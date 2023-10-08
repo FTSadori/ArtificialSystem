@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\Core">
+      <UniqueIdentifier>{0860cdbc-54d8-427a-8155-75eb536a509d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory">
+      <UniqueIdentifier>{ee2a13ab-97a2-46f6-9e75-3e11ad0ad1d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
