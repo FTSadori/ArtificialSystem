@@ -1,18 +1,21 @@
 #include "SectorName.h"
 #include <sstream>
 
-SectorName::SectorName(const std::string& _mark, uintptr_t _sector)
+namespace Core::Memory
 {
-	std::hash<int> h_sector;
-	std::hash<std::string> h_mark;
+	SectorName::SectorName(const std::string& _mark, uintptr_t _sector)
+	{
+		std::hash<int> h_sector;
+		std::hash<std::string> h_mark;
 
-	std::stringstream ss;
-	ss << std::hex << h_mark(_mark) << h_sector(_sector) << ".sec";
+		std::stringstream ss;
+		ss << std::hex << h_mark(_mark) << h_sector(_sector) << ".sec";
 
-	name = ss.str();
-}
+		name = ss.str();
+	}
 
-std::string SectorName::get_name()
-{
-	return name;
+	std::string SectorName::get_name()
+	{
+		return name;
+	}
 }
