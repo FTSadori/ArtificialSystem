@@ -1,38 +1,43 @@
 #include "RealFileManager.h"
 #include "Exceptions.h"
+#include "Base64.h"
 #include <fstream>
 #include <iostream>
 
 namespace Core::Memory
 {
-	void RealFileManager::write_into_real_file(SectorName _name, const std::vector<uint8_t>& _raw)
+	void RealFileManager::write_into_real_file(SectorName _name, const DataQueue& _raw)
 	{
+		auto line = b64encode(_raw.get_data(), _raw.size());
+
 		std::ofstream out(_name.get_name());
-		for (uint8_t n : _raw)
-			out << (char)(n ^ m_key);
+		out << line;
 		out.close();
 	}
 
-	std::vector<uint8_t> RealFileManager::read_from_real_file(SectorName _name)
+	DataQueue RealFileManager::read_from_real_file(SectorName _name)
 	{
 		std::ifstream in(_name.get_name());
 		if (!in.is_open())
 			throw FileDoesNotExist("Sector file does not exist");
 
-		std::vector<uint8_t> data;
+		DataQueue data;
 
 		while (!in.eof())
-			data.push_back((uint8_t)in.get() ^ m_key);
+			data.push_char((char)(in.get()));
 
-		data.pop_back();
+		data.fix_last_char();
+
+		auto line = b64decode(data.get_data(), data.size());
 
 		in.close();
 
-		return data;
+		return DataQueue(std::vector<char>(line.data(), line.data() + line.size()));
 	}
 
 	void RealFileManager::delete_real_file(SectorName _name)
 	{
+		std::cout << _name.get_name() << std::endl;
 		remove(_name.get_name().c_str());
 	}
 }

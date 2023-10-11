@@ -5,18 +5,20 @@
 
 namespace Core::Memory
 {
-	RealFileManager Sectors::s_real_file_manager = RealFileManager(42);
+	RealFileManager Sectors::s_real_file_manager;
 
 	Sectors::Sectors(size_t _capacity, const std::string& _disk_mark, uint32_t _max_sector_num)
 		: c_capacity(_capacity), c_disk_mark(_disk_mark), c_max_sector_num(_max_sector_num) 
 	{
 		size_t _first_sector_capacity = _max_sector_num * sizeof(SectorInfo) + sizeof(uint32_t);
 		try {
-			load_from_data(s_real_file_manager.read_from_real_file(SectorName(_disk_mark, 0)));
+			auto data = s_real_file_manager.read_from_real_file(SectorName(_disk_mark, c_sector_file));
+			load_from_data(data);
 		}
-		catch (const std::exception&)
+		catch (const std::exception& ex)
 		{
-			add_sector(SectorInfo(0, _first_sector_capacity, true, true, 0), {});
+			add_sector(SectorInfo(c_sector_file, _first_sector_capacity, true, true, 0), {});
+			reload();
 		}
 	}
 
@@ -42,7 +44,7 @@ namespace Core::Memory
 		return FreeSectorInfo{ 0, 0 };
 	}
 
-	void Sectors::add_sector(const SectorInfo& _sector, const std::vector<uint8_t>& _data)
+	void Sectors::add_sector(const SectorInfo& _sector, const DataQueue& _data)
 	{
 		s_real_file_manager.write_into_real_file(SectorName{ c_disk_mark, _sector.start }, _data);
 		m_sectors.emplace(_sector.start, _sector);
@@ -53,11 +55,11 @@ namespace Core::Memory
 		size_t space = c_capacity;
 
 		for (const auto& pair : m_sectors)
-			space -= pair.second.size;
+			space -= std::min(pair.second.size, space);
 		return space;
 	}
 
-	uintptr_t Sectors::put_raw_file(const std::vector<uint8_t>& _data, bool system)
+	uintptr_t Sectors::put_raw_file(const DataQueue& _data, bool system)
 	{
 		size_t remains = _data.size();
 
@@ -89,9 +91,6 @@ namespace Core::Memory
 				}
 				new_sectors.push_back(s);
 				m_sectors.emplace(s.start, s);
-
-				//todo Delete this print stuff
-				std::cout << s.first_in_chain << " " << s.start << " " << s.size << " " << s.next << '\n';
 			}
 		}
 		catch (const NotEnoughFreeSpace& ex)
@@ -111,7 +110,7 @@ namespace Core::Memory
 		{
 			m_sectors.erase(sec.start);
 			end = beg + sec.size;
-			add_sector(sec, std::vector<uint8_t>(_data.data() + beg, _data.data() + end));
+			add_sector(sec, DataQueue(std::vector<char>(_data.get_data() + beg, _data.get_data() + end)));
 			beg = end;
 		}
 		reload();
@@ -119,10 +118,10 @@ namespace Core::Memory
 		return ret;
 	}
 
-	std::vector<uint8_t> Sectors::get_raw_file(uintptr_t _start, bool system)
+	DataQueue Sectors::get_raw_file(uintptr_t _start, bool system)
 	{
 
-		std::vector<uint8_t> result{ 0 };
+		DataQueue result;
 		do
 		{
 			if (m_sectors.find(_start) == m_sectors.end())
@@ -132,69 +131,68 @@ namespace Core::Memory
 			if (s.first_in_chain && s.system && !system)
 				throw FileIsBlocked("File is a system file. Failed to read it");
 			auto file = s_real_file_manager.read_from_real_file(SectorName{ c_disk_mark, _start });
-			result.insert(result.end(), file.begin(), file.end());
+			result.concat(file);
 			_start = s.next;
 		} while (_start != 0);
-
-		result.erase(result.begin());
 
 		return result;
 	}
 
 	void Sectors::delete_file(uintptr_t _start, bool system)
 	{
+		if (m_sectors.find(_start) == m_sectors.end())
+			throw WrongFileDeletion("File was not deleted properly");
+		if (!m_sectors[_start].first_in_chain)
+			throw WrongFileDeletion("File was not deleted properly");
 		do
 		{
 			if (m_sectors.find(_start) == m_sectors.end())
 				throw WrongFileDeletion("File was not deleted properly");
 			SectorInfo s = m_sectors[_start];
+			std::cout << s.size << std::endl;
 			if (s.first_in_chain && s.system && !system)
 				throw FileIsBlocked("File is a system file. Failed to delete it");
+			m_sectors.erase(_start);
 			s_real_file_manager.delete_real_file(SectorName{ c_disk_mark, _start });
 			_start = s.next;
 		} while (_start != 0);
-
+		
 		reload();
 	}
 
-	uintptr_t Sectors::get_load_file_ptr()
+	DataQueue Sectors::get_as_data() const
 	{
-		return c_sector_file;
-	}
+		DataQueue data;
 
-	std::vector<uint8_t> Sectors::get_as_data()
-	{
-		std::vector<uint8_t> ss;
-
-		uint32_t count = m_sectors.size();
-
-		ss.insert(ss.end(), (uint8_t*)&count, (uint8_t*)&count + sizeof(uint32_t));
+		uint32_t size = m_sectors.size();
+		data.push(size);
 
 		for (const auto& pair : m_sectors)
-			ss.insert(ss.end(), (uint8_t*)&pair.second, (uint8_t*)&pair.second + sizeof(SectorInfo));
+		{
+			data.concat(pair.second.get_as_data());
+		}
 
-		return ss;
+		return data;
 	}
 	
-	void Sectors::load_from_data(const std::vector<uint8_t>& _data)
+	void Sectors::load_from_data(DataQueue& _data)
 	{
 		if (_data.size() == 0) return;
-
-		const uint8_t* beg = _data.data();
-		uint32_t size = *((uint32_t*)beg);
-
+		
+		uint32_t size = _data.pop<uint32_t>();
+		
 		m_sectors.clear();
 
 		for (uint32_t i = 0; i < size; ++i)
 		{
-			SectorInfo* sec = (SectorInfo*)(beg + sizeof(size) + i * sizeof(SectorInfo));
-			m_sectors.emplace(sec->start, *sec);
+			SectorInfo sec;
+			sec.load_from_data(_data);
+			m_sectors.emplace(sec.start, sec);
 		}
 	}
 
 	void Sectors::reload()
 	{
-		auto data = get_as_data();
-		s_real_file_manager.write_into_real_file(SectorName(c_disk_mark, 0), data);
+		s_real_file_manager.write_into_real_file(SectorName(c_disk_mark, c_sector_file), get_as_data());
 	}
 }
