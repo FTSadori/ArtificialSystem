@@ -1,75 +1,47 @@
 #pragma once
-#include <exception>
+#include "BaseException.h"
 
 namespace Core::Memory
 {
-	class NotEnoughFreeSpace final : public std::exception
+	struct NotEnoughFreeSpace final : public Exception
 	{
-	public:
-		NotEnoughFreeSpace(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		NotEnoughFreeSpace(const std::string& _message) : Exception(_message) {}
+		NotEnoughFreeSpace(const char* _message) : Exception(_message) {}
 	};
 
-	class WrongFileDeletion final : public std::exception
+	struct WrongFileDeletion final : public Exception
 	{
-	public:
-		WrongFileDeletion(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		WrongFileDeletion(const std::string& _message) : Exception(_message) {}
+		WrongFileDeletion(const char* _message) : Exception(_message) {}
 	};
 
-	class WrongFileReading final : public std::exception
+	struct WrongFileReading final : public Exception
 	{
-	public:
-		WrongFileReading(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		WrongFileReading(const std::string& _message) : Exception(_message) {}
+		WrongFileReading(const char* _message) : Exception(_message) {}
 	};
 
-	class FileIsBlocked final : public std::exception
+	struct FileIsBlocked final : public Exception
 	{
-	public:
-		FileIsBlocked(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		FileIsBlocked(const std::string& _message) : Exception(_message) {}
+		FileIsBlocked(const char* _message) : Exception(_message) {}
 	};
 
-	class FileAlreadyExists final : public std::exception
+	struct FileAlreadyExists final : public Exception
 	{
-	public:
-		FileAlreadyExists(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		FileAlreadyExists(const std::string& _message) : Exception(_message) {}
+		FileAlreadyExists(const char* _message) : Exception(_message) {}
 	};
 
-	class FileDoesNotExist final : public std::exception
+	struct FileDoesNotExist final : public Exception
 	{
-	public:
-		FileDoesNotExist(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		FileDoesNotExist(const std::string& _message) : Exception(_message) {}
+		FileDoesNotExist(const char* _message) : Exception(_message) {}
 	};
 
-	class SectorFileIsFull final : public std::exception
+	struct SectorFileIsFull final : public Exception
 	{
-	public:
-		SectorFileIsFull(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		SectorFileIsFull(const std::string& _message) : Exception(_message) {}
+		SectorFileIsFull(const char* _message) : Exception(_message) {}
 	};
 }

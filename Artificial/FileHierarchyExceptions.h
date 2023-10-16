@@ -1,36 +1,35 @@
 #pragma once
-#include <exception>
+#include "BaseException.h"
 
 namespace Core::Memory
 {
-	class DirectoryDoesntExist final : public std::exception
+	struct DirectoryDoesntExist final : public Exception
 	{
-	public:
-		DirectoryDoesntExist(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		DirectoryDoesntExist(const std::string& _message) : Exception(_message) {}
+		DirectoryDoesntExist(const char* _message) : Exception(_message) {}
 	};
 
-	class CantDeleteRootDirectory final : public std::exception
+	struct CantDeleteRootDirectory final : public Exception
 	{
-	public:
-		CantDeleteRootDirectory(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		CantDeleteRootDirectory(const std::string& _message) : Exception(_message) {}
+		CantDeleteRootDirectory(const char* _message) : Exception(_message) {}
 	};
 
-	class PointerAlreadyUsed final : public std::exception
+	struct PointerAlreadyUsed final : public Exception
 	{
-	public:
-		PointerAlreadyUsed(const char* _message) : m_message(_message) {}
-		const char* what() const { return m_message; }
-
-	private:
-		const char* m_message;
+		PointerAlreadyUsed(const std::string& _message) : Exception(_message) {}
+		PointerAlreadyUsed(const char* _message) : Exception(_message) {}
 	};
 
+	struct RootAlreadyExists final : public Exception
+	{
+		RootAlreadyExists(const std::string& _message) : Exception(_message) {}
+		RootAlreadyExists(const char* _message) : Exception(_message) {}
+	};
+
+	struct RootIsTheHighestDirectory final : public Exception
+	{
+		RootIsTheHighestDirectory(const std::string& _message) : Exception(_message) {}
+		RootIsTheHighestDirectory(const char* _message) : Exception(_message) {}
+	};
 }
