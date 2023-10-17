@@ -6,13 +6,13 @@ namespace Core::Memory
 	{
 		DataQueue data;
 		data.push(start);
-		data.push(is_directory);
+		data.push(type);
 		return data;
 	}
 
 	void HierarchyFileInfo::load_from_data(DataQueue& _data)
 	{
 		start = _data.pop<uintptr_t>();
-		is_directory = _data.pop<bool>();
+		type = _data.pop<FileT>();
 	}
 }
