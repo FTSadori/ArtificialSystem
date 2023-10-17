@@ -2,7 +2,6 @@
 #include "Exceptions.h"
 #include "Base64.h"
 #include <fstream>
-#include <iostream>
 
 namespace Core::Memory
 {
@@ -37,7 +36,6 @@ namespace Core::Memory
 
 	void RealFileManager::delete_real_file(SectorName _name)
 	{
-		std::cout << _name.get_name() << std::endl;
 		remove(_name.get_name().c_str());
 	}
 }
