@@ -19,10 +19,192 @@
     <Filter Include="Исходные файлы\Core\Memory">
       <UniqueIdentifier>{ee2a13ab-97a2-46f6-9e75-3e11ad0ad1d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\LoaderInterface">
+      <UniqueIdentifier>{f45cde27-7908-4f8f-95ac-3379b6f2d7e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files">
+      <UniqueIdentifier>{a89f5231-0b21-4405-8c56-0722554038ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\FileManager">
+      <UniqueIdentifier>{a2248c71-8249-4557-9f0b-288f4d5980f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\Info">
+      <UniqueIdentifier>{06ab73ec-8b6c-4c5f-9595-cac6a778500e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\RealFileManager">
+      <UniqueIdentifier>{e69a8585-be84-49e7-9b0f-87f6e46c82db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\FileHierarchy">
+      <UniqueIdentifier>{a2fdd84d-3685-426d-a83b-c120b84c6c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\CoreStructures">
+      <UniqueIdentifier>{df943f7e-5fa6-41d8-b18e-f8e99f24cd83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Exceptions">
+      <UniqueIdentifier>{715e20ad-7685-4516-a494-eaaa3db431fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\Sectors">
+      <UniqueIdentifier>{99ff21ef-fb66-492f-8239-c1107092df63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Folders">
+      <UniqueIdentifier>{d5ac17ad-35da-4a56-8215-4e867c42eba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Folders\FolderManager">
+      <UniqueIdentifier>{d27e7d05-0cfa-41d6-a827-17af352c5bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Folders\Info">
+      <UniqueIdentifier>{adb7bbc0-d715-4f23-a999-0a3cdf46003d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Disk">
+      <UniqueIdentifier>{ce68b2f9-d917-461f-b05c-3ddac2fb7f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Disk\DiskSystem">
+      <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\Sectors\SectorName">
+      <UniqueIdentifier>{f2022ef4-172c-464e-aa8c-ccc7f0e1deed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Data">
+      <UniqueIdentifier>{247ae1dd-f7e4-48b7-8aaa-06b012ad2d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Base64">
+      <UniqueIdentifier>{6f87cedd-6bc5-4f2d-8eb4-6002ab6d18bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\FileHierarchy\HierarchyFileInfo">
+      <UniqueIdentifier>{5a2e1459-e3c7-45a9-8a0b-52abc4cebfc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\DiskFileManager">
+      <UniqueIdentifier>{474c622b-1744-44de-80c7-1fb1ce808af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\NameValidator">
+      <UniqueIdentifier>{cee6933f-763e-4a46-8279-c5adb08f8fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Time">
+      <UniqueIdentifier>{cffd5988-9a27-4ccb-bf84-65f7ee88d00a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Permissions.h">
+      <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="RealFileManager.h">
+      <Filter>Исходные файлы\Core\Memory\Files\RealFileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHierarchy.h">
+      <Filter>Исходные файлы\Core\Memory\Files\FileHierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="RealFileManager.cpp">
+      <Filter>Исходные файлы\Core\Memory\Files\RealFileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SectorName.cpp">
+      <Filter>Исходные файлы\Core\Memory\Files\Sectors\SectorName</Filter>
+    </ClCompile>
+    <ClCompile Include="Sectors.cpp">
+      <Filter>Исходные файлы\Core\Memory\Files\Sectors</Filter>
+    </ClCompile>
+    <ClCompile Include="SectorInfo.cpp">
+      <Filter>Исходные файлы\Core\Memory\Files\Sectors</Filter>
+    </ClCompile>
+    <ClCompile Include="DataQueueExceptions.h">
+      <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="DataQueue.cpp">
+      <Filter>Исходные файлы\Core\Memory\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Base64.cpp">
+      <Filter>Исходные файлы\Core\Memory\Base64</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHierarchy.cpp">
+      <Filter>Исходные файлы\Core\Memory\Files\FileHierarchy</Filter>
+    </ClCompile>
+    <ClCompile Include="HierarchyFileInfo.cpp">
+      <Filter>Исходные файлы\Core\Memory\Files\FileHierarchy\HierarchyFileInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="DiskFileManager.cpp">
+      <Filter>Исходные файлы\Core\Memory\DiskFileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="NameValidator.cpp">
+      <Filter>Исходные файлы\Core\Memory\NameValidator</Filter>
+    </ClCompile>
+    <ClCompile Include="NameExceptions.h">
+      <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseException.h">
+      <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Memory.h">
+      <Filter>Исходные файлы\Core\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SectorInfo.h">
+      <Filter>Исходные файлы\Core\Memory\Files\Sectors</Filter>
+    </ClInclude>
+    <ClInclude Include="Sectors.h">
+      <Filter>Исходные файлы\Core\Memory\Files\Sectors</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="ILoadable.h">
+      <Filter>Исходные файлы\Core\Memory\LoaderInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="ILoader.h">
+      <Filter>Исходные файлы\Core\Memory\LoaderInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Исходные файлы\Core\Memory\Files\FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="IFileManager.h">
+      <Filter>Исходные файлы\Core\Memory\Files\FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FileInfo.h">
+      <Filter>Исходные файлы\Core\Memory\Files\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.h">
+      <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FolderManager.h">
+      <Filter>Исходные файлы\Core\Memory\Folders\FolderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Disk.h">
+      <Filter>Исходные файлы\Core\Memory\Disk</Filter>
+    </ClInclude>
+    <ClInclude Include="DiskSystem.h">
+      <Filter>Исходные файлы\Core\Memory\Disk\DiskSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SectorName.h">
+      <Filter>Исходные файлы\Core\Memory\Files\Sectors\SectorName</Filter>
+    </ClInclude>
+    <ClInclude Include="DataQueue.h">
+      <Filter>Исходные файлы\Core\Memory\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Base64.h">
+      <Filter>Исходные файлы\Core\Memory\Base64</Filter>
+    </ClInclude>
+    <ClInclude Include="HierarchyFileInfo.h">
+      <Filter>Исходные файлы\Core\Memory\Files\FileHierarchy\HierarchyFileInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHierarchyExceptions.h">
+      <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="DiskFileManager.h">
+      <Filter>Исходные файлы\Core\Memory\DiskFileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="NameValidator.h">
+      <Filter>Исходные файлы\Core\Memory\NameValidator</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Исходные файлы\Core\Memory\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="FileType.h">
+      <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

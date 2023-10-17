@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +129,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="BaseException.h" />
+    <ClCompile Include="DataQueue.cpp" />
+    <ClCompile Include="DataQueueExceptions.h" />
+    <ClCompile Include="DiskFileManager.cpp" />
+    <ClCompile Include="FileHierarchy.cpp" />
+    <ClCompile Include="FileHierarchy.h" />
+    <ClCompile Include="HierarchyFileInfo.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="NameExceptions.h" />
+    <ClCompile Include="NameValidator.cpp" />
+    <ClCompile Include="Path.cpp" />
+    <ClCompile Include="Permissions.h" />
+    <ClCompile Include="RealFileManager.cpp" />
+    <ClCompile Include="RealFileManager.h" />
+    <ClCompile Include="SectorInfo.cpp" />
+    <ClCompile Include="SectorName.cpp" />
+    <ClCompile Include="Sectors.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base64.h" />
+    <ClInclude Include="DataQueue.h" />
+    <ClInclude Include="Disk.h" />
+    <ClInclude Include="DiskFileManager.h" />
+    <ClInclude Include="DiskSystem.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="FileHierarchyExceptions.h" />
+    <ClInclude Include="FileInfo.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="FileType.h" />
+    <ClInclude Include="FolderManager.h" />
+    <ClInclude Include="HierarchyFileInfo.h" />
+    <ClInclude Include="IFileManager.h" />
+    <ClInclude Include="ILoadable.h" />
+    <ClInclude Include="ILoader.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="NameValidator.h" />
+    <ClInclude Include="Path.h" />
+    <ClInclude Include="SectorInfo.h" />
+    <ClInclude Include="SectorName.h" />
+    <ClInclude Include="Sectors.h" />
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
