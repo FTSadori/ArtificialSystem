@@ -8,14 +8,15 @@ namespace Core::Memory
 	RealFileManager Sectors::s_real_file_manager;
 
 	Sectors::Sectors(size_t _capacity, const std::string& _disk_mark, uint32_t _max_sector_num)
-		: c_capacity(_capacity), c_disk_mark(_disk_mark), c_max_sector_num(_max_sector_num) 
+		: c_capacity(_capacity), c_disk_mark(_disk_mark), c_max_sector_num(_max_sector_num),
+		c_sector_file_max_size(_max_sector_num * sizeof(SectorInfo) + sizeof(uint32_t))
 	{
-		size_t _first_sector_capacity = _max_sector_num * sizeof(SectorInfo) + sizeof(uint32_t);
+		size_t _first_sector_capacity = c_sector_file_max_size;
 		try {
 			auto data = s_real_file_manager.read_from_real_file(SectorName(_disk_mark, c_sector_file));
 			load_from_data(data);
 		}
-		catch (const std::exception& ex)
+		catch (const std::exception&)
 		{
 			add_sector(SectorInfo(c_sector_file, _first_sector_capacity, true, true, 0), {});
 			reload();
@@ -42,6 +43,16 @@ namespace Core::Memory
 		throw NotEnoughFreeSpace("Can't find a free sector");
 
 		return FreeSectorInfo{ 0, 0 };
+	}
+
+	void Sectors::write_in_system_sector(uintptr_t _start, uintptr_t _size, const DataQueue& _data)
+	{
+		SectorInfo info = SectorInfo(_start, _size, true, true, 0);
+
+		if (m_sectors.find(_start) == m_sectors.end())
+			m_sectors.emplace(_start, info);
+		s_real_file_manager.write_into_real_file(SectorName{ c_disk_mark, _start }, _data);
+		reload();
 	}
 
 	void Sectors::add_sector(const SectorInfo& _sector, const DataQueue& _data)
@@ -101,7 +112,7 @@ namespace Core::Memory
 		}
 
 		if (m_sectors.size() > c_max_sector_num)
-			throw SectorFileIsFull("You can't add more sectors");
+			throw SectorFileIsFull("(Sectors::put_raw_file) You can't add more sectors");
 
 		uintptr_t ret = new_sectors[0].start;
 		size_t beg = 0;
@@ -125,11 +136,11 @@ namespace Core::Memory
 		do
 		{
 			if (m_sectors.find(_start) == m_sectors.end())
-				throw WrongFileReading("File was not read properly");
+				throw WrongFileReading("(Sectors::get_raw_file) File was not read properly");
 
 			SectorInfo s = m_sectors[_start];
 			if (s.first_in_chain && s.system && !system)
-				throw FileIsBlocked("File is a system file. Failed to read it");
+				throw FileIsBlocked("(Sectors::get_raw_file) File is a system file. Failed to read it");
 			auto file = s_real_file_manager.read_from_real_file(SectorName{ c_disk_mark, _start });
 			result.concat(file);
 			_start = s.next;
@@ -138,20 +149,36 @@ namespace Core::Memory
 		return result;
 	}
 
-	void Sectors::delete_file(uintptr_t _start, bool system)
+	size_t Core::Memory::Sectors::get_file_size(uintptr_t _start)
 	{
-		if (m_sectors.find(_start) == m_sectors.end())
-			throw WrongFileDeletion("File was not deleted properly");
-		if (!m_sectors[_start].first_in_chain)
-			throw WrongFileDeletion("File was not deleted properly");
+		size_t size = 0;
+
 		do
 		{
 			if (m_sectors.find(_start) == m_sectors.end())
-				throw WrongFileDeletion("File was not deleted properly");
+				throw WrongFileReading("(Sectors::get_file_size) File was not read properly");
+
 			SectorInfo s = m_sectors[_start];
-			std::cout << s.size << std::endl;
+			size += s.size;
+			_start = s.next;
+		} while (_start != 0);
+
+		return size;
+	}
+
+	void Sectors::delete_file(uintptr_t _start, bool system)
+	{
+		if (m_sectors.find(_start) == m_sectors.end())
+			throw WrongFileDeletion("(Sectors::delete_file) File was not deleted properly");
+		if (!m_sectors[_start].first_in_chain)
+			throw WrongFileDeletion("(Sectors::delete_file) File was not deleted properly");
+		do
+		{
+			if (m_sectors.find(_start) == m_sectors.end())
+				throw WrongFileDeletion("(Sectors::delete_file) File was not deleted properly");
+			SectorInfo s = m_sectors[_start];
 			if (s.first_in_chain && s.system && !system)
-				throw FileIsBlocked("File is a system file. Failed to delete it");
+				throw FileIsBlocked("(Sectors::delete_file) File is a system file. Failed to delete it");
 			m_sectors.erase(_start);
 			s_real_file_manager.delete_real_file(SectorName{ c_disk_mark, _start });
 			_start = s.next;
