@@ -5,7 +5,7 @@ namespace Core::Memory
 {
 	SectorName::SectorName(const std::string& _mark, uintptr_t _sector)
 	{
-		std::hash<int> h_sector;
+		std::hash<uintptr_t> h_sector;
 		std::hash<std::string> h_mark;
 
 		std::stringstream ss;
