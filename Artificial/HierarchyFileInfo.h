@@ -5,7 +5,7 @@
 
 namespace Core::Memory
 {
-	struct HierarchyFileInfo final : ILoadable
+	struct HierarchyFileInfo final : public ILoadable
 	{
 		uintptr_t start = 0;
 		FileT type = FileT::FILE;

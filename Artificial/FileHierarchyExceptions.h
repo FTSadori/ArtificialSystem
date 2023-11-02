@@ -32,4 +32,10 @@ namespace Core::Memory
 		RootIsTheHighestDirectory(const std::string& _message) : Exception(_message) {}
 		RootIsTheHighestDirectory(const char* _message) : Exception(_message) {}
 	};
+
+	struct RecursiveDirectoryMove final : public Exception
+	{
+		RecursiveDirectoryMove(const std::string& _message) : Exception(_message) {}
+		RecursiveDirectoryMove(const char* _message) : Exception(_message) {}
+	};
 }

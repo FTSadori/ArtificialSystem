@@ -55,12 +55,6 @@
     <Filter Include="Исходные файлы\Core\Memory\Folders\Info">
       <UniqueIdentifier>{adb7bbc0-d715-4f23-a999-0a3cdf46003d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Disk">
-      <UniqueIdentifier>{ce68b2f9-d917-461f-b05c-3ddac2fb7f36}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Disk\DiskSystem">
-      <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Core\Memory\Files\Sectors\SectorName">
       <UniqueIdentifier>{f2022ef4-172c-464e-aa8c-ccc7f0e1deed}</UniqueIdentifier>
     </Filter>
@@ -81,6 +75,9 @@
     </Filter>
     <Filter Include="Исходные файлы\Core\Memory\Time">
       <UniqueIdentifier>{cffd5988-9a27-4ccb-bf84-65f7ee88d00a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\DiskSystem">
+      <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +135,9 @@
     <ClCompile Include="BaseException.h">
       <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
     </ClCompile>
+    <ClCompile Include="DiskSystem.cpp">
+      <Filter>Исходные файлы\Core\Memory\DiskSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Memory.h">
@@ -173,11 +173,8 @@
     <ClInclude Include="FolderManager.h">
       <Filter>Исходные файлы\Core\Memory\Folders\FolderManager</Filter>
     </ClInclude>
-    <ClInclude Include="Disk.h">
-      <Filter>Исходные файлы\Core\Memory\Disk</Filter>
-    </ClInclude>
     <ClInclude Include="DiskSystem.h">
-      <Filter>Исходные файлы\Core\Memory\Disk\DiskSystem</Filter>
+      <Filter>Исходные файлы\Core\Memory\DiskSystem</Filter>
     </ClInclude>
     <ClInclude Include="SectorName.h">
       <Filter>Исходные файлы\Core\Memory\Files\Sectors\SectorName</Filter>

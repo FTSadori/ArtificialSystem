@@ -7,13 +7,12 @@ namespace Core::Memory
 	class DiskPath final
 	{
 	public:
-		static const std::string c_div_str;
 		static const char c_div = '\\';
 
 		DiskPath(const std::string& _dir, const std::string& _file);
 		DiskPath(const std::string& _path);
 
-		std::string full_name(FileT _type) const;
+		std::string full_name() const;
 		const std::string& dir() const;
 		const std::string& file() const;
 

@@ -29,6 +29,7 @@ namespace Core::Memory
 		virtual DataQueue get_as_data() const override final;
 		virtual void load_from_data(DataQueue& _data) override final;
 
+		bool is_system(uintptr_t _start);
 		// system method
 		void write_in_system_sector(uintptr_t _start, uintptr_t _size, const DataQueue& _data = DataQueue());
 

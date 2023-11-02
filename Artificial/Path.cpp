@@ -4,44 +4,42 @@
 
 namespace Core::Memory
 {
-	const std::string DiskPath::c_div_str = "\\";
-
 	DiskPath::DiskPath(const std::string& _dir, const std::string& _file) 
 		: m_dir(_dir), m_file(_file)
 	{
-		m_full_name = m_dir + m_file;
+		m_full_name = m_dir + c_div + m_file;
+		if (m_full_name.size() == 1) // check for root directory
+			m_full_name = "";
 	}
 
 	DiskPath::DiskPath(const std::string& _path)
 	{
-		if (_path[0] != c_div)
+		if (_path == "") // check for root directory
 		{
-			throw PathIsNotValid("(DiskPath::DiskPath) Path " + _path + " is not valid");
-		}
-		if (_path.back() == c_div)
-			m_full_name = _path.substr(0, _path.size() - 1);
-		else
-			m_full_name = _path;
-
-		size_t i = m_full_name.size();
-
-		if (i == 0)
-		{
+			m_full_name = "";
 			m_dir = "";
 			m_file = "";
+			return;
 		}
-		else
-		{
-			while (_path[--i] != c_div);
 
-			m_dir = _path.substr(0, i + 1);
-			m_file = _path.substr(i + 1);
-		}
+		if (_path.find(c_div) == std::string::npos)
+			throw NameIsNotValid("(DiskPath::DiskPath) " + _path + " is not valid path");
+
+		size_t i = _path.size();
+
+		while (_path[--i] != c_div);
+
+		m_dir = _path.substr(0, i);
+		m_file = _path.substr(i + 1);
+		if (m_file.back() == c_div)
+			m_file = m_file.substr(0, m_file.size() - 1);
+
+		m_full_name = m_dir + c_div + m_file;
 	}
 
-	std::string DiskPath::full_name(FileT _type) const
+	std::string DiskPath::full_name() const
 	{
-		return ((_type == FileT::FOLDER) ? m_full_name + c_div : m_full_name);
+		return m_full_name;
 	}
 
 	const std::string& DiskPath::dir() const
@@ -53,6 +51,4 @@ namespace Core::Memory
 	{
 		return m_file;
 	}
-
-
 }

@@ -222,4 +222,9 @@ namespace Core::Memory
 	{
 		s_real_file_manager.write_into_real_file(SectorName(c_disk_mark, c_sector_file), get_as_data());
 	}
+
+	bool Sectors::is_system(uintptr_t _start)
+	{
+		return m_sectors[_start].system;
+	}
 }

@@ -134,6 +134,7 @@
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
     <ClCompile Include="DiskFileManager.cpp" />
+    <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
@@ -151,7 +152,6 @@
   <ItemGroup>
     <ClInclude Include="Base64.h" />
     <ClInclude Include="DataQueue.h" />
-    <ClInclude Include="Disk.h" />
     <ClInclude Include="DiskFileManager.h" />
     <ClInclude Include="DiskSystem.h" />
     <ClInclude Include="Exceptions.h" />
