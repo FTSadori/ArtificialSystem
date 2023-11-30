@@ -2,7 +2,7 @@
 #include "DataQueueExceptions.h"
 #include <vector>
 
-namespace Core::Memory
+namespace Memory
 {
 	class DataQueue final
 	{

@@ -3,7 +3,7 @@
 #include "ILoadable.h"
 #include "FileType.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	struct HierarchyFileInfo final : public ILoadable
 	{

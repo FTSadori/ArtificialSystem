@@ -1,8 +1,9 @@
 #include "FileHierarchy.h"
 #include "FileHierarchyExceptions.h"
 #include "Exceptions.h"
+#include <iostream>
 
-namespace Core::Memory
+namespace Memory
 {
 	FileHierarchy::FileHierarchy(uintptr_t _root_dir) : m_root_dir(_root_dir)
 	{ 
@@ -65,7 +66,7 @@ namespace Core::Memory
 		m_higher_dir.erase(_start);
 	}
 
-	DataQueue Core::Memory::FileHierarchy::get_as_data() const
+	DataQueue Memory::FileHierarchy::get_as_data() const
 	{
 		DataQueue data;
 		data.push(m_root_dir);

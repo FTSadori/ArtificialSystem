@@ -1,6 +1,6 @@
 #include "HierarchyFileInfo.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	DataQueue HierarchyFileInfo::get_as_data() const
 	{

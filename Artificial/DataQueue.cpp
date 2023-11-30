@@ -1,6 +1,6 @@
 #include "DataQueue.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	void DataQueue::push_char(char c)
 	{

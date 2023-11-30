@@ -4,7 +4,7 @@
 #include "Permissions.h"
 #include "ILoadable.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	struct FileInfo final : public ILoadable
 	{

@@ -2,7 +2,7 @@
 #include <exception>
 #include <string>
 
-namespace Core::Memory
+namespace Memory
 {
 	class Exception : public std::exception
 	{

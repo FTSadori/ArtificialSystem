@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseException.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	struct NameIsNotValid final : public Exception
 	{

@@ -3,7 +3,7 @@
 #include "FileType.h"
 #include <unordered_map>
 
-namespace Core::Memory
+namespace Memory
 {
 	class FileHierarchy final : public ILoadable
 	{

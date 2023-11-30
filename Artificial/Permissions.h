@@ -1,7 +1,7 @@
 #pragma once
 #include <stdint.h>
 
-namespace Core::Memory
+namespace Memory
 {
 	using hash_t = size_t;
 

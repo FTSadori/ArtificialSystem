@@ -1,7 +1,7 @@
 #pragma once
 #include "DataQueue.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	class ILoadable
 	{

@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
 
-namespace Core::Memory
+namespace Memory
 {
 	enum class FileT : int8_t
 	{

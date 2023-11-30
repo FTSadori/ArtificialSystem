@@ -1,7 +1,7 @@
 #pragma once
 #include <chrono>
 
-namespace Core::Memory
+namespace Memory
 {
 	struct Time final
 	{
