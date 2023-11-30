@@ -4,7 +4,7 @@
 #include "RealFileManager.h"
 #include <map>
 
-namespace Core::Memory
+namespace Memory
 {
 	class Sectors final : public ILoadable
 	{
@@ -16,7 +16,7 @@ namespace Core::Memory
 		const uint32_t c_max_sector_num;
 		const uintptr_t c_sector_file = 0;
 
-		Sectors(size_t _capacity, const std::string& _disk_mark, uint32_t _max_sector_num);
+		Sectors(const std::string& _folder, size_t _capacity, const std::string& _disk_mark, uint32_t _max_sector_num);
 
 		size_t get_free_space_size();
 
@@ -41,6 +41,9 @@ namespace Core::Memory
 		void add_sector(const SectorInfo& _sector, const DataQueue& _data);
 
 		std::map<uintptr_t, SectorInfo> m_sectors;
+
+		const std::string c_folder;
+
 		static RealFileManager s_real_file_manager;
 	};
 }

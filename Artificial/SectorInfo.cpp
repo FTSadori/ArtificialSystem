@@ -2,7 +2,7 @@
 #include "DataQueue.h"
 #include <sstream>
 
-namespace Core::Memory 
+namespace Memory 
 {
 	DataQueue SectorInfo::get_as_data() const
 	{

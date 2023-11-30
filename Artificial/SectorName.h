@@ -2,7 +2,7 @@
 #include "Permissions.h"
 #include <string>
 
-namespace Core::Memory
+namespace Memory
 {
 	class SectorName final
 	{

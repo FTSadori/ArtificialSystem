@@ -3,20 +3,20 @@
 #include "Base64.h"
 #include <fstream>
 
-namespace Core::Memory
+namespace Memory
 {
-	void RealFileManager::write_into_real_file(SectorName _name, const DataQueue& _raw)
+	void RealFileManager::write_into_real_file(const std::string& _folder, SectorName _name, const DataQueue& _raw)
 	{
 		auto line = b64encode(_raw.get_data(), _raw.size());
 
-		std::ofstream out(_name.get_name());
+		std::ofstream out(_folder + "\\" + _name.get_name());
 		out << line;
 		out.close();
 	}
 
-	DataQueue RealFileManager::read_from_real_file(SectorName _name)
+	DataQueue RealFileManager::read_from_real_file(const std::string& _folder, SectorName _name)
 	{
-		std::ifstream in(_name.get_name());
+		std::ifstream in(_folder + "\\" + _name.get_name());
 		if (!in.is_open())
 			throw FileDoesNotExist("Sector file does not exist");
 
@@ -34,8 +34,8 @@ namespace Core::Memory
 		return DataQueue(std::vector<char>(line.data(), line.data() + line.size()));
 	}
 
-	void RealFileManager::delete_real_file(SectorName _name)
+	void RealFileManager::delete_real_file(const std::string& _folder, SectorName _name)
 	{
-		remove(_name.get_name().c_str());
+		remove((_folder + "\\" + _name.get_name()).c_str());
 	}
 }

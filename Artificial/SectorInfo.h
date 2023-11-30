@@ -2,7 +2,7 @@
 #include <cstdint>
 #include "ILoadable.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	struct SectorInfo final : ILoadable
 	{

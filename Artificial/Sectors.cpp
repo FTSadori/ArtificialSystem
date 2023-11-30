@@ -3,17 +3,18 @@
 #include <iostream>
 #include <sstream>
 
-namespace Core::Memory
+namespace Memory
 {
 	RealFileManager Sectors::s_real_file_manager;
 
-	Sectors::Sectors(size_t _capacity, const std::string& _disk_mark, uint32_t _max_sector_num)
+	Sectors::Sectors(const std::string& _folder, size_t _capacity, const std::string& _disk_mark, uint32_t _max_sector_num)
 		: c_capacity(_capacity), c_disk_mark(_disk_mark), c_max_sector_num(_max_sector_num),
-		c_sector_file_max_size(_max_sector_num * sizeof(SectorInfo) + sizeof(uint32_t))
+		c_sector_file_max_size(_max_sector_num * sizeof(SectorInfo) + sizeof(uint32_t)),
+		c_folder(_folder)
 	{
 		size_t _first_sector_capacity = c_sector_file_max_size;
 		try {
-			auto data = s_real_file_manager.read_from_real_file(SectorName(_disk_mark, c_sector_file));
+			auto data = s_real_file_manager.read_from_real_file(c_folder, SectorName(_disk_mark, c_sector_file));
 			load_from_data(data);
 		}
 		catch (const std::exception&)
@@ -51,13 +52,13 @@ namespace Core::Memory
 
 		if (m_sectors.find(_start) == m_sectors.end())
 			m_sectors.emplace(_start, info);
-		s_real_file_manager.write_into_real_file(SectorName{ c_disk_mark, _start }, _data);
+		s_real_file_manager.write_into_real_file(c_folder, SectorName{ c_disk_mark, _start }, _data);
 		reload();
 	}
 
 	void Sectors::add_sector(const SectorInfo& _sector, const DataQueue& _data)
 	{
-		s_real_file_manager.write_into_real_file(SectorName{ c_disk_mark, _sector.start }, _data);
+		s_real_file_manager.write_into_real_file(c_folder, SectorName{ c_disk_mark, _sector.start }, _data);
 		m_sectors.emplace(_sector.start, _sector);
 	}
 
@@ -141,7 +142,7 @@ namespace Core::Memory
 			SectorInfo s = m_sectors[_start];
 			if (s.first_in_chain && s.system && !system)
 				throw FileIsBlocked("(Sectors::get_raw_file) File is a system file. Failed to read it");
-			auto file = s_real_file_manager.read_from_real_file(SectorName{ c_disk_mark, _start });
+			auto file = s_real_file_manager.read_from_real_file(c_folder, SectorName{ c_disk_mark, _start });
 			result.concat(file);
 			_start = s.next;
 		} while (_start != 0);
@@ -149,7 +150,7 @@ namespace Core::Memory
 		return result;
 	}
 
-	size_t Core::Memory::Sectors::get_file_size(uintptr_t _start)
+	size_t Memory::Sectors::get_file_size(uintptr_t _start)
 	{
 		size_t size = 0;
 
@@ -180,7 +181,7 @@ namespace Core::Memory
 			if (s.first_in_chain && s.system && !system)
 				throw FileIsBlocked("(Sectors::delete_file) File is a system file. Failed to delete it");
 			m_sectors.erase(_start);
-			s_real_file_manager.delete_real_file(SectorName{ c_disk_mark, _start });
+			s_real_file_manager.delete_real_file(c_folder, SectorName{ c_disk_mark, _start });
 			_start = s.next;
 		} while (_start != 0);
 		
@@ -220,7 +221,7 @@ namespace Core::Memory
 
 	void Sectors::reload()
 	{
-		s_real_file_manager.write_into_real_file(SectorName(c_disk_mark, c_sector_file), get_as_data());
+		s_real_file_manager.write_into_real_file(c_folder, SectorName(c_disk_mark, c_sector_file), get_as_data());
 	}
 
 	bool Sectors::is_system(uintptr_t _start)

@@ -1,7 +1,7 @@
 #include "SectorName.h"
 #include <sstream>
 
-namespace Core::Memory
+namespace Memory
 {
 	SectorName::SectorName(const std::string& _mark, uintptr_t _sector)
 	{
