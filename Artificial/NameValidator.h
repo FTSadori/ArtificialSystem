@@ -2,7 +2,7 @@
 #include <string>
 #include "NameExceptions.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	struct NameValidator final
 	{

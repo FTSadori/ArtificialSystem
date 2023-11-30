@@ -1,6 +1,6 @@
 #include "NameValidator.h"
 
-namespace Core::Memory
+namespace Memory
 {
     bool NameValidator::is_name_valid(const std::string& name)
     {
