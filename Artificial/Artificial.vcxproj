@@ -131,17 +131,21 @@
   <ItemGroup>
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="BaseException.h" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
     <ClCompile Include="DiskFileManager.cpp" />
     <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
+    <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
+    <ClCompile Include="IControllerOption.h" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MemoryController.cpp" />
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
-    <ClCompile Include="Path.cpp" />
+    <ClCompile Include="DiskPath.cpp" />
     <ClCompile Include="Permissions.h" />
     <ClCompile Include="RealFileManager.cpp" />
     <ClCompile Include="RealFileManager.h" />
@@ -151,25 +155,30 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base64.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="DataQueue.h" />
+    <ClInclude Include="DiskException.h" />
     <ClInclude Include="DiskFileManager.h" />
+    <ClInclude Include="DiskInfo.h" />
     <ClInclude Include="DiskSystem.h" />
     <ClInclude Include="Exceptions.h" />
     <ClInclude Include="FileHierarchyExceptions.h" />
     <ClInclude Include="FileInfo.h" />
-    <ClInclude Include="FileManager.h" />
     <ClInclude Include="FileType.h" />
-    <ClInclude Include="FolderManager.h" />
+    <ClInclude Include="FullPath.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
-    <ClInclude Include="IFileManager.h" />
+    <ClInclude Include="ICommand.h" />
+    <ClInclude Include="IController.h" />
     <ClInclude Include="ILoadable.h" />
-    <ClInclude Include="ILoader.h" />
-    <ClInclude Include="Memory.h" />
+    <ClInclude Include="MemoryController.h" />
+    <ClInclude Include="MemoryOptionsLoader.h" />
     <ClInclude Include="NameValidator.h" />
-    <ClInclude Include="Path.h" />
+    <ClInclude Include="DiskPath.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="SectorInfo.h" />
     <ClInclude Include="SectorName.h" />
     <ClInclude Include="Sectors.h" />
+    <ClInclude Include="Separator.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
