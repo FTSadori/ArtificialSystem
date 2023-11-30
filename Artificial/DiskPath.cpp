@@ -1,8 +1,8 @@
-#include "Path.h"
+#include "DiskPath.h"
 #include "NameExceptions.h"
 #include <iostream>
 
-namespace Core::Memory
+namespace Memory
 {
 	DiskPath::DiskPath(const std::string& _dir, const std::string& _file) 
 		: m_dir(_dir), m_file(_file)
@@ -37,7 +37,7 @@ namespace Core::Memory
 		m_full_name = m_dir + c_div + m_file;
 	}
 
-	std::string DiskPath::full_name() const
+	const std::string& DiskPath::full_name() const
 	{
 		return m_full_name;
 	}

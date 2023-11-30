@@ -2,7 +2,7 @@
 #include <string>
 #include "FileType.h"
 
-namespace Core::Memory
+namespace Memory
 {
 	class DiskPath final
 	{
@@ -11,8 +11,9 @@ namespace Core::Memory
 
 		DiskPath(const std::string& _dir, const std::string& _file);
 		DiskPath(const std::string& _path);
+		DiskPath() : DiskPath("") {}
 
-		std::string full_name() const;
+		const std::string& full_name() const;
 		const std::string& dir() const;
 		const std::string& file() const;
 
@@ -21,12 +22,5 @@ namespace Core::Memory
 		std::string m_file;
 
 		std::string m_full_name;
-	};
-
-	struct FullPath final
-	{
-		std::string disk;
-		std::string folder;
-		std::string file;
 	};
 }
