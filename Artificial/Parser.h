@@ -4,7 +4,7 @@
 
 namespace Commands
 {
-	static class Parser
+	class Parser
 	{
 	public:
 

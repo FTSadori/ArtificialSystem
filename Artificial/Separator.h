@@ -4,7 +4,7 @@
 
 namespace Commands
 {
-	static class Separator
+	class Separator
 	{
 	public:
 		static std::vector<std::string> split(const std::string& line, char sep)
