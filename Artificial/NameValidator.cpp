@@ -9,6 +9,8 @@ namespace Memory
                 || c == '?' || c == '"' || c == '<' || c == '>'
                 || c == ':')
                 return false;
+        if (name == "..")
+            return false;
         return true;
     }
 }
