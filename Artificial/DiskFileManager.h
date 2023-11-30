@@ -4,17 +4,19 @@
 #include "FileHierarchyExceptions.h"
 #include "Sectors.h"
 #include "FileInfo.h"
-#include "Path.h"
+#include "DiskPath.h"
 #include "Time.h"
 #include "NameValidator.h"
 #include <iostream>
 
-namespace Core::Memory
+namespace Memory
 {
 	class DiskFileManager final : public ILoadable
 	{
 	public:
-		DiskFileManager(size_t _capacity, const std::string& _mark, uint32_t _max_sec_num);
+		const size_t capacity;
+
+		DiskFileManager(const std::string& _folder, size_t _capacity, const std::string& _mark, uint32_t _max_sec_num);
 
 		void save_hierarchy_data();
 
@@ -32,7 +34,9 @@ namespace Core::Memory
 		void move(const DiskPath& _path, const DiskPath& new_dir, bool system, bool _first = true);
 		void write(const DiskPath& _path, DataQueue& _new_data, bool system);
 		DataQueue read(const DiskPath& _path, bool system);
-		void copy(const DiskPath& _src, const DiskPath& _dst, bool system);
+		void copy(const DiskPath& _src, const DiskPath& _dst, bool system, bool _first = true);
+		bool is_system(const DiskPath& _file);
+		bool is_exists(const DiskPath& _file);
 
 		std::vector<std::string> list(const DiskPath& _dir, bool system);
 
@@ -40,16 +44,14 @@ namespace Core::Memory
 		virtual DataQueue get_as_data() const override;
 		virtual void load_from_data(DataQueue& _data) override;
 
-		std::unordered_map<std::string, uintptr_t> m_names_to_ptr;
-		FileHierarchy m_file_hierarchy;
-
 	private:
 		void update_file_links(uintptr_t _old, uintptr_t _new);
 		void update_directory(const DiskPath& _path);
 
 		std::string check_names(const DiskPath& _path, FileT _type);
 		
-		
+		std::unordered_map<std::string, uintptr_t> m_names_to_ptr;
+		FileHierarchy m_file_hierarchy;
 		Sectors m_sectors;
 
 		uintptr_t m_hierarchy_data_ptr = 0;

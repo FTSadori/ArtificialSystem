@@ -4,10 +4,10 @@
 #include <iostream>
 #include "FileInfo.h"
 
-namespace Core::Memory
+namespace Memory
 {
-	DiskFileManager::DiskFileManager(size_t _capacity, const std::string& _mark, uint32_t _max_sec_num)
-		: m_sectors(_capacity, _mark, _max_sec_num) 
+	DiskFileManager::DiskFileManager(const std::string& _folder, size_t _capacity, const std::string& _mark, uint32_t _max_sec_num)
+		: m_sectors(_folder, _capacity, _mark, _max_sec_num), capacity(_capacity)
 	{
 		try {
 			{	
@@ -176,8 +176,9 @@ namespace Core::Memory
 
 	void DiskFileManager::update_directory(const DiskPath& _path)
 	{
-		uintptr_t old_ptr = m_names_to_ptr[_path.full_name()];
+		if (_path.full_name() == "") return;
 
+		uintptr_t old_ptr = m_names_to_ptr[_path.full_name()];
 		bool if_system = m_sectors.is_system(m_names_to_ptr[_path.full_name()]);
 
 		auto info = get_info(_path, if_system);
@@ -254,8 +255,11 @@ namespace Core::Memory
 
 	void DiskFileManager::remove(const DiskPath& _path, bool system, bool _first)
 	{
-		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
-			throw FileDoesNotExist("(DiskFileManager::remove) File or directory (" + _path.full_name() + ") does not exist");
+		if (_first)
+		{
+			if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
+				throw FileDoesNotExist("(DiskFileManager::remove) File or directory (" + _path.full_name() + ") does not exist");
+		}
 		uintptr_t ptr = m_names_to_ptr[_path.full_name()];
 		m_sectors.delete_file(ptr, system);
 
@@ -289,17 +293,20 @@ namespace Core::Memory
 
 	void DiskFileManager::rename(const DiskPath& _path, const DiskPath& new_path, bool system, bool _first)
 	{
-		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
-			throw FileDoesNotExist("(DiskFileManager::rename) File or directory (" + _path.full_name() + ") does not exist");
+		if (_first)
+		{
+			if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
+				throw FileDoesNotExist("(DiskFileManager::rename) File or directory (" + _path.full_name() + ") does not exist");
 
-		if (!NameValidator::is_name_valid(new_path.file()))
-			throw NameIsNotValid("(DiskFileManager::rename) Name (" + new_path.file() + ") must not include / \\ : * ? \" < > |");
+			if (!NameValidator::is_name_valid(new_path.file()))
+				throw NameIsNotValid("(DiskFileManager::rename) Name (" + new_path.file() + ") must not include / \\ : * ? \" < > |");
 
-		if (m_names_to_ptr.find(new_path.full_name()) != m_names_to_ptr.end())
-			throw FileAlreadyExists("(DiskFileManager::rename) File or directory (" + new_path.full_name() + ") already exists");
+			if (m_names_to_ptr.find(new_path.full_name()) != m_names_to_ptr.end())
+				throw FileAlreadyExists("(DiskFileManager::rename) File or directory (" + new_path.full_name() + ") already exists");
 
-		if (m_names_to_ptr.find(new_path.dir()) == m_names_to_ptr.end())
-			throw DirectoryDoesntExist("(DiskFileManager::rename) Destination directory (" + _path.dir() + ") does not exist");
+			if (m_names_to_ptr.find(new_path.dir()) == m_names_to_ptr.end())
+				throw DirectoryDoesntExist("(DiskFileManager::rename) Destination directory (" + _path.dir() + ") does not exist");
+		}
 
 		uintptr_t ptr = m_names_to_ptr[_path.full_name()];
 		m_names_to_ptr.erase(_path.full_name());
@@ -330,19 +337,32 @@ namespace Core::Memory
 		}
 	}
 
-	void DiskFileManager::copy(const DiskPath& _src, const DiskPath& _dst, bool system)
+	bool DiskFileManager::is_system(const DiskPath& _file)
 	{
-		if (m_names_to_ptr.find(_src.full_name()) == m_names_to_ptr.end())
-			throw FileDoesNotExist("(DiskFileManager::move) File or directory (" + _src.full_name() + ") does not exist");
+		return m_sectors.is_system(m_names_to_ptr[_file.full_name()]);
+	}
 
-		if (m_names_to_ptr.find(_dst.dir()) == m_names_to_ptr.end())
-			throw DirectoryDoesntExist("(DiskFileManager::move) Destination directory (" + _dst.full_name() + ") does not exist");
+	bool DiskFileManager::is_exists(const DiskPath& _file)
+	{
+		return (m_names_to_ptr.find(_file.full_name()) != m_names_to_ptr.end());
+	}
 
-		if (get_type(_src) == FileT::DIR && _dst.full_name().starts_with(_src.full_name() + "\\"))
-			throw RecursiveDirectoryMove("(DiskFileManager::mome) Source directory (" + _src.full_name() + ") contains destination directory (" + _dst.full_name() + ")");
+	void DiskFileManager::copy(const DiskPath& _src, const DiskPath& _dst, bool system, bool _first)
+	{
+		if (_first)
+		{
+			if (m_names_to_ptr.find(_src.full_name()) == m_names_to_ptr.end())
+				throw FileDoesNotExist("(DiskFileManager::move) File or directory (" + _src.full_name() + ") does not exist");
+
+			if (m_names_to_ptr.find(_dst.dir()) == m_names_to_ptr.end())
+				throw DirectoryDoesntExist("(DiskFileManager::move) Destination directory (" + _dst.full_name() + ") does not exist");
+
+			if (get_type(_src) == FileT::DIR && _dst.full_name().starts_with(_src.full_name() + "\\"))
+				throw RecursiveDirectoryMove("(DiskFileManager::mome) Source directory (" + _src.full_name() + ") contains destination directory (" + _dst.full_name() + ")");
+		}
 
 		FileInfo info = get_info(_src, system);
-		create(_dst, info.permissions, get_type(_src), m_sectors.is_system(m_names_to_ptr[_src.full_name()]));
+		create(_dst, info.permissions, get_type(_src), is_system(_src));
 		
 		if (get_type(_src) == FileT::DIR)
 		{
@@ -353,17 +373,14 @@ namespace Core::Memory
 				try
 				{
 					DiskPath path = DiskPath(m_ptr_to_names[vec[i].start]);
-					copy(path, DiskPath(_dst.full_name(), path.file()), system);
+					copy(path, DiskPath(_dst.full_name(), path.file()), system, false);
 				}
-				catch (const Exception& ex)
-				{
-					std::cout << ex.what() << std::endl;
-				}
+				catch (const Exception&) { }
 			}
 		}
 		else
 		{
-			DataQueue data = read(_dst, system);
+			DataQueue data = read(_src, system);
 			write(_dst, data, system);
 		}
 	}
@@ -379,11 +396,10 @@ namespace Core::Memory
 		std::vector<std::string> list;
 
 		uintptr_t ptr = m_names_to_ptr[_dir.full_name()];
-		const std::vector<HierarchyFileInfo>& vec = m_file_hierarchy.get_file_hierarchy().at(ptr);
-
-		for (const HierarchyFileInfo& info : vec)
+		
+		for (const auto& info : m_file_hierarchy.get_file_hierarchy().at(ptr))
 			list.push_back(DiskPath(m_ptr_to_names[info.start]).file());
-
+		
 		return list;
 	}
 
@@ -431,10 +447,10 @@ namespace Core::Memory
 			uintptr_t higher_dir = m_names_to_ptr[_path.dir()];
 			m_file_hierarchy.add_to_hierarchy(higher_dir, ptr, _type);
 		}
-
 		m_names_to_ptr.emplace(new_name, ptr);
 		m_ptr_to_names.emplace(ptr, new_name);
 
+		update_directory(_path.dir());
 		reload();
 	}
 }
