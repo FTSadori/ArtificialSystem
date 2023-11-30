@@ -67,20 +67,26 @@
     <Filter Include="Исходные файлы\Core\Memory\DiskSystem">
       <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Controllers">
+    <Filter Include="Исходные файлы\Core\Commands">
       <UniqueIdentifier>{d4746b67-32a3-45e8-aa54-ebda080fde48}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Controllers\Base">
+    <Filter Include="Исходные файлы\Core\Commands\Base">
       <UniqueIdentifier>{97d522a5-fa53-45e6-a64f-65d7ba2685ec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Controllers\Memory">
+    <Filter Include="Исходные файлы\Core\Commands\Memory">
       <UniqueIdentifier>{207e9839-2923-403b-88d0-2fef03047930}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Controllers\Memory\Options">
+    <Filter Include="Исходные файлы\Core\Commands\Memory\Options">
       <UniqueIdentifier>{686ff51e-9471-4bb2-ac5b-b4a164972ae5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Controllers\Command">
+    <Filter Include="Исходные файлы\Core\Commands\Command">
       <UniqueIdentifier>{f51483bf-143a-4bba-ab77-814a4160cc5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Exceptions">
+      <UniqueIdentifier>{3a19cd52-eab6-4d31-a605-d7ddfc2d3995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Base">
+      <UniqueIdentifier>{dc7984fb-eaa8-4d28-97b2-b79f18833342}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -135,9 +141,6 @@
     <ClCompile Include="DiskPath.cpp">
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
     </ClCompile>
-    <ClCompile Include="BaseException.h">
-      <Filter>Исходные файлы\Core\Memory\Exceptions</Filter>
-    </ClCompile>
     <ClCompile Include="DiskSystem.cpp">
       <Filter>Исходные файлы\Core\Memory\DiskSystem</Filter>
     </ClCompile>
@@ -145,13 +148,16 @@
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
     </ClCompile>
     <ClCompile Include="IControllerOption.h">
-      <Filter>Исходные файлы\Core\Controllers\Base</Filter>
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClCompile>
     <ClCompile Include="MemoryController.cpp">
-      <Filter>Исходные файлы\Core\Controllers\Memory</Filter>
+      <Filter>Исходные файлы\Core\Commands\Memory</Filter>
     </ClCompile>
     <ClCompile Include="Command.cpp">
-      <Filter>Исходные файлы\Core\Controllers\Command</Filter>
+      <Filter>Исходные файлы\Core\Commands\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseException.h">
+      <Filter>Исходные файлы\Core\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -213,25 +219,30 @@
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
     </ClInclude>
     <ClInclude Include="ICommand.h">
-      <Filter>Исходные файлы\Core\Controllers\Base</Filter>
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="Parser.h">
-      <Filter>Исходные файлы\Core\Controllers\Base</Filter>
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="IController.h">
-      <Filter>Исходные файлы\Core\Controllers\Base</Filter>
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="MemoryController.h">
-      <Filter>Исходные файлы\Core\Controllers\Memory</Filter>
+      <Filter>Исходные файлы\Core\Commands\Memory</Filter>
     </ClInclude>
     <ClInclude Include="MemoryOptionsLoader.h">
-      <Filter>Исходные файлы\Core\Controllers\Memory</Filter>
+      <Filter>Исходные файлы\Core\Commands\Memory</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
-      <Filter>Исходные файлы\Core\Controllers\Command</Filter>
+      <Filter>Исходные файлы\Core\Commands\Command</Filter>
     </ClInclude>
     <ClInclude Include="Separator.h">
-      <Filter>Исходные файлы\Core\Controllers\Base</Filter>
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CommandExceptions.h">
+      <Filter>Исходные файлы\Core\Commands\Exceptions</Filter>
+    </None>
   </ItemGroup>
 </Project>

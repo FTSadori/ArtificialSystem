@@ -181,6 +181,9 @@
     <ClInclude Include="Separator.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CommandExceptions.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
