@@ -143,6 +143,7 @@
     <ClCompile Include="IControllerOption.h" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryController.cpp" />
+    <ClCompile Include="MemoryCreateFileOption.cpp" />
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
     <ClCompile Include="DiskPath.cpp" />

@@ -37,15 +37,16 @@ namespace Commands
 			divided.push_back(text);
 
 		// Load to map
-		if (divided.size() == 0)
+		if (divided.size() < 2)
 			return;
 
 		for (size_t i = 0; i < divided.size(); ++i)
 			divided[i] = divided[i].starts_with('"') ? divided[i].substr(1) : divided[i];
 
-		m_parameters["name"] = divided[0];
+		m_parameters["path"] = divided[0];
+		m_parameters["name"] = divided[1];
 		size_t parameter = 1;
-		for (size_t i = 1; i < divided.size(); ++i)
+		for (size_t i = 2; i < divided.size(); ++i)
 		{
 			if (divided[i].size() > 0 && divided[i][0] == ':')
 			{

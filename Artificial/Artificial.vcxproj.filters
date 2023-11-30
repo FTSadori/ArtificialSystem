@@ -159,6 +159,9 @@
     <ClCompile Include="BaseException.h">
       <Filter>Исходные файлы\Core\Base</Filter>
     </ClCompile>
+    <ClCompile Include="MemoryCreateFileOption.cpp">
+      <Filter>Исходные файлы\Core\Commands\Memory\Options</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
