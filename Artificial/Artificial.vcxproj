@@ -176,6 +176,7 @@
     <ClInclude Include="NameValidator.h" />
     <ClInclude Include="DiskPath.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="RelativePathCreator.h" />
     <ClInclude Include="SectorInfo.h" />
     <ClInclude Include="SectorName.h" />
     <ClInclude Include="Sectors.h" />

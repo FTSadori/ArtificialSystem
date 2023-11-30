@@ -242,6 +242,9 @@
     <ClInclude Include="Separator.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
+    <ClInclude Include="RelativePathCreator.h">
+      <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
