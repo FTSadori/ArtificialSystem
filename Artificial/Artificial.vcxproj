@@ -143,7 +143,7 @@
     <ClCompile Include="IControllerOption.h" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryController.cpp" />
-    <ClCompile Include="MemoryCreateFileOption.cpp" />
+    <ClCompile Include="MemoryCreateOption.cpp" />
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
     <ClCompile Include="DiskPath.cpp" />
@@ -170,7 +170,9 @@
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="IController.h" />
+    <ClInclude Include="ICore.h" />
     <ClInclude Include="ILoadable.h" />
+    <ClInclude Include="ISender.h" />
     <ClInclude Include="MemoryController.h" />
     <ClInclude Include="MemoryOptionsLoader.h" />
     <ClInclude Include="NameValidator.h" />

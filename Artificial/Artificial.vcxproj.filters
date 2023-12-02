@@ -159,7 +159,7 @@
     <ClCompile Include="BaseException.h">
       <Filter>Исходные файлы\Core\Base</Filter>
     </ClCompile>
-    <ClCompile Include="MemoryCreateFileOption.cpp">
+    <ClCompile Include="MemoryCreateOption.cpp">
       <Filter>Исходные файлы\Core\Commands\Memory\Options</Filter>
     </ClCompile>
   </ItemGroup>
@@ -244,6 +244,12 @@
     </ClInclude>
     <ClInclude Include="RelativePathCreator.h">
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="ISender.h">
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ICore.h">
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
