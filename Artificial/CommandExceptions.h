@@ -3,9 +3,15 @@
 
 namespace Commands
 {
-	struct CantCreateCommand final : public Exception
+	struct SenderHasLowPermissionLvl final : public Exception
 	{
-		CantCreateCommand(const std::string& _message) : Exception(_message) {}
-		CantCreateCommand(const char* _message) : Exception(_message) {}
+		SenderHasLowPermissionLvl(const std::string& _message) : Exception(_message) {}
+		SenderHasLowPermissionLvl(const char* _message) : Exception(_message) {}
+	};
+
+	struct PasswordAlreadyExists final : public Exception
+	{
+		PasswordAlreadyExists(const std::string& _message) : Exception(_message) {}
+		PasswordAlreadyExists(const char* _message) : Exception(_message) {}
 	};
 }
