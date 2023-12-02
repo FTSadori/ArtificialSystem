@@ -4,7 +4,7 @@
 
 namespace Commands
 {
-	class Command final : ICommand
+	class Command final : public ICommand
 	{
 	public:
 		Command(const std::string& line);

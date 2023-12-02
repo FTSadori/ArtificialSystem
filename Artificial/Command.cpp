@@ -7,8 +7,8 @@ namespace Commands
 {
 	Command::Command(const std::string& line)
 	{
-		// Dividing by '>'
-		size_t text_size = line.find('>');
+		// Dividing by '\n'
+		size_t text_size = line.find('\n');
 		std::string text;
 		if (text_size < line.size())
 			text = line.substr(text_size + 1);
