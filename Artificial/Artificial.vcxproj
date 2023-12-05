@@ -132,7 +132,7 @@
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="BaseException.h" />
     <ClCompile Include="Command.cpp" />
-    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="ConsoleWindow.cpp" />
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
     <ClCompile Include="DiskFileManager.cpp" />
@@ -159,7 +159,7 @@
     <ClInclude Include="AbstractControllerOption.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="Command.h" />
-    <ClInclude Include="Console.h" />
+    <ClInclude Include="ConsoleWindow.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="DataQueue.h" />
     <ClInclude Include="DiskException.h" />

@@ -168,7 +168,7 @@
     <ClCompile Include="MemoryCreateOption.h">
       <Filter>Исходные файлы\Core\Commands\Memory\Options</Filter>
     </ClCompile>
-    <ClCompile Include="Console.cpp">
+    <ClCompile Include="ConsoleWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -275,7 +275,7 @@
     <ClInclude Include="IWindow.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Console.h">
+    <ClInclude Include="ConsoleWindow.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
     <ClInclude Include="GuiExceptions.h">
