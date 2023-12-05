@@ -171,6 +171,9 @@
     <ClCompile Include="ConsoleWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleInputHandler.cpp">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -285,6 +288,9 @@
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
     <ClInclude Include="TextAttributes.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleInputHandler.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
   </ItemGroup>
