@@ -88,6 +88,9 @@
     <Filter Include="Исходные файлы\Core\Base">
       <UniqueIdentifier>{dc7984fb-eaa8-4d28-97b2-b79f18833342}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Senders">
+      <UniqueIdentifier>{9c51ab09-4066-4c0f-ac46-ffa9346006e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -147,19 +150,13 @@
     <ClCompile Include="FullPath.cpp">
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
     </ClCompile>
-    <ClCompile Include="IControllerOption.h">
-      <Filter>Исходные файлы\Core\Commands\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="MemoryController.cpp">
-      <Filter>Исходные файлы\Core\Commands\Memory</Filter>
-    </ClCompile>
     <ClCompile Include="Command.cpp">
       <Filter>Исходные файлы\Core\Commands\Command</Filter>
     </ClCompile>
     <ClCompile Include="BaseException.h">
       <Filter>Исходные файлы\Core\Base</Filter>
     </ClCompile>
-    <ClCompile Include="MemoryCreateOption.cpp">
+    <ClCompile Include="MemoryCreateOption.h">
       <Filter>Исходные файлы\Core\Commands\Memory\Options</Filter>
     </ClCompile>
   </ItemGroup>
@@ -248,7 +245,19 @@
     <ClInclude Include="ISender.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="ICore.h">
+    <ClInclude Include="ICommandExecutor.h">
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractControllerOption.h">
+      <Filter>Исходные файлы\Core\Commands\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemSender.h">
+      <Filter>Исходные файлы\Core\Commands\Senders</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Исходные файлы\Core\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandExecutor.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
   </ItemGroup>

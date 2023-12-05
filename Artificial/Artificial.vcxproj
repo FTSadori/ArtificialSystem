@@ -140,10 +140,8 @@
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
-    <ClCompile Include="IControllerOption.h" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MemoryController.cpp" />
-    <ClCompile Include="MemoryCreateOption.cpp" />
+    <ClCompile Include="MemoryCreateOption.h" />
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
     <ClCompile Include="DiskPath.cpp" />
@@ -155,8 +153,11 @@
     <ClCompile Include="Sectors.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CommandExecutor.h" />
+    <ClInclude Include="AbstractControllerOption.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="Core.h" />
     <ClInclude Include="DataQueue.h" />
     <ClInclude Include="DiskException.h" />
     <ClInclude Include="DiskFileManager.h" />
@@ -170,7 +171,7 @@
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="IController.h" />
-    <ClInclude Include="ICore.h" />
+    <ClInclude Include="ICommandExecutor.h" />
     <ClInclude Include="ILoadable.h" />
     <ClInclude Include="ISender.h" />
     <ClInclude Include="MemoryController.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="SectorName.h" />
     <ClInclude Include="Sectors.h" />
     <ClInclude Include="Separator.h" />
+    <ClInclude Include="SystemSender.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
