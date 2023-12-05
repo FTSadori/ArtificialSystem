@@ -51,8 +51,15 @@ namespace Commands
 			if (divided[i].size() > 0 && divided[i][0] == ':')
 			{
 				parameter = 0;
-				m_parameters[divided[i]] = divided[i + 1];
-				i++;
+				if (divided[i].size() > 1 && divided[i][1] == ':')
+				{
+					m_parameters[divided[i]] = "amogus";
+				}
+				else
+				{
+					m_parameters[divided[i]] = divided[i + 1];
+					i++;
+				}
 			}
 			else if (parameter > 0)
 			{
