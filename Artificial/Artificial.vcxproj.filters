@@ -91,6 +91,15 @@
     <Filter Include="Исходные файлы\Core\Commands\Senders">
       <UniqueIdentifier>{9c51ab09-4066-4c0f-ac46-ffa9346006e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\GUI">
+      <UniqueIdentifier>{87d64973-5e3a-42d7-b997-640f3c242e46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Base">
+      <UniqueIdentifier>{94432d89-e45b-4d9d-a648-21c596b6d52c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Exceptions">
+      <UniqueIdentifier>{0393747d-23a9-4115-a2a8-40c9b7c55fe1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -158,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="MemoryCreateOption.h">
       <Filter>Исходные файлы\Core\Commands\Memory\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +271,18 @@
     </ClInclude>
     <ClInclude Include="CommandExecutor.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="IWindow.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiExceptions.h">
+      <Filter>Исходные файлы\Core\GUI\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="Colours.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

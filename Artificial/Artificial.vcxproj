@@ -132,6 +132,7 @@
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="BaseException.h" />
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
     <ClCompile Include="DiskFileManager.cpp" />
@@ -153,10 +154,12 @@
     <ClCompile Include="Sectors.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Colours.h" />
     <ClInclude Include="CommandExecutor.h" />
     <ClInclude Include="AbstractControllerOption.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="Console.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="DataQueue.h" />
     <ClInclude Include="DiskException.h" />
@@ -168,12 +171,14 @@
     <ClInclude Include="FileInfo.h" />
     <ClInclude Include="FileType.h" />
     <ClInclude Include="FullPath.h" />
+    <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="IController.h" />
     <ClInclude Include="ICommandExecutor.h" />
     <ClInclude Include="ILoadable.h" />
     <ClInclude Include="ISender.h" />
+    <ClInclude Include="IWindow.h" />
     <ClInclude Include="MemoryController.h" />
     <ClInclude Include="MemoryOptionsLoader.h" />
     <ClInclude Include="NameValidator.h" />
