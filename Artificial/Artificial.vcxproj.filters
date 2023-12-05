@@ -284,6 +284,9 @@
     <ClInclude Include="Colours.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
+    <ClInclude Include="TextAttributes.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

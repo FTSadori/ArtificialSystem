@@ -22,16 +22,4 @@ namespace GUI
 		LIGHT_YELLOW,
 		WHITE,
 	};
-
-	struct ColoursCombiner
-	{
-		ColoursCombiner(Colours _foreground, Colours _background)
-			: m_foreground(_foreground), m_background(_background)
-			, m_code((uint8_t)_background * 16 + (uint8_t)_foreground) 
-		{}
-
-		const Colours m_foreground;
-		const Colours m_background;
-		const uint8_t m_code;
-	};
 }

@@ -190,6 +190,7 @@
     <ClInclude Include="Sectors.h" />
     <ClInclude Include="Separator.h" />
     <ClInclude Include="SystemSender.h" />
+    <ClInclude Include="TextAttributes.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>
