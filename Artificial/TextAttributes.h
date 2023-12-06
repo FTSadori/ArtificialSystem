@@ -28,6 +28,10 @@ namespace GUI
 		TextAttributes(TextColours _colours, TextBorders _borders)
 			: m_code(_colours.m_code | _borders.m_code)
 		{}
+
+		TextAttributes(uint16_t _code)
+			: m_code(_code)
+		{}
 		
 		const uint16_t m_code;
 	};
