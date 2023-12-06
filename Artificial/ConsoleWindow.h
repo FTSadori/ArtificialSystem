@@ -9,14 +9,14 @@ namespace GUI
 {
 	struct Point
 	{
-		int16_t x;
-		int16_t y;
+		int16_t x = 0;
+		int16_t y = 0;
 	};
 
 	struct Size
 	{
-		uint16_t rows;
-		uint16_t columns;
+		uint16_t rows = 0;
+		uint16_t columns = 0;
 	};
 
 	static class ConsoleWindow final
