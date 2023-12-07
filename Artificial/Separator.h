@@ -19,5 +19,15 @@ namespace Commands
 			return lines;
 		}
 
+		static std::string join(const std::vector<std::string>& lines, char sep)
+		{
+			if (lines.empty()) return "";
+
+			std::string res = "";
+			for (const auto& line : lines)
+				res += sep + line;
+			res = res.substr(1);
+			return res;
+		}
 	};
 }
