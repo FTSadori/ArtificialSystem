@@ -34,7 +34,7 @@ namespace GUI
 	inline const std::string& BaseWindow::get_title() const { return m_title; }
 	inline ScreenPoint BaseWindow::get_position() const { return m_position; }
 	
-	void BaseWindow::render_border(TextColours colours)
+	void BaseWindow::render_border(TextColours colours) const
 	{
 		ConsoleWindow::set_text_colours(colours);
 
@@ -61,5 +61,17 @@ namespace GUI
 		}
 
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
+	}
+	
+	void BaseWindow::render_text() const
+	{
+		ScreenText text(m_size);
+		for (const auto& info : m_text_parts)
+			text.push_text(info.text, info.attributes);
+		text.render_text_from(m_position, m_line_num);
+	}
+
+	void BaseWindow::key_pressed(KEY_EVENT_RECORD key_event)
+	{
 	}
 }
