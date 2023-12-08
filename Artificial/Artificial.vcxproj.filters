@@ -180,7 +180,7 @@
     <ClCompile Include="ConsoleInputHandler.cpp">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClCompile>
-    <ClCompile Include="TerminalWindow.cpp">
+    <ClCompile Include="BaseWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Windows</Filter>
     </ClCompile>
     <ClCompile Include="ScreenText.cpp">
@@ -302,7 +302,7 @@
     <ClInclude Include="ConsoleInputHandler.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
-    <ClInclude Include="TerminalWindow.h">
+    <ClInclude Include="BaseWindow.h">
       <Filter>Исходные файлы\Core\GUI\Windows</Filter>
     </ClInclude>
     <ClInclude Include="ScreenText.h">
