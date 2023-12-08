@@ -150,9 +150,11 @@
     <ClCompile Include="Permissions.h" />
     <ClCompile Include="RealFileManager.cpp" />
     <ClCompile Include="RealFileManager.h" />
+    <ClCompile Include="ScreenText.cpp" />
     <ClCompile Include="SectorInfo.cpp" />
     <ClCompile Include="SectorName.cpp" />
     <ClCompile Include="Sectors.cpp" />
+    <ClCompile Include="TerminalWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Colours.h" />
@@ -180,7 +182,6 @@
     <ClInclude Include="ICommandExecutor.h" />
     <ClInclude Include="ILoadable.h" />
     <ClInclude Include="ISender.h" />
-    <ClInclude Include="IWindow.h" />
     <ClInclude Include="MemoryController.h" />
     <ClInclude Include="MemoryOptionsLoader.h" />
     <ClInclude Include="NameValidator.h" />
@@ -191,7 +192,9 @@
     <ClInclude Include="SectorName.h" />
     <ClInclude Include="Sectors.h" />
     <ClInclude Include="Separator.h" />
+    <ClInclude Include="ScreenText.h" />
     <ClInclude Include="SystemSender.h" />
+    <ClInclude Include="TerminalWindow.h" />
     <ClInclude Include="TextAttributes.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
