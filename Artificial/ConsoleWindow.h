@@ -7,7 +7,7 @@
 
 namespace GUI
 {
-	struct Point
+	struct ScreenPoint
 	{
 		int16_t x = 0;
 		int16_t y = 0;
@@ -28,8 +28,8 @@ namespace GUI
 		static void set_text_attributes(const TextAttributes& _attributes);
 		static Size get_console_size();
 		static void set_cursor_visibility(bool visibility);
-		static void set_cursor_position(const Point point);
-		static void delta_cursor_position(const Point delta);
+		static void set_cursor_position(const ScreenPoint point);
+		static void delta_cursor_position(const ScreenPoint delta);
 	private:
 		static HANDLE m_console_handler;
 		static uint16_t m_last_text_attributes;

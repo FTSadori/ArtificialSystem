@@ -53,16 +53,16 @@ namespace GUI
 		SetConsoleCursorInfo(m_console_handler, &info);
 	}
 	
-	void ConsoleWindow::set_cursor_position(const Point point)
+	void ConsoleWindow::set_cursor_position(const ScreenPoint point)
 	{
 		SetConsoleCursorPosition(m_console_handler, { point.y, point.x });
 	}
 
-	void ConsoleWindow::delta_cursor_position(const Point delta)
+	void ConsoleWindow::delta_cursor_position(const ScreenPoint delta)
 	{
 		CONSOLE_SCREEN_BUFFER_INFO info;
 		GetConsoleScreenBufferInfo(m_console_handler, &info);
-		Point point;
+		ScreenPoint point;
 		point.x = info.dwCursorPosition.X + delta.y;
 		point.y = info.dwCursorPosition.Y + delta.x;
 		set_cursor_position(point);
