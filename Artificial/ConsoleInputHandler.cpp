@@ -2,6 +2,10 @@
 
 namespace GUI
 {
+	std::vector<KEY_EVENT_RECORD> ConsoleInputHandler::s_last_events;
+	std::mutex ConsoleInputHandler::s_events_mutex;
+	std::condition_variable ConsoleInputHandler::s_cv;
+
 	void ConsoleInputHandler::start()
 	{
 		std::thread th([&]() {
@@ -22,9 +26,9 @@ namespace GUI
 				{
 					if (input_buffer[i].EventType == KEY_EVENT)
 					{
-						std::lock_guard lock(m_events_mutex);
-						m_last_events.push_back(input_buffer[i].Event.KeyEvent);
-						m_cv.notify_one();
+						std::lock_guard lock(s_events_mutex);
+						s_last_events.push_back(input_buffer[i].Event.KeyEvent);
+						s_cv.notify_one();
 					}
 				}
 			}
@@ -35,15 +39,15 @@ namespace GUI
 
 	KEY_EVENT_RECORD ConsoleInputHandler::get_last_key_event()
 	{
-		std::lock_guard lock(m_events_mutex);
-		KEY_EVENT_RECORD last_event = m_last_events.back();
-		m_last_events.pop_back();
+		std::lock_guard lock(s_events_mutex);
+		KEY_EVENT_RECORD last_event = s_last_events.back();
+		s_last_events.pop_back();
 		return last_event;
 	}
 
 	void ConsoleInputHandler::wait_for_events()
 	{
-		std::unique_lock lock(m_events_mutex);
-		m_cv.wait(lock, [&] { return !m_last_events.empty(); });
+		std::unique_lock lock(s_events_mutex);
+		s_cv.wait(lock, [&] { return !s_last_events.empty(); });
 	}
 }
