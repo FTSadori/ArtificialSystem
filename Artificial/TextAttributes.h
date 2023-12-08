@@ -11,7 +11,7 @@ namespace GUI
 					| (right * COMMON_LVB_GRID_RVERTICAL) | (bottom * COMMON_LVB_UNDERSCORE))
 		{}
 
-		uint16_t code() { return m_code; }
+		uint16_t code() const { return m_code; }
 
 	private:
 		uint16_t m_code;
@@ -23,7 +23,7 @@ namespace GUI
 			: m_code((uint8_t)_background * 16 + (uint8_t)_foreground)
 		{}
 
-		uint16_t code() { return m_code; }
+		uint16_t code() const { return m_code; }
 	
 	private:
 		uint16_t m_code;
@@ -39,7 +39,7 @@ namespace GUI
 			: m_code(_code)
 		{}
 
-		uint16_t code() { return m_code; }
+		uint16_t code() const { return m_code; }
 
 	private:
 		uint16_t m_code;
