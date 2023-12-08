@@ -13,7 +13,7 @@ namespace GUI
 	void ConsoleWindow::set_text_colours(const TextColours& _color)
 	{
 		m_last_text_attributes &= 0xFFFF0000;
-		m_last_text_attributes |= _color.m_code;
+		m_last_text_attributes |= _color.code();
 
 		SetConsoleTextAttribute(m_console_handler, m_last_text_attributes);
 	}
@@ -24,14 +24,14 @@ namespace GUI
 		m_last_text_attributes &= ~COMMON_LVB_GRID_LVERTICAL;
 		m_last_text_attributes &= ~COMMON_LVB_GRID_RVERTICAL;
 		m_last_text_attributes &= ~COMMON_LVB_UNDERSCORE;
-		m_last_text_attributes |= _borders.m_code;
+		m_last_text_attributes |= _borders.code();
 
 		SetConsoleTextAttribute(m_console_handler, m_last_text_attributes);
 	}
 
 	void ConsoleWindow::set_text_attributes(const TextAttributes& _attributes)
 	{
-		m_last_text_attributes = _attributes.m_code;
+		m_last_text_attributes = _attributes.code();
 
 		SetConsoleTextAttribute(m_console_handler, m_last_text_attributes);
 	}
