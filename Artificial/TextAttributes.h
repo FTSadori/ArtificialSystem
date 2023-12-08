@@ -11,7 +11,10 @@ namespace GUI
 					| (right * COMMON_LVB_GRID_RVERTICAL) | (bottom * COMMON_LVB_UNDERSCORE))
 		{}
 
-		const uint16_t m_code;
+		uint16_t code() { return m_code; }
+
+	private:
+		uint16_t m_code;
 	};
 
 	struct TextColours
@@ -20,19 +23,25 @@ namespace GUI
 			: m_code((uint8_t)_background * 16 + (uint8_t)_foreground)
 		{}
 
-		const uint16_t m_code;
+		uint16_t code() { return m_code; }
+	
+	private:
+		uint16_t m_code;
 	};
 
 	struct TextAttributes
 	{
 		TextAttributes(TextColours _colours, TextBorders _borders)
-			: m_code(_colours.m_code | _borders.m_code)
+			: m_code(_colours.code() | _borders.code())
 		{}
 
 		TextAttributes(uint16_t _code)
 			: m_code(_code)
 		{}
-		
-		const uint16_t m_code;
+
+		uint16_t code() { return m_code; }
+
+	private:
+		uint16_t m_code;
 	};
 }
