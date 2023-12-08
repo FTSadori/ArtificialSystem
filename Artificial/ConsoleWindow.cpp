@@ -63,8 +63,8 @@ namespace GUI
 		CONSOLE_SCREEN_BUFFER_INFO info;
 		GetConsoleScreenBufferInfo(m_console_handler, &info);
 		ScreenPoint point;
-		point.x = info.dwCursorPosition.X + delta.y;
-		point.y = info.dwCursorPosition.Y + delta.x;
+		point.x = info.dwCursorPosition.Y + delta.x;
+		point.y = info.dwCursorPosition.X + delta.y;
 		set_cursor_position(point);
 	}
 }
