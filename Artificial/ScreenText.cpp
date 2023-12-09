@@ -47,6 +47,12 @@ namespace GUI
 		}
 	}
 
+	void ScreenText::push_text(const std::vector<TextInfo>& info_array)
+	{
+		for (const auto& info : info_array)
+			push_text(info.text, info.attributes);
+	}
+
 	void ScreenText::render_text_from(ScreenPoint absolute, size_t line_num)
 	{
 		TextAttributes attribute(0);
@@ -84,5 +90,18 @@ namespace GUI
 			absolute.x += 1;
 			rows_used += 1;
 		}
+	}
+	
+	size_t ScreenText::get_lines_num()
+	{
+		return m_text.size();
+	}
+
+	void ScreenText::render_text_end(ScreenPoint absolute)
+	{
+		if (m_text.size() <= c_size.rows)
+			render_text_from(absolute, 0);
+		else
+			render_text_from(absolute, m_text.size() - c_size.rows);
 	}
 }
