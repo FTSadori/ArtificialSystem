@@ -40,8 +40,8 @@ namespace GUI
 	{
 		CONSOLE_SCREEN_BUFFER_INFO info;
 		GetConsoleScreenBufferInfo(m_console_handler, &info);
-		Size size {info.srWindow.Right - info.srWindow.Left + 1,
-				   info.srWindow.Bottom - info.srWindow.Top + 1};
+		Size size {info.srWindow.Bottom - info.srWindow.Top + 1,
+				   info.srWindow.Right - info.srWindow.Left + 1};
 		return size;
 	}
 	
