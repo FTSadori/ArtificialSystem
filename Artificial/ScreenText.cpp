@@ -53,6 +53,11 @@ namespace GUI
 			push_text(info.text, info.attributes);
 	}
 
+	void ScreenText::push_text(char c, TextAttributes attributes)
+	{
+		push_text(std::string(1, c), attributes);
+	}
+
 	void ScreenText::render_text_from(ScreenPoint absolute, size_t line_num)
 	{
 		TextAttributes attribute(0);

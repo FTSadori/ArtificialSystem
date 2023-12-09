@@ -23,6 +23,7 @@ namespace GUI
 
 		void push_text(const std::string& text, TextAttributes attributes);
 		void push_text(const std::vector<TextInfo>& info_array);
+		void push_text(char c, TextAttributes attributes);
 		void render_text_from(ScreenPoint absolute, size_t line_num);
 		size_t get_lines_num();
 		void render_text_end(ScreenPoint absolute);
