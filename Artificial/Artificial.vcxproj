@@ -155,6 +155,7 @@
     <ClCompile Include="SectorName.cpp" />
     <ClCompile Include="Sectors.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
+    <ClCompile Include="TerminalWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Colours.h" />
@@ -195,7 +196,9 @@
     <ClInclude Include="ScreenText.h" />
     <ClInclude Include="SystemSender.h" />
     <ClInclude Include="BaseWindow.h" />
+    <ClInclude Include="TerminalWindow.h" />
     <ClInclude Include="TextAttributes.h" />
+    <ClInclude Include="TextInfo.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <ItemGroup>

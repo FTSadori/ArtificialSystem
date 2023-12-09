@@ -106,6 +106,12 @@
     <Filter Include="Исходные файлы\Core\GUI\Text">
       <UniqueIdentifier>{4ef601b9-38c1-4526-a976-9bfa1b98646a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Windows\Base">
+      <UniqueIdentifier>{ac1a1c4b-d18e-491d-baba-37e781835ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Windows\Terminal">
+      <UniqueIdentifier>{8ed9e198-d270-48a5-8c11-61b6fcd0ef63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -180,11 +186,14 @@
     <ClCompile Include="ConsoleInputHandler.cpp">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClCompile>
-    <ClCompile Include="BaseWindow.cpp">
-      <Filter>Исходные файлы\Core\GUI\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="ScreenText.cpp">
       <Filter>Исходные файлы\Core\GUI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseWindow.cpp">
+      <Filter>Исходные файлы\Core\GUI\Windows\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TerminalWindow.cpp">
+      <Filter>Исходные файлы\Core\GUI\Windows\Terminal</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -302,11 +311,17 @@
     <ClInclude Include="ConsoleInputHandler.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
-    <ClInclude Include="BaseWindow.h">
-      <Filter>Исходные файлы\Core\GUI\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="ScreenText.h">
       <Filter>Исходные файлы\Core\GUI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseWindow.h">
+      <Filter>Исходные файлы\Core\GUI\Windows\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TerminalWindow.h">
+      <Filter>Исходные файлы\Core\GUI\Windows\Terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="TextInfo.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
