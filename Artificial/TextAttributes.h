@@ -6,7 +6,7 @@ namespace GUI
 {
 	struct TextBorders
 	{
-		TextBorders(bool left, bool top, bool right, bool bottom)
+		TextBorders(bool left = false, bool top = false, bool right = false, bool bottom = false)
 			: m_code((left * COMMON_LVB_GRID_LVERTICAL) | (top * COMMON_LVB_GRID_HORIZONTAL)
 					| (right * COMMON_LVB_GRID_RVERTICAL) | (bottom * COMMON_LVB_UNDERSCORE))
 		{}
