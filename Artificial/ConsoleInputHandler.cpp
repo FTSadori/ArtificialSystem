@@ -1,4 +1,5 @@
 #include "ConsoleInputHandler.h"
+#include <signal.h>
 
 namespace GUI
 {
@@ -8,6 +9,8 @@ namespace GUI
 
 	void ConsoleInputHandler::start()
 	{
+		signal(SIGINT, SIG_IGN);
+
 		std::thread th([&]() {
 			HANDLE handle = GetStdHandle(STD_INPUT_HANDLE);
 			DWORD events_number;
