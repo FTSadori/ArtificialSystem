@@ -66,9 +66,18 @@ namespace GUI
 	void BaseWindow::render_text() const
 	{
 		ScreenText text(m_size);
-		for (const auto& info : m_text_parts)
-			text.push_text(info.text, info.attributes);
+		text.push_text(m_text_parts);
 		text.render_text_from(m_position, m_line_num);
+	}
+
+	void BaseWindow::render_background() const
+	{
+		ConsoleWindow::set_text_attributes(TextAttributes(TextColours(m_background, m_background), TextBorders(false, false, false, false)));
+		for (uint16_t i = 0; i < m_size.rows; ++i)
+		{
+			ConsoleWindow::set_cursor_position({ (SHORT)(m_position.x + i), m_position.y });
+			std::cout << std::string(m_size.columns, ' ');
+		}
 	}
 
 	void BaseWindow::key_pressed(KEY_EVENT_RECORD key_event)

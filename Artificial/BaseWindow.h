@@ -1,15 +1,10 @@
 #pragma once
 #include "ConsoleWindow.h"
 #include "ScreenText.h"
+#include "TextInfo.h"
 
 namespace GUI
 {
-	struct TextInfo
-	{
-		std::string text;
-		TextAttributes attributes;
-	};
-
 	class BaseWindow
 	{
 	public:
@@ -25,6 +20,7 @@ namespace GUI
 
 		virtual void render_border(TextColours colours) const;
 		virtual void render_text() const;
+		virtual void render_background() const;
 		virtual void key_pressed(KEY_EVENT_RECORD key_event);
 
 		virtual ~BaseWindow() = default;
