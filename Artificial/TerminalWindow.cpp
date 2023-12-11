@@ -6,6 +6,7 @@ namespace GUI
 		: BaseWindow(_size, _position, _title, _background), m_path(_path), m_user(_user)
 	{
 		m_buffer.push_back("");
+		m_command_line = 0;
 		start_new_command();
 	}
 
@@ -17,7 +18,9 @@ namespace GUI
 		{
 			if (code >= 32 && code <= 126)
 			{
-				m_buffer.back() += CHAR(code);
+				m_buffer.back() = m_buffer.back().substr(0, m_cursor_in_buffer) 
+					+ CHAR(code) 
+					+ m_buffer.back().substr(m_cursor_in_buffer);
 				++m_cursor_in_buffer;
 				render_background();
 				render_text_end();
@@ -30,11 +33,10 @@ namespace GUI
 			case 8:
 				if (m_buffer.back().size() != 0)
 				{
+					m_buffer.back() = m_buffer.back().substr(0, m_cursor_in_buffer - 1)
+						+ m_buffer.back().substr(m_cursor_in_buffer);
 					--m_cursor_in_buffer;
-					m_buffer.back().pop_back();
 				}
-				render_background();
-				render_text_end();
 				break;
 			case 13:
 				m_cursor_in_buffer = 0;
@@ -42,13 +44,40 @@ namespace GUI
 				m_text_parts.emplace_back(m_buffer.back(), m_main);
 				start_new_command();
 				m_buffer.push_back("");
-				render_background();
-				render_text_end();
+				m_command_line = m_buffer.size() - 1;
 				break;
-			
+			case 37:
+				m_cursor_in_buffer = max(1, m_cursor_in_buffer) - 1;
+				break;
+			case 39:
+				m_cursor_in_buffer = min(m_cursor_in_buffer + 1, m_buffer.back().size());
+				break;
+			case 38:
+				m_command_line = max(1, m_command_line) - 1;
+				m_buffer.back() = m_buffer[m_command_line];
+				m_cursor_in_buffer = m_buffer.back().size();
+				if (m_command_line != m_buffer.size() - 1)
+				{
+					m_buffer.back().pop_back();
+					m_cursor_in_buffer--;
+				}
+				break;
+			case 40:
+				m_command_line = min(m_command_line + 1, m_buffer.size() - 1);
+				m_buffer.back() = m_buffer[m_command_line];
+				m_cursor_in_buffer = m_buffer.back().size();
+				if (m_command_line != m_buffer.size() - 1)
+				{
+					m_buffer.back().pop_back();
+					m_cursor_in_buffer--;
+				}
+				break;
 			default:
 				break;
 			}
+
+			render_background();
+			render_text_end();
 		}
 	}
 	

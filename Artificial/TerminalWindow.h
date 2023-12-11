@@ -24,6 +24,7 @@ namespace GUI
 		Memory::FullPath m_path;
 		std::string m_user;
 		size_t m_cursor_in_buffer = 0;
+		size_t m_command_line = 0;
 
 		TextAttributes m_main = 15;
 		TextAttributes m_secondary = 6;
