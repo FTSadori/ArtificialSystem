@@ -58,6 +58,14 @@ namespace GUI
 		SetConsoleCursorPosition(m_console_handler, { point.y, point.x });
 	}
 
+	void ConsoleWindow::fill_screen(Colours background)
+	{
+		set_cursor_position({ 0, 0 });
+		set_text_colours(TextColours(Colours::WHITE, background));
+		std::cout << std::string(10000, ' ');
+		set_cursor_position({ 0, 0 });
+	}
+
 	void ConsoleWindow::delta_cursor_position(const ScreenPoint delta)
 	{
 		CONSOLE_SCREEN_BUFFER_INFO info;

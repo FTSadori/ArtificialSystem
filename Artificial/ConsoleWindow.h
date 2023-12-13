@@ -1,6 +1,7 @@
 #pragma once
 #include "GuiExceptions.h"
 #include "TextAttributes.h"
+#include "Size.h"
 #include <stdint.h>
 #include <windows.h>
 #include <iostream>
@@ -13,12 +14,6 @@ namespace GUI
 		int16_t y = 0;
 	};
 
-	struct Size
-	{
-		uint16_t rows = 0;
-		uint16_t columns = 0;
-	};
-
 	static class ConsoleWindow final
 	{
 	public:
@@ -29,6 +24,7 @@ namespace GUI
 		static Size get_console_size();
 		static void set_cursor_visibility(bool visibility);
 		static void set_cursor_position(const ScreenPoint point);
+		static void fill_screen(Colours background);
 		static void delta_cursor_position(const ScreenPoint delta);
 	private:
 		static HANDLE m_console_handler;
