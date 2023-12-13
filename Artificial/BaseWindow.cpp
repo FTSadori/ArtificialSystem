@@ -13,26 +13,26 @@ namespace GUI
 		set_title(_title);
 	}
 
-	inline void BaseWindow::set_size(Size _size)
+	void BaseWindow::set_size(Size _size)
 	{
 		m_size.columns = min(max(_size.columns, s_min_size.columns), s_max_size.columns);
 		m_size.rows = min(max(_size.rows, s_min_size.rows), s_max_size.rows);
 	}
 	
-	inline void BaseWindow::set_title(std::string _title)
+	void BaseWindow::set_title(std::string _title)
 	{
 		m_title = (_title.empty() ? "Window" : _title);
 	}
 	
-	inline void BaseWindow::set_position(ScreenPoint _position)
+	void BaseWindow::set_position(ScreenPoint _position)
 	{
 		m_position.x = max(1, _position.x);
 		m_position.y = max(1, _position.y);
 	}
 
-	inline Size BaseWindow::get_size() const { return m_size; }
-	inline const std::string& BaseWindow::get_title() const { return m_title; }
-	inline ScreenPoint BaseWindow::get_position() const { return m_position; }
+	Size BaseWindow::get_size() const { return m_size; }
+	const std::string& BaseWindow::get_title() const { return m_title; }
+	ScreenPoint BaseWindow::get_position() const { return m_position; }
 	
 	void BaseWindow::render_border(TextColours colours) const
 	{
