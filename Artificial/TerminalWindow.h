@@ -16,6 +16,7 @@ namespace GUI
 	{
 	public:
 		TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title = "Window", Colours _background = Colours::BLACK);
+		TerminalWindow(Size _size, ScreenPoint _position, const std::string& _title = "Window", Colours _background = Colours::BLACK);
 
 		void print_main(const std::string& line);
 		void print_secondary(const std::string& line);
@@ -39,7 +40,7 @@ namespace GUI
 		std::string m_last_input;
 		bool m_entered = false;
 
-		Memory::FullPath m_path;
+		std::string m_path_line;
 		std::string m_user;
 
 		TerminalInputType m_current_input_type = TerminalInputType::COMMAND;

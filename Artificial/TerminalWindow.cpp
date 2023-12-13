@@ -3,11 +3,13 @@
 namespace GUI
 {
 	TerminalWindow::TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title, Colours _background)
-		: BaseWindow(_size, _position, _title, _background), m_path(_path), m_user(_user)
+		: BaseWindow(_size, _position, _title, _background), m_path_line(_path.full_disk_name()), m_user(_user)
 	{
-		m_buffer.push_back("");
-		m_command_line = 0;
-		start_new_command();
+	}
+
+	TerminalWindow::TerminalWindow(Size _size, ScreenPoint _position, const std::string& _title, Colours _background)
+		: BaseWindow(_size, _position, _title, _background)
+	{
 	}
 
 	void TerminalWindow::print_main(const std::string& line)
@@ -40,6 +42,10 @@ namespace GUI
 		std::unique_lock lock(m_text_mutex);
 		m_caninput = true;
 		m_current_input_type = type;
+
+		if (type == TerminalInputType::COMMAND)
+			start_new_command();
+
 		m_cv.wait(lock, [&] { return m_entered; });
 	}
 
@@ -135,7 +141,7 @@ namespace GUI
 
 	void TerminalWindow::set_path(const Memory::FullPath& _path)
 	{
-		m_path = _path;
+		m_path_line = _path.full_disk_name();
 	}
 
 	void TerminalWindow::set_user_name(const std::string& _name)
@@ -177,6 +183,6 @@ namespace GUI
 	void TerminalWindow::start_new_command()
 	{
 		m_text_parts.emplace_back("(" + m_user + ") ", m_third);
-		m_text_parts.emplace_back(m_path.full_disk_name() + " $ ", m_secondary);
+		m_text_parts.emplace_back(m_path_line + " $ ", m_secondary);
 	}
 }
