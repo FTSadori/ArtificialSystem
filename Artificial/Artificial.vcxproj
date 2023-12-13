@@ -141,6 +141,7 @@
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="FullPath.cpp" />
+    <ClCompile Include="GUIHandler.cpp" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryCreateOption.h" />
@@ -155,6 +156,7 @@
     <ClCompile Include="SectorName.cpp" />
     <ClCompile Include="Sectors.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
+    <ClCompile Include="Size.cpp" />
     <ClCompile Include="TerminalWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +179,7 @@
     <ClInclude Include="FileType.h" />
     <ClInclude Include="FullPath.h" />
     <ClInclude Include="GuiExceptions.h" />
+    <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="IController.h" />
@@ -194,6 +197,7 @@
     <ClInclude Include="Sectors.h" />
     <ClInclude Include="Separator.h" />
     <ClInclude Include="ScreenText.h" />
+    <ClInclude Include="Size.h" />
     <ClInclude Include="SystemSender.h" />
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="TerminalWindow.h" />

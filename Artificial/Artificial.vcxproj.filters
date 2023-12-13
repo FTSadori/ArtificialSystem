@@ -112,6 +112,9 @@
     <Filter Include="Исходные файлы\Core\GUI\Windows\Terminal">
       <UniqueIdentifier>{8ed9e198-d270-48a5-8c11-61b6fcd0ef63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\GUIHandler">
+      <UniqueIdentifier>{d468f379-15cd-454d-91a7-82dd733d3c9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -194,6 +197,12 @@
     </ClCompile>
     <ClCompile Include="TerminalWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Windows\Terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="Size.cpp">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIHandler.cpp">
+      <Filter>Исходные файлы\Core\GUI\GUIHandler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +330,12 @@
       <Filter>Исходные файлы\Core\GUI\Windows\Terminal</Filter>
     </ClInclude>
     <ClInclude Include="TextInfo.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIHandler.h">
+      <Filter>Исходные файлы\Core\GUI\GUIHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Size.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
   </ItemGroup>
