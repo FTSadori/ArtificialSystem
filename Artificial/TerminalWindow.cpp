@@ -56,7 +56,7 @@ namespace GUI
 		return m_last_input;
 	}
 
-	void TerminalWindow::render_text() const
+	void TerminalWindow::render_text()
 	{
 		load_screen_text().render_text_end(m_position);
 	}
@@ -161,11 +161,11 @@ namespace GUI
 		else
 			input = m_last_input;
 
-		stext.push_text(m_last_input.substr(0, m_cursor_in_input), m_main);
-		if (m_cursor_in_input < m_last_input.size())
+		stext.push_text(input.substr(0, m_cursor_in_input), m_main);
+		if (m_cursor_in_input < input.size())
 		{
-			stext.push_text(m_last_input[m_cursor_in_input], m_selection);
-			stext.push_text(m_last_input.substr(m_cursor_in_input + 1), m_main);
+			stext.push_text(input[m_cursor_in_input], m_selection);
+			stext.push_text(input.substr(m_cursor_in_input + 1), m_main);
 		}
 		else
 			stext.push_text(" ", m_selection);

@@ -63,7 +63,7 @@ namespace GUI
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
 	}
 	
-	void BaseWindow::render_text() const
+	void BaseWindow::render_text()
 	{
 		ScreenText text(m_size);
 		text.push_text(m_text_parts);

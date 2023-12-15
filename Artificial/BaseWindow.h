@@ -19,7 +19,7 @@ namespace GUI
 		ScreenPoint get_position() const;
 
 		virtual void render_border(TextColours colours) const;
-		virtual void render_text() const;
+		virtual void render_text();
 		virtual void render_background() const;
 		virtual void key_pressed(KEY_EVENT_RECORD key_event);
 		
