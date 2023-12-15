@@ -56,87 +56,69 @@ namespace GUI
 		return m_last_input;
 	}
 
-	void TerminalWindow::key_pressed(KEY_EVENT_RECORD key_event)
-	{
-		if (!m_caninput) { return; }
-
-		SHORT code = key_event.uChar.AsciiChar;
-
-		// printable symbol
-		if (code >= 32 && code <= 126)
-		{
-			m_last_input = m_last_input.substr(0, m_cursor_in_input)
-				+ CHAR(code)
-				+ m_last_input.substr(m_cursor_in_input);
-			++m_cursor_in_input;
-		}
-		else
-		{
-			switch (key_event.wVirtualKeyCode)
-			{
-			// backspace
-			case 8:
-				if (m_last_input.size() != 0)
-				{
-					m_last_input = m_last_input.substr(0, m_cursor_in_input - 1)
-						+ m_last_input.substr(m_cursor_in_input);
-					--m_cursor_in_input;
-				}
-				break;
-			// enter
-			case 13:
-				m_cursor_in_input = 0;
-				m_buffer.push_back(m_last_input);
-				m_last_input = "";
-				m_text_parts.emplace_back(m_buffer.back() + '\n', m_main);
-				start_new_command();
-				m_command_line = m_buffer.size();
-				m_entered = true;
-				m_caninput = false;
-				break;
-			// left
-			case 37:
-				m_cursor_in_input = max(1, m_cursor_in_input) - 1;
-				break;
-			// right
-			case 39:
-				m_cursor_in_input = min(m_cursor_in_input + 1, m_last_input.size());
-				break;
-			// up
-			case 38:
-				if (m_current_input_type == TerminalInputType::COMMAND)
-				{
-					m_command_line = max(1, m_command_line) - 1;
-					m_last_input = m_buffer[m_command_line];
-					m_cursor_in_input = m_last_input.size();
-				}
-				break;
-			// down
-			case 40:
-				if (m_current_input_type == TerminalInputType::COMMAND && m_command_line != m_buffer.size())
-				{
-					m_command_line = min(m_command_line + 1, m_buffer.size() - 1);
-					m_last_input = m_buffer[m_command_line];
-					m_cursor_in_input = m_last_input.size();
-				}
-				break;
-			default:
-				break;
-			}
-		}
-
-		render_background();
-		render_text_end();
-	}
-	
-	void TerminalWindow::render_text_end() const
+	void TerminalWindow::render_text() const
 	{
 		load_screen_text().render_text_end(m_position);
 	}
 
-	void TerminalWindow::render_text_line() const
+	void TerminalWindow::on_printable(SHORT code)
 	{
-		load_screen_text().render_text_from(m_position, m_line_num);
+		m_last_input = m_last_input.substr(0, m_cursor_in_input)
+			+ CHAR(code)
+			+ m_last_input.substr(m_cursor_in_input);
+		++m_cursor_in_input;
+	}
+
+	void TerminalWindow::on_backspace()
+	{
+		if (m_last_input.size() != 0)
+		{
+			m_last_input = m_last_input.substr(0, m_cursor_in_input - 1)
+				+ m_last_input.substr(m_cursor_in_input);
+			--m_cursor_in_input;
+		}
+	}
+
+	void TerminalWindow::on_enter()
+	{
+		m_cursor_in_input = 0;
+		m_buffer.push_back(m_last_input);
+		m_last_input = "";
+		m_text_parts.emplace_back(m_buffer.back() + '\n', m_main);
+		start_new_command();
+		m_command_line = m_buffer.size();
+		m_entered = true;
+		m_caninput = false;
+	}
+
+	void TerminalWindow::on_left()
+	{
+		m_cursor_in_input = max(1, m_cursor_in_input) - 1;
+	}
+
+	void TerminalWindow::on_right()
+	{
+		m_cursor_in_input = min(m_cursor_in_input + 1, m_last_input.size());
+	}
+
+	void TerminalWindow::on_up()
+	{
+		if (m_current_input_type == TerminalInputType::COMMAND)
+		{
+			m_command_line = max(1, m_command_line) - 1;
+			m_last_input = m_buffer[m_command_line];
+			m_cursor_in_input = m_last_input.size();
+		}
+	}
+
+	void TerminalWindow::on_down()
+	{
+		if (m_current_input_type == TerminalInputType::COMMAND && m_command_line != m_buffer.size())
+		{
+			m_command_line = min(m_command_line + 1, m_buffer.size() - 1);
+			m_last_input = m_buffer[m_command_line];
+			m_cursor_in_input = m_last_input.size();
+		}
 	}
 
 	void TerminalWindow::set_path(const Memory::FullPath& _path)

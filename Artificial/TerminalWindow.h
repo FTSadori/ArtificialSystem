@@ -25,9 +25,15 @@ namespace GUI
 
 		void wait_for_input(TerminalInputType type);
 		std::string get_last_input();
-		virtual void key_pressed(KEY_EVENT_RECORD key_event) override;
-		virtual void render_text_end() const override;
-		virtual void render_text_line() const override;
+		virtual void render_text() const override;
+
+		virtual void on_printable(SHORT code) override;
+		virtual void on_backspace() override;
+		virtual void on_enter() override;
+		virtual void on_left() override;
+		virtual void on_right() override;
+		virtual void on_up() override;
+		virtual void on_down() override;
 
 		void set_path(const Memory::FullPath& _path);
 		void set_user_name(const std::string& _name);
