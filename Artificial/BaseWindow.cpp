@@ -67,7 +67,7 @@ namespace GUI
 	{
 		ScreenText text(m_size);
 		text.push_text(m_text_parts);
-		text.render_text_from(m_position, m_line_num);
+		text.render_text_from(m_position, m_render_from_line);
 	}
 
 	void BaseWindow::render_background() const

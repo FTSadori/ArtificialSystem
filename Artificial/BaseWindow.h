@@ -43,6 +43,6 @@ namespace GUI
 		ScreenPoint m_position;
 
 		std::vector<TextInfo> m_text_parts;
-		size_t m_line_num = 0;
+		size_t m_render_from_line = 0;
 	};
 }
