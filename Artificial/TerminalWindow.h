@@ -31,7 +31,10 @@ namespace GUI
 
 		void set_path(const Memory::FullPath& _path);
 		void set_user_name(const std::string& _name);
-	
+
+		Memory::FullPath get_path();
+		std::string get_user_name();
+
 		void set_colours(Colours background, Colours main, Colours secondary, Colours third);
 	private:
 		ScreenText load_screen_text() const;

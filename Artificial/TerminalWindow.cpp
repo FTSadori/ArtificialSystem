@@ -148,6 +148,16 @@ namespace GUI
 	{
 		m_user = _name;
 	}
+
+	Memory::FullPath TerminalWindow::get_path()
+	{
+		return m_path_line;
+	}
+
+	std::string TerminalWindow::get_user_name()
+	{
+		return m_user;
+	}
 	
 	void TerminalWindow::set_colours(Colours background, Colours main, Colours secondary, Colours third)
 	{
