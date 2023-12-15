@@ -63,14 +63,7 @@ namespace GUI
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
 	}
 	
-	void BaseWindow::render_text_end() const
-	{
-		ScreenText text(m_size);
-		text.push_text(m_text_parts);
-		text.render_text_end(m_position);
-	}
-
-	void BaseWindow::render_text_line() const
+	void BaseWindow::render_text() const
 	{
 		ScreenText text(m_size);
 		text.push_text(m_text_parts);
@@ -92,7 +85,7 @@ namespace GUI
 		SHORT code = key_event.uChar.AsciiChar;
 
 		if (code >= 32 && code <= 126)
-			on_printable();
+			on_printable(code);
 		else
 		{
 			switch (key_event.wVirtualKeyCode)
@@ -108,5 +101,8 @@ namespace GUI
 				break;
 			}
 		}
+
+		render_background();
+		render_text();
 	}
 }
