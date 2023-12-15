@@ -36,7 +36,7 @@ namespace GUI
 		{
 			m_terminal.render_background();
 			m_terminal.render_border(TextColours(m_border, m_background));
-			m_terminal.render_text_end();
+			m_terminal.render_text();
 		}
 	}
 	
