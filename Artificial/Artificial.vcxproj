@@ -158,6 +158,7 @@
     <ClCompile Include="BaseWindow.cpp" />
     <ClCompile Include="Size.cpp" />
     <ClCompile Include="TerminalWindow.cpp" />
+    <ClCompile Include="TextEditorWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Colours.h" />
@@ -202,6 +203,7 @@
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="TerminalWindow.h" />
     <ClInclude Include="TextAttributes.h" />
+    <ClInclude Include="TextEditorWindow.h" />
     <ClInclude Include="TextInfo.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>

@@ -115,6 +115,9 @@
     <Filter Include="Исходные файлы\Core\GUI\GUIHandler">
       <UniqueIdentifier>{d468f379-15cd-454d-91a7-82dd733d3c9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Windows\TextEditor">
+      <UniqueIdentifier>{bbec48c7-da4a-4567-a0dd-e44714aedb91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -203,6 +206,9 @@
     </ClCompile>
     <ClCompile Include="GUIHandler.cpp">
       <Filter>Исходные файлы\Core\GUI\GUIHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEditorWindow.cpp">
+      <Filter>Исходные файлы\Core\GUI\Windows\TextEditor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +343,9 @@
     </ClInclude>
     <ClInclude Include="Size.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEditorWindow.h">
+      <Filter>Исходные файлы\Core\GUI\Windows\TextEditor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
