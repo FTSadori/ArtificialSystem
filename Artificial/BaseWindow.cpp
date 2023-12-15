@@ -89,5 +89,24 @@ namespace GUI
 
 	void BaseWindow::key_pressed(KEY_EVENT_RECORD key_event)
 	{
+		SHORT code = key_event.uChar.AsciiChar;
+
+		if (code >= 32 && code <= 126)
+			on_printable();
+		else
+		{
+			switch (key_event.wVirtualKeyCode)
+			{
+			case 8:  on_backspace(); break;
+			case 13: on_enter();     break;
+			case 37: on_left();      break;
+			case 39: on_right();     break;
+			case 38: on_up();        break;
+			case 40: on_down();      break;
+
+			default:
+				break;
+			}
+		}
 	}
 }
