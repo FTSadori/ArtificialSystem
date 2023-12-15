@@ -24,7 +24,7 @@ namespace GUI
 		virtual void render_background() const;
 		virtual void key_pressed(KEY_EVENT_RECORD key_event);
 		
-		virtual void on_printable() = 0;
+		virtual void on_printable(SHORT code) = 0;
 		virtual void on_backspace() = 0;
 		virtual void on_enter() = 0;
 		virtual void on_left() = 0;
