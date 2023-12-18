@@ -359,6 +359,9 @@
     <ClInclude Include="Parser.h">
       <Filter>Исходные файлы\Core\Base</Filter>
     </ClInclude>
+    <ClInclude Include="Margin.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
