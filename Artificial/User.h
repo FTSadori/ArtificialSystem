@@ -14,7 +14,7 @@ namespace Commands
 		uint8_t lvl() const { return m_lvl; }
 		std::string name() const { return m_name; }
 
-	private:
+	protected:
 		bool m_sudo;
 		uint8_t m_lvl;
 		std::string m_name;
