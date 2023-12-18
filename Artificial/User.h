@@ -6,7 +6,7 @@ namespace Commands
 	class User
 	{
 	public:
-		User(const std::string& _name, bool _sudo, uint8_t _lvl)
+		User(const std::string& _name = "", bool _sudo = false, uint8_t _lvl = 0)
 			: m_name(_name), m_sudo(_sudo), m_lvl(_lvl) 
 		{}
 
