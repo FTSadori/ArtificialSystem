@@ -210,6 +210,12 @@
     <ClCompile Include="TextEditorWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Windows\TextEditor</Filter>
     </ClCompile>
+    <ClCompile Include="UsersHandler.cpp">
+      <Filter>Исходные файлы\Core\Commands\Senders</Filter>
+    </ClCompile>
+    <ClCompile Include="UserExceptions.h">
+      <Filter>Исходные файлы\Core\Commands\Exceptions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -286,9 +292,6 @@
     </ClInclude>
     <ClInclude Include="RelativePathCreator.h">
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
-    </ClInclude>
-    <ClInclude Include="ISender.h">
-      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="ICommandExecutor.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>

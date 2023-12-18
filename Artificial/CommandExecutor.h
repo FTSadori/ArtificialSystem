@@ -14,7 +14,7 @@ namespace Commands
 			m_controllers.emplace_back(controller.release());
 		}
 
-		virtual std::string execute(const ICommand& command, const ISender& sender) override
+		virtual std::string execute(const ICommand& command, const User& sender) override
 		{
 			for (const auto& controller : m_controllers)
 			{

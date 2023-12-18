@@ -159,6 +159,8 @@
     <ClCompile Include="Size.cpp" />
     <ClCompile Include="TerminalWindow.cpp" />
     <ClCompile Include="TextEditorWindow.cpp" />
+    <ClCompile Include="UserExceptions.h" />
+    <ClCompile Include="UsersHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Colours.h" />
@@ -189,7 +191,6 @@
     <ClInclude Include="IController.h" />
     <ClInclude Include="ICommandExecutor.h" />
     <ClInclude Include="ILoadable.h" />
-    <ClInclude Include="ISender.h" />
     <ClInclude Include="MemoryController.h" />
     <ClInclude Include="MemoryOptionsLoader.h" />
     <ClInclude Include="NameValidator.h" />

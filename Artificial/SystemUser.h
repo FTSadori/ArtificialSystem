@@ -6,6 +6,6 @@ namespace Commands
 	class SystemUser final : public User
 	{
 	public:
-		SystemUser() : User(true, 255) {}
+		SystemUser() : User("system", true, 255) {}
 	};
 }
