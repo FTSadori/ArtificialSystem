@@ -1,10 +1,9 @@
 #pragma once
 #include <stdint.h>
+#include "Hash.h"
 
 namespace Memory
 {
-	using hash_t = size_t;
-
 	struct Permissions final
 	{
 		bool hidden = false;

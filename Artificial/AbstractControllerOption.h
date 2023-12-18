@@ -2,7 +2,7 @@
 #include "ICommand.h"
 #include "ISender.h"
 #include "DiskSystem.h"
-#include "SystemSender.h"
+#include "SystemUser.h"
 #include "ICommandExecutor.h"
 
 namespace Commands
@@ -17,7 +17,7 @@ namespace Commands
 		
 		virtual std::string send(const ICommand& command)
 		{
-			return m_core.execute(command, SystemSender());
+			return m_core.execute(command, SystemUser());
 		}
 
 		virtual ~AbstractControllerOption() = default;

@@ -8,7 +8,7 @@ namespace GUI
 	{
 		if (text.empty()) return;
 		
-		auto lines = Commands::Separator::split(text, '\n');
+		auto lines = Separator::split(text, '\n');
 		size_t i = 0;
 
 		size_t cur_lines = m_text.size();

@@ -41,7 +41,7 @@ namespace GUI
 		nums[0] = 0;
 		for (size_t i = 1; i < nums.size(); ++i)
 		{
-			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Commands::Parser::to_string(i + 1), m_secondary);
+			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Parser::to_string(i + 1), m_secondary);
 		}
 
 		text.render_text_from({ m_position.x, int16_t(m_position.y + c_max_num_size) }, m_render_from_line);
@@ -158,6 +158,6 @@ namespace GUI
 
 	std::string TextEditorWindow::get_text()
 	{
-		return Commands::Separator::join(m_lines, '\n');
+		return Separator::join(m_lines, '\n');
 	}
 }

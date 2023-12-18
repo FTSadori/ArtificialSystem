@@ -15,7 +15,7 @@ namespace Memory
 			FullPath from_path(from);
 			DiskPath result(from_path.disk_path());
 
-			auto list = Commands::Separator::split(path, '\\');
+			auto list = Separator::split(path, '\\');
 			for (const auto& l : list)
 			{
 				if (l == "..")
