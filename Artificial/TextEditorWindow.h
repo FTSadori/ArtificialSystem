@@ -2,6 +2,7 @@
 #include "BaseWindow.h"
 #include "FullPath.h"
 #include "Parser.h"
+#include "Separator.h"
 
 namespace GUI
 {
@@ -21,6 +22,7 @@ namespace GUI
 		virtual void on_down() override;
 
 		Memory::FullPath get_file_path();
+		std::string get_text();
 
 		void set_colours(Colours background, Colours main, Colours secondary);
 	private:

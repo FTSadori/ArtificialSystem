@@ -155,4 +155,9 @@ namespace GUI
 	{
 		return m_file_path;
 	}
+
+	std::string TextEditorWindow::get_text()
+	{
+		return Commands::Separator::join(m_lines, '\n');
+	}
 }
