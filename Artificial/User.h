@@ -1,10 +1,9 @@
 #pragma once
-#include "ISender.h"
 #include <string>
 
 namespace Commands 
 {
-	class User : public ISender
+	class User
 	{
 	public:
 		User(const std::string& _name, bool _sudo, uint8_t _lvl)
