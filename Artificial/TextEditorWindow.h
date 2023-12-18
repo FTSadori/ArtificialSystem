@@ -29,7 +29,7 @@ namespace GUI
 		void next_line_num();
 		void prev_line_num();
 
-		const uint16_t c_max_num_size = 6;
+		uint16_t c_max_num_size = 6;
 
 		size_t m_line_num = 0;
 		size_t m_cursor_in_line = 0;
