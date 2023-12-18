@@ -10,7 +10,7 @@ namespace GUI
 
 	void TextEditorWindow::render_text()
 	{
-		ScreenText text(Size{ m_size.rows, uint16_t(m_size.columns - 6) });
+		ScreenText text(Size{ m_size.rows, uint16_t(m_size.columns - c_max_num_size) });
 		std::vector<size_t> nums;
 		for (size_t i = 0; i < m_lines.size(); ++i)
 		{
@@ -36,7 +36,7 @@ namespace GUI
 			text.push_text("\n", m_main);
 		}
 
-		ScreenText numbers(Size{ m_size.rows, 6 });
+		ScreenText numbers(Size{ m_size.rows, c_max_num_size });
 		numbers.push_text(" 1", m_secondary);
 		nums[0] = 0;
 		for (size_t i = 1; i < nums.size(); ++i)
@@ -44,7 +44,7 @@ namespace GUI
 			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Commands::Parser::to_string(i + 1), m_secondary);
 		}
 
-		text.render_text_from({ m_position.x, int16_t(m_position.y + 6) }, m_render_from_line);
+		text.render_text_from({ m_position.x, int16_t(m_position.y + c_max_num_size) }, m_render_from_line);
 		numbers.render_text_from(m_position, m_render_from_line);
 	}
 
