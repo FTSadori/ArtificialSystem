@@ -181,6 +181,9 @@
     <ClInclude Include="FullPath.h" />
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
+    <ClInclude Include="Hash.h" />
+    <ClInclude Include="User.h" />
+    <ClInclude Include="UsersHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
     <ClInclude Include="IController.h" />
@@ -199,7 +202,7 @@
     <ClInclude Include="Separator.h" />
     <ClInclude Include="ScreenText.h" />
     <ClInclude Include="Size.h" />
-    <ClInclude Include="SystemSender.h" />
+    <ClInclude Include="SystemUser.h" />
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="TerminalWindow.h" />
     <ClInclude Include="TextAttributes.h" />

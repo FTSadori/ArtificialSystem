@@ -272,9 +272,6 @@
     <ClInclude Include="ICommand.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
-      <Filter>Исходные файлы\Core\Commands\Base</Filter>
-    </ClInclude>
     <ClInclude Include="IController.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
@@ -286,9 +283,6 @@
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Исходные файлы\Core\Commands\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Separator.h">
-      <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="RelativePathCreator.h">
       <Filter>Исходные файлы\Core\Memory\CoreStructures</Filter>
@@ -302,7 +296,7 @@
     <ClInclude Include="AbstractControllerOption.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="SystemSender.h">
+    <ClInclude Include="SystemUser.h">
       <Filter>Исходные файлы\Core\Commands\Senders</Filter>
     </ClInclude>
     <ClInclude Include="Core.h">
@@ -346,6 +340,21 @@
     </ClInclude>
     <ClInclude Include="TextEditorWindow.h">
       <Filter>Исходные файлы\Core\GUI\Windows\TextEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersHandler.h">
+      <Filter>Исходные файлы\Core\Commands\Senders</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Исходные файлы\Core\Commands\Senders</Filter>
+    </ClInclude>
+    <ClInclude Include="Hash.h">
+      <Filter>Исходные файлы\Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Separator.h">
+      <Filter>Исходные файлы\Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Исходные файлы\Core\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
