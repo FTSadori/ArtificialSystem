@@ -7,11 +7,16 @@ namespace Commands
 	{
 	public:
 		User(const std::string& _name, bool _sudo, uint8_t _lvl)
-			: c_name(_name), c_sudo(_sudo), c_lvl(_lvl) 
+			: m_name(_name), m_sudo(_sudo), m_lvl(_lvl) 
 		{}
 
-		const bool c_sudo;
-		const uint8_t c_lvl;
-		const std::string c_name;
+		bool sudo() const { return m_sudo; }
+		uint8_t lvl() const { return m_lvl; }
+		std::string name() const { return m_name; }
+
+	private:
+		bool m_sudo;
+		uint8_t m_lvl;
+		std::string m_name;
 	};
 }

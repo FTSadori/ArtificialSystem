@@ -25,14 +25,14 @@ namespace Commands
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
 			auto& disk = m_system.get_disk(path.mark());
-			uint8_t need = disk.get_info(path.disk_path(), sender.c_sudo).permissions.write_perm_lvl;
+			uint8_t need = disk.get_info(path.disk_path(), sender.sudo()).permissions.write_perm_lvl;
 
-			if (need > sender.c_lvl)
+			if (need > sender.lvl())
 				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
 
 			send(Command(path.full_dir_name() + " checkpassword"));
 
-			auto dir_perm = disk.get_info(path.disk_path().dir(), sender.c_sudo).permissions;
+			auto dir_perm = disk.get_info(path.disk_path().dir(), sender.sudo()).permissions;
 
 			std::map<std::string, uint8_t&> perm_map = { 
 				{":rp", dir_perm.read_perm_lvl}, 
@@ -46,7 +46,7 @@ namespace Commands
 				{
 					uint8_t rp = Parser::from_string<uint8_t>(_command.get(flag));
 					if (link < rp)
-						link = std::min(rp, sender.c_lvl);
+						link = std::min(rp, sender.lvl());
 				}
 			}
 
@@ -60,7 +60,7 @@ namespace Commands
 			}
 
 			bool system_file = _command.has("::sys");
-			if (system_file && !sender.c_sudo)
+			if (system_file && !sender.sudo())
 				throw CommandException("(MemoryCreateOption) Non-sudo user can't create system file");
 
 			if (_command.has("::dir"))
