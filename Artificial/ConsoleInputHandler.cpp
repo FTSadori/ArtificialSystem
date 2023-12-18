@@ -25,7 +25,7 @@ namespace GUI
 					buffer_size,
 					&events_number);
 
-				for (int i = 0; i < events_number; ++i)
+				for (DWORD i = 0; i < events_number; ++i)
 				{
 					if (input_buffer[i].EventType == KEY_EVENT)
 					{

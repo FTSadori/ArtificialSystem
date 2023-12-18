@@ -192,7 +192,7 @@ namespace Memory
 	{
 		DataQueue data;
 
-		uint32_t size = m_sectors.size();
+		uint32_t size = (uint32_t)m_sectors.size();
 		data.push(size);
 
 		for (const auto& pair : m_sectors)

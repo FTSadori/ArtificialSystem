@@ -4,7 +4,7 @@
 
 namespace Commands
 {
-	static class MemoryOptionsLoader final
+	class MemoryOptionsLoader final
 	{
 	public:
 		static MemoryController Load(Memory::DiskSystem& system, ICommandExecutor& core)

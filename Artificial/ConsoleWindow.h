@@ -14,7 +14,7 @@ namespace GUI
 		int16_t y = 0;
 	};
 
-	static class ConsoleWindow final
+	class ConsoleWindow final
 	{
 	public:
 		static void init();
