@@ -184,7 +184,6 @@
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
-    <ClInclude Include="Margin.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UsersHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
