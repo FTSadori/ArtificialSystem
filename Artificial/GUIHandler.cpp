@@ -53,6 +53,10 @@ namespace GUI
 		if (m_current_window != 0)
 		{
 			auto& editor = m_text_editors[m_current_window - 1];
+			const auto& title = editor.get_title();
+
+			if (title.ends_with("*"))
+				editor.set_title(title.substr(0, title.size() - 1));
 
 			std::string text = b64encode(editor.get_text());
 			auto path = editor.get_file_path();
@@ -100,7 +104,17 @@ namespace GUI
 					if (m_current_window == 0)
 						m_terminal.key_pressed(key);
 					else
-						m_text_editors[m_current_window - 1].key_pressed(key);
+					{
+						auto& window = m_text_editors[m_current_window - 1];
+						
+						if ((key.wVirtualKeyCode < 37 || key.wVirtualKeyCode > 40) && !window.get_title().ends_with("*"))
+						{
+							window.set_title(window.get_title() + "*");
+							render(m_current_window);
+						}
+						
+						window.key_pressed(key);
+					}
 				}
 			}
 		});
