@@ -15,8 +15,8 @@ namespace GUI
 	class TerminalWindow final : public BaseWindow
 	{
 	public:
-		TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title = "Window", Colours _background = Colours::BLACK);
-		TerminalWindow(Size _size, ScreenPoint _position, const std::string& _title = "Window", Colours _background = Colours::BLACK);
+		TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title = "Window");
+		TerminalWindow(Size _size, ScreenPoint _position, const std::string& _title = "Window");
 
 		void print_main(const std::string& line);
 		void print_secondary(const std::string& line);
@@ -40,8 +40,6 @@ namespace GUI
 
 		Memory::FullPath get_path();
 		std::string get_user_name();
-
-		void set_colours(Colours background, Colours main, Colours secondary, Colours third);
 	private:
 		ScreenText load_screen_text() const;
 		void start_new_command();
@@ -58,11 +56,6 @@ namespace GUI
 		std::vector<std::string> m_buffer;
 		size_t m_cursor_in_input = 0;
 		size_t m_command_line = 0;
-
-		TextAttributes m_main = 15;
-		TextAttributes m_secondary = 6;
-		TextAttributes m_third = 14;
-		TextAttributes m_selection = 15 * 16;
 
 		std::mutex m_text_mutex;
 		std::condition_variable m_cv;
