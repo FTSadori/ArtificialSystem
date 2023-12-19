@@ -9,7 +9,7 @@ namespace GUI
 	class TextEditorWindow final : public BaseWindow
 	{
 	public:
-		TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title = "Window", Colours _background = Colours::BLACK);
+		TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title = "Window");
 
 		virtual void render_text() override;
 
@@ -24,7 +24,6 @@ namespace GUI
 		Memory::FullPath get_file_path();
 		std::string get_text();
 
-		void set_colours(Colours background, Colours main, Colours secondary);
 	private:
 		void next_line_num();
 		void prev_line_num();

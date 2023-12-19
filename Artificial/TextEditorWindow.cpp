@@ -2,8 +2,8 @@
 
 namespace GUI
 {
-	TextEditorWindow::TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title, Colours _background)
-	: BaseWindow(_size, _position, _title, _background), m_file_path(_path)
+	TextEditorWindow::TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title)
+	: BaseWindow(_size, _position, _title), m_file_path(_path)
 	{
 		m_lines.push_back("");
 	}
@@ -123,14 +123,6 @@ namespace GUI
 			next_line_num();
 			m_cursor_in_line = min(m_lines[m_line_num].size(), m_cursor_in_line);
 		}
-	}
-
-	void TextEditorWindow::set_colours(Colours background, Colours main, Colours secondary)
-	{
-		m_background = background;
-		m_main = TextAttributes(TextColours(main, background), TextBorders());
-		m_secondary = TextAttributes(TextColours(secondary, background), TextBorders());
-		m_selection = TextAttributes(TextColours(background, main), TextBorders());
 	}
 
 	void TextEditorWindow::next_line_num()

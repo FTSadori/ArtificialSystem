@@ -4,16 +4,18 @@ namespace GUI
 {
 	GUIHandler::GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler, Colours _background, Colours _window, Colours _border)
 		: m_core(_core), m_users_handler(_users_handler),
-		m_terminal(TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal", _window)),
+		m_terminal(TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal")),
 		m_background(_background), m_window(_window), m_border(_border)
 	{
+		m_terminal.set_window_colours(m_window, m_border);
 		start_resize_thread();
 		start_input_thread();
 	}
 
 	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data)
 	{
-		TextEditorWindow window(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file(), m_window);
+		TextEditorWindow window(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file());
+		window.set_window_colours(m_window, m_border);
 		m_text_editors.push_back(window);
 		// todo add data to window
 	}
@@ -254,7 +256,7 @@ namespace GUI
 			window = &m_text_editors[window_num - 1];
 		
 		window->render_background();
-		window->render_border(TextColours(m_border, m_background));
+		window->render_border(m_background);
 		window->render_text();
 	}
 	

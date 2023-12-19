@@ -2,13 +2,13 @@
 
 namespace GUI
 {
-	TerminalWindow::TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title, Colours _background)
-		: BaseWindow(_size, _position, _title, _background), m_path_line(_path.full_disk_name()), m_user(_user)
+	TerminalWindow::TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title)
+		: BaseWindow(_size, _position, _title), m_path_line(_path.full_disk_name()), m_user(_user)
 	{
 	}
 
-	TerminalWindow::TerminalWindow(Size _size, ScreenPoint _position, const std::string& _title, Colours _background)
-		: BaseWindow(_size, _position, _title, _background)
+	TerminalWindow::TerminalWindow(Size _size, ScreenPoint _position, const std::string& _title)
+		: BaseWindow(_size, _position, _title)
 	{
 	}
 
@@ -139,15 +139,6 @@ namespace GUI
 	std::string TerminalWindow::get_user_name()
 	{
 		return m_user;
-	}
-	
-	void TerminalWindow::set_colours(Colours background, Colours main, Colours secondary, Colours third)
-	{
-		m_background = background;
-		m_main = TextAttributes(TextColours(main, background), TextBorders());
-		m_secondary = TextAttributes(TextColours(secondary, background), TextBorders());
-		m_third = TextAttributes(TextColours(third, background), TextBorders());
-		m_selection = TextAttributes(TextColours(background, main), TextBorders());
 	}
 	
 	ScreenText TerminalWindow::load_screen_text() const

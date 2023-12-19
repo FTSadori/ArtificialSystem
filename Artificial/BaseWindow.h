@@ -8,19 +8,23 @@ namespace GUI
 	class BaseWindow
 	{
 	public:
-		BaseWindow(Size _size, ScreenPoint _position, const std::string& _title = "Window", Colours _background = Colours::BLACK);
+		BaseWindow(Size _size, ScreenPoint _position, const std::string& _title = "Window");
 
 		void set_size(Size _size);
 		void set_title(std::string _title);
 		void set_position(ScreenPoint _position);
 
+		void set_window_colours(Colours _background, Colours _border);
+		void set_text_colours(Colours _main, Colours _secondary, Colours _third);
+		
 		Size get_size() const;
 		const std::string& get_title() const;
 		ScreenPoint get_position() const;
 
-		virtual void render_border(TextColours colours) const;
-		virtual void render_text();
+		virtual void render_border(Colours _console) const;
 		virtual void render_background() const;
+		virtual void render_text() = 0;
+	
 		virtual void key_pressed(KEY_EVENT_RECORD key_event);
 		
 		virtual void on_printable(SHORT code) = 0;
@@ -37,7 +41,14 @@ namespace GUI
 		static Size s_min_size;
 
 	protected:
-		Colours m_background;
+		Colours m_background = Colours::BLACK;
+		Colours m_border = Colours::WHITE;
+
+		TextAttributes m_main = 15;
+		TextAttributes m_secondary = 6;
+		TextAttributes m_third = 14;
+		TextAttributes m_selection = 15 * 16;
+
 		std::string m_title;
 		Size m_size;
 		ScreenPoint m_position;

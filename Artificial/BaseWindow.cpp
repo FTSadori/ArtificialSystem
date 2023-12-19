@@ -5,8 +5,7 @@ namespace GUI
 	Size BaseWindow::s_max_size{ 1024, 1024 };
 	Size BaseWindow::s_min_size{ 2, 2 };
 
-	BaseWindow::BaseWindow(Size _size, ScreenPoint _position, const std::string& _title, Colours _background)
-		: m_background(_background)
+	BaseWindow::BaseWindow(Size _size, ScreenPoint _position, const std::string& _title)
 	{
 		set_size(_size);
 		set_position(_position);
@@ -30,13 +29,27 @@ namespace GUI
 		m_position.y = max(1, _position.y);
 	}
 
+	void BaseWindow::set_window_colours(Colours _background, Colours _border)
+	{
+		m_background = _background;
+		m_border = _border;
+	}
+
+	void BaseWindow::set_text_colours(Colours _main, Colours _secondary, Colours _third)
+	{
+		m_main = TextAttributes(TextColours(_main, m_background), TextBorders());
+		m_secondary = TextAttributes(TextColours(_secondary, m_background), TextBorders());
+		m_third = TextAttributes(TextColours(_third, m_background), TextBorders());
+		m_selection = TextAttributes(TextColours(m_background, _main), TextBorders());
+	}
+
 	Size BaseWindow::get_size() const { return m_size; }
 	const std::string& BaseWindow::get_title() const { return m_title; }
 	ScreenPoint BaseWindow::get_position() const { return m_position; }
 	
-	void BaseWindow::render_border(TextColours colours) const
+	void BaseWindow::render_border(Colours colours) const
 	{
-		ConsoleWindow::set_text_colours(colours);
+		ConsoleWindow::set_text_colours(TextColours(m_border, colours));
 
 		ConsoleWindow::set_cursor_position({ (int16_t)(m_position.x - 1), m_position.y });
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, true));
@@ -61,13 +74,6 @@ namespace GUI
 		}
 
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
-	}
-	
-	void BaseWindow::render_text()
-	{
-		ScreenText text(m_size);
-		text.push_text(m_text_parts);
-		text.render_text_from(m_position, m_render_from_line);
 	}
 
 	void BaseWindow::render_background() const
