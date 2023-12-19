@@ -44,6 +44,7 @@ namespace GUI
 		default:
 			return false;
 		}
+		render(m_current_window);
 		return true;
 	}
 
@@ -68,13 +69,11 @@ namespace GUI
 	void GUIHandler::doCtrlZ()
 	{
 		m_current_window = max(1, m_current_window) - 1;
-		render(m_current_window);
 	}
 
 	void GUIHandler::doCtrlX()
 	{
 		m_current_window = min(m_current_window + 1, m_text_editors.size());
-		render(m_current_window);
 	}
 
 	void GUIHandler::doCtrlQ()
@@ -82,7 +81,7 @@ namespace GUI
 		if (m_current_window > 0)
 		{
 			m_text_editors.erase(m_text_editors.begin() + (m_current_window - 1));
-			doCtrlX();
+			m_current_window = min(m_current_window, m_text_editors.size());
 		}
 	}
 
@@ -133,20 +132,23 @@ namespace GUI
 
 	void GUIHandler::render(size_t window_num)
 	{
+		Size size;
+		{
+			std::lock_guard lock(m_window_size_mutex);
+			size = m_window_size;
+		}
+
 		render_window(window_num);
-		render_header_border(); 
-		render_header(window_num);
+		render_header_border(size); 
+		render_header_background(size);
+		render_header(size, window_num);
 	}
 
-	void GUIHandler::render_header(size_t window_num)
+	void GUIHandler::render_header(Size window_size, size_t window_num)
 	{
 		const size_t double_margin = 2 * c_horizontal_margin;
 
-		size_t window_width = 0;
-		{
-			std::lock_guard lock(m_window_size_mutex);
-			window_width = max(double_margin, m_window_size.columns) - double_margin;
-		}
+		size_t window_width = max(double_margin, window_size.columns) - double_margin;
 
 		size_t full_tab_size = max(window_width / c_full_tab_size_divider, c_min_tab_size);
 		size_t mini_tab_size = max(window_width / c_mini_tab_size_divider, c_min_tab_size);
@@ -171,12 +173,13 @@ namespace GUI
 				titles[i] += "...";
 			}
 
-			if (sum + titles.size() + 2 >= window_width)
+			if (sum + titles[i].size() + 2 >= window_width)
 			{
 				if (i <= window_num)
 				{
 					m_tabs_from++;
-					render_header(window_num);
+					render_header_background(window_size);
+					render_header(window_size, window_num);
 				}
 				break;
 			}
@@ -200,24 +203,29 @@ namespace GUI
 		}
 	}
 
-	void GUIHandler::render_header_border()
+	void GUIHandler::render_header_background(Size window_size)
 	{
-		Size size;
-		{
-			std::lock_guard lock(m_window_size_mutex);
-			size = m_window_size;
-		}
+		const size_t double_margin = 2 * c_horizontal_margin;
+		size_t window_width = max(double_margin, window_size.columns) - double_margin;
+
+		ConsoleWindow::set_cursor_position({ c_vertical_margin, c_horizontal_margin });
+		ConsoleWindow::set_text_colours(TextColours(m_background, m_background));
+		std::cout << std::string(window_width, ' ');
+	}
+
+	void GUIHandler::render_header_border(Size window_size)
+	{
 		ConsoleWindow::set_text_colours(TextColours(m_border, m_background));
 
 		ConsoleWindow::set_cursor_position({ SHORT(c_vertical_margin - 1), c_horizontal_margin });
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, true));
-		std::cout << std::string(size.columns - c_horizontal_margin * 2, ' ');
+		std::cout << std::string(window_size.columns - c_horizontal_margin * 2, ' ');
 
 		ConsoleWindow::set_cursor_position({ c_vertical_margin, SHORT(c_horizontal_margin - 1) });
 		ConsoleWindow::set_text_borders(TextBorders(false, false, true, false));
 		std::cout << ' ';
 
-		ConsoleWindow::set_cursor_position({ c_vertical_margin, SHORT(size.columns - c_horizontal_margin) });
+		ConsoleWindow::set_cursor_position({ c_vertical_margin, SHORT(window_size.columns - c_horizontal_margin) });
 		ConsoleWindow::set_text_borders(TextBorders(true, false, false, false));
 		std::cout << ' ';
 	}

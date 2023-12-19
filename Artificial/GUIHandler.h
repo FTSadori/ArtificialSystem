@@ -56,8 +56,9 @@ namespace GUI
 		void start_input_thread();
 		void start_resize_thread();
 		void render(size_t window_num);
-		void render_header(size_t window_num);
-		void render_header_border();
+		void render_header(Size window_size, size_t window_num);
+		void render_header_background(Size window_size);
+		void render_header_border(Size window_size);
 		void render_window(size_t window_num);
 		void set_size_to_all(Size new_size);
 	};
