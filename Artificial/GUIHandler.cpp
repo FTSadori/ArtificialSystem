@@ -4,20 +4,28 @@ namespace GUI
 {
 	GUIHandler::GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler, Colours _background, Colours _window, Colours _border)
 		: m_core(_core), m_users_handler(_users_handler),
-		m_terminal(TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal")),
 		m_background(_background), m_window(_window), m_border(_border)
 	{
-		m_terminal.set_window_colours(m_window, m_border);
+		m_windows.emplace_back(new TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal"));
+		m_windows[0]->set_window_colours(m_window, m_border);
+
 		start_resize_thread();
 		start_input_thread();
 	}
 
 	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data)
 	{
-		TextEditorWindow window(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file());
-		window.set_window_colours(m_window, m_border);
-		m_text_editors.push_back(window);
+		m_windows.emplace_back(new TextEditorWindow(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file()));
+		m_windows.back()->set_window_colours(m_window, m_border);
 		// todo add data to window
+	}
+
+	void GUIHandler::open_image(const std::string& name, const std::string& data)
+	{
+		m_windows.emplace_back(new ImageTextWindow(get_windows_size(m_window_size), get_windows_start(), name));
+		m_windows.back()->set_window_colours(m_window, m_border);
+		ImageTextWindow* ptr = dynamic_cast<ImageTextWindow*>(m_windows.back().get());
+		ptr->set_text(data);
 	}
 	
 	ScreenPoint GUIHandler::get_windows_start()
@@ -52,19 +60,20 @@ namespace GUI
 
 	void GUIHandler::doCtrlS()
 	{
-		if (m_current_window != 0)
+		TextEditorWindow* te_ptr = dynamic_cast<TextEditorWindow*>(m_windows[m_current_window].get());
+		if (te_ptr)
 		{
-			auto& editor = m_text_editors[m_current_window - 1];
-			const auto& title = editor.get_title();
+			const auto& title = te_ptr->get_title();
 
 			if (title.ends_with("*"))
-				editor.set_title(title.substr(0, title.size() - 1));
+				te_ptr->set_title(title.substr(0, title.size() - 1));
 
-			std::string text = b64encode(editor.get_text());
-			auto path = editor.get_file_path();
-			Commands::Command cmd(editor.get_file_path().full_dir_name()
+			std::string text = b64encode(te_ptr->get_text());
+			auto path = te_ptr->get_file_path();
+
+			Commands::Command cmd(te_ptr->get_file_path().full_dir_name()
 				+ " write "
-				+ editor.get_file_path().disk_path().file()
+				+ te_ptr->get_file_path().disk_path().file()
 				+ " "
 				+ text);
 
@@ -79,15 +88,15 @@ namespace GUI
 
 	void GUIHandler::doCtrlX()
 	{
-		m_current_window = min(m_current_window + 1, m_text_editors.size());
+		m_current_window = min(m_current_window + 1, m_windows.size() - 1);
 	}
 
 	void GUIHandler::doCtrlQ()
 	{
 		if (m_current_window > 0)
 		{
-			m_text_editors.erase(m_text_editors.begin() + (m_current_window - 1));
-			m_current_window = min(m_current_window, m_text_editors.size());
+			m_windows.erase(m_windows.begin() + m_current_window);
+			m_current_window = min(m_current_window, m_windows.size() - 1);
 		}
 	}
 
@@ -103,19 +112,17 @@ namespace GUI
 				if (!key.bKeyDown) continue;
 				if (!try_key_combination(key))
 				{
-					if (m_current_window == 0)
-						m_terminal.key_pressed(key);
-					else
+					m_windows[m_current_window]->key_pressed(key);
+
+					TextEditorWindow* te_ptr = dynamic_cast<TextEditorWindow*>(m_windows[m_current_window].get());
+					
+					if (te_ptr)
 					{
-						auto& window = m_text_editors[m_current_window - 1];
-						
-						if ((key.wVirtualKeyCode < 37 || key.wVirtualKeyCode > 40) && !window.get_title().ends_with("*"))
+						if ((key.wVirtualKeyCode < 37 || key.wVirtualKeyCode > 40) && !te_ptr->get_title().ends_with("*"))
 						{
-							window.set_title(window.get_title() + "*");
+							te_ptr->set_title(te_ptr->get_title() + "*");
 							render(m_current_window);
 						}
-						
-						window.key_pressed(key);
 					}
 				}
 			}
@@ -172,9 +179,8 @@ namespace GUI
 		size_t sum = 0;
 
 		std::vector<std::string> titles;
-		titles.push_back("Terminal");
-		for (const auto& editor : m_text_editors)
-			titles.push_back(editor.get_title());
+		for (const auto& win : m_windows)
+			titles.push_back(win->get_title());
 
 		m_tabs_from = min(m_tabs_from, window_num);
 
@@ -248,13 +254,8 @@ namespace GUI
 
 	void GUIHandler::render_window(size_t window_num)
 	{
-		BaseWindow* window;
-		
-		if (window_num == 0)
-			window = &m_terminal;
-		else 
-			window = &m_text_editors[window_num - 1];
-		
+		BaseWindow* window = m_windows[window_num].get();
+
 		window->render_background();
 		window->render_border(m_background);
 		window->render_text();
@@ -266,9 +267,8 @@ namespace GUI
 			new_size.columns = 0;
 		if (new_size.rows > m_window_size.rows)
 			new_size.rows = 0;
-
-		m_terminal.set_size(new_size);
-		for (auto& editor : m_text_editors)
-			editor.set_size(new_size);
+		
+		for (const auto& window : m_windows)
+			window->set_size(new_size);
 	}
 }

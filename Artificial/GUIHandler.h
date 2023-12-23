@@ -2,10 +2,12 @@
 #include "TerminalWindow.h"
 #include "TextEditorWindow.h"
 #include "ConsoleInputHandler.h"
+#include "ImageTextWindow.h"
 #include "ICommandExecutor.h"
 #include "UsersHandler.h"
 #include "Command.h"
 #include "Base64.h"
+#include <memory>
 
 namespace GUI
 {
@@ -16,6 +18,7 @@ namespace GUI
 			Colours _background, Colours _window, Colours _border);
 
 		void open_editor(const Memory::FullPath& path, const std::string& data);
+		void open_image(const std::string& name, const std::string& data);
 
 	private:
 		const size_t c_full_tab_size_divider = 2;
@@ -36,8 +39,7 @@ namespace GUI
 		Commands::ICommandExecutor& m_core;
 		Commands::UsersHandler& m_users_handler;
 
-		TerminalWindow m_terminal;
-		std::vector<TextEditorWindow> m_text_editors;
+		std::vector<std::unique_ptr<BaseWindow>> m_windows;
 		size_t m_current_window = 0;
 
 		size_t m_tabs_from = 0;
