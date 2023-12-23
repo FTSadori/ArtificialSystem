@@ -143,6 +143,7 @@
     <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="GUIHandler.cpp" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
+    <ClCompile Include="ImageTextWindow.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MemoryCreateOption.h" />
     <ClCompile Include="NameExceptions.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="UsersHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ImageTextWindow.h" />
     <ClInclude Include="Colours.h" />
     <ClInclude Include="CommandExecutor.h" />
     <ClInclude Include="AbstractControllerOption.h" />

@@ -118,6 +118,9 @@
     <Filter Include="Исходные файлы\Core\GUI\Windows\TextEditor">
       <UniqueIdentifier>{bbec48c7-da4a-4567-a0dd-e44714aedb91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Windows\Image">
+      <UniqueIdentifier>{6784a76b-0192-48e2-8629-b67cb0a0db21}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -195,9 +198,6 @@
     <ClCompile Include="ScreenText.cpp">
       <Filter>Исходные файлы\Core\GUI\Text</Filter>
     </ClCompile>
-    <ClCompile Include="BaseWindow.cpp">
-      <Filter>Исходные файлы\Core\GUI\Windows\Base</Filter>
-    </ClCompile>
     <ClCompile Include="TerminalWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Windows\Terminal</Filter>
     </ClCompile>
@@ -215,6 +215,12 @@
     </ClCompile>
     <ClCompile Include="UserExceptions.h">
       <Filter>Исходные файлы\Core\Commands\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseWindow.cpp">
+      <Filter>Исходные файлы\Core\GUI\Windows\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageTextWindow.cpp">
+      <Filter>Исходные файлы\Core\GUI\Windows\Image</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -358,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="Parser.h">
       <Filter>Исходные файлы\Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageTextWindow.h">
+      <Filter>Исходные файлы\Core\GUI\Windows\Image</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
