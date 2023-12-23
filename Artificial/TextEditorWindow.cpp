@@ -50,6 +50,7 @@ namespace GUI
 
 	void TextEditorWindow::on_printable(SHORT code)
 	{
+		if (m_readonly) return;
 		m_lines[m_line_num] = m_lines[m_line_num].substr(0, m_cursor_in_line)
 			+ CHAR(code)
 			+ m_lines[m_line_num].substr(m_cursor_in_line);
@@ -58,6 +59,7 @@ namespace GUI
 
 	void TextEditorWindow::on_backspace()
 	{
+		if (m_readonly) return;
 		if (m_cursor_in_line == 0 && m_line_num > 0)
 		{
 			m_cursor_in_line = m_lines[m_line_num - 1].size();
@@ -75,6 +77,7 @@ namespace GUI
 
 	void TextEditorWindow::on_enter()
 	{
+		if (m_readonly) return;
 		m_lines.insert(m_lines.begin() + m_line_num + 1, m_lines[m_line_num].substr(m_cursor_in_line));
 		m_lines[m_line_num] = m_lines[m_line_num].substr(0, m_cursor_in_line);
 		next_line_num();
@@ -151,5 +154,10 @@ namespace GUI
 	std::string TextEditorWindow::get_text()
 	{
 		return Separator::join(m_lines, '\n');
+	}
+	
+	void TextEditorWindow::set_readonly(bool _readonly)
+	{
+		m_readonly = _readonly;
 	}
 }

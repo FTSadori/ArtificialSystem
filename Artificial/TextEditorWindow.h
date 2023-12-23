@@ -24,9 +24,13 @@ namespace GUI
 		Memory::FullPath get_file_path();
 		std::string get_text();
 
+		void set_readonly(bool _readonly);
+
 	private:
 		void next_line_num();
 		void prev_line_num();
+
+		bool m_readonly = false;
 
 		uint16_t c_max_num_size = 6;
 
