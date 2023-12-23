@@ -2,10 +2,14 @@
 
 namespace GUI
 {
-	TextEditorWindow::TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title)
+	TextEditorWindow::TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title, const std::string& _text)
 	: BaseWindow(_size, _position, _title), m_file_path(_path)
 	{
-		m_lines.push_back("");
+		if (_text == "")
+			m_lines.push_back("");
+		else
+			for (const auto& line : Separator::split(_text, '\n'))
+				m_lines.push_back(line);
 	}
 
 	void TextEditorWindow::render_text()
@@ -159,5 +163,9 @@ namespace GUI
 	void TextEditorWindow::set_readonly(bool _readonly)
 	{
 		m_readonly = _readonly;
+	}
+	bool TextEditorWindow::get_readonly()
+	{
+		return m_readonly;
 	}
 }

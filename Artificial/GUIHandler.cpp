@@ -13,11 +13,12 @@ namespace GUI
 		start_input_thread();
 	}
 
-	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data)
+	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data, bool readonly)
 	{
-		m_windows.emplace_back(new TextEditorWindow(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file()));
+		auto* ptr = new TextEditorWindow(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file(), data);
+		ptr->set_readonly(readonly);
+		m_windows.emplace_back(ptr);
 		m_windows.back()->set_window_colours(m_window, m_border);
-		// todo add data to window
 	}
 
 	void GUIHandler::open_image(const std::string& name, const std::string& data)
@@ -116,7 +117,7 @@ namespace GUI
 
 					TextEditorWindow* te_ptr = dynamic_cast<TextEditorWindow*>(m_windows[m_current_window].get());
 					
-					if (te_ptr)
+					if (te_ptr && !te_ptr->get_readonly())
 					{
 						if ((key.wVirtualKeyCode < 37 || key.wVirtualKeyCode > 40) && !te_ptr->get_title().ends_with("*"))
 						{

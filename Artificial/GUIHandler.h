@@ -17,7 +17,7 @@ namespace GUI
 		GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler,
 			Colours _background, Colours _window, Colours _border);
 
-		void open_editor(const Memory::FullPath& path, const std::string& data);
+		void open_editor(const Memory::FullPath& path, const std::string& data, bool readonly);
 		void open_image(const std::string& name, const std::string& data);
 
 	private:

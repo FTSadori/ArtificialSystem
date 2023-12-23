@@ -9,8 +9,8 @@ namespace GUI
 	class TextEditorWindow final : public BaseWindow
 	{
 	public:
-		TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title = "Window");
-
+		TextEditorWindow(const Memory::FullPath& _path, Size _size, ScreenPoint _position, const std::string& _title = "Window", const std::string& _text = "");
+		
 		virtual void render_text() override;
 
 		virtual void on_printable(SHORT code) override;
@@ -25,6 +25,7 @@ namespace GUI
 		std::string get_text();
 
 		void set_readonly(bool _readonly);
+		bool get_readonly();
 
 	private:
 		void next_line_num();
