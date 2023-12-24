@@ -75,4 +75,10 @@ namespace Memory
 		get_disk(_src.mark()).remove(_src.disk_path(), system);
 	}
 
+	FullPath DiskSystem::get_start_path()
+	{
+		std::string first_mark = m_disks.begin()->first;
+		return FullPath(first_mark + FullPath::c_disk_div + DiskPath::c_div);
+	}
+
 }
