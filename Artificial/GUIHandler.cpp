@@ -29,6 +29,14 @@ namespace GUI
 		ptr->set_text(data);
 	}
 
+	void GUIHandler::change_colours(Colours _background, Colours _window, Colours _border)
+	{
+		m_background = _background;
+		m_window = _window;
+		m_border = _border;
+		rerender();
+	}
+
 	void GUIHandler::rerender()
 	{
 		ConsoleWindow::fill_screen(m_background);

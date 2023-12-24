@@ -19,7 +19,7 @@ namespace GUI
 
 		void open_editor(const Memory::FullPath& path, const std::string& data, bool readonly);
 		void open_image(const std::string& name, const std::string& data);
-		void rerender();
+		void change_colours(Colours _background, Colours _window, Colours _border);
 
 		TerminalWindow* get_terminal_ptr();
 
@@ -60,6 +60,7 @@ namespace GUI
 
 		void start_input_thread();
 		void start_resize_thread();
+		void rerender();
 		void render(size_t window_num);
 		void render_header(Size window_size, size_t window_num);
 		void render_header_background(Size window_size);
