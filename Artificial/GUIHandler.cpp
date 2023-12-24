@@ -29,6 +29,18 @@ namespace GUI
 		ptr->set_text(data);
 	}
 
+	void GUIHandler::rerender()
+	{
+		ConsoleWindow::fill_screen(m_background);
+		{
+			std::lock_guard lock(m_window_size_mutex);
+			m_window_size = ConsoleWindow::get_console_size();
+		}
+		set_size_to_all(get_windows_size(m_window_size));
+		render(m_current_window);
+		ConsoleWindow::set_cursor_visibility(false);
+	}
+
 	TerminalWindow* GUIHandler::get_terminal_ptr()
 	{
 		return dynamic_cast<TerminalWindow*>(m_windows[0].get());
@@ -145,14 +157,7 @@ namespace GUI
 				Size new_size = ConsoleWindow::get_console_size();
 				if (m_window_size != new_size)
 				{
-					ConsoleWindow::fill_screen(m_background);
-					{
-						std::lock_guard lock(m_window_size_mutex);
-						m_window_size = ConsoleWindow::get_console_size();
-					}
-					set_size_to_all(get_windows_size(m_window_size));
-					render(m_current_window);
-					ConsoleWindow::set_cursor_visibility(false);
+					rerender();
 				}
 			}
 		});

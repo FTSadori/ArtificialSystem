@@ -222,6 +222,9 @@
     <ClCompile Include="ImageTextWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Windows\Image</Filter>
     </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">

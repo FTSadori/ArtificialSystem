@@ -19,6 +19,7 @@ namespace GUI
 
 		void open_editor(const Memory::FullPath& path, const std::string& data, bool readonly);
 		void open_image(const std::string& name, const std::string& data);
+		void rerender();
 
 		TerminalWindow* get_terminal_ptr();
 

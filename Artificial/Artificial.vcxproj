@@ -134,6 +134,7 @@
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleInputHandler.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
+    <ClCompile Include="Core.cpp" />
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
     <ClCompile Include="DiskFileManager.cpp" />
