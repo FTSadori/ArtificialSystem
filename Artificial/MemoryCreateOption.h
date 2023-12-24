@@ -17,8 +17,8 @@ namespace Commands
 	class MemoryCreateOption final : public AbstractControllerOption
 	{
 	public:
-		MemoryCreateOption(Memory::DiskSystem& _system, ICommandExecutor& _core)
-			: m_system(_system), AbstractControllerOption(_core) {}
+		MemoryCreateOption(Memory::DiskSystem& _system, ICommandExecutor& _core, GUI::GUIHandler& _gui)
+			: m_system(_system), AbstractControllerOption(_core, _gui) {}
 
 		virtual std::string execute(const ICommand& _command, const User& sender) override
 		{
@@ -46,7 +46,7 @@ namespace Commands
 				{
 					uint8_t rp = Parser::from_string<uint8_t>(_command.get(flag));
 					if (link < rp)
-						link = std::min(rp, sender.lvl());
+						link = min(rp, sender.lvl());
 				}
 			}
 
