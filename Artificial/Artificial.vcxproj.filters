@@ -121,6 +121,12 @@
     <Filter Include="Исходные файлы\Core\GUI\Windows\Image">
       <UniqueIdentifier>{6784a76b-0192-48e2-8629-b67cb0a0db21}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\GUI\Base\ThemesHandler">
+      <UniqueIdentifier>{4951b59a-9ebc-4803-9afd-85b9957defea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Core">
+      <UniqueIdentifier>{e320bd9a-d25a-4874-bd11-b9f3b50d22d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -222,8 +228,11 @@
     <ClCompile Include="ImageTextWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Windows\Image</Filter>
     </ClCompile>
+    <ClCompile Include="ColoursThemesHandler.cpp">
+      <Filter>Исходные файлы\Core\GUI\Base\ThemesHandler</Filter>
+    </ClCompile>
     <ClCompile Include="Core.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\Core\Commands\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -311,9 +320,6 @@
     <ClInclude Include="SystemUser.h">
       <Filter>Исходные файлы\Core\Commands\Senders</Filter>
     </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>Исходные файлы\Core\Commands</Filter>
-    </ClInclude>
     <ClInclude Include="CommandExecutor.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
@@ -372,7 +378,13 @@
       <Filter>Исходные файлы\Core\GUI\Windows\Image</Filter>
     </ClInclude>
     <ClInclude Include="ColourTheme.h">
-      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+      <Filter>Исходные файлы\Core\GUI\Base\ThemesHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="ColoursThemesHandler.h">
+      <Filter>Исходные файлы\Core\GUI\Base\ThemesHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Исходные файлы\Core\Commands\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

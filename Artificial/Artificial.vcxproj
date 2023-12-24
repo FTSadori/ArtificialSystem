@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="BaseException.h" />
+    <ClCompile Include="ColoursThemesHandler.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleInputHandler.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="UsersHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ColoursThemesHandler.h" />
     <ClInclude Include="ColourTheme.h" />
     <ClInclude Include="ImageTextWindow.h" />
     <ClInclude Include="Colours.h" />
