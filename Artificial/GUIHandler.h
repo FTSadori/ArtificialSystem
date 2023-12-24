@@ -20,6 +20,8 @@ namespace GUI
 		void open_editor(const Memory::FullPath& path, const std::string& data, bool readonly);
 		void open_image(const std::string& name, const std::string& data);
 
+		TerminalWindow* get_terminal_ptr();
+
 	private:
 		const size_t c_full_tab_size_divider = 2;
 		const size_t c_mini_tab_size_divider = 6;

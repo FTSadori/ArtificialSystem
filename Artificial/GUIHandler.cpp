@@ -28,6 +28,11 @@ namespace GUI
 		ImageTextWindow* ptr = dynamic_cast<ImageTextWindow*>(m_windows.back().get());
 		ptr->set_text(data);
 	}
+
+	TerminalWindow* GUIHandler::get_terminal_ptr()
+	{
+		return dynamic_cast<TerminalWindow*>(m_windows[0].get());
+	}
 	
 	ScreenPoint GUIHandler::get_windows_start()
 	{
