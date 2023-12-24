@@ -13,7 +13,7 @@ namespace Commands
 		hash_t pass_hash;
 	};
 
-	class UsersHandler final
+	class UsersHandler final // todo review code, add load from file
 	{
 	public:
 		UsersHandler() = default;
