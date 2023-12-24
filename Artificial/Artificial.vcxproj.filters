@@ -371,6 +371,9 @@
     <ClInclude Include="ImageTextWindow.h">
       <Filter>Исходные файлы\Core\GUI\Windows\Image</Filter>
     </ClInclude>
+    <ClInclude Include="ColourTheme.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

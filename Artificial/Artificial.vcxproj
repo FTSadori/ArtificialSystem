@@ -165,6 +165,7 @@
     <ClCompile Include="UsersHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ColourTheme.h" />
     <ClInclude Include="ImageTextWindow.h" />
     <ClInclude Include="Colours.h" />
     <ClInclude Include="CommandExecutor.h" />
