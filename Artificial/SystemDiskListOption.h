@@ -27,7 +27,7 @@ namespace Commands
 				throw PermissionException("(SystemDiskListOption) Sender has low permission lvl");
 			
 			if (m_core.memory_info().disks_info.empty())
-				ptr->print_main("DiskSystemInfo is empty now\n");
+				ptr->print_main("DiskSystemInfo is empty\n");
 			else
 			{
 				size_t i = 0;
