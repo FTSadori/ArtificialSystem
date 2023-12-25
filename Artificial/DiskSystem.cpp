@@ -5,6 +5,13 @@ namespace Memory
 {
 	DiskSystem::DiskSystem(const DiskSystemInfo& _info)
 	{
+		load(_info);
+	}
+
+	void DiskSystem::load(const DiskSystemInfo& _info)
+	{
+		m_disks.clear();
+
 		if (!std::filesystem::exists("Inner"))
 		{
 			std::filesystem::create_directory("Inner");

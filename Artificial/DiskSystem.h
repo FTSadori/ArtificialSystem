@@ -11,9 +11,11 @@ namespace Memory
 	class DiskSystem final
 	{
 	public:
-		
+		DiskSystem() = default;
 		DiskSystem(const DiskSystemInfo& _info);
 		
+		void load(const DiskSystemInfo& _info);
+
 		static DiskSystemInfo try_load_boot();
 		
 		DiskFileManager& get_disk(const std::string& _mark);
