@@ -13,7 +13,7 @@ namespace Commands
 	void UsersHandler::add_user(const std::string& name, User user, hash_t pass_hash)
 	{
 		if (m_users.contains(name))
-			throw UserNameAlreadyExistsException("(UsersHanler::add_user) Name " + name + " already exists");
+			throw UserNameAlreadyExistsException("(UsersHandler::add_user) Name " + name + " already exists");
 		m_users.emplace(name, UserPassword{ user, pass_hash });
 		if (m_users.size() == 1)
 			m_current_user = m_users.begin()->second.user;
@@ -35,5 +35,9 @@ namespace Commands
 			throw WrongUserPasswordException("(UsersHandler::try_change_user) Wrong password to user " + name);
 		
 		m_current_user = m_users[name].user;
+	}
+	const std::unordered_map<std::string, UserPassword>& UsersHandler::get_map()
+	{
+		return m_users;
 	}
 }
