@@ -1,17 +1,16 @@
 #pragma once
 #include "BaseController.h"
 #include "SystemCreationStartOption.h"
-#include "UsersHandler.h"
 
 namespace Commands
 {
 	class SystemOptionsLoader final
 	{
 	public:
-		static BaseController Load(ICommandExecutor& core, GUI::GUIHandler& gui, Memory::DiskSystem& system, UsersHandler& users)
+		static BaseController Load(ICore& core)
 		{
 			BaseController controller;
-			controller.add_option("syscreateinfo", std::make_unique<SystemCreationStartOption>(core, gui));
+			controller.add_option("syscreateinfo", std::make_unique<SystemCreationStartOption>(core));
 			return controller;
 		}
 	};

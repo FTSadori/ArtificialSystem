@@ -4,6 +4,7 @@
 #include "CommandExceptions.h"
 #include "Parser.h"
 #include "Command.h"
+#include "ICore.h"
 #include <map>
 
 namespace Commands
@@ -17,14 +18,14 @@ namespace Commands
 	class MemoryCreateOption final : public AbstractControllerOption
 	{
 	public:
-		MemoryCreateOption(Memory::DiskSystem& _system, ICommandExecutor& _core, GUI::GUIHandler& _gui)
-			: m_system(_system), AbstractControllerOption(_core, _gui) {}
+		MemoryCreateOption(ICore& _core)
+			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
 		{
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
-			auto& disk = m_system.get_disk(path.mark());
+			auto& disk = m_core.memory().get_disk(path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.sudo()).permissions;
 			uint8_t need = perm.write_perm_lvl;
 
@@ -72,8 +73,5 @@ namespace Commands
 
 			return;
 		}
-	
-	private:
-		Memory::DiskSystem& m_system;
 	};
 }

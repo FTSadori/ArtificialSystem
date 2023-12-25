@@ -171,7 +171,6 @@
     <ClInclude Include="ColourTheme.h" />
     <ClInclude Include="ImageTextWindow.h" />
     <ClInclude Include="Colours.h" />
-    <ClInclude Include="CommandExecutor.h" />
     <ClInclude Include="AbstractControllerOption.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="Command.h" />

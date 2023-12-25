@@ -1,10 +1,6 @@
 #pragma once
 #include "AbstractControllerOption.h"
-#include "RelativePathCreator.h"
 #include "CommandExceptions.h"
-#include "Parser.h"
-#include "Command.h"
-#include <map>
 
 namespace Commands
 {
@@ -12,12 +8,12 @@ namespace Commands
 	class SystemCreationStartOption final : public AbstractControllerOption
 	{
 	public:
-		SystemCreationStartOption(ICommandExecutor& _core, GUI::GUIHandler& _gui)
-			: AbstractControllerOption(_core, _gui) {}
+		SystemCreationStartOption(ICore& _core)
+			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
 		{
-			auto ptr = m_gui.get_terminal_ptr();
+			auto ptr = m_core.gui().get_terminal_ptr();
 
 			if (_command.has("::help"))
 			{
