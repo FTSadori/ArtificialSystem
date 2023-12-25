@@ -246,6 +246,9 @@
     <ClCompile Include="Core.cpp">
       <Filter>Исходные файлы\Core\Commands\Core</Filter>
     </ClCompile>
+    <ClCompile Include="SystemDiskListOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -403,6 +406,9 @@
     </ClInclude>
     <ClInclude Include="ICore.h">
       <Filter>Исходные файлы\Core\Commands\Core\BaseCore</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDiskClearOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

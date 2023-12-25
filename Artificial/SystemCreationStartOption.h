@@ -32,7 +32,7 @@ namespace Commands
 			ptr->print_main("Use next commands:\n");
 			ptr->print_secondary("- diskadd {mark} {capacity} {max_sec_num} [::main]");
 			ptr->print_main(" - add new disk partition\n");
-			ptr->print_secondary("- diskclear {mark}");
+			ptr->print_secondary("- diskclear");
 			ptr->print_main(" - clear partition info\n");
 			ptr->print_secondary("- disklist");
 			ptr->print_main(" - show partition info\n");
@@ -45,9 +45,9 @@ namespace Commands
 			ptr->print_main(" - show users info\n");
 
 			ptr->print_secondary("- startsystem");
-			ptr->print_main(" - end preparation\n\n");
+			ptr->print_main(" - end preparation\n");
 
-			ptr->print_main("Use ::help flag in any command to see more information about it.\n");
+			ptr->print_main("Use ::help flag in any command to see more information about it.\n\n");
 
 			return;
 		}
