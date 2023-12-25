@@ -20,18 +20,20 @@ namespace Commands
 		MemoryCreateOption(Memory::DiskSystem& _system, ICommandExecutor& _core, GUI::GUIHandler& _gui)
 			: m_system(_system), AbstractControllerOption(_core, _gui) {}
 
-		virtual std::string execute(const ICommand& _command, const User& sender) override
+		virtual void execute(const ICommand& _command, const User& sender) override
 		{
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
 			auto& disk = m_system.get_disk(path.mark());
-			uint8_t need = disk.get_info(path.disk_path(), sender.sudo()).permissions.write_perm_lvl;
+			auto perm = disk.get_info(path.disk_path(), sender.sudo()).permissions;
+			uint8_t need = perm.write_perm_lvl;
 
 			if (need > sender.lvl())
 				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
 
-			send(Command(path.full_dir_name() + " checkpassword"));
-
+			if (perm.password_hash != 0)
+				m_core.execute(Command(path.full_dir_name() + " checkpassword " + Parser::to_string(perm.password_hash)), sender);
+			
 			auto dir_perm = disk.get_info(path.disk_path().dir(), sender.sudo()).permissions;
 
 			std::map<std::string, uint8_t&> perm_map = { 
@@ -68,7 +70,7 @@ namespace Commands
 			else
 				disk.create(path.disk_path(), dir_perm, Memory::FileT::FILE, system_file);
 
-			return "";
+			return;
 		}
 	
 	private:

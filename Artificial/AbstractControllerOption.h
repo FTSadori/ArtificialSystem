@@ -14,12 +14,7 @@ namespace Commands
 		AbstractControllerOption(ICommandExecutor& _core, GUI::GUIHandler& _gui)
 			: m_core(_core), m_gui(_gui) {}
 
-		virtual std::string execute(const ICommand& command, const User& sender) = 0;
-		
-		virtual std::string send(const ICommand& command)
-		{
-			return m_core.execute(command, SystemUser());
-		}
+		virtual void execute(const ICommand& command, const User& sender) = 0;
 
 		virtual ~AbstractControllerOption() = default;
 

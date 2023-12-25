@@ -14,7 +14,7 @@ namespace Commands
 			m_controllers.emplace_back(controller);
 		}
 
-		virtual std::string execute(const ICommand& command, const User& sender) override
+		virtual void execute(const ICommand& command, const User& sender) override
 		{
 			std::lock_guard lock(m_execution_mutex);
 			for (auto& controller : m_controllers)

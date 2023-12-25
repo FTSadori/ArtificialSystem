@@ -18,7 +18,7 @@ namespace Commands
 			m_options.emplace(name, option.release());
 		}
 
-		virtual std::string execute(const ICommand& command, const User& sender)
+		virtual void execute(const ICommand& command, const User& sender)
 		{
 			return m_options.at(command.get("name"))->execute(command, sender);
 		}

@@ -15,12 +15,19 @@ namespace Commands
 		SystemCreationStartOption(ICommandExecutor& _core, GUI::GUIHandler& _gui)
 			: AbstractControllerOption(_core, _gui) {}
 
-		virtual std::string execute(const ICommand& _command, const User& sender) override
+		virtual void execute(const ICommand& _command, const User& sender) override
 		{
+			auto ptr = m_gui.get_terminal_ptr();
+
+			if (_command.has("::help"))
+			{
+				ptr->print_main("AMOGUS\n");
+				return;
+			}
+
 			if (sender.lvl() < 255)
 				throw PermissionException("(SystemCreationStartOption) Sender has low permission lvl");
 
-			auto ptr = m_gui.get_terminal_ptr();
 			ptr->print_secondary("=============================\n");
 			ptr->print_secondary("WELCOME TO ARTIFICIAL SYSTEM!\n");
 			ptr->print_secondary("=============================\n");
@@ -39,9 +46,14 @@ namespace Commands
 			ptr->print_third("- userclear {name}");
 			ptr->print_main(" - clear user by name\n");
 			ptr->print_third("- userlist {name}");
-			ptr->print_main(" - show users info\n\n");
+			ptr->print_main(" - show users info\n");
 
-			return "";
+			ptr->print_secondary("- startsystem");
+			ptr->print_main(" - end preparation\n\n");
+
+			ptr->print_main("Use ::help flag in any command to see more information about it.\n");
+
+			return;
 		}
 	};
 }
