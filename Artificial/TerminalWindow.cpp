@@ -84,8 +84,21 @@ namespace GUI
 	void TerminalWindow::on_enter()
 	{
 		m_cursor_in_input = 0;
-		m_buffer.push_back(m_last_input);
-		m_text_parts.emplace_back(m_buffer.back() + '\n', m_main);
+		
+		switch (m_current_input_type)
+		{
+		case TerminalInputType::COMMAND:
+			m_buffer.push_back(m_last_input); // no break
+		case TerminalInputType::TEXT:
+			m_text_parts.emplace_back(m_last_input + '\n', m_main);
+			break;
+		case TerminalInputType::PASSWORD:
+			m_text_parts.emplace_back(std::string(m_last_input.size(), '*') + '\n', m_main);
+			break;
+		default:
+			break;
+		}
+
 		m_command_line = m_buffer.size();
 		m_entered = true;
 		m_caninput = false;
