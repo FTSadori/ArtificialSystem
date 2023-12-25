@@ -305,7 +305,7 @@
     <ClInclude Include="ICommand.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractController.h">
+    <ClInclude Include="BaseController.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="MemoryOptionsLoader.h">
@@ -320,7 +320,7 @@
     <ClInclude Include="ICommandExecutor.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="BaseControllerOption.h">
+    <ClInclude Include="AbstractControllerOption.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="SystemUser.h">
@@ -391,6 +391,12 @@
     </ClInclude>
     <ClInclude Include="Core.h">
       <Filter>Исходные файлы\Core\Commands\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemCreationStartOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
