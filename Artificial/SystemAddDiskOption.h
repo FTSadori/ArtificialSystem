@@ -5,11 +5,11 @@
 
 namespace Commands
 {
-	// diskadd {mark} {capacity} {max_sec_num} [::main]
-	class SystemDiskAddOption final : public AbstractControllerOption
+	// adddisk {mark} {capacity} {max_sec_num} [::main]
+	class SystemAddDiskOption final : public AbstractControllerOption
 	{
 	public:
-		SystemDiskAddOption(ICore& _core)
+		SystemAddDiskOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -20,7 +20,7 @@ namespace Commands
 			{
 				ptr->print_main("255 permission lvl needed\n");
 				ptr->print_main("Adds disk info to DiskSystemInfo.\n");
-				ptr->print_secondary("diskadd {mark} {capacity} {max_seg_num} [::main]\n");
+				ptr->print_secondary("adddisk {mark} {capacity} {max_seg_num} [::main]\n");
 				ptr->print_main("  mark - (string) new disk mark;\n");
 				ptr->print_main("  capacity - (integer) disk capacity in bytes;\n");
 				ptr->print_main("  max_sec_num - (integer) max number of sectors files;\n");
@@ -30,7 +30,7 @@ namespace Commands
 			}
 
 			if (sender.lvl() < 255)
-				throw PermissionException("(SystemDiskAddOption) Sender has low permission lvl");
+				throw PermissionException("(SystemAddDiskOption) Sender has low permission lvl");
 
 			m_core.memory_info().disks_info.emplace_back(_command.get("1"),
 				Memory::DiskInfo(

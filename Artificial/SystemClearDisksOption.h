@@ -5,11 +5,11 @@
 
 namespace Commands
 {
-	// diskclear
-	class SystemDiskClearOption final : public AbstractControllerOption
+	// cleardisks
+	class SystemClearDisksOption final : public AbstractControllerOption
 	{
 	public:
-		SystemDiskClearOption(ICore& _core)
+		SystemClearDisksOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -20,12 +20,12 @@ namespace Commands
 			{
 				ptr->print_main("255 permission lvl needed\n");
 				ptr->print_main("Clears DiskSystemInfo.\n");
-				
+
 				return;
 			}
 
 			if (sender.lvl() < 255)
-				throw PermissionException("(SystemDiskClearOption) Sender has low permission lvl");
+				throw PermissionException("(SystemClearDiskOption) Sender has low permission lvl");
 
 			m_core.memory_info().disks_info.clear();
 			ptr->print_main("DiskSystemInfo is now empty.\n");

@@ -30,18 +30,18 @@ namespace Commands
 			ptr->print_main("Now you should start setting up you future system.\n");
 			
 			ptr->print_main("Use next commands:\n");
-			ptr->print_secondary("- diskadd {mark} {capacity} {max_sec_num} [::main]");
+			ptr->print_secondary("- adddisk {mark} {capacity} {max_sec_num} [::main]");
 			ptr->print_main(" - add new disk partition\n");
-			ptr->print_secondary("- diskclear");
+			ptr->print_secondary("- cleardisks");
 			ptr->print_main(" - clear partition info\n");
 			ptr->print_secondary("- disklist");
 			ptr->print_main(" - show partition info\n");
 
-			ptr->print_third("- useradd {name} {lvl} [:p password] [::root]");
+			ptr->print_third("- adduser {name} {lvl} [:p password] [::root]");
 			ptr->print_main(" - add new user\n");
-			ptr->print_third("- userclear {name}");
+			ptr->print_third("- clearuser {name}");
 			ptr->print_main(" - clear user by name\n");
-			ptr->print_third("- userlist {name}");
+			ptr->print_third("- userlist");
 			ptr->print_main(" - show users info\n");
 
 			ptr->print_secondary("- startsystem");
