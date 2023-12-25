@@ -139,6 +139,12 @@
     <Filter Include="Исходные файлы\Core\Commands\Core\BaseCore">
       <UniqueIdentifier>{9d40fa7e-430b-46c7-a689-9230adc53324}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Users">
+      <UniqueIdentifier>{a9405338-1fad-4701-85dd-91cfd97893a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Users\Options">
+      <UniqueIdentifier>{424a6c08-90cc-4f3f-9291-4d16d6692e78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -248,6 +254,9 @@
     </ClCompile>
     <ClCompile Include="SystemDiskListOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="UserListOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -401,14 +410,23 @@
     <ClInclude Include="SystemCreationStartOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
-    <ClInclude Include="SystemDiskAddOption.h">
+    <ClInclude Include="SystemAddDiskOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
     <ClInclude Include="ICore.h">
       <Filter>Исходные файлы\Core\Commands\Core\BaseCore</Filter>
     </ClInclude>
-    <ClInclude Include="SystemDiskClearOption.h">
+    <ClInclude Include="SystemClearDisksOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Users</Filter>
+    </ClInclude>
+    <ClInclude Include="AddUserOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeUserOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

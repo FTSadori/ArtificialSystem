@@ -165,6 +165,7 @@
     <ClCompile Include="TextEditorWindow.cpp" />
     <ClCompile Include="UserExceptions.h" />
     <ClCompile Include="UsersHandler.cpp" />
+    <ClCompile Include="UserListOption.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ICore.h" />
@@ -192,10 +193,12 @@
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
-    <ClInclude Include="SystemDiskAddOption.h" />
-    <ClInclude Include="SystemDiskClearOption.h" />
+    <ClInclude Include="SystemAddDiskOption.h" />
+    <ClInclude Include="SystemClearDisksOption.h" />
     <ClInclude Include="SystemOptionsLoader.h" />
     <ClInclude Include="User.h" />
+    <ClInclude Include="AddUserOption.h" />
+    <ClInclude Include="ChangeUserOption.h" />
     <ClInclude Include="UsersHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
@@ -220,6 +223,7 @@
     <ClInclude Include="TextEditorWindow.h" />
     <ClInclude Include="TextInfo.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="UsersOptionsLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h" />
