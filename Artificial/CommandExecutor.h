@@ -16,6 +16,7 @@ namespace Commands
 
 		virtual std::string execute(const ICommand& command, const User& sender) override
 		{
+			std::lock_guard lock(m_execution_mutex);
 			for (auto& controller : m_controllers)
 			{
 				if (controller.has_option(command.get("name")))
@@ -26,5 +27,6 @@ namespace Commands
 
 	protected:
 		std::vector<BaseController> m_controllers;
+		std::mutex m_execution_mutex;
 	};
 }
