@@ -25,7 +25,7 @@ namespace Commands
 			}
 
 			if (sender.lvl() < 255)
-				throw PermissionException("(SystemClearDiskOption) Sender has low permission lvl");
+				throw PermissionException("(SystemClearDisksOption) Sender has low permission lvl");
 
 			m_core.memory_info().disks_info.clear();
 			ptr->print_main("DiskSystemInfo is now empty.\n");
