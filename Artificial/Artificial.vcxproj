@@ -171,7 +171,7 @@
     <ClInclude Include="ImageTextWindow.h" />
     <ClInclude Include="Colours.h" />
     <ClInclude Include="CommandExecutor.h" />
-    <ClInclude Include="AbstractControllerOption.h" />
+    <ClInclude Include="BaseControllerOption.h" />
     <ClInclude Include="Base64.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="ConsoleInputHandler.h" />
@@ -194,10 +194,9 @@
     <ClInclude Include="UsersHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />
-    <ClInclude Include="IController.h" />
+    <ClInclude Include="AbstractController.h" />
     <ClInclude Include="ICommandExecutor.h" />
     <ClInclude Include="ILoadable.h" />
-    <ClInclude Include="MemoryController.h" />
     <ClInclude Include="MemoryOptionsLoader.h" />
     <ClInclude Include="NameValidator.h" />
     <ClInclude Include="DiskPath.h" />

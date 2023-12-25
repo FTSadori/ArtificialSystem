@@ -1,5 +1,5 @@
 #pragma once
-#include "AbstractControllerOption.h"
+#include "BaseControllerOption.h"
 #include "RelativePathCreator.h"
 #include "CommandExceptions.h"
 #include "Parser.h"
@@ -14,11 +14,11 @@ namespace Commands
 	// ::h - hidden
 	// :p "password" - set password
 	// :rp :wp :ep - read, write and execute permissions
-	class MemoryCreateOption final : public AbstractControllerOption
+	class MemoryCreateOption final : public BaseControllerOption
 	{
 	public:
 		MemoryCreateOption(Memory::DiskSystem& _system, ICommandExecutor& _core, GUI::GUIHandler& _gui)
-			: m_system(_system), AbstractControllerOption(_core, _gui) {}
+			: m_system(_system), BaseControllerOption(_core, _gui) {}
 
 		virtual std::string execute(const ICommand& _command, const User& sender) override
 		{

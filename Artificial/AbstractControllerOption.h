@@ -23,7 +23,7 @@ namespace Commands
 
 		virtual ~AbstractControllerOption() = default;
 
-	private:
+	protected:
 		ICommandExecutor& m_core;
 		GUI::GUIHandler& m_gui;
 	};

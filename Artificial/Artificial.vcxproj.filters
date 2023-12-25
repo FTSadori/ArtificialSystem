@@ -73,12 +73,6 @@
     <Filter Include="Исходные файлы\Core\Commands\Base">
       <UniqueIdentifier>{97d522a5-fa53-45e6-a64f-65d7ba2685ec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Commands\Memory">
-      <UniqueIdentifier>{207e9839-2923-403b-88d0-2fef03047930}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Commands\Memory\Options">
-      <UniqueIdentifier>{686ff51e-9471-4bb2-ac5b-b4a164972ae5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Core\Commands\Command">
       <UniqueIdentifier>{f51483bf-143a-4bba-ab77-814a4160cc5d}</UniqueIdentifier>
     </Filter>
@@ -126,6 +120,21 @@
     </Filter>
     <Filter Include="Исходные файлы\Core\Commands\Core">
       <UniqueIdentifier>{e320bd9a-d25a-4874-bd11-b9f3b50d22d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options">
+      <UniqueIdentifier>{ab065a78-1b82-4071-90a3-f418ddf4acde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Memory">
+      <UniqueIdentifier>{207e9839-2923-403b-88d0-2fef03047930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Memory\Options">
+      <UniqueIdentifier>{686ff51e-9471-4bb2-ac5b-b4a164972ae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\SystemCreation">
+      <UniqueIdentifier>{8b65cfe8-de2c-41c3-937e-4a2b71ad74d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\SystemCreation\Options">
+      <UniqueIdentifier>{83915d98-7c70-4d38-be97-1f51be0fc395}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -193,7 +202,7 @@
       <Filter>Исходные файлы\Core\Base</Filter>
     </ClCompile>
     <ClCompile Include="MemoryCreateOption.h">
-      <Filter>Исходные файлы\Core\Commands\Memory\Options</Filter>
+      <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleWindow.cpp">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
@@ -296,14 +305,11 @@
     <ClInclude Include="ICommand.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="IController.h">
+    <ClInclude Include="AbstractController.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="MemoryController.h">
-      <Filter>Исходные файлы\Core\Commands\Memory</Filter>
-    </ClInclude>
     <ClInclude Include="MemoryOptionsLoader.h">
-      <Filter>Исходные файлы\Core\Commands\Memory</Filter>
+      <Filter>Исходные файлы\Core\Commands\Options\Memory</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Исходные файлы\Core\Commands\Command</Filter>
@@ -314,7 +320,7 @@
     <ClInclude Include="ICommandExecutor.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="AbstractControllerOption.h">
+    <ClInclude Include="BaseControllerOption.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
     <ClInclude Include="SystemUser.h">

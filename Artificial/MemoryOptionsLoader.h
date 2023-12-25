@@ -1,5 +1,6 @@
 #pragma once
-#include "MemoryController.h"
+#include "AbstractController.h"
+#include "GUIHandler.h"
 #include "MemoryCreateOption.h"
 
 namespace Commands
@@ -7,10 +8,10 @@ namespace Commands
 	class MemoryOptionsLoader final
 	{
 	public:
-		static MemoryController Load(Memory::DiskSystem& system, ICommandExecutor& core)
+		static AbstractController Load(Memory::DiskSystem& system, ICommandExecutor& core, GUI::GUIHandler& gui)
 		{
-			MemoryController controller(system);
-			controller.add_option("mk", std::make_unique<MemoryCreateOption>(system, core));
+			AbstractController controller;
+			controller.add_option("mk", std::make_unique<MemoryCreateOption>(system, core, gui));
 			return controller;
 		}
 	};
