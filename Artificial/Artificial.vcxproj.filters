@@ -428,6 +428,9 @@
     <ClInclude Include="ChangeUserOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
     </ClInclude>
+    <ClInclude Include="DeleteUserOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

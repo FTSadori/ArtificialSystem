@@ -14,4 +14,10 @@ namespace Commands
 		CommandException(const std::string& _message) : Exception(_message) {}
 		CommandException(const char* _message) : Exception(_message) {}
 	};
+
+	struct CannotDeleteCurrentUserException final : public Exception
+	{
+		CannotDeleteCurrentUserException(const std::string& _message) : Exception(_message) {}
+		CannotDeleteCurrentUserException(const char* _message) : Exception(_message) {}
+	};
 }

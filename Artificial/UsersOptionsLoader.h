@@ -3,6 +3,7 @@
 #include "AddUserOption.h"
 #include "ChangeUserOption.h"
 #include "UserListOption.h"
+#include "DeleteUserOption.h"
 
 namespace Commands
 {
@@ -15,6 +16,7 @@ namespace Commands
 			controller.add_option("adduser", std::make_unique<AddUserOption>(core));
 			controller.add_option("userlist", std::make_unique<UserListOption>(core));
 			controller.add_option("changeuser", std::make_unique<ChangeUserOption>(core));
+			controller.add_option("deleteuser", std::make_unique<DeleteUserOption>(core));
 			return controller;
 		}
 	};
