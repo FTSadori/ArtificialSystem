@@ -9,22 +9,22 @@ namespace Commands
 	class CommandExecutor : public ICommandExecutor
 	{
 	public:
-		virtual void add_controller(std::unique_ptr<BaseController>&& controller)
+		virtual void add_controller(const BaseController& controller)
 		{
-			m_controllers.emplace_back(controller.release());
+			m_controllers.emplace_back(controller);
 		}
 
 		virtual std::string execute(const ICommand& command, const User& sender) override
 		{
-			for (const auto& controller : m_controllers)
+			for (auto& controller : m_controllers)
 			{
-				if (controller->has_option(command.get("name")))
-					return controller->execute(command, sender);
+				if (controller.has_option(command.get("name")))
+					return controller.execute(command, sender);
 			}
-			throw CommandException("(CommandExecutor) Unknown command");
+			throw CommandException("(CommandExecutor) Unknown command '" + command.get("name") + "'");
 		}
 
 	protected:
-		std::vector<std::unique_ptr<BaseController>> m_controllers;
+		std::vector<BaseController> m_controllers;
 	};
 }

@@ -2,14 +2,15 @@
 
 namespace GUI
 {
+	GUIHandler::GUIHandler()
+	{
+		init();
+	}
+
 	GUIHandler::GUIHandler(Commands::ICommandExecutor* _core, Commands::UsersHandler* _users_handler, SystemColourTheme theme)
 		: m_core(_core), m_users_handler(_users_handler), m_theme(theme)
 	{
-		m_windows.emplace_back(new TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal"));
-		m_windows[0]->set_window_colours(m_theme.window, m_theme.border);
-
-		start_resize_thread();
-		start_input_thread();
+		init();
 	}
 
 	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data, TextColourTheme theme, bool readonly)
@@ -63,6 +64,15 @@ namespace GUI
 		return dynamic_cast<TerminalWindow*>(m_windows[0].get());
 	}
 	
+	void GUIHandler::init()
+	{
+		m_windows.emplace_back(new TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal"));
+		m_windows[0]->set_window_colours(m_theme.window, m_theme.border);
+
+		start_resize_thread();
+		start_input_thread();
+	}
+
 	ScreenPoint GUIHandler::get_windows_start()
 	{
 		return { SHORT(c_vertical_margin + c_tabs_height), c_horizontal_margin };

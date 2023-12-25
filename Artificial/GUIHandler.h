@@ -15,7 +15,7 @@ namespace GUI
 	class GUIHandler final
 	{
 	public:
-		GUIHandler() = default;
+		GUIHandler();
 		GUIHandler(Commands::ICommandExecutor* _core, Commands::UsersHandler* _users_handler,
 			SystemColourTheme theme);
 
@@ -50,6 +50,8 @@ namespace GUI
 
 		size_t m_tabs_from = 0;
 		size_t m_tabs_to = 0;
+
+		void init();
 
 		ScreenPoint get_windows_start();
 		Size get_windows_size(Size screen_size);
