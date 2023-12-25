@@ -136,6 +136,9 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\SystemCreation\Options">
       <UniqueIdentifier>{83915d98-7c70-4d38-be97-1f51be0fc395}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Core\BaseCore">
+      <UniqueIdentifier>{9d40fa7e-430b-46c7-a689-9230adc53324}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -397,6 +400,12 @@
     </ClInclude>
     <ClInclude Include="SystemCreationStartOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemDiskAddOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ICore.h">
+      <Filter>Исходные файлы\Core\Commands\Core\BaseCore</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

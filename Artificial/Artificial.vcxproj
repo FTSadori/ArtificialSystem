@@ -166,6 +166,7 @@
     <ClCompile Include="UsersHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />
     <ClInclude Include="ColourTheme.h" />
     <ClInclude Include="ImageTextWindow.h" />
@@ -191,6 +192,7 @@
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
+    <ClInclude Include="SystemDiskAddOption.h" />
     <ClInclude Include="SystemOptionsLoader.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UsersHandler.h" />
