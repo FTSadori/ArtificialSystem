@@ -40,4 +40,9 @@ namespace Commands
 	{
 		return m_users;
 	}
+	
+	void UsersHandler::remove_user(const std::string& name)
+	{
+		m_users.erase(name);
+	}
 }

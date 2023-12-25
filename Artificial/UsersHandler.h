@@ -23,6 +23,7 @@ namespace Commands
 		User get_current_user();
 		void try_change_user(const std::string& name, const std::string& pass = "");
 		const std::unordered_map<std::string, UserPassword>& get_map();
+		void remove_user(const std::string& name);
 
 	private:
 		User m_current_user{ "none", false, 0 };
