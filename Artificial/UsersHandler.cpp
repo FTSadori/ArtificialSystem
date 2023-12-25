@@ -15,6 +15,8 @@ namespace Commands
 		if (m_users.contains(name))
 			throw UserNameAlreadyExistsException("(UsersHanler::add_user) Name " + name + " already exists");
 		m_users.emplace(name, UserPassword{ user, pass_hash });
+		if (m_users.size() == 1)
+			m_current_user = m_users.begin()->second.user;
 	}
 
 	User UsersHandler::get_current_user()
