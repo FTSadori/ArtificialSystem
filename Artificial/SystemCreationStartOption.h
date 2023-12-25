@@ -39,8 +39,8 @@ namespace Commands
 
 			ptr->print_third("- adduser {name} {lvl} [:p password] [::root]");
 			ptr->print_main(" - add new user\n");
-			ptr->print_third("- clearuser {name}");
-			ptr->print_main(" - clear user by name\n");
+			ptr->print_third("- deleteuser {name}");
+			ptr->print_main(" - delete user by name\n");
 			ptr->print_third("- userlist");
 			ptr->print_main(" - show users info\n");
 
