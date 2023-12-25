@@ -22,7 +22,7 @@ namespace Commands
 				ptr->print_main("Adds new system user. You should create at least one root user before do startsystem\n");
 				ptr->print_secondary("adduser {name} {lvl} [:p password] [::root]\n");
 				ptr->print_main("  name - (string) new user name;\n");
-				ptr->print_main("  lvl - (integer) new user permission level, needs to be lower or equal to yours and in [0, 255] range;\n");
+				ptr->print_main("  lvl - (integer) new user permission level, needs to be lower or equal to yours and in [0, 254] range;\n");
 				ptr->print_main("  :p \"password\" - (flag + string) password for new user;\n");
 				ptr->print_main("  ::root - (flag) new user will be root if flag enabled;\n");
 
@@ -30,7 +30,7 @@ namespace Commands
 			}
 
 			uint8_t perm_lvl = Parser::from_string<int>(_command.get("2"));
-			if (sender.lvl() < perm_lvl)
+			if (sender.lvl() < perm_lvl || perm_lvl == 255)
 				throw PermissionException("(UserAddOption) Sender has low permission lvl");
 
 			User new_user = User(_command.get("1"), _command.has("::root"), perm_lvl);
