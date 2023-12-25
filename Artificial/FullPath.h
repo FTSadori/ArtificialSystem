@@ -16,7 +16,7 @@ namespace Memory
 		FullPath(const std::string& _mark, const DiskPath& _path);
 		FullPath(const std::string& _path);
 
-		const std::string& full_disk_name() const;
+		const std::string& full_path_str() const;
 		const DiskPath& disk_path() const;
 		const std::string& full_dir_name() const;
 		const std::string& mark() const;
@@ -26,6 +26,6 @@ namespace Memory
 		DiskPath m_path;
 
 		std::string m_full_dir_name;
-		std::string m_full_disk_name;
+		std::string m_full_path_str;
 	};
 }

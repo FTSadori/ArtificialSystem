@@ -14,7 +14,7 @@ namespace Memory
 
 	DiskPath::DiskPath(const std::string& _path)
 	{
-		if (_path == "") // check for root directory
+		if (_path == "" || _path == "\\") // check for root directory
 		{
 			m_full_name = "";
 			m_dir = "";
