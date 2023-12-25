@@ -2,7 +2,7 @@
 
 namespace GUI
 {
-	GUIHandler::GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler, SystemColourTheme theme)
+	GUIHandler::GUIHandler(Commands::ICommandExecutor* _core, Commands::UsersHandler* _users_handler, SystemColourTheme theme)
 		: m_core(_core), m_users_handler(_users_handler), m_theme(theme)
 	{
 		m_windows.emplace_back(new TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal"));
@@ -34,6 +34,16 @@ namespace GUI
 	{
 		m_theme = theme;
 		rerender();
+	}
+
+	void GUIHandler::connect_to_core(Commands::ICommandExecutor* _core)
+	{
+		m_core = _core;
+	}
+
+	void GUIHandler::connect_to_users(Commands::UsersHandler* _users)
+	{
+		m_users_handler = _users;
 	}
 
 	void GUIHandler::rerender()
@@ -102,7 +112,8 @@ namespace GUI
 				+ " "
 				+ text);
 
-			m_core.execute(cmd, m_users_handler.get_current_user());
+			if (m_core && m_users_handler)
+				m_core->execute(cmd, m_users_handler->get_current_user());
 		}
 	}
 

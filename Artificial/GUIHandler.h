@@ -15,12 +15,16 @@ namespace GUI
 	class GUIHandler final
 	{
 	public:
-		GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler,
+		GUIHandler() = default;
+		GUIHandler(Commands::ICommandExecutor* _core, Commands::UsersHandler* _users_handler,
 			SystemColourTheme theme);
 
 		void open_editor(const Memory::FullPath& path, const std::string& data, TextColourTheme theme, bool readonly);
 		void open_image(const std::string& name, const std::string& data, TextColourTheme theme);
 		void change_colours(SystemColourTheme theme);
+
+		void connect_to_core(Commands::ICommandExecutor* _core);
+		void connect_to_users(Commands::UsersHandler* _users);
 
 		TerminalWindow* get_terminal_ptr();
 
@@ -38,8 +42,8 @@ namespace GUI
 		Size m_window_size{ 0, 0 };
 		std::mutex m_window_size_mutex;
 
-		Commands::ICommandExecutor& m_core;
-		Commands::UsersHandler& m_users_handler;
+		Commands::ICommandExecutor* m_core = nullptr;
+		Commands::UsersHandler* m_users_handler = nullptr;
 
 		std::vector<std::unique_ptr<BaseWindow>> m_windows;
 		size_t m_current_window = 0;
