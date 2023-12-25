@@ -26,5 +26,6 @@ namespace Memory
 		FullPath get_start_path();
 	private:
 		std::map<std::string, DiskFileManager> m_disks;
+		std::string m_main_disk;
 	};
 }

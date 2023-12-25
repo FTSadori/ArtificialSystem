@@ -30,7 +30,7 @@ namespace Commands
 			ptr->print_main("Now you should start setting up you future system.\n");
 			
 			ptr->print_main("Use next commands:\n");
-			ptr->print_secondary("- diskadd {mark} {capacity} {max_seg_num} [::main]");
+			ptr->print_secondary("- diskadd {mark} {capacity} {max_sec_num} [::main]");
 			ptr->print_main(" - add new disk partition\n");
 			ptr->print_secondary("- diskclear {mark}");
 			ptr->print_main(" - clear partition info\n");

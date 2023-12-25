@@ -22,6 +22,8 @@ namespace Memory
 		}
 		for (const auto& [mark, info] : _info.disks_info)
 			m_disks.emplace(mark, DiskFileManager("Inner", info.capacity, info.mark, info.max_sec_num));
+
+		m_main_disk = _info.disks_info[_info.main_disk].first;
 	}
 
 	DiskSystemInfo DiskSystem::try_load_boot()
@@ -84,8 +86,6 @@ namespace Memory
 
 	FullPath DiskSystem::get_start_path()
 	{
-		std::string first_mark = m_disks.begin()->first;
-		return FullPath(first_mark + FullPath::c_disk_div + DiskPath::c_div);
+		return FullPath(m_main_disk + FullPath::c_disk_div + DiskPath::c_div);
 	}
-
 }
