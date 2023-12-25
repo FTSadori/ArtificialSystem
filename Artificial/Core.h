@@ -23,5 +23,7 @@ namespace Commands
 		GUI::GUIHandler m_gui;
 		GUI::ColoursThemesHandler m_themes;
 		Memory::DiskSystem m_memory;
+
+		void start_input_thread();
 	};
 }

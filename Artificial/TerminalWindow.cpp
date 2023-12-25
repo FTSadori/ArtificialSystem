@@ -3,7 +3,7 @@
 namespace GUI
 {
 	TerminalWindow::TerminalWindow(const Memory::FullPath& _path, const std::string& _user, Size _size, ScreenPoint _position, const std::string& _title)
-		: BaseWindow(_size, _position, _title), m_path_line(_path.full_disk_name()), m_user(_user)
+		: BaseWindow(_size, _position, _title), m_path_line(_path.full_path_str()), m_user(_user)
 	{
 	}
 
@@ -37,8 +37,6 @@ namespace GUI
 
 	void TerminalWindow::wait_for_input(TerminalInputType type)
 	{
-		if (m_caninput) return;
-	
 		std::unique_lock lock(m_text_mutex);
 		m_caninput = true;
 		m_current_input_type = type;
@@ -53,7 +51,9 @@ namespace GUI
 	{
 		std::lock_guard lock(m_text_mutex);
 		m_entered = false;
-		return m_last_input;
+		std::string input = m_last_input;
+		m_last_input = "";
+		return input;
 	}
 
 	void TerminalWindow::render_text()
@@ -83,12 +83,11 @@ namespace GUI
 	{
 		m_cursor_in_input = 0;
 		m_buffer.push_back(m_last_input);
-		m_last_input = "";
 		m_text_parts.emplace_back(m_buffer.back() + '\n', m_main);
-		start_new_command();
 		m_command_line = m_buffer.size();
 		m_entered = true;
 		m_caninput = false;
+		m_cv.notify_one();
 	}
 
 	void TerminalWindow::on_left()
@@ -106,8 +105,11 @@ namespace GUI
 		if (m_current_input_type == TerminalInputType::COMMAND)
 		{
 			m_command_line = max(1, m_command_line) - 1;
-			m_last_input = m_buffer[m_command_line];
-			m_cursor_in_input = m_last_input.size();
+			if (m_buffer.size() > 0)
+			{
+				m_last_input = m_buffer[m_command_line];
+				m_cursor_in_input = m_last_input.size();
+			}
 		}
 	}
 
@@ -123,7 +125,7 @@ namespace GUI
 
 	void TerminalWindow::set_path(const Memory::FullPath& _path)
 	{
-		m_path_line = _path.full_disk_name();
+		m_path_line = _path.full_path_str();
 	}
 
 	void TerminalWindow::set_user_name(const std::string& _name)
