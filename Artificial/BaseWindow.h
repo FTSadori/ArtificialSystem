@@ -3,6 +3,7 @@
 #include "ScreenText.h"
 #include "ColourTheme.h"
 #include "TextInfo.h"
+#include <mutex>
 
 namespace GUI
 {
@@ -25,7 +26,8 @@ namespace GUI
 		virtual void render_border(Colours _console) const;
 		virtual void render_background() const;
 		virtual void render_text() = 0;
-	
+		virtual void rerender();
+
 		virtual void key_pressed(KEY_EVENT_RECORD key_event);
 		
 		virtual void on_printable(SHORT code) = 0;
@@ -56,5 +58,7 @@ namespace GUI
 
 		std::vector<TextInfo> m_text_parts;
 		size_t m_render_from_line = 0;
+
+		std::mutex m_render_mutex;
 	};
 }

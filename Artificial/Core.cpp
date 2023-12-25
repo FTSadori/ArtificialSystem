@@ -64,6 +64,6 @@ namespace Commands
 			if (controller.has_option(command.get("name")))
 				return controller.execute(command, sender);
 		}
-		throw CommandException("(CommandExecutor) Unknown command '" + command.get("name") + "'");
+		throw CommandException("(Core) Unknown command '" + command.get("name") + "'");
 	}
 }

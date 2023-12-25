@@ -31,8 +31,10 @@ namespace GUI
 	{
 		if (m_caninput) return;
 
-		std::lock_guard lock(m_text_mutex);
-		m_text_parts.emplace_back(line, attributes);
+		{
+			std::lock_guard lock(m_text_mutex);
+			m_text_parts.emplace_back(line, attributes);
+		}
 	}
 
 	void TerminalWindow::wait_for_input(TerminalInputType type)
@@ -169,5 +171,7 @@ namespace GUI
 	{
 		m_text_parts.emplace_back("(" + m_user + ") ", m_third);
 		m_text_parts.emplace_back(m_path_line + " $ ", m_secondary);
+
+		rerender();
 	}
 }

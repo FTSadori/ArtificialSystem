@@ -86,6 +86,13 @@ namespace GUI
 		}
 	}
 
+	void BaseWindow::rerender()
+	{
+		std::lock_guard lock(m_render_mutex);
+		render_background();
+		render_text();
+	}
+
 	void BaseWindow::key_pressed(KEY_EVENT_RECORD key_event)
 	{
 		SHORT code = key_event.uChar.AsciiChar;
@@ -108,7 +115,6 @@ namespace GUI
 			}
 		}
 
-		render_background();
-		render_text();
+		rerender();
 	}
 }
