@@ -1,6 +1,7 @@
 #pragma once
 #include "ConsoleWindow.h"
 #include "ScreenText.h"
+#include "ColourTheme.h"
 #include "TextInfo.h"
 
 namespace GUI
@@ -15,7 +16,7 @@ namespace GUI
 		void set_position(ScreenPoint _position);
 
 		void set_window_colours(Colours _background, Colours _border);
-		void set_text_colours(Colours _main, Colours _secondary, Colours _third);
+		void set_text_colours(TextColourTheme theme);
 		
 		Size get_size() const;
 		const std::string& get_title() const;

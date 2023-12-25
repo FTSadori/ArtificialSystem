@@ -2,44 +2,43 @@
 
 namespace GUI
 {
-	GUIHandler::GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler, Colours _background, Colours _window, Colours _border)
-		: m_core(_core), m_users_handler(_users_handler),
-		m_background(_background), m_window(_window), m_border(_border)
+	GUIHandler::GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler, SystemColourTheme theme)
+		: m_core(_core), m_users_handler(_users_handler), m_theme(theme)
 	{
 		m_windows.emplace_back(new TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal"));
-		m_windows[0]->set_window_colours(m_window, m_border);
+		m_windows[0]->set_window_colours(m_theme.window, m_theme.border);
 
 		start_resize_thread();
 		start_input_thread();
 	}
 
-	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data, bool readonly)
+	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data, TextColourTheme theme, bool readonly)
 	{
 		auto* ptr = new TextEditorWindow(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file(), data);
 		ptr->set_readonly(readonly);
+		ptr->set_text_colours(theme);
 		m_windows.emplace_back(ptr);
-		m_windows.back()->set_window_colours(m_window, m_border);
+		m_windows.back()->set_window_colours(m_theme.window, m_theme.border);
 	}
 
-	void GUIHandler::open_image(const std::string& name, const std::string& data)
+	void GUIHandler::open_image(const std::string& name, const std::string& data, TextColourTheme theme)
 	{
 		m_windows.emplace_back(new ImageTextWindow(get_windows_size(m_window_size), get_windows_start(), name));
-		m_windows.back()->set_window_colours(m_window, m_border);
+		m_windows.back()->set_window_colours(m_theme.window, m_theme.border);
 		ImageTextWindow* ptr = dynamic_cast<ImageTextWindow*>(m_windows.back().get());
 		ptr->set_text(data);
+		ptr->set_text_colours(theme);
 	}
 
-	void GUIHandler::change_colours(Colours _background, Colours _window, Colours _border)
+	void GUIHandler::change_colours(SystemColourTheme theme)
 	{
-		m_background = _background;
-		m_window = _window;
-		m_border = _border;
+		m_theme = theme;
 		rerender();
 	}
 
 	void GUIHandler::rerender()
 	{
-		ConsoleWindow::fill_screen(m_background);
+		ConsoleWindow::fill_screen(m_theme.background);
 		{
 			std::lock_guard lock(m_window_size_mutex);
 			m_window_size = ConsoleWindow::get_console_size();
@@ -227,12 +226,12 @@ namespace GUI
 
 			if (i == window_num)
 			{
-				ConsoleWindow::set_text_colours(TextColours(m_window, m_border));
+				ConsoleWindow::set_text_colours(TextColours(m_theme.window, m_theme.border));
 				std::cout << " " + titles[i] + " ";
 			}
 			else
 			{
-				ConsoleWindow::set_text_colours(TextColours(m_border, m_window));
+				ConsoleWindow::set_text_colours(TextColours(m_theme.border, m_theme.window));
 				ConsoleWindow::set_text_borders(TextBorders(true, false, false, false));
 				std::cout << " ";
 				ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
@@ -250,13 +249,13 @@ namespace GUI
 		size_t window_width = max(double_margin, window_size.columns) - double_margin;
 
 		ConsoleWindow::set_cursor_position({ c_vertical_margin, c_horizontal_margin });
-		ConsoleWindow::set_text_colours(TextColours(m_background, m_background));
+		ConsoleWindow::set_text_colours(TextColours(m_theme.background, m_theme.background));
 		std::cout << std::string(window_width, ' ');
 	}
 
 	void GUIHandler::render_header_border(Size window_size)
 	{
-		ConsoleWindow::set_text_colours(TextColours(m_border, m_background));
+		ConsoleWindow::set_text_colours(TextColours(m_theme.border, m_theme.background));
 
 		ConsoleWindow::set_cursor_position({ SHORT(c_vertical_margin - 1), c_horizontal_margin });
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, true));
@@ -276,7 +275,7 @@ namespace GUI
 		BaseWindow* window = m_windows[window_num].get();
 
 		window->render_background();
-		window->render_border(m_background);
+		window->render_border(m_theme.background);
 		window->render_text();
 	}
 	

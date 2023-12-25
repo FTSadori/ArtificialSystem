@@ -35,12 +35,12 @@ namespace GUI
 		m_border = _border;
 	}
 
-	void BaseWindow::set_text_colours(Colours _main, Colours _secondary, Colours _third)
+	void BaseWindow::set_text_colours(TextColourTheme theme)
 	{
-		m_main = TextAttributes(TextColours(_main, m_background), TextBorders());
-		m_secondary = TextAttributes(TextColours(_secondary, m_background), TextBorders());
-		m_third = TextAttributes(TextColours(_third, m_background), TextBorders());
-		m_selection = TextAttributes(TextColours(m_background, _main), TextBorders());
+		m_main = TextAttributes(TextColours(theme.main, m_background), TextBorders());
+		m_secondary = TextAttributes(TextColours(theme.secondary, m_background), TextBorders());
+		m_third = TextAttributes(TextColours(theme.third, m_background), TextBorders());
+		m_selection = TextAttributes(TextColours(m_background, theme.main), TextBorders());
 	}
 
 	Size BaseWindow::get_size() const { return m_size; }

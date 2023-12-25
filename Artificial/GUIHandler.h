@@ -5,6 +5,7 @@
 #include "ImageTextWindow.h"
 #include "ICommandExecutor.h"
 #include "UsersHandler.h"
+#include "ColourTheme.h"
 #include "Command.h"
 #include "Base64.h"
 #include <memory>
@@ -15,11 +16,11 @@ namespace GUI
 	{
 	public:
 		GUIHandler(Commands::ICommandExecutor& _core, Commands::UsersHandler& _users_handler,
-			Colours _background, Colours _window, Colours _border);
+			SystemColourTheme theme);
 
-		void open_editor(const Memory::FullPath& path, const std::string& data, bool readonly);
-		void open_image(const std::string& name, const std::string& data);
-		void change_colours(Colours _background, Colours _window, Colours _border);
+		void open_editor(const Memory::FullPath& path, const std::string& data, TextColourTheme theme, bool readonly);
+		void open_image(const std::string& name, const std::string& data, TextColourTheme theme);
+		void change_colours(SystemColourTheme theme);
 
 		TerminalWindow* get_terminal_ptr();
 
@@ -32,10 +33,8 @@ namespace GUI
 		const int16_t c_vertical_margin = 1;
 		const int16_t c_tabs_height = 1;
 
-		Colours m_background;
-		Colours m_window;
-		Colours m_border;
-
+		SystemColourTheme m_theme;
+		
 		Size m_window_size{ 0, 0 };
 		std::mutex m_window_size_mutex;
 
