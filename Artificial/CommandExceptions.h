@@ -20,4 +20,10 @@ namespace Commands
 		CannotDeleteCurrentUserException(const std::string& _message) : Exception(_message) {}
 		CannotDeleteCurrentUserException(const char* _message) : Exception(_message) {}
 	};
+
+	struct MemoryIsNotLoadedException final : public Exception
+	{
+		MemoryIsNotLoadedException(const std::string& _message) : Exception(_message) {}
+		MemoryIsNotLoadedException(const char* _message) : Exception(_message) {}
+	};
 }
