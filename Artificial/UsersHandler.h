@@ -9,6 +9,7 @@
 namespace Commands
 {
 	class UsersHandler final
+	{
 	public:
 		UsersHandler() = default;
 		UsersHandler(const Memory::UsersData& users);
