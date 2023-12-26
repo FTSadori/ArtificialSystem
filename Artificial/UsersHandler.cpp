@@ -2,21 +2,21 @@
 
 namespace Commands
 {
-	UsersHandler::UsersHandler(const std::vector<UserPassword>& users)
+	UsersHandler::UsersHandler(const Memory::UsersData& users)
 	{
-		for (const auto& user_data : users)
+		for (const auto& [name, user_data] : users.m_data)
 		{
-			m_users.emplace(user_data.user.name(), user_data);
+			m_users.m_data.emplace(name, user_data);
 		}
 	}
 
 	void UsersHandler::add_user(const std::string& name, User user, hash_t pass_hash)
 	{
-		if (m_users.contains(name))
+		if (m_users.m_data.contains(name))
 			throw UserNameAlreadyExistsException("(UsersHandler::add_user) Name " + name + " already exists");
-		m_users.emplace(name, UserPassword{ user, pass_hash });
-		if (m_users.size() == 1)
-			m_current_user = m_users.begin()->second.user;
+		m_users.m_data.emplace(name, Memory::UserPassword{ user, pass_hash });
+		if (m_users.m_data.size() == 1)
+			m_current_user = m_users.m_data.begin()->second.user;
 	}
 
 	User UsersHandler::get_current_user()
@@ -29,20 +29,20 @@ namespace Commands
 		std::hash<std::string> hasher;
 		hash_t input_hash = hasher(pass);
 
-		if (!m_users.contains(name))
+		if (!m_users.m_data.contains(name))
 			throw UserNameDoesNotExistException("(UsersHandler::try_change_user) User with name " + name + " doesn't exist");
-		if (m_users[name].pass_hash != 0 && input_hash != m_users[name].pass_hash)
+		if (m_users.m_data[name].pass_hash != 0 && input_hash != m_users.m_data[name].pass_hash)
 			throw WrongUserPasswordException("(UsersHandler::try_change_user) Wrong password to user " + name);
 		
-		m_current_user = m_users[name].user;
+		m_current_user = m_users.m_data[name].user;
 	}
-	const std::unordered_map<std::string, UserPassword>& UsersHandler::get_map()
+	const Memory::UsersData& UsersHandler::get_data()
 	{
 		return m_users;
 	}
 	
 	void UsersHandler::remove_user(const std::string& name)
 	{
-		m_users.erase(name);
+		m_users.m_data.erase(name);
 	}
 }

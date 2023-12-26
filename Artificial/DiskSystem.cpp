@@ -92,6 +92,6 @@ namespace Memory
 
 	FullPath DiskSystem::get_start_path()
 	{
-		return FullPath(m_main_disk + FullPath::c_disk_div + DiskPath::c_div);
+		return FullPath(m_main_disk + FullPath::c_disk_div);
 	}
 }

@@ -29,9 +29,12 @@ namespace Commands
 				return;
 			}
 
+			if (!m_core.memory().is_loaded())
+				throw MemoryIsNotLoadedException("(AddUserOption) Memory is not loaded. Try using 'startsystem' command after setting up DiskSystemInfo file.");
+
 			uint8_t perm_lvl = Parser::from_string<int>(_command.get("2"));
 			if (sender.lvl() < perm_lvl || perm_lvl == 255)
-				throw PermissionException("(UserAddOption) Sender has low permission lvl");
+				throw PermissionException("(AddUserOption) Sender has low permission lvl");
 
 			User new_user = User(_command.get("1"), _command.has("::root"), perm_lvl);
 			hash_t pass_hash = 0;
@@ -41,6 +44,10 @@ namespace Commands
 			}
 
 			m_core.users().add_user(new_user.name(), new_user, pass_hash);
+
+			std::string mark = m_core.memory().get_start_path().mark();
+			Memory::DataQueue data = m_core.users().get_data().get_as_data();
+			m_core.memory().get_disk(mark).write(Memory::DiskPath("\\users.txt"), data, true);
 		}
 	};
 }

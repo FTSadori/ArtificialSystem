@@ -29,7 +29,7 @@ namespace Commands
 			if (sender.lvl() < 0)
 				throw PermissionException("(ChangeUserOption) Sender has low permission lvl");
 
-			const auto& userpass = m_core.users().get_map().at(_command.get("1"));
+			const auto& userpass = m_core.users().get_data().m_data.at(_command.get("1"));
 			if (userpass.pass_hash != 0)
 			{
 				ptr->print_main("Input password: ");

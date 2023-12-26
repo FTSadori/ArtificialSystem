@@ -200,6 +200,7 @@
     <ClInclude Include="User.h" />
     <ClInclude Include="AddUserOption.h" />
     <ClInclude Include="ChangeUserOption.h" />
+    <ClInclude Include="UsersData.h" />
     <ClInclude Include="UsersHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
     <ClInclude Include="ICommand.h" />

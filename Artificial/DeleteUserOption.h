@@ -26,13 +26,16 @@ namespace Commands
 				return;
 			}
 
+			if (!m_core.memory().is_loaded())
+				throw MemoryIsNotLoadedException("(DeleteUserOption) Memory is not loaded. Try using 'startsystem' command after setting up DiskSystemInfo file.");
+
 			if (sender.lvl() < 20)
 				throw PermissionException("(DeleteUserOption) Sender has low permission lvl");
 
 			if (ptr->get_user_name() == _command.get("1"))
 				throw CannotDeleteCurrentUserException("(DeleteUserOption) You can't delete current user, try switch to another one");
 
-			const auto& userpass = m_core.users().get_map().at(_command.get("1"));
+			const auto& userpass = m_core.users().get_data().m_data.at(_command.get("1"));
 			if (userpass.pass_hash != 0)
 			{
 				ptr->print_main("Input password for " + _command.get("1") + ": ");
@@ -41,6 +44,10 @@ namespace Commands
 			}
 			m_core.users().remove_user(_command.get("1"));
 			ptr->set_user_name(m_core.users().get_current_user().name());
+
+			std::string mark = m_core.memory().get_start_path().mark();
+			Memory::DataQueue data = m_core.users().get_data().get_as_data();
+			m_core.memory().get_disk(mark).write(Memory::DiskPath("\\users.txt"), data, true);
 		}
 	};
 }

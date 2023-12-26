@@ -28,7 +28,7 @@ namespace Commands
 				throw PermissionException("(UserListOption) Sender has low permission lvl");
 
 			size_t i = 0;
-			const auto& map = m_core.users().get_map();
+			const auto& map = m_core.users().get_data().m_data;
 			for (const auto& [name, user] : map)
 			{
 				ptr->print_main(Parser::to_string(i++) + ". ");

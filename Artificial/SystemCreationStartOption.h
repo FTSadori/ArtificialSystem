@@ -37,14 +37,7 @@ namespace Commands
 			ptr->print_secondary("- disklist");
 			ptr->print_main(" - show partition info\n");
 
-			ptr->print_third("- adduser {name} {lvl} [:p password] [::root]");
-			ptr->print_main(" - add new user\n");
-			ptr->print_third("- deleteuser {name}");
-			ptr->print_main(" - delete user by name\n");
-			ptr->print_third("- userlist");
-			ptr->print_main(" - show users info\n");
-
-			ptr->print_secondary("- startsystem");
+			ptr->print_third("- startsystem");
 			ptr->print_main(" - end preparation\n");
 
 			ptr->print_main("Use ::help flag in any command to see more information about it.\n\n");
