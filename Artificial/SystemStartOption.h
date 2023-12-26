@@ -33,7 +33,7 @@ namespace Commands
 			m_core.memory().load(m_core.memory_info());
 			std::string mark = m_core.memory().get_start_path().mark();
 			Memory::DataQueue data = m_core.users().get_data().get_as_data();
-			m_core.memory().get_disk(mark).write(Memory::DiskPath("\\users.txt"), data, true);
+			m_core.memory().get_disk(mark).create(Memory::DiskPath("\\users.txt"), Memory::Permissions(true, 255, 255, 0, 0), Memory::FileT::FILE, true);
 
 			ptr->print_main("Memory is now loaded!\n");
 			ptr->print_main("Now you can create your user\n");

@@ -193,6 +193,7 @@
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
+    <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />
     <ClInclude Include="SystemClearDisksOption.h" />

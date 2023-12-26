@@ -434,6 +434,9 @@
     <ClInclude Include="SystemStartOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
+    <ClInclude Include="ShowFileListOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
