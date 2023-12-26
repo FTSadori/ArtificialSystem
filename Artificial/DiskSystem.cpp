@@ -46,7 +46,7 @@ namespace Memory
 	DiskFileManager& DiskSystem::get_disk(const std::string& _mark)
 	{
 		if (m_disks.find(_mark) == m_disks.end())
-			throw DiskMarkDoesNotExist("(DiskSystem::get_disk) Disk with mark \"" + _mark + "\"");
+			throw DiskMarkDoesNotExist("(DiskSystem::get_disk) Disk with mark \"" + _mark + "\" does not exist");
 
 		return m_disks.at(_mark);
 	}
