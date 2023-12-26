@@ -71,7 +71,10 @@ namespace Commands
 
 			m_core.passwords().check_password(ptr, dir_perm.password_hash);
 
-			dir_perm.hidden |= _command.has("::h");
+			if (path.disk_path().dir() == "")
+				dir_perm.hidden = _command.has("::h");
+			else
+				dir_perm.hidden |= _command.has("::h");
 			
 			if (_command.has(":p"))
 			{
