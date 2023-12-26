@@ -217,7 +217,6 @@
     <ClInclude Include="Separator.h" />
     <ClInclude Include="ScreenText.h" />
     <ClInclude Include="Size.h" />
-    <ClInclude Include="SystemUser.h" />
     <ClInclude Include="BaseWindow.h" />
     <ClInclude Include="TerminalWindow.h" />
     <ClInclude Include="TextAttributes.h" />

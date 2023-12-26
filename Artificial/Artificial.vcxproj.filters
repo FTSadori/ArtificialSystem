@@ -338,9 +338,6 @@
     <ClInclude Include="AbstractControllerOption.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
     </ClInclude>
-    <ClInclude Include="SystemUser.h">
-      <Filter>Исходные файлы\Core\Commands\Senders</Filter>
-    </ClInclude>
     <ClInclude Include="ConsoleWindow.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
