@@ -69,15 +69,7 @@ namespace Commands
 			if (sender.lvl() < all_perm_lvls.back())
 				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
 
-			if (dir_perm.password_hash != 0 && !m_core.passwords().is_password_entered(dir_perm.password_hash))
-			{
-				ptr->print_main("Input password: ");
-				ptr->wait_for_input(GUI::TerminalInputType::PASSWORD);
-				hash_t hash = std::hash<std::string>()(ptr->get_last_input());
-				m_core.passwords().add_hash(dir_perm.password_hash);
-				if (dir_perm.password_hash != hash)
-					throw WrongPasswordException("(MemoryCreateOption) Wrong password");
-			}
+			m_core.passwords().check_password(ptr, dir_perm.password_hash);
 
 			dir_perm.hidden |= _command.has("::h");
 			

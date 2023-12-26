@@ -1,5 +1,6 @@
 #pragma once
 #include "Hash.h"
+#include "TerminalWindow.h"
 #include <set>
 
 namespace Commands
@@ -15,6 +16,19 @@ namespace Commands
 		void add_hash(hash_t pass_hash)
 		{
 			m_set.insert(pass_hash);
+		}
+
+		void check_password(GUI::TerminalWindow* ptr, hash_t needed)
+		{
+			if (needed != 0 && !is_password_entered(needed))
+			{
+				ptr->print_main("Input password: ");
+				ptr->wait_for_input(GUI::TerminalInputType::PASSWORD);
+				hash_t hash = std::hash<std::string>()(ptr->get_last_input());
+				if (needed != hash)
+					throw WrongPasswordException("(PasswordHandler) Wrong password");
+				add_hash(needed);
+			}
 		}
 
 	private:
