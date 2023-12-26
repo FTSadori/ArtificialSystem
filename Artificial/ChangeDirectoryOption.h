@@ -35,11 +35,14 @@ namespace Commands
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.sudo()).permissions;
 			
+			if (disk.get_type(path.disk_path()) == Memory::FileT::FILE)
+				throw CommandException("(ChangeDirectoryOption) It's not a directory");
+
 			if (sender.lvl() < perm.read_perm_lvl)
-				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
+				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");
 
 			if (perm.hidden && !sender.sudo())
-				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
+				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");
 
 			m_core.passwords().check_password(ptr, perm.password_hash);
 
