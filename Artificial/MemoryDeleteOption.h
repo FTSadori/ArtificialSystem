@@ -50,7 +50,7 @@ namespace Commands
 			auto& disk = m_core.memory().get_disk(path.mark());
 			
 			if (sender.lvl() < find_max_lvl(disk, path.disk_path(), sender.lvl() == 255))
-				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
+				throw PermissionException("(MemoryDeleteOption) Sender has low permission lvl");
 
 			disk.remove(path.disk_path(), sender.lvl() == 255);
 			

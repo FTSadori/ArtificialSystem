@@ -50,6 +50,9 @@ namespace Memory
 
 	size_t DiskFileManager::get_content_size(const DiskPath& _path)
 	{
+		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
+			throw FileDoesNotExist("(DiskFileManager::get_content_size) File or directory " + _path.full_name() + " does not exist");
+		
 		size_t size = m_sectors.get_file_size(m_names_to_ptr[_path.full_name()]);
 		return size - 2 * sizeof(time_t) - sizeof(Permissions);
 	}
@@ -176,6 +179,9 @@ namespace Memory
 
 	void DiskFileManager::update_directory(const DiskPath& _path)
 	{
+		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
+			throw FileDoesNotExist("(DiskFileManager::update_directory) File or directory " + _path.full_name() + " does not exist");
+
 		if (_path.full_name() == "") return;
 
 		uintptr_t old_ptr = m_names_to_ptr[_path.full_name()];
@@ -250,6 +256,9 @@ namespace Memory
 
 	FileT DiskFileManager::get_type(const DiskPath& _path)
 	{
+		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
+			throw FileDoesNotExist("(DiskFileManager::get_type) File or directory (" + _path.full_name() + ") does not exist");
+
 		return (m_file_hierarchy.is_directory(m_names_to_ptr[_path.full_name()]) ? FileT::DIR : FileT::FILE);
 	}
 
@@ -260,6 +269,8 @@ namespace Memory
 			if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
 				throw FileDoesNotExist("(DiskFileManager::remove) File or directory (" + _path.full_name() + ") does not exist");
 		}
+		
+		FileT file_type = get_type(_path);
 		uintptr_t ptr = m_names_to_ptr[_path.full_name()];
 		m_sectors.delete_file(ptr, system);
 
@@ -268,7 +279,7 @@ namespace Memory
 		m_ptr_to_names.erase(ptr);
 		m_names_to_ptr.erase(name);
 
-		if (get_type(_path) == FileT::DIR)
+		if (file_type == FileT::DIR)
 		{
 			const std::vector<HierarchyFileInfo>& vec = m_file_hierarchy.get_file_hierarchy().at(ptr);
 			for (size_t i = 0; i < vec.size(); ++i)
