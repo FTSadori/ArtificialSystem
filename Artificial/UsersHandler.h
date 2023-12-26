@@ -8,9 +8,7 @@
 
 namespace Commands
 {
-
-	class UsersHandler final // todo review code, add load from file
-	{
+	class UsersHandler final
 	public:
 		UsersHandler() = default;
 		UsersHandler(const Memory::UsersData& users);
