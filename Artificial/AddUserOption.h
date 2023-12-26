@@ -36,6 +36,9 @@ namespace Commands
 			if (sender.lvl() < perm_lvl || perm_lvl == 255)
 				throw PermissionException("(AddUserOption) Sender has low permission lvl");
 
+			if (!sender.sudo() && _command.has("::root"))
+				throw PermissionException("(AddUserOption) You can't create a root user");
+
 			User new_user = User(_command.get("1"), _command.has("::root"), perm_lvl);
 			hash_t pass_hash = 0;
 			if (_command.has(":p"))
