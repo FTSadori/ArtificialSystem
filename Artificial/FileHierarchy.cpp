@@ -133,6 +133,8 @@ namespace Memory
 
 	void FileHierarchy::change_ptr_for(uintptr_t _from, uintptr_t _to)
 	{
+		if (_to == _from)
+			return;
 		if (m_higher_dir.find(_to) != m_higher_dir.end())
 			throw PointerAlreadyUsed("(FileHierarchy::change_ptr_for) Pointer is already used");
 
