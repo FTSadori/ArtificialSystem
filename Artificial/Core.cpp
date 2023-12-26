@@ -43,7 +43,7 @@ namespace Commands
 				auto input = ptr->get_last_input();
 				if (input.empty()) continue;
 				try {
-					execute(Command(ptr->get_path().full_path_str() + " " + input), m_users.get_current_user());
+					execute(Command("\"" + ptr->get_path().full_path_str() + "\" " + input), m_users.get_current_user());
 				}
 				catch (const Exception& ex)
 				{
