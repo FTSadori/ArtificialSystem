@@ -59,6 +59,8 @@ namespace GUI
 		std::vector<TextInfo> m_text_parts;
 		size_t m_render_from_line = 0;
 
-		std::mutex m_render_mutex;
+	public:
+		bool m_block = false;
+		static std::mutex m_render_mutex;
 	};
 }

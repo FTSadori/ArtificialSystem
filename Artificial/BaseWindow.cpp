@@ -2,6 +2,8 @@
 
 namespace GUI
 {
+	std::mutex BaseWindow::m_render_mutex;
+
 	Size BaseWindow::s_max_size{ 1024, 1024 };
 	Size BaseWindow::s_min_size{ 2, 2 };
 
@@ -88,6 +90,7 @@ namespace GUI
 
 	void BaseWindow::rerender()
 	{
+		if (m_block) return;
 		std::lock_guard lock(m_render_mutex);
 		render_background();
 		render_text();

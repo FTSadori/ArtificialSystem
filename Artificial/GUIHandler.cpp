@@ -20,6 +20,10 @@ namespace GUI
 		ptr->set_text_colours(theme);
 		m_windows.emplace_back(ptr);
 		m_windows.back()->set_window_colours(m_theme.window, m_theme.border);
+		m_current_window = m_windows.size() - 1;
+		m_windows[0]->m_block = true;
+
+		render(m_current_window);
 	}
 
 	void GUIHandler::open_image(const std::string& name, const std::string& data, TextColourTheme theme)
@@ -29,6 +33,10 @@ namespace GUI
 		ImageTextWindow* ptr = dynamic_cast<ImageTextWindow*>(m_windows.back().get());
 		ptr->set_text(data);
 		ptr->set_text_colours(theme);
+		m_current_window = m_windows.size() - 1;
+		m_windows[0]->m_block = true;
+
+		render(m_current_window);
 	}
 
 	void GUIHandler::change_colours(SystemColourTheme theme)
@@ -49,12 +57,15 @@ namespace GUI
 
 	void GUIHandler::rerender()
 	{
-		ConsoleWindow::fill_screen(m_theme.background);
 		{
 			std::lock_guard lock(m_window_size_mutex);
 			m_window_size = ConsoleWindow::get_console_size();
 		}
-		set_size_to_all(get_windows_size(m_window_size));
+		{
+			std::lock_guard lock(BaseWindow::m_render_mutex);
+			ConsoleWindow::fill_screen(m_theme.background);
+			set_size_to_all(get_windows_size(m_window_size));
+		}
 		render(m_current_window);
 		ConsoleWindow::set_cursor_visibility(false);
 	}
@@ -164,7 +175,7 @@ namespace GUI
 					
 					if (te_ptr && !te_ptr->get_readonly())
 					{
-						if ((key.wVirtualKeyCode < 37 || key.wVirtualKeyCode > 40) && !te_ptr->get_title().ends_with("*"))
+						if (key.wVirtualKeyCode != 17 && (key.wVirtualKeyCode < 37 || key.wVirtualKeyCode > 40) && !te_ptr->get_title().ends_with("*"))
 						{
 							te_ptr->set_title(te_ptr->get_title() + "*");
 							render(m_current_window);
@@ -194,16 +205,21 @@ namespace GUI
 
 	void GUIHandler::render(size_t window_num)
 	{
+		m_windows[window_num]->m_block = false;
+
 		Size size;
 		{
 			std::lock_guard lock(m_window_size_mutex);
 			size = m_window_size;
 		}
 
-		render_window(window_num);
-		render_header_border(size); 
-		render_header_background(size);
-		render_header(size, window_num);
+		std::lock_guard lock(BaseWindow::m_render_mutex);
+		{
+			render_window(window_num);
+			render_header_border(size);
+			render_header_background(size);
+			render_header(size, window_num);
+		}
 	}
 
 	void GUIHandler::render_header(Size window_size, size_t window_num)

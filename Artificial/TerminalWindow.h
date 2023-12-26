@@ -59,5 +59,8 @@ namespace GUI
 
 		std::mutex m_text_mutex;
 		std::condition_variable m_cv;
+
+	public:
+		static bool m_block;
 	};
 }
