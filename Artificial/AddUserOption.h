@@ -19,7 +19,7 @@ namespace Commands
 			if (_command.has("::help"))
 			{
 				ptr->print_main("Your entered permission lvl needed\n");
-				ptr->print_main("Adds new system user. You should create at least one root user before do startsystem\n");
+				ptr->print_main("Adds new system user\n");
 				ptr->print_secondary("adduser {name} {lvl} [:p password] [::root]\n");
 				ptr->print_main("  name - (string) new user name;\n");
 				ptr->print_main("  lvl - (integer) new user permission level, needs to be lower or equal to yours and in [0, 254] range;\n");
