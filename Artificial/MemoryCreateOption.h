@@ -58,7 +58,7 @@ namespace Commands
 			{
 				if (_command.has(flag))
 				{
-					auto lvl = Parser::from_string<uint8_t>(_command.get(flag));
+					auto lvl = (uint8_t)Parser::from_string<int>(_command.get(flag));
 					all_perm_lvls.push_back(lvl);
 					if (link < lvl) link = lvl;
 				}
