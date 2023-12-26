@@ -168,6 +168,7 @@
     <ClCompile Include="UserListOption.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="DeleteUserOption.h" />
     <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
+    <ClInclude Include="PasswordHandler.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />

@@ -3,6 +3,7 @@
 #include "GUIHandler.h"
 #include "ColoursThemesHandler.h"
 #include "ICommandExecutor.h"
+#include "PasswordHandler.h"
 
 namespace Commands
 {
@@ -14,7 +15,8 @@ namespace Commands
 		virtual GUI::ColoursThemesHandler& themes() = 0;
 		virtual Memory::DiskSystem& memory() = 0;
 		virtual Memory::DiskSystemInfo& memory_info() = 0;
-	
+		virtual PasswordHandler& passwords() = 0;
+
 		virtual ~ICore() = default;
 	};
 }

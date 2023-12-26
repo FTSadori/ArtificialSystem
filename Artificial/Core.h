@@ -17,6 +17,7 @@ namespace Commands
 		virtual GUI::ColoursThemesHandler& themes() override { return m_themes; }
 		virtual Memory::DiskSystem& memory() override { return m_memory; }
 		virtual Memory::DiskSystemInfo& memory_info() override { return m_memory_info; }
+		virtual PasswordHandler& passwords() override { return m_passwords; }
 
 		void add_controller(const BaseController& controller);
 		virtual void execute(const ICommand& command, const User& sender) override;
@@ -27,6 +28,7 @@ namespace Commands
 		GUI::ColoursThemesHandler m_themes;
 		Memory::DiskSystem m_memory;
 		Memory::DiskSystemInfo m_memory_info;
+		PasswordHandler m_passwords;
 
 		std::vector<BaseController> m_controllers;
 		std::mutex m_execution_mutex;
