@@ -4,6 +4,7 @@ namespace Commands
 {
 	UsersHandler::UsersHandler(const Memory::UsersData& users)
 	{
+		m_current_user = users.m_data.begin()->second.user;
 		for (const auto& [name, user_data] : users.m_data)
 		{
 			m_users.m_data.emplace(name, user_data);

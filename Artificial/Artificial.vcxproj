@@ -197,6 +197,7 @@
     <ClInclude Include="SystemAddDiskOption.h" />
     <ClInclude Include="SystemClearDisksOption.h" />
     <ClInclude Include="SystemOptionsLoader.h" />
+    <ClInclude Include="SystemStartOption.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="AddUserOption.h" />
     <ClInclude Include="ChangeUserOption.h" />

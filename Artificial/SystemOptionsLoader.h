@@ -3,6 +3,7 @@
 #include "SystemCreationStartOption.h"
 #include "SystemAddDiskOption.h"
 #include "SystemDiskListOption.h"
+#include "SystemStartOption.h"
 #include "SystemClearDisksOption.h"
 
 namespace Commands
@@ -17,6 +18,7 @@ namespace Commands
 			controller.add_option("adddisk", std::make_unique<SystemAddDiskOption>(core));
 			controller.add_option("disklist", std::make_unique<SystemDiskListOption>(core));
 			controller.add_option("cleardisks", std::make_unique<SystemClearDisksOption>(core));
+			controller.add_option("startsystem", std::make_unique<SystemStartOption>(core));
 			return controller;
 		}
 	};

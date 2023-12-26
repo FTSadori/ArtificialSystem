@@ -431,6 +431,9 @@
     <ClInclude Include="UsersData.h">
       <Filter>Исходные файлы\Core\Commands\Senders</Filter>
     </ClInclude>
+    <ClInclude Include="SystemStartOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

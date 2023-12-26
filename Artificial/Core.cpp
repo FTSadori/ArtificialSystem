@@ -6,9 +6,19 @@ namespace Commands
 	{
 		try
 		{
-			auto info = Memory::DiskSystem::try_load_boot();
-			m_memory.load(info);
+			m_memory_info = Memory::DiskSystem::try_load_boot();
+			m_memory.load(m_memory_info);
 			// vse dobre
+			std::string mark = m_memory.get_start_path().mark();
+			Memory::DataQueue data = m_memory.get_disk(mark).read(Memory::DiskPath("\\users.txt"), true);
+			Memory::UsersData users_data;
+			users_data.load_from_data(data);
+			m_users = UsersHandler(users_data);
+		
+			m_gui.connect_to_core(this);
+			m_gui.connect_to_users(&m_users);
+			m_gui.get_terminal_ptr()->set_user_name(m_users.get_current_user().name());
+			m_gui.get_terminal_ptr()->set_path(m_memory.get_start_path());
 		}
 		catch (const Exception&)
 		{

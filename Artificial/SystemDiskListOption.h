@@ -17,13 +17,13 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("255 permission lvl needed\n");
+				ptr->print_main("155 permission lvl needed\n");
 				ptr->print_main("Shows info about all disk partitions in DiskSystemInfo.\n");
 				
 				return;
 			}
 
-			if (sender.lvl() < 255)
+			if (sender.lvl() < 155)
 				throw PermissionException("(SystemDiskListOption) Sender has low permission lvl");
 			
 			if (m_core.memory_info().disks_info.empty())
