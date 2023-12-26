@@ -79,6 +79,7 @@ namespace Commands
 
 					if (disk.get_info(path, true).permissions.hidden)
 						ptr->print_third(" (hidden)");
+					ptr->print_third("   ");
 					flag = true;
 				}
 				if (flag) ptr->print_main("\n");
