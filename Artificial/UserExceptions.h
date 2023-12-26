@@ -9,10 +9,10 @@ namespace Commands
 		UserNameAlreadyExistsException(const char* _message) : Exception(_message) {}
 	};
 
-	struct WrongUserPasswordException final : public Exception
+	struct WrongPasswordException final : public Exception
 	{
-		WrongUserPasswordException(const std::string& _message) : Exception(_message) {}
-		WrongUserPasswordException(const char* _message) : Exception(_message) {}
+		WrongPasswordException(const std::string& _message) : Exception(_message) {}
+		WrongPasswordException(const char* _message) : Exception(_message) {}
 	};
 
 	struct UserNameDoesNotExistException final : public Exception

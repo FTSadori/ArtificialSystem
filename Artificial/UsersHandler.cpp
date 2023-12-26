@@ -33,7 +33,7 @@ namespace Commands
 		if (!m_users.m_data.contains(name))
 			throw UserNameDoesNotExistException("(UsersHandler::try_change_user) User with name " + name + " doesn't exist");
 		if (m_users.m_data[name].pass_hash != 0 && input_hash != m_users.m_data[name].pass_hash)
-			throw WrongUserPasswordException("(UsersHandler::try_change_user) Wrong password to user " + name);
+			throw WrongPasswordException("(UsersHandler::try_change_user) Wrong password to user " + name);
 		
 		m_current_user = m_users.m_data[name].user;
 	}
