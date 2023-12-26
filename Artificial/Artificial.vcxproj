@@ -194,6 +194,7 @@
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
+    <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="PasswordHandler.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />

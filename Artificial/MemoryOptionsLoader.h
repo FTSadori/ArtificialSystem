@@ -5,6 +5,7 @@
 #include "MemoryCreateOption.h"
 #include "ShowFileListOption.h"
 #include "ChangeDirectoryOption.h"
+#include "MemoryDeleteOption.h"
 
 namespace Commands
 {
@@ -17,6 +18,7 @@ namespace Commands
 			controller.add_option("mk", std::make_unique<MemoryCreateOption>(core));
 			controller.add_option("ls", std::make_unique<ShowFileListOption>(core));
 			controller.add_option("cd", std::make_unique<ChangeDirectoryOption>(core));
+			controller.add_option("rm", std::make_unique<MemoryDeleteOption>(core));
 			return controller;
 		}
 	};

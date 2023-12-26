@@ -145,6 +145,9 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\Users\Options">
       <UniqueIdentifier>{424a6c08-90cc-4f3f-9291-4d16d6692e78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\PasswordHandler">
+      <UniqueIdentifier>{b634e2cf-012c-4768-86e6-1d947b29dd70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -435,6 +438,15 @@
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
     <ClInclude Include="ShowFileListOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeDirectoryOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordHandler.h">
+      <Filter>Исходные файлы\Core\Commands\PasswordHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryDeleteOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
     </ClInclude>
   </ItemGroup>
