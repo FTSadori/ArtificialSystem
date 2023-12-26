@@ -15,7 +15,8 @@ namespace Memory
 		DiskSystem(const DiskSystemInfo& _info);
 		
 		void load(const DiskSystemInfo& _info);
-
+		bool is_loaded();
+		
 		static DiskSystemInfo try_load_boot();
 		
 		DiskFileManager& get_disk(const std::string& _mark);
@@ -27,5 +28,6 @@ namespace Memory
 	private:
 		std::map<std::string, DiskFileManager> m_disks;
 		std::string m_main_disk;
+		bool m_is_loaded = false;
 	};
 }

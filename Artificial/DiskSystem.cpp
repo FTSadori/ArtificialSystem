@@ -24,6 +24,12 @@ namespace Memory
 			m_disks.emplace(mark, DiskFileManager("Inner", info.capacity, info.mark, info.max_sec_num));
 
 		m_main_disk = _info.disks_info[_info.main_disk].first;
+		m_is_loaded = true;
+	}
+
+	bool DiskSystem::is_loaded()
+	{
+		return m_is_loaded;
 	}
 
 	DiskSystemInfo DiskSystem::try_load_boot()
