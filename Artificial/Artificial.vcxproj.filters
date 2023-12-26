@@ -449,6 +449,9 @@
     <ClInclude Include="MemoryDeleteOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
     </ClInclude>
+    <ClInclude Include="MemoryWriteOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
