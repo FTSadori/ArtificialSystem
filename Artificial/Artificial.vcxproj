@@ -196,6 +196,7 @@
     <ClInclude Include="Hash.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
+    <ClInclude Include="OpenTextEditorOption.h" />
     <ClInclude Include="PasswordHandler.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
@@ -231,6 +232,7 @@
     <ClInclude Include="TextInfo.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="UsersOptionsLoader.h" />
+    <ClInclude Include="WindowOptionsLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h" />

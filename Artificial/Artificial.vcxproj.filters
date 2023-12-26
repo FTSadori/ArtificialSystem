@@ -148,6 +148,12 @@
     <Filter Include="Исходные файлы\Core\Commands\PasswordHandler">
       <UniqueIdentifier>{b634e2cf-012c-4768-86e6-1d947b29dd70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Windows">
+      <UniqueIdentifier>{839c7f64-f3d0-44c6-a62b-5356fe357655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Windows\Options">
+      <UniqueIdentifier>{43dcab70-7268-4be3-8157-3941436db085}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -451,6 +457,12 @@
     </ClInclude>
     <ClInclude Include="MemoryWriteOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenTextEditorOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -41,7 +41,7 @@ namespace Commands
 			if (sender.lvl() < perm.read_perm_lvl)
 				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");
 
-			if (perm.hidden && !sender.sudo())
+			if (path.disk_path().full_name() != "" && perm.hidden && !sender.sudo())
 				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");
 
 			m_core.passwords().check_password(ptr, perm.password_hash);

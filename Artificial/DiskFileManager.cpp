@@ -62,9 +62,11 @@ namespace Memory
 		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
 			throw FileDoesNotExist("(DiskFileManager::get_info) File or directory " + _path.full_name() + " does not exist");
 
+		if (_path.full_name() == "") system = true;
 		DataQueue data = m_sectors.get_raw_file(m_names_to_ptr[_path.full_name()], system);
 		FileInfo info;
 		info.load_from_data(data);
+		if (_path.full_name() == "") info.permissions.read_perm_lvl = 0;
 
 		return info;
 	}
