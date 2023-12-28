@@ -218,7 +218,8 @@ namespace Memory
 		}
 		
 		uintptr_t old_file_ptr = m_names_to_ptr[_path.full_name()];
-		
+		bool was_system = m_sectors.is_system(old_file_ptr);
+
 		size_t old_size = get_content_size(_path);
 		if (old_size < _new_data.size())
 		{
@@ -233,7 +234,7 @@ namespace Memory
 		all_data.concat(_new_data);
 
 		m_sectors.delete_file(old_file_ptr, system);
-		uintptr_t new_file_ptr = m_sectors.put_raw_file(all_data, system);
+		uintptr_t new_file_ptr = m_sectors.put_raw_file(all_data, was_system);
 		
 		update_file_links(old_file_ptr, new_file_ptr);
 		update_directory(_path.dir());
