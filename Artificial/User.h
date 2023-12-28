@@ -13,10 +13,13 @@ namespace Commands
 		bool sudo() const { return m_sudo; }
 		uint8_t lvl() const { return m_lvl; }
 		std::string name() const { return m_name; }
+		bool system() const { return m_lvl == m_system_lvl; }
 
 	protected:
 		bool m_sudo;
 		uint8_t m_lvl;
 		std::string m_name;
+
+		uint8_t m_system_lvl = 255;
 	};
 }

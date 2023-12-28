@@ -84,7 +84,7 @@ namespace Commands
 			}
 
 			bool system_file = _command.has("::sys");
-			if (system_file && sender.lvl() != 255)
+			if (system_file && !sender.system())
 				throw CommandException("(MemoryCreateOption) Non-system user can't create system file");
 
 			if (_command.has("::dir"))

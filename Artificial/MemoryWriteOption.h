@@ -50,7 +50,7 @@ namespace Commands
 			std::string str = b64decode(_command.get("2"));
 			Memory::DataQueue data;
 			for (char c : str) data.push_char(c);
-			disk.write(path.disk_path(), data, sender.lvl() == 255); // todo stupid shit
+			disk.write(path.disk_path(), data, sender.system()); // todo stupid shit
 			return;
 		}
 	};
