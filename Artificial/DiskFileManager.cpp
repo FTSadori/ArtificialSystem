@@ -76,6 +76,7 @@ namespace Memory
 		if (m_names_to_ptr.find(_path.full_name()) == m_names_to_ptr.end())
 			throw FileDoesNotExist("(DiskFileManager::change_info) File or directory (" + _path.full_name() + ") does not exist");
 
+		bool was_system = is_system(_path);
 		uintptr_t ptr = m_names_to_ptr[_path.full_name()];
 		DataQueue data = m_sectors.get_raw_file(ptr, system);
 		data.pop<Permissions>();
@@ -87,7 +88,7 @@ namespace Memory
 		DataQueue fileData = info.get_as_data();
 		fileData.concat(data);
 
-		uintptr_t new_ptr = m_sectors.put_raw_file(fileData, system);
+		uintptr_t new_ptr = m_sectors.put_raw_file(fileData, was_system);
 
 		m_file_hierarchy.change_ptr_for(ptr, new_ptr);
 

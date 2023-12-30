@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChangeDirectoryOption.h" />
+    <ClInclude Include="ChangePermissionsOption.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="DeleteUserOption.h" />
     <ClInclude Include="ICore.h" />
