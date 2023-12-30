@@ -57,8 +57,10 @@ namespace Commands
 					if (perm.password_hash != 0)
 						ptr->print_third(" has password");
 
-					if (sender.sudo() && disk.get_info(path, true).permissions.hidden)
+					if (disk.get_info(path, true).permissions.hidden)
 						ptr->print_third(" (hidden)");
+					if (disk.is_system(path))
+						ptr->print_secondary(" (system)");
 					ptr->print_main("\n");
 				}
 			}
