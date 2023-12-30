@@ -196,6 +196,7 @@
     <ClInclude Include="Hash.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
+    <ClInclude Include="MoveFileOption.h" />
     <ClInclude Include="OpenImageViewerOption.h" />
     <ClInclude Include="OpenTextEditorOption.h" />
     <ClInclude Include="PasswordHandler.h" />

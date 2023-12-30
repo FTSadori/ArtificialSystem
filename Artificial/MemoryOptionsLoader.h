@@ -8,6 +8,7 @@
 #include "MemoryDeleteOption.h"
 #include "MemoryWriteOption.h"
 #include "RenameFileOption.h"
+#include "MoveFileOption.h"
 
 namespace Commands
 {
@@ -23,6 +24,7 @@ namespace Commands
 			controller.add_option("rm", std::make_unique<MemoryDeleteOption>(core));
 			controller.add_option("write", std::make_unique<MemoryWriteOption>(core));
 			controller.add_option("rename", std::make_unique<RenameFileOption>(core));
+			controller.add_option("move", std::make_unique<MoveFileOption>(core));
 			return controller;
 		}
 	};
