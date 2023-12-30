@@ -26,7 +26,7 @@ namespace Commands
 				ptr->print_main("Moves file or directory to another directory\n");
 				ptr->print_secondary("move {path} {new_path}\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
-				ptr->print_main("  new_path - (string) new ;\n");
+				ptr->print_main("  new_path - (string) destination path (directory);\n");
 
 				return;
 			}
@@ -37,7 +37,7 @@ namespace Commands
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto& new_disk = m_core.memory().get_disk(new_path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.system()).permissions;
-			auto new_perm = disk.get_info(new_path.disk_path(), sender.system()).permissions;
+			auto new_perm = new_disk.get_info(new_path.disk_path(), sender.system()).permissions;
 
 			if (new_disk.get_type(new_path.disk_path()) != Memory::FileT::DIR)
 				throw PermissionException("(MoveFileOption) It's not a directory");
@@ -57,7 +57,10 @@ namespace Commands
 			}
 			else
 			{
-				m_core.memory().move(path, new_path, sender.system());
+				auto tmp = Memory::DiskPath(new_path.disk_path().full_name(), path.disk_path().file());
+				auto full_tmp = Memory::FullPath(new_path.mark(), tmp);
+				ptr->print_main(full_tmp.full_path_str() + "\n");
+				m_core.memory().move(path, full_tmp, sender.system());
 			}
 			return;
 		}

@@ -58,7 +58,7 @@ namespace Memory
 
 		const DiskPath& src = _src.disk_path();
 		const DiskPath& dst = _dst.disk_path();
-
+		
 		FileInfo info = src_disk.get_info(src, system);
 		dst_disk.create(dst, info.permissions, src_disk.get_type(src), src_disk.is_system(src));
 
@@ -69,8 +69,9 @@ namespace Memory
 			{
 				try
 				{
-					FullPath new_src = FullPath(_src.mark(), DiskPath(_src.disk_path().full_name(), file));
-					FullPath new_dst = FullPath(_dst.mark(), DiskPath(_dst.disk_path().full_name(), file));
+					FullPath new_src = FullPath(_src.mark(), DiskPath(src.full_name(), file));
+					FullPath new_dst = FullPath(_dst.mark(), DiskPath(dst.full_name(), file));
+					
 					copy(new_src, new_dst, system);
 				}
 				catch (const Exception&) { }
