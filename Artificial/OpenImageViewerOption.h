@@ -9,11 +9,11 @@
 
 namespace Commands
 {
-	// nano
-	class OpenTextEditorOption final : public AbstractControllerOption
+	// lookat
+	class OpenImageViewerOption final : public AbstractControllerOption
 	{
 	public:
-		OpenTextEditorOption(ICore& _core)
+		OpenImageViewerOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -22,9 +22,9 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Read/write file permission lvl needed\n");
-				ptr->print_main("Opens file in text editor\n");
-				ptr->print_secondary("nano {path}\n");
+				ptr->print_main("Read file permission lvl needed\n");
+				ptr->print_main("Opens file in image viewer\n");
+				ptr->print_secondary("lookat {path}\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
 
 				return;
@@ -46,11 +46,10 @@ namespace Commands
 
 			m_core.passwords().check_password(ptr, perm.password_hash);
 
-			bool readonly = sender.lvl() < perm.write_perm_lvl;
 			Memory::DataQueue data = disk.read(path.disk_path(), sender.system());
-			
+
 			// todo use colour themes
-			m_core.gui().open_editor(path, std::string(data.get_data(), data.size()), GUI::TextColourTheme(), readonly);
+			m_core.gui().open_image(path.disk_path().file(), std::string(data.get_data(), data.size()), GUI::TextColourTheme());
 
 			return;
 		}
