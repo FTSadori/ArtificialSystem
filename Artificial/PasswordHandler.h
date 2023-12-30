@@ -18,11 +18,11 @@ namespace Commands
 			m_set.insert(pass_hash);
 		}
 
-		void check_password(GUI::TerminalWindow* ptr, hash_t needed)
+		void check_password(GUI::TerminalWindow* ptr, hash_t needed, const std::string& text = "Input password: ")
 		{
 			if (needed != 0 && !is_password_entered(needed))
 			{
-				ptr->print_main("Input password: ");
+				ptr->print_main(text);
 				ptr->wait_for_input(GUI::TerminalInputType::PASSWORD);
 				hash_t hash = std::hash<std::string>()(ptr->get_last_input());
 				if (needed != hash)
