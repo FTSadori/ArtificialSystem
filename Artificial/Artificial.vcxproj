@@ -199,6 +199,7 @@
     <ClInclude Include="OpenImageViewerOption.h" />
     <ClInclude Include="OpenTextEditorOption.h" />
     <ClInclude Include="PasswordHandler.h" />
+    <ClInclude Include="RenameFileOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />

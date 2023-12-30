@@ -9,11 +9,11 @@
 
 namespace Commands
 {
-	// write
-	class MemoryWriteOption final : public AbstractControllerOption
+	// rename
+	class RenameFileOption final : public AbstractControllerOption
 	{
 	public:
-		MemoryWriteOption(ICore& _core)
+		RenameFileOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -23,10 +23,10 @@ namespace Commands
 			if (_command.has("::help"))
 			{
 				ptr->print_main("File write permission lvl needed\n");
-				ptr->print_main("Writes text in file\n");
-				ptr->print_secondary("write {path} {base64_text}\n");
+				ptr->print_main("Renames file or directory\n");
+				ptr->print_secondary("rename {path} {new_name}\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
-				ptr->print_main("  base64_text - (string) text in base64 format;\n");
+				ptr->print_main("  new_name - (string) new name of file;\n");
 
 				return;
 			}
@@ -37,20 +37,14 @@ namespace Commands
 			auto perm = disk.get_info(path.disk_path(), sender.sudo()).permissions;
 
 			if (sender.lvl() < perm.write_perm_lvl)
-				throw PermissionException("(MemoryWriteOption) Sender has low permission lvl");
-
-			if (disk.get_type(path.disk_path()) != Memory::FileT::FILE)
-				throw CommandException("(MemoryWriteOption) It's not a file");
+				throw PermissionException("(RenameFileOption) Sender has low permission lvl");
 
 			if (perm.hidden && !sender.sudo())
-				throw PermissionException("(MemoryWriteOption) Sender has low permission lvl");
+				throw PermissionException("(RenameFileOption) Sender has low permission lvl");
 
 			m_core.passwords().check_password(ptr, perm.password_hash);
 
-			std::string str = b64decode(_command.get("2"));
-			Memory::DataQueue data;
-			for (char c : str) data.push_char(c);
-			disk.write(path.disk_path(), data, sender.system());
+			disk.rename(path.disk_path(), Memory::DiskPath(path.disk_path().dir(), _command.get("2")), sender.system());
 			return;
 		}
 	};
