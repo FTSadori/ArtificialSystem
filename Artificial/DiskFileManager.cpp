@@ -78,10 +78,13 @@ namespace Memory
 
 		bool was_system = is_system(_path);
 		uintptr_t ptr = m_names_to_ptr[_path.full_name()];
+		DataQueue perm_data = m_sectors.get_raw_file(ptr, system);
+		perm_data.pop<Permissions>();
+		time_t a = perm_data.pop<time_t>();
+		time_t b = perm_data.pop<time_t>();
+		
 		DataQueue data = m_sectors.get_raw_file(ptr, system);
-		data.pop<Permissions>();
-		time_t a = data.pop<time_t>();
-		time_t b = data.pop<time_t>();
+		
 		m_sectors.delete_file(ptr, system);
 
 		FileInfo info = FileInfo(_per, a, b);
@@ -95,6 +98,8 @@ namespace Memory
 		m_ptr_to_names.erase(ptr);
 		m_ptr_to_names.emplace(new_ptr, _path.full_name());
 		m_names_to_ptr[_path.full_name()] = new_ptr;
+
+		reload();
 	}
 
 	void DiskFileManager::reload()

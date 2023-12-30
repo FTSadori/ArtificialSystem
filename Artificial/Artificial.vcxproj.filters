@@ -476,7 +476,7 @@
     <ClInclude Include="CopyFileOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
     </ClInclude>
-    <ClInclude Include="ChangePermissionsOption.h">
+    <ClInclude Include="ChangeModificatorsOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
     </ClInclude>
   </ItemGroup>
