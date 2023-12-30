@@ -473,6 +473,9 @@
     <ClInclude Include="MoveFileOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
     </ClInclude>
+    <ClInclude Include="CopyFileOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

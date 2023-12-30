@@ -9,11 +9,11 @@
 
 namespace Commands
 {
-	// move
-	class MoveFileOption final : public AbstractControllerOption
+	// copy
+	class CopyFileOption final : public AbstractControllerOption
 	{
 	public:
-		MoveFileOption(ICore& _core)
+		CopyFileOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -23,43 +23,39 @@ namespace Commands
 			if (_command.has("::help"))
 			{
 				ptr->print_main("File write permission lvl needed\n");
-				ptr->print_main("Moves file or directory to another directory\n");
-				ptr->print_secondary("move {path} {new_path}\n");
+				ptr->print_main("Copy file or directory to another path\n");
+				ptr->print_secondary("copy {path} {new_path}\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
-				ptr->print_main("  new_path - (string) destination path (directory);\n");
+				ptr->print_main("  new_path - (string) destination path (you should add new file name);\n");
 
 				return;
 			}
 
+			// todo fix copypast
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 			Memory::FullPath new_path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("2"));
 
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto& new_disk = m_core.memory().get_disk(new_path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.system()).permissions;
-			auto new_perm = new_disk.get_info(new_path.disk_path(), sender.system()).permissions;
-
-			if (new_disk.get_type(new_path.disk_path()) != Memory::FileT::DIR)
-				throw PermissionException("(MoveFileOption) It's not a directory");
+			auto new_perm = new_disk.get_info(new_path.disk_path().dir(), sender.system()).permissions;
 
 			if (sender.lvl() < perm.write_perm_lvl || sender.lvl() < new_perm.write_perm_lvl)
-				throw PermissionException("(MoveFileOption) Sender has low permission lvl");
+				throw PermissionException("(CopyFileOption) Sender has low permission lvl");
 
 			if (perm.hidden && new_perm.hidden && !sender.sudo())
-				throw PermissionException("(MoveFileOption) Sender has low permission lvl");
+				throw PermissionException("(CopyFileOption) Sender has low permission lvl");
 
 			m_core.passwords().check_password(ptr, perm.password_hash, "Input password for source: ");
 			m_core.passwords().check_password(ptr, new_perm.password_hash, "Input password for destination: ");
 
 			if (path.mark() == new_path.mark())
 			{
-				disk.move(path.disk_path(), new_path.disk_path(), sender.system());
+				disk.copy(path.disk_path(), new_path.disk_path(), sender.system());
 			}
 			else
 			{
-				auto tmp = Memory::DiskPath(new_path.disk_path().full_name(), path.disk_path().file());
-				auto full_tmp = Memory::FullPath(new_path.mark(), tmp);
-				m_core.memory().move(path, full_tmp, sender.system());
+				m_core.memory().copy(path, new_path, sender.system());
 			}
 			return;
 		}

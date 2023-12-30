@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChangeDirectoryOption.h" />
+    <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="DeleteUserOption.h" />
     <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />
