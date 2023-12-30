@@ -34,7 +34,7 @@ namespace Commands
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
 			auto& disk = m_core.memory().get_disk(path.mark());
-			auto perm = disk.get_info(path.disk_path(), sender.sudo()).permissions;
+			auto perm = disk.get_info(path.disk_path(), sender.system()).permissions;
 
 			if (sender.lvl() < perm.write_perm_lvl)
 				throw PermissionException("(RenameFileOption) Sender has low permission lvl");
