@@ -168,10 +168,12 @@
     <ClCompile Include="UserListOption.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="DeleteUserOption.h" />
+    <ClInclude Include="HelpOptionsLoader.h" />
     <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />
     <ClInclude Include="ColourTheme.h" />
@@ -197,6 +199,7 @@
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
+    <ClInclude Include="MemoryHelpOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
     <ClInclude Include="MoveFileOption.h" />
     <ClInclude Include="OpenImageViewerOption.h" />
@@ -207,11 +210,13 @@
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />
     <ClInclude Include="SystemClearDisksOption.h" />
+    <ClInclude Include="SystemHelpOption.h" />
     <ClInclude Include="SystemOptionsLoader.h" />
     <ClInclude Include="SystemStartOption.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="AddUserOption.h" />
     <ClInclude Include="ChangeUserOption.h" />
+    <ClInclude Include="UserHelpOption.h" />
     <ClInclude Include="UsersData.h" />
     <ClInclude Include="UsersHandler.h" />
     <ClInclude Include="HierarchyFileInfo.h" />
@@ -238,6 +243,7 @@
     <ClInclude Include="Time.h" />
     <ClInclude Include="UsersOptionsLoader.h" />
     <ClInclude Include="WindowOptionsLoader.h" />
+    <ClInclude Include="WindowsHelpOption.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h" />

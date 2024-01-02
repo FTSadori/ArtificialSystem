@@ -154,6 +154,12 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\Windows\Options">
       <UniqueIdentifier>{43dcab70-7268-4be3-8157-3941436db085}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Help">
+      <UniqueIdentifier>{4673341e-6061-4bd6-a9ef-5639a385e400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Help\Options">
+      <UniqueIdentifier>{53b6887d-5644-45f1-9154-fd51a4abf454}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -478,6 +484,24 @@
     </ClInclude>
     <ClInclude Include="ChangeModificatorsOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Memory\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="UserHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
