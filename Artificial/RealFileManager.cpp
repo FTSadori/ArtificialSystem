@@ -16,7 +16,12 @@ namespace Memory
 
 	DataQueue RealFileManager::read_from_real_file(const std::string& _folder, SectorName _name)
 	{
-		std::ifstream in(_folder + "\\" + _name.get_name());
+		return read_from_real_file(_folder, _name.get_name());
+	}
+
+	DataQueue RealFileManager::read_from_real_file(const std::string& _folder, const std::string& _name)
+	{
+		std::ifstream in(_folder + "\\" + _name);
 		if (!in.is_open())
 			throw FileDoesNotExist("Sector file does not exist");
 
