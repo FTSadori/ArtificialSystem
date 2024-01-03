@@ -160,6 +160,12 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\Help\Options">
       <UniqueIdentifier>{53b6887d-5644-45f1-9154-fd51a4abf454}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Devices">
+      <UniqueIdentifier>{2be1c090-c81f-4ee2-9275-1a56ea95d868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Devices\Options">
+      <UniqueIdentifier>{e2ca1bfb-b4f4-41fe-bdff-f4233b93772f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -502,6 +508,12 @@
     </ClInclude>
     <ClInclude Include="WindowsHelpOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadFileFromPortOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Devices\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="DevicesOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Devices</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

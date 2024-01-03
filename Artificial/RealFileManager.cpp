@@ -29,12 +29,11 @@ namespace Memory
 
 		while (!in.eof())
 			data.push_char((char)(in.get()));
+		in.close();
 
 		data.fix_last_char();
 
 		auto line = b64decode(data.get_data(), data.size());
-
-		in.close();
 
 		return DataQueue(std::vector<char>(line.data(), line.data() + line.size()));
 	}

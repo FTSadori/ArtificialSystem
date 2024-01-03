@@ -173,6 +173,7 @@
     <ClInclude Include="ChangeModificatorsOption.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="DeleteUserOption.h" />
+    <ClInclude Include="DevicesOptionsLoader.h" />
     <ClInclude Include="HelpOptionsLoader.h" />
     <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />
@@ -198,6 +199,7 @@
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
+    <ClInclude Include="LoadFileFromPortOption.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryHelpOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
