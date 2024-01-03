@@ -25,7 +25,7 @@ namespace Commands
 			if (_command.has("::help"))
 			{
 				ptr->print_main("No permission lvl needed\n");
-				ptr->print_main("Loads file  from port with entered number to memory.\n");
+				ptr->print_main("Loads file from port with entered number to memory.\n");
 				ptr->print_secondary("fromport {port_number} {external_file_name} {new_file_name}\n");
 				ptr->print_main("  port_number - (int) port number;\n");
 				ptr->print_main("  external_file_name - (string) name of the file in port;\n");
