@@ -12,12 +12,12 @@ namespace Commands
 
 		void load();
 
-		virtual UsersHandler& users() override { return m_users; }
-		virtual GUI::GUIHandler& gui() override { return m_gui; }
-		virtual GUI::ColoursThemesHandler& themes() override { return m_themes; }
-		virtual Memory::DiskSystem& memory() override { return m_memory; }
-		virtual Memory::DiskSystemInfo& memory_info() override { return m_memory_info; }
-		virtual PasswordHandler& passwords() override { return m_passwords; }
+		virtual UsersHandler& users()                 override { std::lock_guard lock(m_execution_mutex); return m_users; }
+		virtual GUI::GUIHandler& gui()                override { std::lock_guard lock(m_execution_mutex); return m_gui; }
+		virtual GUI::ColoursThemesHandler& themes()   override { std::lock_guard lock(m_execution_mutex); return m_themes; }
+		virtual Memory::DiskSystem& memory()          override { std::lock_guard lock(m_execution_mutex); return m_memory; }
+		virtual Memory::DiskSystemInfo& memory_info() override { std::lock_guard lock(m_execution_mutex); return m_memory_info; }
+		virtual PasswordHandler& passwords()          override { std::lock_guard lock(m_execution_mutex); return m_passwords; }
 
 		void add_controller(const BaseController& controller);
 		virtual void execute(const ICommand& command, const User& sender) override;

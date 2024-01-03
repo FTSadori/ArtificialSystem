@@ -68,7 +68,6 @@ namespace Commands
 
 	void Core::execute(const ICommand& command, const User& sender)
 	{
-		std::lock_guard lock(m_execution_mutex);
 		for (auto& controller : m_controllers)
 		{
 			if (controller.has_option(command.get("name")))
