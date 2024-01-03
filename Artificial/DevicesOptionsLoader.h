@@ -3,6 +3,7 @@
 #include "BaseController.h"
 #include "GUIHandler.h"
 #include "LoadFileFromPortOption.h"
+#include "OpenPortOption.h"
 
 namespace Commands
 {
@@ -13,6 +14,7 @@ namespace Commands
 		{
 			BaseController controller;
 			controller.add_option("fromport", std::make_unique<LoadFileFromPortOption>(core));
+			controller.add_option("openport", std::make_unique<OpenPortOption>(core));
 			return controller;
 		}
 	};

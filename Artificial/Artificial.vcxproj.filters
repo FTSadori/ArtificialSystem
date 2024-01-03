@@ -515,6 +515,9 @@
     <ClInclude Include="DevicesOptionsLoader.h">
       <Filter>Исходные файлы\Core\Commands\Options\Devices</Filter>
     </ClInclude>
+    <ClInclude Include="OpenPortOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Devices\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
