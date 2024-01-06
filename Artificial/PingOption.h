@@ -33,16 +33,14 @@ namespace Commands
 
 			if (!m_core.net().has(_command.get("1")))
 			{
-				ptr->print_secondary("No connection with " + _command.get("1") + '\n');
-				return;
+				throw CommandException("(PingOption) No connection with " + _command.get("1"));
 			}
 
 			const NetData& data = m_core.net().get(_command.get("1"));
 
 			if (data.lvl > sender.lvl())
 			{
-				ptr->print_secondary("You need " + Parser::to_string((int)data.lvl) + " lvl to connect" + '\n');
-				return;
+				throw PermissionException("(PingOption) You need " + Parser::to_string((int)data.lvl) + " lvl to connect");
 			}
 			
 			m_core.passwords().check_password(ptr, data.password_hash);

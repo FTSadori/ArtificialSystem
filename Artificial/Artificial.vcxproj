@@ -177,6 +177,7 @@
     <ClInclude Include="DeleteUserOption.h" />
     <ClInclude Include="DevicesHelpOption.h" />
     <ClInclude Include="DevicesOptionsLoader.h" />
+    <ClInclude Include="DownloadOption.h" />
     <ClInclude Include="HelpOptionsLoader.h" />
     <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />

@@ -560,6 +560,9 @@
     <ClInclude Include="PingOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Net\Options</Filter>
     </ClInclude>
+    <ClInclude Include="DownloadOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Net\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
