@@ -151,6 +151,7 @@
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
     <ClCompile Include="DiskPath.cpp" />
+    <ClCompile Include="NetContainer.cpp" />
     <ClCompile Include="Permissions.h" />
     <ClCompile Include="RealFileManager.cpp" />
     <ClCompile Include="RealFileManager.h" />
@@ -205,6 +206,7 @@
     <ClInclude Include="MemoryHelpOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
     <ClInclude Include="MoveFileOption.h" />
+    <ClInclude Include="NetContainer.h" />
     <ClInclude Include="NetOptionsLoader.h" />
     <ClInclude Include="OpenImageViewerOption.h" />
     <ClInclude Include="OpenPortOption.h" />

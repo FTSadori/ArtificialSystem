@@ -172,6 +172,9 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\Net\Options">
       <UniqueIdentifier>{959d462e-ca0a-4ab7-a699-eee1b38af902}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Net">
+      <UniqueIdentifier>{2bae0cee-5f04-4c19-a401-fa4e142385d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -284,6 +287,9 @@
     </ClCompile>
     <ClCompile Include="UserListOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="NetContainer.cpp">
+      <Filter>Исходные файлы\Core\Commands\Net</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -529,6 +535,9 @@
     </ClInclude>
     <ClInclude Include="NetOptionsLoader.h">
       <Filter>Исходные файлы\Core\Commands\Options\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="NetContainer.h">
+      <Filter>Исходные файлы\Core\Commands\Net</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
