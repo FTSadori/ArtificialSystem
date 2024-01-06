@@ -563,6 +563,9 @@
     <ClInclude Include="DownloadOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Net\Options</Filter>
     </ClInclude>
+    <ClInclude Include="NetHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
