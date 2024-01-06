@@ -38,14 +38,14 @@ namespace Commands
 			if (!std::filesystem::exists(_command.get("1")))
 				throw CommandException("(LoadFileFromPortOption) Can't find " + _command.get("1") + " port");
 
-			Command create_command("\"" + _command.get("path") + "\" mk " + _command.get("3"));
+			Command create_command("\"" + _command.get("path") + "\" mk \"" + _command.get("3") + "\"");
 			m_core.execute(create_command, sender);
 
 			Memory::RealFileManager fm;
 			auto data = fm.read_from_real_file(_command.get("1"), _command.get("2"));
 			std::string str = std::string(data.get_data(), data.size());
 
-			Command write_command("\"" + _command.get("path") + "\" write " + _command.get("3") + " " + b64encode(str));
+			Command write_command("\"" + _command.get("path") + "\" write \"" + _command.get("3") + "\" " + b64encode(str));
 			m_core.execute(write_command, sender);
 
 			return;

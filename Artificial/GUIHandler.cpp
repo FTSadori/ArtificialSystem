@@ -128,9 +128,9 @@ namespace GUI
 			auto path = te_ptr->get_file_path();
 
 			Commands::Command cmd(te_ptr->get_file_path().full_dir_name()
-				+ " write "
+				+ " write \""
 				+ te_ptr->get_file_path().disk_path().file()
-				+ " "
+				+ "\" "
 				+ text);
 
 			if (m_core && m_users_handler)
