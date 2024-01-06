@@ -166,6 +166,12 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\Devices\Options">
       <UniqueIdentifier>{e2ca1bfb-b4f4-41fe-bdff-f4233b93772f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Net">
+      <UniqueIdentifier>{20193871-48e1-45cd-9b9e-8d7d7d505edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Net\Options">
+      <UniqueIdentifier>{959d462e-ca0a-4ab7-a699-eee1b38af902}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -520,6 +526,9 @@
     </ClInclude>
     <ClInclude Include="DevicesHelpOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="NetOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Net</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

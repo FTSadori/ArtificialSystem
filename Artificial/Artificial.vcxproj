@@ -205,6 +205,7 @@
     <ClInclude Include="MemoryHelpOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
     <ClInclude Include="MoveFileOption.h" />
+    <ClInclude Include="NetOptionsLoader.h" />
     <ClInclude Include="OpenImageViewerOption.h" />
     <ClInclude Include="OpenPortOption.h" />
     <ClInclude Include="OpenTextEditorOption.h" />
