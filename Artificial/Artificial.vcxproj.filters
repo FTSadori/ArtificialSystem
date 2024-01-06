@@ -175,6 +175,18 @@
     <Filter Include="Исходные файлы\Core\Commands\Net">
       <UniqueIdentifier>{2bae0cee-5f04-4c19-a401-fa4e142385d2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story">
+      <UniqueIdentifier>{6707d850-3f4f-4db1-b154-c5e1e62ffa02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Story\NetFiles">
+      <UniqueIdentifier>{a4b6625f-1e59-4bc0-bb4b-a23bdb9facad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Base">
+      <UniqueIdentifier>{3b1a3f5e-cf96-4738-b6fe-dc7e35c8a8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Core\Loader">
+      <UniqueIdentifier>{0ab086d7-f444-413e-82cb-9a80ce4cbc5f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -538,6 +550,12 @@
     </ClInclude>
     <ClInclude Include="NetContainer.h">
       <Filter>Исходные файлы\Core\Commands\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="NetFilesLoader.h">
+      <Filter>Исходные файлы\Core\Story\NetFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Core\Loader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

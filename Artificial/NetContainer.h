@@ -7,6 +7,10 @@ namespace Commands
 {
 	struct NetData final
 	{
+		NetData() = default;
+		NetData(const std::string& data, hash_t hash, uint8_t lvl)
+			: b64data(data), password_hash(hash), lvl(lvl) {}
+
 		std::string b64data = "";
 		hash_t password_hash = 0;
 		uint8_t lvl = 0;
