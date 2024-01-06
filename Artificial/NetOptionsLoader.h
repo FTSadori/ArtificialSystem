@@ -2,6 +2,7 @@
 #include "ICore.h"
 #include "BaseController.h"
 #include "GUIHandler.h"
+#include "PingOption.h"
 
 namespace Commands
 {
@@ -11,7 +12,7 @@ namespace Commands
 		static BaseController Load(ICore& core)
 		{
 			BaseController controller;
-			//controller.add_option("mk", std::make_unique<MemoryCreateOption>(core));
+			controller.add_option("ping", std::make_unique<PingOption>(core));
 			return controller;
 		}
 	};

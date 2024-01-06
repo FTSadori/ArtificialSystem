@@ -214,6 +214,7 @@
     <ClInclude Include="OpenPortOption.h" />
     <ClInclude Include="OpenTextEditorOption.h" />
     <ClInclude Include="PasswordHandler.h" />
+    <ClInclude Include="PingOption.h" />
     <ClInclude Include="RenameFileOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />

@@ -557,6 +557,9 @@
     <ClInclude Include="CoreLoader.h">
       <Filter>Исходные файлы\Core\Commands\Core\Loader</Filter>
     </ClInclude>
+    <ClInclude Include="PingOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Net\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
