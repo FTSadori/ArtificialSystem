@@ -4,6 +4,7 @@
 #include "ColoursThemesHandler.h"
 #include "ICommandExecutor.h"
 #include "PasswordHandler.h"
+#include "NetContainer.h"
 
 namespace Commands
 {
@@ -16,6 +17,7 @@ namespace Commands
 		virtual Memory::DiskSystem& memory() = 0;
 		virtual Memory::DiskSystemInfo& memory_info() = 0;
 		virtual PasswordHandler& passwords() = 0;
+		virtual NetContainer& net() = 0;
 
 		virtual ~ICore() = default;
 	};
