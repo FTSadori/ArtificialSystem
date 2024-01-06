@@ -173,6 +173,7 @@
     <ClInclude Include="ChangeModificatorsOption.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="DeleteUserOption.h" />
+    <ClInclude Include="DevicesHelpOption.h" />
     <ClInclude Include="DevicesOptionsLoader.h" />
     <ClInclude Include="HelpOptionsLoader.h" />
     <ClInclude Include="ICore.h" />

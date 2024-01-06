@@ -518,6 +518,9 @@
     <ClInclude Include="OpenPortOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Devices\Options</Filter>
     </ClInclude>
+    <ClInclude Include="DevicesHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

@@ -9,11 +9,11 @@
 
 namespace Commands
 {
-	// help
-	class BaseHelpOption final : public AbstractControllerOption
+	// helpdevices
+	class DevicesHelpOption final : public AbstractControllerOption
 	{
 	public:
-		BaseHelpOption(ICore& _core)
+		DevicesHelpOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -22,16 +22,13 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Why?\n");
+				ptr->print_main("\n");
 				return;
 			}
 
-			ptr->print_main("Use next commands to get more info:\n");
-			ptr->print_third("- helpmemory\n");
-			ptr->print_third("- helpsystem\n");
-			ptr->print_third("- helpusers\n");
-			ptr->print_third("- helpwindows\n");
-			ptr->print_third("- helpdevices\n");
+			ptr->print_main("Use next commands with ::help to get more info:\n");
+			ptr->print_third("- fromport\n");
+			ptr->print_third("- openport\n");
 
 			return;
 		}
