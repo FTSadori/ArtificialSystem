@@ -22,4 +22,27 @@ public:
 		ss << t;
 		return ss.str();
 	}
+
+	static int from_bits(const std::string& s)
+	{
+		int mul = 1;
+		int sum = 0;
+		for (int i = s.size() - 1; i >= 0; --i)
+		{
+			sum += (s[i] - '0') * mul;
+			mul *= 2;
+		}
+		return sum;
+	}
+
+	static std::string to_bits(int n)
+	{
+		std::string s = "";
+		while (n > 0)
+		{
+			s = char('0' + (n % 2)) + s;
+			n /= 2;
+		}
+		return s;
+	}
 };
