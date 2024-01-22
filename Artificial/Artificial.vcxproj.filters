@@ -187,6 +187,12 @@
     <Filter Include="Исходные файлы\Core\Commands\Core\Loader">
       <UniqueIdentifier>{0ab086d7-f444-413e-82cb-9a80ce4cbc5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Mova">
+      <UniqueIdentifier>{7b3b1cad-6571-482f-92d6-31c7d0131851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Mova\Base">
+      <UniqueIdentifier>{95a76a63-209a-4398-8c2a-3267d6f2c940}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -565,6 +571,12 @@
     </ClInclude>
     <ClInclude Include="NetHelpOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="IProcessor.h">
+      <Filter>Исходные файлы\Core\Mova\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="IMovaCommand.h">
+      <Filter>Исходные файлы\Core\Mova\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

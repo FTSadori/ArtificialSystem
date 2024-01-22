@@ -203,6 +203,7 @@
     <ClInclude Include="GuiExceptions.h" />
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
+    <ClInclude Include="IMovaCommand.h" />
     <ClInclude Include="LoadFileFromPortOption.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryHelpOption.h" />
@@ -217,6 +218,7 @@
     <ClInclude Include="OpenTextEditorOption.h" />
     <ClInclude Include="PasswordHandler.h" />
     <ClInclude Include="PingOption.h" />
+    <ClInclude Include="IProcessor.h" />
     <ClInclude Include="RenameFileOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
