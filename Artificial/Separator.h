@@ -27,4 +27,17 @@ public:
 		res = res.substr(1);
 		return res;
 	}
+
+	static std::vector<std::string> split_by(const std::string& line, int num)
+	{
+		std::vector<std::string> lines;
+		std::string copy = line;
+		for (size_t i = 0; i < line.size(); i += num)
+		{
+			lines.push_back(copy.substr(0, num));
+			if (copy.size() > num)
+				copy = copy.substr(num);
+		}
+		return lines;
+	}
 };
