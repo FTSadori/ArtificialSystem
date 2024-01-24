@@ -219,6 +219,8 @@
     <ClInclude Include="PasswordHandler.h" />
     <ClInclude Include="PingOption.h" />
     <ClInclude Include="IProcessor.h" />
+    <ClInclude Include="Processor.h" />
+    <ClInclude Include="ProcessorExceptions.h" />
     <ClInclude Include="RenameFileOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
@@ -256,6 +258,7 @@
     <ClInclude Include="TextInfo.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="UsersOptionsLoader.h" />
+    <ClInclude Include="Version.h" />
     <ClInclude Include="WindowOptionsLoader.h" />
     <ClInclude Include="WindowsHelpOption.h" />
   </ItemGroup>

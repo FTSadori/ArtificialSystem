@@ -193,6 +193,12 @@
     <Filter Include="Исходные файлы\Core\Mova\Base">
       <UniqueIdentifier>{95a76a63-209a-4398-8c2a-3267d6f2c940}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Mova\Processor">
+      <UniqueIdentifier>{96e03ee8-ca10-4b8e-a72e-69d458922185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Mova\Exceptions">
+      <UniqueIdentifier>{af0f7cba-afdc-4492-9c68-2e897b8c6738}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -577,6 +583,15 @@
     </ClInclude>
     <ClInclude Include="IMovaCommand.h">
       <Filter>Исходные файлы\Core\Mova\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.h">
+      <Filter>Исходные файлы\Core\Mova\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessorExceptions.h">
+      <Filter>Исходные файлы\Core\Mova\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Исходные файлы\Core\Mova\Processor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
