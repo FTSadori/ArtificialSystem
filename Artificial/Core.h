@@ -19,6 +19,8 @@ namespace Commands
 		virtual Memory::DiskSystemInfo& memory_info() override { std::lock_guard lock(m_execution_mutex); return m_memory_info; }
 		virtual PasswordHandler& passwords()          override { std::lock_guard lock(m_execution_mutex); return m_passwords; }
 		virtual NetContainer& net()                   override { std::lock_guard lock(m_execution_mutex); return m_net; }
+		virtual Mova::Processor& processor()          override { std::lock_guard lock(m_execution_mutex); return m_processor; }
+
 
 		void add_controller(const BaseController& controller);
 		virtual void execute(const ICommand& command, const User& sender) override;
@@ -31,6 +33,7 @@ namespace Commands
 		Memory::DiskSystemInfo m_memory_info;
 		PasswordHandler m_passwords;
 		NetContainer m_net;
+		Mova::Processor m_processor
 
 		std::vector<BaseController> m_controllers;
 		std::mutex m_execution_mutex;

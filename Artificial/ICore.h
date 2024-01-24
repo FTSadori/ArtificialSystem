@@ -5,6 +5,7 @@
 #include "ICommandExecutor.h"
 #include "PasswordHandler.h"
 #include "NetContainer.h"
+#include "Processor.h"
 
 namespace Commands
 {
@@ -18,6 +19,7 @@ namespace Commands
 		virtual Memory::DiskSystemInfo& memory_info() = 0;
 		virtual PasswordHandler& passwords() = 0;
 		virtual NetContainer& net() = 0;
+		virtual Mova::Processor& processor() = 0;
 
 		virtual ~ICore() = default;
 	};
