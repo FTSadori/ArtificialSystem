@@ -27,9 +27,13 @@ namespace Mova
 			m_registers.resize(c_registers_size, 0);
 			m_execution_ptr = 0;
 
+			auto max_num = pow(2, m_current_num_size) - 1;
+			if (code.size() > max_num)
+				throw ProcessorException("Code: File can't have more than " + Parser::to_string(max_num) + " rows");
+
 			for (size_t i = 0; i < input.size(); ++i)
 			{
-				if (input[i] > pow(2, m_current_num_size))
+				if (input[i] > max_num)
 					throw ProcessorException("Input: Input can't be larger than " + Parser::to_string(m_current_num_size) + " bits");
 				if (m_version.types_lvl < 2)
 					m_registers[i] = round(input[i]);
