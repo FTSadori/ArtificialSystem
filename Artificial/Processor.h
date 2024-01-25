@@ -21,11 +21,21 @@ namespace Mova
 			m_current_num_size = c_start_num_size + m_version.bits_lvl;
 		}
 
-		virtual double process(const std::vector<std::string>& code) override
+		virtual double process(const std::vector<std::string>& code, const std::vector<double>& input) override
 		{
 			m_registers.clear();
 			m_registers.resize(c_registers_size, 0);
 			m_execution_ptr = 0;
+
+			for (size_t i = 0; i < input.size(); ++i)
+			{
+				if (input[i] > pow(2, m_current_num_size))
+					throw ProcessorException("Input: Input can't be larger than " + Parser::to_string(m_current_num_size) + " bits");
+				if (m_version.types_lvl < 2)
+					m_registers[i] = round(input[i]);
+				else
+					m_registers[i] = input[i];
+			}
 
 			while (m_execution_ptr < code.size())
 			{
@@ -88,9 +98,9 @@ namespace Mova
 			int second = m_registers[arguments[1]];
 			if (arguments.size() == 4)
 			{
-				if ((arguments[3] == 2 || arguments[3] == 3) && m_version.jump_lvl < 1)
+				if ((arguments[3] == 1 || arguments[3] == 2) && m_version.jump_lvl < 1)
 					throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
-				if (arguments[3] >= 4 && m_version.jump_lvl < 2)
+				if (arguments[3] >= 3 && m_version.jump_lvl < 2)
 					throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
 				switch (arguments[3])
 				{

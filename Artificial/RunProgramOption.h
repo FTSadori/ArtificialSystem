@@ -26,8 +26,9 @@ namespace Commands
 			{
 				ptr->print_main("R permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
-				ptr->print_secondary("mova {path}\n");
+				ptr->print_secondary("mova {path} [...]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
+				ptr->print_main("  ... - (doubles) start values in registers;\n");
 				return;
 			}
 
@@ -48,10 +49,18 @@ namespace Commands
 
 			auto lines = Separator::split(std::string(data.get_data(), data.size()), '\n');
 
+			std::vector<double> args;
+			size_t num = 2;
+			while (_command.has(Parser::to_string(num)))
+			{
+				args.push_back(Parser::from_string<double>(_command.get(Parser::to_string(num))));
+				num++;
+			}
+
 			// currently we have only first module
 			m_core.processor().set_version(lines[0]);
 			lines.erase(lines.begin());
-			double ans = m_core.processor().process(lines);
+			double ans = m_core.processor().process(lines, args);
 			ptr->print_third("Program returned " + Parser::to_string(ans) + "\n");
 
 			return;
