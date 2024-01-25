@@ -41,11 +41,11 @@ namespace GUI
 		}
 
 		ScreenText numbers(Size{ m_size.rows, c_max_num_size });
-		numbers.push_text(" 1", m_secondary);
+		numbers.push_text(" 0", m_secondary);
 		nums[0] = 0;
 		for (size_t i = 1; i < nums.size(); ++i)
 		{
-			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Parser::to_string(i + 1), m_secondary);
+			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Parser::to_string(i), m_secondary);
 		}
 
 		text.render_text_from({ m_position.x, int16_t(m_position.y + c_max_num_size) }, m_render_from_line);
