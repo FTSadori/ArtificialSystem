@@ -208,6 +208,7 @@
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryHelpOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
+    <ClInclude Include="MovaOptionsLoader.h" />
     <ClInclude Include="MoveFileOption.h" />
     <ClInclude Include="NetContainer.h" />
     <ClInclude Include="NetFilesLoader.h" />
@@ -222,6 +223,7 @@
     <ClInclude Include="Processor.h" />
     <ClInclude Include="ProcessorExceptions.h" />
     <ClInclude Include="RenameFileOption.h" />
+    <ClInclude Include="RunProgramOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />

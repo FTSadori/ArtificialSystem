@@ -16,57 +16,6 @@
     <Filter Include="Исходные файлы\Core">
       <UniqueIdentifier>{0860cdbc-54d8-427a-8155-75eb536a509d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Memory">
-      <UniqueIdentifier>{ee2a13ab-97a2-46f6-9e75-3e11ad0ad1d3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\LoaderInterface">
-      <UniqueIdentifier>{f45cde27-7908-4f8f-95ac-3379b6f2d7e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files">
-      <UniqueIdentifier>{a89f5231-0b21-4405-8c56-0722554038ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files\Info">
-      <UniqueIdentifier>{06ab73ec-8b6c-4c5f-9595-cac6a778500e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files\RealFileManager">
-      <UniqueIdentifier>{e69a8585-be84-49e7-9b0f-87f6e46c82db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files\FileHierarchy">
-      <UniqueIdentifier>{a2fdd84d-3685-426d-a83b-c120b84c6c4c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\CoreStructures">
-      <UniqueIdentifier>{df943f7e-5fa6-41d8-b18e-f8e99f24cd83}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Exceptions">
-      <UniqueIdentifier>{715e20ad-7685-4516-a494-eaaa3db431fa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files\Sectors">
-      <UniqueIdentifier>{99ff21ef-fb66-492f-8239-c1107092df63}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files\Sectors\SectorName">
-      <UniqueIdentifier>{f2022ef4-172c-464e-aa8c-ccc7f0e1deed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Data">
-      <UniqueIdentifier>{247ae1dd-f7e4-48b7-8aaa-06b012ad2d99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Base64">
-      <UniqueIdentifier>{6f87cedd-6bc5-4f2d-8eb4-6002ab6d18bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Files\FileHierarchy\HierarchyFileInfo">
-      <UniqueIdentifier>{5a2e1459-e3c7-45a9-8a0b-52abc4cebfc4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\DiskFileManager">
-      <UniqueIdentifier>{474c622b-1744-44de-80c7-1fb1ce808af5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\NameValidator">
-      <UniqueIdentifier>{cee6933f-763e-4a46-8279-c5adb08f8fe9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\Time">
-      <UniqueIdentifier>{cffd5988-9a27-4ccb-bf84-65f7ee88d00a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Core\Memory\DiskSystem">
-      <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Core\Commands">
       <UniqueIdentifier>{d4746b67-32a3-45e8-aa54-ebda080fde48}</UniqueIdentifier>
     </Filter>
@@ -198,6 +147,63 @@
     </Filter>
     <Filter Include="Исходные файлы\Core\Mova\Exceptions">
       <UniqueIdentifier>{af0f7cba-afdc-4492-9c68-2e897b8c6738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Mova">
+      <UniqueIdentifier>{4d9ad267-3538-4367-a5df-36462e30fca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Mova\Options">
+      <UniqueIdentifier>{ed0fa68a-2711-4655-8b57-85bec1a9b9f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory">
+      <UniqueIdentifier>{ee2a13ab-97a2-46f6-9e75-3e11ad0ad1d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\LoaderInterface">
+      <UniqueIdentifier>{f45cde27-7908-4f8f-95ac-3379b6f2d7e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files">
+      <UniqueIdentifier>{a89f5231-0b21-4405-8c56-0722554038ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\Info">
+      <UniqueIdentifier>{06ab73ec-8b6c-4c5f-9595-cac6a778500e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\RealFileManager">
+      <UniqueIdentifier>{e69a8585-be84-49e7-9b0f-87f6e46c82db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\FileHierarchy">
+      <UniqueIdentifier>{a2fdd84d-3685-426d-a83b-c120b84c6c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\FileHierarchy\HierarchyFileInfo">
+      <UniqueIdentifier>{5a2e1459-e3c7-45a9-8a0b-52abc4cebfc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\Sectors">
+      <UniqueIdentifier>{99ff21ef-fb66-492f-8239-c1107092df63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Files\Sectors\SectorName">
+      <UniqueIdentifier>{f2022ef4-172c-464e-aa8c-ccc7f0e1deed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\CoreStructures">
+      <UniqueIdentifier>{df943f7e-5fa6-41d8-b18e-f8e99f24cd83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Exceptions">
+      <UniqueIdentifier>{715e20ad-7685-4516-a494-eaaa3db431fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Data">
+      <UniqueIdentifier>{247ae1dd-f7e4-48b7-8aaa-06b012ad2d99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Base64">
+      <UniqueIdentifier>{6f87cedd-6bc5-4f2d-8eb4-6002ab6d18bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\DiskFileManager">
+      <UniqueIdentifier>{474c622b-1744-44de-80c7-1fb1ce808af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\NameValidator">
+      <UniqueIdentifier>{cee6933f-763e-4a46-8279-c5adb08f8fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\Time">
+      <UniqueIdentifier>{cffd5988-9a27-4ccb-bf84-65f7ee88d00a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Memory\DiskSystem">
+      <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -592,6 +598,12 @@
     </ClInclude>
     <ClInclude Include="Version.h">
       <Filter>Исходные файлы\Core\Mova\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="RunProgramOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="MovaOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

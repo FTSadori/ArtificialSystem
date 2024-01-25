@@ -33,7 +33,7 @@ namespace Commands
 		Memory::DiskSystemInfo m_memory_info;
 		PasswordHandler m_passwords;
 		NetContainer m_net;
-		Mova::Processor m_processor
+		Mova::Processor m_processor;
 
 		std::vector<BaseController> m_controllers;
 		std::mutex m_execution_mutex;
