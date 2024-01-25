@@ -21,7 +21,7 @@ namespace Mova
 			m_current_num_size = c_start_num_size + m_version.bits_lvl;
 		}
 
-		virtual double process(const std::vector<std::string>& code, const std::vector<double>& input) override
+		virtual std::vector<float>& process(const std::vector<std::string>& code, const std::vector<double>& input) override
 		{
 			m_registers.clear();
 			m_registers.resize(c_registers_size, 0);
@@ -66,7 +66,7 @@ namespace Mova
 				if (num != 3)
 					m_execution_ptr++;
 			}
-			return m_registers[0];
+			return m_registers;
 		}
 
 		void check_for_arguments(const std::vector<int>& arguments, size_t min, size_t max)

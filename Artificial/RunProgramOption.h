@@ -60,8 +60,20 @@ namespace Commands
 			// currently we have only first module
 			m_core.processor().set_version(lines[0]);
 			lines.erase(lines.begin());
-			double ans = m_core.processor().process(lines, args);
-			ptr->print_third("Program returned " + Parser::to_string(ans) + "\n");
+			auto& res = m_core.processor().process(lines, args);
+			std::string str_res;
+			ptr->print_third("Program returned [");
+			
+			for (double d : res)
+				if (d != 0)
+				{
+					ptr->print_third(Parser::to_string(d) + ", ");
+					str_res.push_back((char)d);
+				}
+				else
+					break;
+			ptr->print_third("0]\n");
+			ptr->print_secondary("Or string [" + str_res + "]\n");
 
 			return;
 		}
