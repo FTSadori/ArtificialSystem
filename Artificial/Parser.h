@@ -35,12 +35,6 @@ public:
 		return sum;
 	}
 
-	static int from_bits_signed(const std::string& s)
-	{
-		int num = from_bits(s);
-		return num - pow(2, s.size());
-	}
-
 	static std::string to_bits(unsigned n)
 	{
 		std::string s = "";
