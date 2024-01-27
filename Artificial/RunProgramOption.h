@@ -7,6 +7,7 @@
 #include "ICore.h"
 #include "RealFileManager.h"
 #include "HexModule.h"
+#include "SymbolsModule.h"
 #include <map>
 #include <filesystem>
 
@@ -63,9 +64,10 @@ namespace Commands
 			m_core.processor().set_version(ver);
 			lines.erase(lines.begin());
 
-			if (ver.module_lvl == 2)
+			switch (ver.module_lvl)
 			{
-				lines = Mova::HexModule::compile(lines);
+			case 2: lines = Mova::HexModule::compile(lines); break;
+			case 3: lines = Mova::SymbolsModule::compile(lines, m_core.processor().get_current_num_size()); break;
 			}
 
 			auto& res = m_core.processor().process(lines, args);
