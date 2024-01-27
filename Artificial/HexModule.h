@@ -14,15 +14,16 @@ namespace Mova
 		static std::vector<std::string> compile(const std::vector<std::string> code)
 		{
 			std::vector<std::string> res;
-			for (const auto& line : code)
+			for (size_t i = 0; i < code.size(); ++i)
 			{
 				std::string str;
-				for (char c : line)
+				for (char c : code[i])
 				{
 					char lc = tolower(c);
 					if (map.contains(lc))
 						str += map.at(lc);
-					else throw ProcessorException("HexModule: Wrong symbol '" + std::string(1, lc) + "'");
+					else
+						throw ProcessorException("Compiler: Line " + Parser::to_string(i + 1) + ": Wrong symbol '" + std::string(1, lc) + "'");
 				}
 				res.push_back(str);
 			}
