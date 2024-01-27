@@ -203,7 +203,7 @@ namespace Mova
 			{
 				m_call_stack.push(m_execution_ptr + 1);
 				m_register_points.push(m_last_register + 1);
-				m_execution_ptr = arguments[0];
+				m_execution_ptr = arguments[0] - 1;
 				m_func_mode = true;
 			}
 			else
