@@ -205,6 +205,9 @@
     <Filter Include="Исходные файлы\Core\Memory\DiskSystem">
       <UniqueIdentifier>{0149f90f-178f-4e49-9ae1-835564b057f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Mova\Compilers">
+      <UniqueIdentifier>{1c38de99-2673-4b39-bc8d-cbbb5c3a4230}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -320,6 +323,9 @@
     </ClCompile>
     <ClCompile Include="NetContainer.cpp">
       <Filter>Исходные файлы\Core\Commands\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="HexModule.cpp">
+      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -604,6 +610,9 @@
     </ClInclude>
     <ClInclude Include="MovaOptionsLoader.h">
       <Filter>Исходные файлы\Core\Commands\Options\Mova</Filter>
+    </ClInclude>
+    <ClInclude Include="HexModule.h">
+      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

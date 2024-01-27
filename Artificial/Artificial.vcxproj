@@ -144,6 +144,7 @@
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="GUIHandler.cpp" />
+    <ClCompile Include="HexModule.cpp" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
     <ClCompile Include="ImageTextWindow.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="DevicesOptionsLoader.h" />
     <ClInclude Include="DownloadOption.h" />
     <ClInclude Include="HelpOptionsLoader.h" />
+    <ClInclude Include="HexModule.h" />
     <ClInclude Include="ICore.h" />
     <ClInclude Include="ColoursThemesHandler.h" />
     <ClInclude Include="ColourTheme.h" />
