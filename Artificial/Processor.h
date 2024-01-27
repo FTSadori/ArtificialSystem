@@ -99,7 +99,7 @@ namespace Mova
 		{
 			if (m_func_mode)
 			{
-				num -= pow(2, m_current_num_size - 1);
+				if (num >= pow(2, m_current_num_size - 1)) num -= pow(2, m_current_num_size);
 				if (m_register_points.top() + num < 0 || m_register_points.top() + num >= c_registers_size)
 					throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Index out of range");
 				return m_register_points.top() + num;
