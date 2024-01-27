@@ -6,6 +6,7 @@
 #include "Command.h"
 #include "ICore.h"
 #include "RealFileManager.h"
+#include "HexModule.h"
 #include <map>
 #include <filesystem>
 
@@ -58,8 +59,15 @@ namespace Commands
 			}
 
 			// currently we have only first module
-			m_core.processor().set_version(lines[0]);
+			Mova::Version ver = lines[0];
+			m_core.processor().set_version(ver);
 			lines.erase(lines.begin());
+
+			if (ver.module_lvl == 2)
+			{
+				lines = Mova::HexModule::compile(lines);
+			}
+
 			auto& res = m_core.processor().process(lines, args);
 			std::string str_res;
 			ptr->print_third("Program returned [");
@@ -68,7 +76,8 @@ namespace Commands
 				if (d != 0)
 				{
 					ptr->print_third(Parser::to_string(d) + ", ");
-					str_res.push_back((char)d);
+					
+					if (isalnum((char)d)) str_res.push_back((char)d);
 				}
 				else
 					break;
