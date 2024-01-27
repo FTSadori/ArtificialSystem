@@ -327,6 +327,9 @@
     <ClCompile Include="HexModule.cpp">
       <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClCompile>
+    <ClCompile Include="SymbolsModule.cpp">
+      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -612,6 +615,9 @@
       <Filter>Исходные файлы\Core\Commands\Options\Mova</Filter>
     </ClInclude>
     <ClInclude Include="HexModule.h">
+      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolsModule.h">
       <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClInclude>
   </ItemGroup>

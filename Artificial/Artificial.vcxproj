@@ -162,6 +162,7 @@
     <ClCompile Include="Sectors.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
     <ClCompile Include="Size.cpp" />
+    <ClCompile Include="SymbolsModule.cpp" />
     <ClCompile Include="SystemDiskListOption.h" />
     <ClCompile Include="TerminalWindow.cpp" />
     <ClCompile Include="TextEditorWindow.cpp" />
@@ -227,6 +228,7 @@
     <ClInclude Include="RenameFileOption.h" />
     <ClInclude Include="RunProgramOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
+    <ClInclude Include="SymbolsModule.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />
     <ClInclude Include="SystemClearDisksOption.h" />
