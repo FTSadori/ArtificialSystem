@@ -16,6 +16,11 @@ namespace Mova
 			return m_registers;
 		}
 
+		int get_current_num_size()
+		{
+			return m_current_num_size;
+		}
+
 		void set_version(const Version& version)
 		{
 			m_version = version;
