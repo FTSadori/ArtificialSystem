@@ -30,6 +30,7 @@ namespace Mova
 			m_registers.resize(c_registers_size, 0);
 			m_execution_ptr = 0;
 			m_func_mode = false;
+			m_last_register = 0;
 
 			auto max_num = pow(2, m_current_num_size) - 1;
 			if (code.size() > max_num)
@@ -44,8 +45,12 @@ namespace Mova
 				case 0: m_registers[i] = round(abs(input[i])); break;
 				case 1: m_registers[i] = round(input[i]); break;
 				case 2: m_registers[i] = input[i]; break;
+				default:
+					m_registers[i] = round(abs(input[i])); break;
 				}
 			}
+			if (input.size() > 0)
+				m_last_register = input.size() - 1;
 
 			while (m_execution_ptr < code.size())
 			{
@@ -78,7 +83,7 @@ namespace Mova
 				case 0b1111: end(arguments); break;
 				}
 
-				if (num != 3)
+				if (num != 0b0011 && num != 0b1110)
 					m_execution_ptr++;
 			}
 
@@ -101,7 +106,7 @@ namespace Mova
 			{
 				if (num >= pow(2, m_current_num_size - 1)) num -= pow(2, m_current_num_size);
 				if (m_register_points.top() + num < 0 || m_register_points.top() + num >= c_registers_size)
-					throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Index out of range");
+					throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Index out of range [" + Parser::to_string(m_register_points.top() + num) + "]");
 				return m_register_points.top() + num;
 			}
 			else
@@ -112,7 +117,7 @@ namespace Mova
 		{
 			check_for_arguments(arguments, 1, 1);
 			m_registers[get_index(arguments[0])] = 0;
-			m_last_register = max(m_last_register, arguments[0]);
+			m_last_register = max(m_last_register, get_index(arguments[0]));
 		}
 
 		void increment(const std::vector<int>& arguments)
@@ -177,7 +182,7 @@ namespace Mova
 			case '+': m_registers[get_index(arguments[0])] += second; break;
 			case '-': m_registers[get_index(arguments[0])] -= second; break;
 			case '*': m_registers[get_index(arguments[0])] *= second; break;
-			case 'd': m_registers[get_index(arguments[0])] = round(m_registers[get_index(arguments[0])] / second); break;
+			case 'd': m_registers[get_index(arguments[0])] = trunc(m_registers[get_index(arguments[0])] / second); break;
 			case '%': m_registers[get_index(arguments[0])] = int(m_registers[get_index(arguments[0])]) % int(second); break;
 			case '/': 
 				if (m_version.types_lvl >= 2)
@@ -194,11 +199,11 @@ namespace Mova
 			check_for_arguments(arguments, 1, 2);
 			if (m_version.func_lvl < 1 || (m_version.func_lvl < 2 && arguments.size() == 2))
 				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
-			if (arguments.size() == 2)
+			if (arguments.size() == 1)
 			{
 				m_call_stack.push(m_execution_ptr + 1);
 				m_register_points.push(m_last_register + 1);
-				m_execution_ptr = arguments[1];
+				m_execution_ptr = arguments[0];
 				m_func_mode = true;
 			}
 			else
@@ -212,6 +217,9 @@ namespace Mova
 			check_for_arguments(arguments, 0, 0);
 			if (m_version.func_lvl < 1)
 				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
+			if (m_call_stack.empty())
+				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Wrong END statement");
+			m_execution_ptr = m_call_stack.top();
 			m_call_stack.pop();
 			m_last_register = m_register_points.top();
 			m_register_points.pop();
