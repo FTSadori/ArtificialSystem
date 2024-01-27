@@ -16,9 +16,9 @@ namespace Mova
 			return m_registers;
 		}
 
-		void set_version(const std::string& version_string)
+		void set_version(const Version& version)
 		{
-			m_version = Version(version_string);
+			m_version = version;
 			m_current_num_size = c_start_num_size + m_version.bits_lvl;
 		}
 
