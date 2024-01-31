@@ -330,6 +330,9 @@
     <ClCompile Include="SymbolsModule.cpp">
       <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClCompile>
+    <ClCompile Include="FinalModule.cpp">
+      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -619,6 +622,12 @@
     </ClInclude>
     <ClInclude Include="SymbolsModule.h">
       <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalModule.h">
+      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
+    </ClInclude>
+    <ClInclude Include="Trim.h">
+      <Filter>Исходные файлы\Core\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

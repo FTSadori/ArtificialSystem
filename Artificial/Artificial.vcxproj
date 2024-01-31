@@ -142,6 +142,7 @@
     <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
+    <ClCompile Include="FinalModule.cpp" />
     <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="GUIHandler.cpp" />
     <ClCompile Include="HexModule.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="DevicesHelpOption.h" />
     <ClInclude Include="DevicesOptionsLoader.h" />
     <ClInclude Include="DownloadOption.h" />
+    <ClInclude Include="FinalModule.h" />
     <ClInclude Include="HelpOptionsLoader.h" />
     <ClInclude Include="HexModule.h" />
     <ClInclude Include="ICore.h" />
@@ -235,6 +237,7 @@
     <ClInclude Include="SystemHelpOption.h" />
     <ClInclude Include="SystemOptionsLoader.h" />
     <ClInclude Include="SystemStartOption.h" />
+    <ClInclude Include="Trim.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="AddUserOption.h" />
     <ClInclude Include="ChangeUserOption.h" />
