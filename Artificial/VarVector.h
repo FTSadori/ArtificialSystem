@@ -5,6 +5,8 @@
 #include "ProcessorExceptions.h"
 #include "FinalModuleKeyWords.h"
 #include "Parser.h"
+#include "Trim.h"
+#include "Separator.h"
 
 namespace Mova
 {
@@ -41,10 +43,8 @@ namespace Mova
 			if (FinalModuleKeyWords::is_keyword(name))
 				throw ProcessorException("Precompile: Wrong used keyword (Line " + Parser::to_string(line + 1) + ")");
 
-			if (m_vars.back().contains(name))
-				throw ProcessorException("Precompile: Variable with this name already exists (Line " + Parser::to_string(line + 1) + ")");
-
-			m_vars.back().emplace(name, m_cur_base + m_vars.back().size());
+			if (!m_vars.back().contains(name))
+				m_vars.back().emplace(name, m_cur_base + m_vars.back().size());
 		}
 
 		void push_layer()
@@ -57,6 +57,35 @@ namespace Mova
 		{
 			m_vars.pop_back();
 			m_cur_base -= m_vars.back().size();
+		}
+
+		std::vector<std::string> convert(const std::vector<std::string>& code, size_t from)
+		{
+			std::vector<std::string> res;
+			for (const auto& line : code)
+			{
+				if (line.find('v') >= line.size())
+				{
+					res.push_back(line);
+					continue;
+				}
+			
+				auto arr = Separator::split(line, ' ');
+				std::vector<std::string> new_arr;
+				for (const auto& part : arr)
+				{
+					if (part.size() > 0 && part[0] == 'v')
+					{
+						size_t ptr = from + Parser::from_string<size_t>(part.substr(1));
+						new_arr.push_back(Parser::to_string(ptr));
+					}
+					else
+						new_arr.push_back(part);
+				}
+
+				res.push_back(Separator::join(new_arr, ' '));
+			}
+			return res;
 		}
 
 	private:
