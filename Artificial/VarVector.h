@@ -11,6 +11,13 @@ namespace Mova
 	class VarVector final
 	{
 	public:
+		void clear()
+		{
+			m_vars.clear();
+			m_cur_base = 0;
+			m_cur_nesting_lvl = 0;
+		}
+
 		size_t get_ptr_by_name(const std::string& name, size_t line)
 		{
 			for (int j = m_cur_nesting_lvl; j >= 0; --j)
