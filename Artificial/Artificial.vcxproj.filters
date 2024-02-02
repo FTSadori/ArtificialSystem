@@ -638,6 +638,9 @@
     <ClInclude Include="FinalModuleKeyWords.h">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClInclude>
+    <ClInclude Include="ConstantsVector.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

@@ -175,6 +175,7 @@
     <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
+    <ClInclude Include="ConstantsVector.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
     <ClInclude Include="DeleteUserOption.h" />
