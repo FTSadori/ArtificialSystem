@@ -181,7 +181,15 @@ namespace Mova
 			check_for_arguments(arguments, 2, 3);
 			if (m_version.math_lvl < needed_base_lvl || (arguments.size() == 3 && m_version.math_lvl < 3))
 				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
-			auto second = (arguments.size() == 3 ? m_registers[get_index(arguments[1])] : arguments[1]);
+			double second = arguments[1];
+			if (arguments.size() == 3)
+			{
+				switch (arguments[1])
+				{
+				case 0: second = m_registers[get_index(arguments[1])]; break;
+				case 1: second = m_registers[m_registers[get_index(arguments[1])]]; break;
+				}
+			}
 			switch (symb)
 			{
 			case '+': m_registers[get_index(arguments[0])] += second; break;
