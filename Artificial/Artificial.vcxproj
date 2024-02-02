@@ -182,6 +182,7 @@
     <ClInclude Include="DevicesOptionsLoader.h" />
     <ClInclude Include="DownloadOption.h" />
     <ClInclude Include="FinalModule.h" />
+    <ClInclude Include="FinalModuleKeyWords.h" />
     <ClInclude Include="HelpOptionsLoader.h" />
     <ClInclude Include="HexModule.h" />
     <ClInclude Include="ICore.h" />
@@ -267,6 +268,7 @@
     <ClInclude Include="TextInfo.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="UsersOptionsLoader.h" />
+    <ClInclude Include="VarVector.h" />
     <ClInclude Include="Version.h" />
     <ClInclude Include="WindowOptionsLoader.h" />
     <ClInclude Include="WindowsHelpOption.h" />

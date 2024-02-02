@@ -208,6 +208,9 @@
     <Filter Include="Исходные файлы\Core\Mova\Compilers">
       <UniqueIdentifier>{1c38de99-2673-4b39-bc8d-cbbb5c3a4230}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Mova\FinalModule">
+      <UniqueIdentifier>{b1a33db5-b430-4f11-ba1a-0c7bc292fcae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -628,6 +631,12 @@
     </ClInclude>
     <ClInclude Include="Trim.h">
       <Filter>Исходные файлы\Core\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="VarVector.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalModuleKeyWords.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
