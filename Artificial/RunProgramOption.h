@@ -8,6 +8,7 @@
 #include "RealFileManager.h"
 #include "HexModule.h"
 #include "SymbolsModule.h"
+#include "FinalModule.h"
 #include <map>
 #include <filesystem>
 
@@ -28,9 +29,11 @@ namespace Commands
 			{
 				ptr->print_main("R permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
-				ptr->print_secondary("mova {path} [...]\n");
+				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::show]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
 				ptr->print_main("  ... - (doubles) start values in registers;\n");
+				ptr->print_main("  ::show - (flag) on 4th module shows half-compiled code;\n");
+				ptr->print_main("  :r register_show_num - (flag + int) shows no less than entered number of registers\n");
 				return;
 			}
 
@@ -64,22 +67,41 @@ namespace Commands
 			m_core.processor().set_version(ver);
 			lines.erase(lines.begin());
 
+			auto num_size = m_core.processor().get_current_num_size();
 			switch (ver.module_lvl)
 			{
 			case 2: lines = Mova::HexModule::compile(lines); break;
-			case 3: lines = Mova::SymbolsModule::compile(lines, m_core.processor().get_current_num_size()); break;
+			case 3: lines = Mova::SymbolsModule::compile(lines, num_size); break;
+			case 4:
+				auto l = Mova::FinalModule::compile(lines, ver);
+				if (_command.has("::show"))
+					for (auto& line : l)
+						ptr->print_third(line + "\n");
+				lines = Mova::SymbolsModule::compile(l, num_size); 
+				break;
 			}
 
 			auto& res = m_core.processor().process(lines, args);
 			std::string str_res;
 			ptr->print_third("Program returned [");
 			
-			for (double d : res)
-				if (d != 0)
+			size_t checker = 0;
+			if (_command.has(":r"))
+			{
+				checker = Parser::from_string<size_t>(_command.get(":r"));
+			}
+
+			for (size_t i = 0; i < res.size(); ++i)
+				if (i < checker || res[i] != 0)
 				{
-					ptr->print_third(Parser::to_string(d) + ", ");
+					ptr->print_third(Parser::to_string(res[i]) + ", ");
 					
-					if (isalnum((char)d)) str_res.push_back((char)d);
+					try
+					{
+						if (res[i] >= 32 && res[i] <= 255)
+							str_res.push_back((char)res[i]);
+					}
+					catch (...) { }
 				}
 				else
 					break;

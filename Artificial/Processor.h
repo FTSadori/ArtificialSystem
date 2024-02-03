@@ -6,12 +6,12 @@
 
 namespace Mova
 {
-	class Processor : public IProcessor
+	class Processor
 	{
 	public:
 		Processor() = default;
 
-		virtual std::vector<float>& registers() override
+		std::vector<double>& registers()
 		{
 			return m_registers;
 		}
@@ -27,7 +27,7 @@ namespace Mova
 			m_current_num_size = c_start_num_size + m_version.bits_lvl;
 		}
 
-		virtual std::vector<float>& process(const std::vector<std::string>& code, const std::vector<double>& input) override
+		std::vector<double>& process(const std::vector<std::string>& code, const std::vector<double>& input)
 		{
 			m_call_stack = std::stack<int>();
 			m_register_points = std::stack<int>();
@@ -83,6 +83,8 @@ namespace Mova
 				case 0b1000: math(arguments, 'd', 2); break;
 				case 0b1001: math(arguments, '%', 2); break;
 				case 0b1010: math(arguments, '/', 2); break;
+				case 0b1011: math(arguments, '<', 2); break;
+				case 0b1100: math(arguments, '>', 2); break;
 
 				case 0b1110: func(arguments); break;
 				case 0b1111: end(arguments); break;
@@ -120,8 +122,14 @@ namespace Mova
 
 		void zeroing(const std::vector<int>& arguments)
 		{
-			check_for_arguments(arguments, 1, 1);
-			m_registers[get_index(arguments[0])] = 0;
+			check_for_arguments(arguments, 1, 2);
+			if (arguments.size() >= 2 && m_version.math_lvl < 3)
+				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
+
+			if (arguments.size() == 1)
+				m_registers[get_index(arguments[0])] = 0;
+			else
+				m_registers[unsigned(m_registers[get_index(arguments[0])])] = 0;
 			m_last_register = max(m_last_register, get_index(arguments[0]));
 		}
 
@@ -178,28 +186,34 @@ namespace Mova
 
 		void math(const std::vector<int>& arguments, char symb, int needed_base_lvl)
 		{
-			check_for_arguments(arguments, 2, 3);
-			if (m_version.math_lvl < needed_base_lvl || (arguments.size() == 3 && m_version.math_lvl < 3))
+			check_for_arguments(arguments, 2, 4);
+			if (m_version.math_lvl < needed_base_lvl || (arguments.size() >= 3 && m_version.math_lvl < 3))
 				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
 			double second = arguments[1];
-			if (arguments.size() == 3)
+			if (arguments.size() >= 3)
 			{
-				switch (arguments[1])
+				switch (arguments[2])
 				{
-				case 0: second = m_registers[get_index(arguments[1])]; break;
-				case 1: second = m_registers[m_registers[get_index(arguments[1])]]; break;
+				case 1: second = m_registers[get_index(arguments[1])]; break;
+				case 2: second = m_registers[unsigned(m_registers[get_index(arguments[1])])]; break;
 				}
 			}
+			double& first = (arguments.size() != 4) ? 
+				m_registers[get_index(arguments[0])] :
+				m_registers[unsigned(m_registers[get_index(arguments[0])])];
+
 			switch (symb)
 			{
-			case '+': m_registers[get_index(arguments[0])] += second; break;
-			case '-': m_registers[get_index(arguments[0])] -= second; break;
-			case '*': m_registers[get_index(arguments[0])] *= second; break;
-			case 'd': m_registers[get_index(arguments[0])] = trunc(m_registers[get_index(arguments[0])] / second); break;
-			case '%': m_registers[get_index(arguments[0])] = int(m_registers[get_index(arguments[0])]) % int(second); break;
+			case '+': first += second; break;
+			case '-': first -= second; break;
+			case '*': first *= second; break;
+			case 'd': first = trunc(first / second); break;
+			case '%': first = int(first) % int(second); break;
+			case '>': first /= pow(10, int(second)); break;
+			case '<': first *= pow(10, int(second)); break;
 			case '/': 
 				if (m_version.types_lvl >= 2)
-					m_registers[get_index(arguments[0])] /= second; 
+					first /= second; 
 				else
 					throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
 			break;
@@ -241,7 +255,7 @@ namespace Mova
 		}
 
 	private:
-		std::vector<float> m_registers;
+		std::vector<double> m_registers;
 		int m_stack_ptr = 0;
 		int m_execution_ptr = 0;
 		const uint8_t c_first_bits = 4;

@@ -14,6 +14,4 @@ namespace Mova
 			return (std::find(c_keywords.begin(), c_keywords.end(), word) != c_keywords.end());
 		}
 	};
-
-	const std::vector<std::string> FinalModuleKeyWords::c_keywords = { "while", "for", "func", "if", "end", "goto", };
 }

@@ -336,6 +336,12 @@
     <ClCompile Include="FinalModule.cpp">
       <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClCompile>
+    <ClCompile Include="FinalModuleKeyWords.cpp">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClCompile>
+    <ClCompile Include="MathExpression.cpp">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -639,6 +645,15 @@
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClInclude>
     <ClInclude Include="ConstantsVector.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="PointerOperations.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="MathExpression.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="LRValue.h">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "Separator.h"
 #include <stack>
 #include "Trim.h"
+#include "MathExpression.h"
 
 namespace Mova
 {
@@ -18,18 +19,21 @@ namespace Mova
 	{
 	private:
 		static std::unordered_map<double, size_t> s_constants;
-		static std::unordered_map<std::string, size_t> s_vars;
 		static std::unordered_map<std::string, size_t> s_marks;
 		static std::unordered_map<std::string, FuncInfo> s_functions;
+		static size_t s_current_nesting_lvl;
+		static size_t s_current_var_ptr;
 
-		static const std::vector<std::string> keywords;
-		static const std::vector<std::string> math_expr;
+	public:
+
 		static const std::vector<std::string> comparison_expr;
 
+	private:
+		/*
 		static void precompile(const std::vector<std::string>& code)
 		{
 			s_constants.clear();
-			s_vars.clear();
+			//s_vars.clear();
 			s_marks.clear();
 			s_functions.clear();
 
@@ -76,126 +80,13 @@ namespace Mova
 				}
 				else check_undefined(parts, i);
 			}
-		}
-
-		static void check_size_t(const std::string& word, size_t i)
-		{
-			try
+			if (!stack.empty())
 			{
-				Parser::from_string<size_t>(word);
+				if (stack.top() == 's')
+					throw ProcessorException("Precompile: Need end keyword");
+				if (stack.top() == 'f')
+					throw ProcessorException("Precompile: Need return keyword");
 			}
-			catch (...)
-			{
-				throw ProcessorException("Precompile: Wrong address value (Line " + Parser::to_string(i + 1) + ")");
-			}
-		}
-
-		static void check_double(const std::string& word, size_t i)
-		{
-			try
-			{
-				double d = Parser::from_string<double>(word);
-				if (!s_constants.contains(d))
-					s_constants.emplace(d, s_constants.size());
-			}
-			catch (...)
-			{
-				throw ProcessorException("Precompile: Wrong double (Line " + Parser::to_string(i + 1) + ")");
-			}
-		}
-
-		static void check_var(const std::string& word, size_t i, bool check = true)
-		{
-			for (char c : std::string("()&*:"))
-			{
-				if (word.find(c) < word.size())
-					throw ProcessorException("Precompile: Variable name cannot contain '(', ')', '&', '*' or ':' (Line " + Parser::to_string(i + 1) + ")");
-			}
-			if (std::find(keywords.begin(), keywords.end(), word) == keywords.end())
-				throw ProcessorException("Precompile: Wrong used keyword (Line " + Parser::to_string(i + 1) + ")");
-			if (check && !s_vars.contains(word))
-				throw ProcessorException("Precompile: Undefined variable (Line " + Parser::to_string(i + 1) + ")");
-		}
-
-		static void check_ampersant(const std::string& word, size_t i)
-		{
-			auto ptr = word.substr(1);
-			if (ptr.size() == 0)
-				throw ProcessorException("Precompile: Wrong '&' (Line " + Parser::to_string(i + 1) + ")");
-			if (isalpha(ptr[0]))
-			{
-				check_var(ptr, i);
-			}
-			else
-				throw ProcessorException("Precompile: What the duck is this? (Line " + Parser::to_string(i + 1) + ")");
-		}
-		
-		static void check_asterisk(const std::string& word, size_t i)
-		{
-			auto ptr = word.substr(1);
-			if (ptr.size() == 0)
-				throw ProcessorException("Precompile: Wrong '*' (Line " + Parser::to_string(i + 1) + ")");
-			if (isalpha(ptr[0]))
-			{
-				check_var(ptr, i);
-			}
-			else if (isdigit(ptr[0]))
-			{
-				check_size_t(ptr, i);
-			}
-			else
-				throw ProcessorException("Precompile: What the duck is this? (Line " + Parser::to_string(i + 1) + ")");
-		}
-
-		static void check_rvalue(const std::string& word, size_t i)
-		{
-			if (word.size() == 0)
-				throw ProcessorException("Precompile: Empty rvalue (Line " + Parser::to_string(i + 1) + ")");
-			if (word.starts_with("*"))
-			{
-				check_asterisk(word, i);
-			}
-			if (word.starts_with("&"))
-			{
-				check_ampersant(word, i);
-			}
-			if (isalpha(word[0]))
-			{
-				check_var(word, i);
-			}
-			else if (isdigit(word[0]))
-			{
-				check_double(word, i);
-			}
-			else
-				throw ProcessorException("Precompile: What the duck is this? (Line " + Parser::to_string(i + 1) + ")");
-		}
-
-		static void check_lvalue(const std::string& word, size_t i)
-		{
-			if (word.size() == 0)
-				throw ProcessorException("Precompile: Empty lvalue (Line " + Parser::to_string(i + 1) + ")");
-			if (word.starts_with("*"))
-			{
-				check_asterisk(word, i);
-			}
-			if (isalpha(word[0]))
-			{
-				check_var(word, i, false);
-			}
-			else
-				throw ProcessorException("Precompile: Wrong lvalue (Line " + Parser::to_string(i + 1) + ")");
-		}
-
-		static void check_math(const std::vector<std::string>& parts, size_t i)
-		{
-			if (parts.size() != 3 ||
-				std::find(math_expr.begin(), math_expr.end(), parts[1]) == math_expr.end())
-				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
-			check_lvalue(parts[0], i);
-			check_rvalue(parts[2], i);
-			if (parts[1] == "=" && !s_vars.contains(parts[0]))
-				s_vars.emplace(parts[0], s_vars.size());
 		}
 
 		static void check_condition(const std::vector<std::string>& parts, size_t i)
@@ -266,11 +157,11 @@ namespace Mova
 				check_rvalue(parts[4], i);
 				check_rvalue(parts[6], i);
 				check_var(parts[1], i, false);
-				if (!s_vars.contains(parts[1]))
-					s_vars.emplace(parts[1], s_vars.size());
+				//if (!s_vars.contains(parts[1]))
+				//	s_vars.emplace(parts[1], s_vars.size());
 			}
-
-			throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+			else
+				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_end(const std::vector<std::string>& parts, size_t i)
@@ -290,7 +181,7 @@ namespace Mova
 						throw ProcessorException("Precompile: Function is already defined (Line " + Parser::to_string(i + 1) + ")");
 					if (second_sep[1].ends_with(')'))
 					{
-						auto args_sep = Separator::split(second_sep[1].substr(0, second_sep[1].size()), ',');
+						auto args_sep = Separator::split(second_sep[1].substr(0, second_sep[1].size() - 1), ',');
 						for (const auto& arg : args_sep)
 							check_var(arg, i, false);
 
@@ -333,21 +224,30 @@ namespace Mova
 				else if (parts[0].find("(") < parts[0].size())
 					check_func_call(parts[0], i);
 			}
-
-			throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
-		}
+			else
+				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+		}*/
 
 	public:
 		static std::vector<std::string> compile(const std::vector<std::string> code, const Version& version)
 		{
-			precompile(code);
-			std::vector<std::string> res;
-			size_t i = 0;
-			while (i < code.size())
+			Mova::VarVector vv;
+			Mova::ConstantsVector cv;
+			
+			std::vector<std::string> part1;
+			for (size_t i = 0; i < code.size(); ++i)
 			{
-				std::string line = Trim::left_trim(code[i]);
-				
+				auto parts = Separator::split(Trim::left_trim(code[i]), ' ');
+				if (parts.size() == 0) continue;
+
+				auto math_parts = Mova::MathExpression::convert(parts, vv, cv, i);
+				for (auto& p : math_parts) part1.push_back(p);
 			}
+
+			std::vector<std::string> res = cv.convert_to_code();
+			for (auto& p : vv.convert(part1, cv.get_size()))
+				res.push_back(p);
+
 			return res;
 		}
 	};

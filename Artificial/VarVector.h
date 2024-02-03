@@ -13,6 +13,11 @@ namespace Mova
 	class VarVector final
 	{
 	public:
+		VarVector()
+		{
+			m_vars.emplace_back();
+		}
+
 		void clear()
 		{
 			m_vars.clear();

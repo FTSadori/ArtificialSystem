@@ -143,12 +143,14 @@
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="FinalModule.cpp" />
+    <ClCompile Include="FinalModuleKeyWords.cpp" />
     <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="GUIHandler.cpp" />
     <ClCompile Include="HexModule.cpp" />
     <ClCompile Include="HierarchyFileInfo.cpp" />
     <ClCompile Include="ImageTextWindow.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MathExpression.cpp" />
     <ClCompile Include="MemoryCreateOption.h" />
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
@@ -212,6 +214,7 @@
     <ClInclude Include="Hash.h" />
     <ClInclude Include="IMovaCommand.h" />
     <ClInclude Include="LoadFileFromPortOption.h" />
+    <ClInclude Include="MathExpression.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryHelpOption.h" />
     <ClInclude Include="MemoryWriteOption.h" />
@@ -227,9 +230,11 @@
     <ClInclude Include="PasswordHandler.h" />
     <ClInclude Include="PingOption.h" />
     <ClInclude Include="IProcessor.h" />
+    <ClInclude Include="PointerOperations.h" />
     <ClInclude Include="Processor.h" />
     <ClInclude Include="ProcessorExceptions.h" />
     <ClInclude Include="RenameFileOption.h" />
+    <ClInclude Include="LRValue.h" />
     <ClInclude Include="RunProgramOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
     <ClInclude Include="SymbolsModule.h" />
