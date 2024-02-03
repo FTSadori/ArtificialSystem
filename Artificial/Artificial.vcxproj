@@ -133,6 +133,7 @@
     <ClCompile Include="BaseException.h" />
     <ClCompile Include="ColoursThemesHandler.cpp" />
     <ClCompile Include="Command.cpp" />
+    <ClCompile Include="ComparingExpression.cpp" />
     <ClCompile Include="ConsoleInputHandler.cpp" />
     <ClCompile Include="ConsoleWindow.cpp" />
     <ClCompile Include="Core.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
+    <ClInclude Include="ComparingExpression.h" />
     <ClInclude Include="ConstantsVector.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
@@ -213,7 +215,9 @@
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="IMovaCommand.h" />
+    <ClInclude Include="JumpExpression.h" />
     <ClInclude Include="LoadFileFromPortOption.h" />
+    <ClInclude Include="MarkVector.h" />
     <ClInclude Include="MathExpression.h" />
     <ClInclude Include="MemoryDeleteOption.h" />
     <ClInclude Include="MemoryHelpOption.h" />

@@ -11,10 +11,10 @@ namespace Mova
 		static std::string ampersand(const std::string& word, VarVector& vv, size_t line, bool func = false)
 		{
 			if (word.size() < 2 || word[0] != '&')
-				throw ProcessorException("Precompile: Wrong '&' (Line " + Parser::to_string(line + 1) + ")");
+				throw ProcessorException("Compile: Wrong '&' (Line " + Parser::to_string(line + 1) + ")");
 			
 			if (isdigit(word[1]))
-				throw ProcessorException("Precompile: '&' cannot be before numbers (Line " + Parser::to_string(line + 1) + ")");
+				throw ProcessorException("Compile: '&' cannot be before numbers (Line " + Parser::to_string(line + 1) + ")");
 		
 			return ((func) ? "" : "v") + Parser::to_string(vv.get_ptr_by_name(word.substr(1), line));
 		}
@@ -22,7 +22,7 @@ namespace Mova
 		static std::string asterisk(const std::string& word, VarVector& vv, ConstantsVector& cv, size_t line, bool func = false)
 		{
 			if (word.size() < 2 || word[0] != '*')
-				throw ProcessorException("Precompile: Wrong '*' (Line " + Parser::to_string(line + 1) + ")");
+				throw ProcessorException("Compile: Wrong '*' (Line " + Parser::to_string(line + 1) + ")");
 			
 			if (isdigit(word[1]))
 			{
@@ -32,7 +32,7 @@ namespace Mova
 				}
 				catch (...)
 				{
-					throw ProcessorException("Precompile: Cannot convert number to uint (Line " + Parser::to_string(line + 1) + ")");
+					throw ProcessorException("Compile: Cannot convert number to uint (Line " + Parser::to_string(line + 1) + ")");
 				}
 			}
 			return ((func) ? "" : "v") + Parser::to_string(vv.get_ptr_by_name(word.substr(1), line));

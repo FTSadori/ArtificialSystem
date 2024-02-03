@@ -33,20 +33,20 @@ namespace Mova
 					return m_vars[j][name];
 			}
 
-			throw ProcessorException("Precompile: Undefined variable (Line " + Parser::to_string(line + 1) + ")");
+			throw ProcessorException("Compile: Undefined variable (Line " + Parser::to_string(line + 1) + ")");
 		}
 
 		void push_var(const std::string& name, size_t line)
 		{
 			if (name.size() == 0 || isdigit(name[0]))
-				throw ProcessorException("Precompile: Veriable name cannot begin with digit (Line " + Parser::to_string(line + 1) + ")");
+				throw ProcessorException("Compile: Veriable name cannot begin with digit (Line " + Parser::to_string(line + 1) + ")");
 
 			for (char c : name)
 				if (!isalnum(c) && c != '-' && c != '_')
-					throw ProcessorException("Precompile: Variable name must contain only digits, latin letters, '-' and '_' (Line " + Parser::to_string(line + 1) + ")");
+					throw ProcessorException("Compile: Variable name must contain only digits, latin letters, '-' and '_' (Line " + Parser::to_string(line + 1) + ")");
 			
 			if (FinalModuleKeyWords::is_keyword(name))
-				throw ProcessorException("Precompile: Wrong used keyword (Line " + Parser::to_string(line + 1) + ")");
+				throw ProcessorException("Compile: Wrong used keyword (Line " + Parser::to_string(line + 1) + ")");
 
 			if (!m_vars.back().contains(name))
 				m_vars.back().emplace(name, m_cur_base + m_vars.back().size());

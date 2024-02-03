@@ -61,7 +61,7 @@ namespace Mova
 					if (stack.empty())
 						stack.push('f');
 					else
-						throw ProcessorException("Precompile: Function cannot be inside while/for/if/func block (Line " + Parser::to_string(i + 1) + ")");
+						throw ProcessorException("Compile: Function cannot be inside while/for/if/func block (Line " + Parser::to_string(i + 1) + ")");
 				}
 				else if (parts[0] == "return")
 				{
@@ -69,23 +69,23 @@ namespace Mova
 					if (!stack.empty() && stack.top() == 'f')
 						stack.pop();
 					else
-						throw ProcessorException("Precompile: Wrong return statement (Line " + Parser::to_string(i + 1) + ")");
+						throw ProcessorException("Compile: Wrong return statement (Line " + Parser::to_string(i + 1) + ")");
 				}
 				else if (parts[0] == "end")
 				{
 					if (!stack.empty() && stack.top() == 's')
 						stack.pop();
 					else
-						throw ProcessorException("Precompile: Wrong end statement (Line " + Parser::to_string(i + 1) + ")");
+						throw ProcessorException("Compile: Wrong end statement (Line " + Parser::to_string(i + 1) + ")");
 				}
 				else check_undefined(parts, i);
 			}
 			if (!stack.empty())
 			{
 				if (stack.top() == 's')
-					throw ProcessorException("Precompile: Need end keyword");
+					throw ProcessorException("Compile: Need end keyword");
 				if (stack.top() == 'f')
-					throw ProcessorException("Precompile: Need return keyword");
+					throw ProcessorException("Compile: Need return keyword");
 			}
 		}
 
@@ -93,7 +93,7 @@ namespace Mova
 		{
 			if (parts.size() != 3 ||
 				std::find(comparison_expr.begin(), comparison_expr.end(), parts[1]) == comparison_expr.end())
-				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 			check_rvalue(parts[0], i);
 			check_rvalue(parts[2], i);
 		}
@@ -101,12 +101,12 @@ namespace Mova
 		static void check_mark(const std::string& word, size_t i)
 		{
 			if (word.size() == 0)
-				throw ProcessorException("Precompile: Empty rvalue (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: Empty rvalue (Line " + Parser::to_string(i + 1) + ")");
 			if (word.back() != ':')
-				throw ProcessorException("Precompile: Mark must end with ':' symbol (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: Mark must end with ':' symbol (Line " + Parser::to_string(i + 1) + ")");
 			auto mark = word.substr(0, word.size() - 1);
 			if (s_marks.contains(mark))
-				throw ProcessorException("Precompile: This mark is already exists (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: This mark is already exists (Line " + Parser::to_string(i + 1) + ")");
 			s_marks.emplace(mark, 0);
 		}
 
@@ -121,7 +121,7 @@ namespace Mova
 				return;
 			}
 
-			throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+			throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_return(const std::vector<std::string>& parts, size_t i)
@@ -134,7 +134,7 @@ namespace Mova
 				return;
 			}
 		
-			throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+			throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_ifwhile(const std::vector<std::string>& parts, size_t i)
@@ -146,7 +146,7 @@ namespace Mova
 				return;
 			}
 
-			throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+			throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_for(const std::vector<std::string>& parts, size_t i)
@@ -161,13 +161,13 @@ namespace Mova
 				//	s_vars.emplace(parts[1], s_vars.size());
 			}
 			else
-				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_end(const std::vector<std::string>& parts, size_t i)
 		{
 			if (parts.size() != 1)
-				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_func(const std::vector<std::string>& parts, size_t i)
@@ -178,7 +178,7 @@ namespace Mova
 				if (second_sep.size() == 2)
 				{
 					if (s_functions.contains(second_sep[0]))
-						throw ProcessorException("Precompile: Function is already defined (Line " + Parser::to_string(i + 1) + ")");
+						throw ProcessorException("Compile: Function is already defined (Line " + Parser::to_string(i + 1) + ")");
 					if (second_sep[1].ends_with(')'))
 					{
 						auto args_sep = Separator::split(second_sep[1].substr(0, second_sep[1].size() - 1), ',');
@@ -191,7 +191,7 @@ namespace Mova
 				}
 			}
 
-			throw ProcessorException("Precompile: Wrong expression (do not use any spaces besides after 'func' keyword) (Line " + Parser::to_string(i + 1) + ")");
+			throw ProcessorException("Compile: Wrong expression (do not use any spaces besides after 'func' keyword) (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_func_call(const std::string& word, size_t i)
@@ -200,7 +200,7 @@ namespace Mova
 			if (second_sep.size() == 2)
 			{
 				if (!s_functions.contains(second_sep[0]))
-					throw ProcessorException("Precompile: Function is undefined (Line " + Parser::to_string(i + 1) + ")");
+					throw ProcessorException("Compile: Function is undefined (Line " + Parser::to_string(i + 1) + ")");
 				if (second_sep[1].ends_with(')'))
 				{
 					auto args_sep = Separator::split(second_sep[1].substr(0, second_sep[1].size()), ',');
@@ -210,7 +210,7 @@ namespace Mova
 				}
 			}
 
-			throw ProcessorException("Precompile: Wrong expression (do not use any spaces) (Line " + Parser::to_string(i + 1) + ")");
+			throw ProcessorException("Compile: Wrong expression (do not use any spaces) (Line " + Parser::to_string(i + 1) + ")");
 		}
 
 		static void check_undefined(const std::vector<std::string>& parts, size_t i)
@@ -225,7 +225,7 @@ namespace Mova
 					check_func_call(parts[0], i);
 			}
 			else
-				throw ProcessorException("Precompile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
+				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
 		}*/
 
 	public:

@@ -342,6 +342,9 @@
     <ClCompile Include="MathExpression.cpp">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClCompile>
+    <ClCompile Include="ComparingExpression.cpp">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -655,6 +658,15 @@
     </ClInclude>
     <ClInclude Include="LRValue.h">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="ComparingExpression.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="MarkVector.h">
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpExpression.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
