@@ -18,10 +18,8 @@ namespace Mova
 				res.push_back(l);
 			std::string jump = "J v" + Parser::to_string(vv.get_ptr_by_name("_1", line)) + " v"
 				+ Parser::to_string(vv.get_ptr_by_name("_2", line)) + " n " + expressions.at(parts[1]);
-			//std::string afterjump = "J 0 0 j";
 			res.push_back(jump);
-			//res.push_back(afterjump);
-
+			
 			return res;
 		}
 

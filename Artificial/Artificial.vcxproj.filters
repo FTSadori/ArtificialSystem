@@ -666,7 +666,7 @@
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClInclude>
     <ClInclude Include="JumpExpression.h">
-      <Filter>Файлы заголовков</Filter>
+      <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

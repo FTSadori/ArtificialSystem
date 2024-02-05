@@ -5,29 +5,12 @@
 #include "Separator.h"
 #include <stack>
 #include "Trim.h"
-#include "MathExpression.h"
+#include "JumpExpression.h"
 
 namespace Mova
 {
-	struct FuncInfo
-	{
-		size_t args = 0;
-		size_t ptr = 0;
-	};
-
 	class FinalModule final
 	{
-	private:
-		static std::unordered_map<double, size_t> s_constants;
-		static std::unordered_map<std::string, size_t> s_marks;
-		static std::unordered_map<std::string, FuncInfo> s_functions;
-		static size_t s_current_nesting_lvl;
-		static size_t s_current_var_ptr;
-
-	public:
-
-		static const std::vector<std::string> comparison_expr;
-
 	private:
 		/*
 		static void precompile(const std::vector<std::string>& code)
@@ -213,26 +196,39 @@ namespace Mova
 			throw ProcessorException("Compile: Wrong expression (do not use any spaces) (Line " + Parser::to_string(i + 1) + ")");
 		}
 
-		static void check_undefined(const std::vector<std::string>& parts, size_t i)
+		*/
+		static std::vector<std::string> check_undefined(const std::vector<std::string>& parts, VarVector& vv, ConstantsVector& cv, MarkVector& mv, size_t code_len, size_t line)
 		{
 			if (parts.size() == 3)
-				check_math(parts, i);
+				return MathExpression::convert(parts, vv, cv, line);
 			else if (parts.size() == 1)
 			{
 				if (parts[0].find(":") < parts[0].size())
-					check_mark(parts[0], i);
-				else if (parts[0].find("(") < parts[0].size())
-					check_func_call(parts[0], i);
+				{
+					mv.add_mark(parts[0].substr(0, parts[0].size() - 1), code_len, line);
+					return {};
+				}
+			//	else if (parts[0].find("(") < parts[0].size())
+			//		check_func_call(parts[0], i);
 			}
 			else
-				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(i + 1) + ")");
-		}*/
+				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(line + 1) + ")");
+		}
+
+		static std::vector<std::string> check_all(const std::vector<std::string>& parts, VarVector& vv, ConstantsVector& cv, MarkVector& mv, size_t code_len, size_t line)
+		{
+			if (parts[0] == "goto")
+				return JumpExpression::convert_goto(parts, vv, cv, mv, line);
+			else 
+				return check_undefined(parts, vv, cv, mv, code_len, line);
+		}
 
 	public:
 		static std::vector<std::string> compile(const std::vector<std::string> code, const Version& version)
 		{
-			Mova::VarVector vv;
-			Mova::ConstantsVector cv;
+			VarVector vv;
+			ConstantsVector cv;
+			MarkVector mv;
 			
 			std::vector<std::string> part1;
 			for (size_t i = 0; i < code.size(); ++i)
@@ -240,12 +236,13 @@ namespace Mova
 				auto parts = Separator::split(Trim::left_trim(code[i]), ' ');
 				if (parts.size() == 0) continue;
 
-				auto math_parts = Mova::MathExpression::convert(parts, vv, cv, i);
-				for (auto& p : math_parts) part1.push_back(p);
+				auto lines = check_all(parts, vv, cv, mv, part1.size(), i);
+				for (auto& p : lines) part1.push_back(p);
 			}
 
 			std::vector<std::string> res = cv.convert_to_code();
-			for (auto& p : vv.convert(part1, cv.get_size()))
+			size_t c_size = res.size();
+			for (auto& p : mv.convert(vv.convert(part1, cv.get_size()), c_size))
 				res.push_back(p);
 
 			return res;
