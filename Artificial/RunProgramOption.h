@@ -83,7 +83,7 @@ namespace Commands
 
 			auto& res = m_core.processor().process(lines, args);
 			std::string str_res;
-			ptr->print_third("Program returned [");
+			ptr->print_third("Program returned " + Parser::to_string(res[0]) + "\n");
 			
 			size_t checker = 0;
 			if (_command.has(":r"))
@@ -91,11 +91,19 @@ namespace Commands
 				checker = Parser::from_string<size_t>(_command.get(":r"));
 			}
 
+			// full register output
+			ptr->print_third("Registers [");
 			for (size_t i = 0; i < res.size(); ++i)
 				if (i < checker || res[i] != 0)
-				{
 					ptr->print_third(Parser::to_string(res[i]) + ", ");
-					
+				else
+					break;
+			ptr->print_third("0]\n");
+
+			// line starts from [res[0]] symbol
+			for (size_t i = res[0]; i < res.size(); ++i)
+				if (i < checker || res[i] != 0)
+				{
 					try
 					{
 						if (res[i] >= 32 && res[i] <= 255)
@@ -105,7 +113,7 @@ namespace Commands
 				}
 				else
 					break;
-			ptr->print_third("0]\n");
+			
 			ptr->print_secondary("Or string [" + str_res + "]\n");
 
 			return;

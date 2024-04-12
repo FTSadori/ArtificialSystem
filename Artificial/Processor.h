@@ -41,6 +41,7 @@ namespace Mova
 			if (code.size() > max_num)
 				throw ProcessorException("Code: File can't have more than " + Parser::to_string(max_num) + " rows");
 
+			/*
 			for (size_t i = 0; i < input.size(); ++i)
 			{
 				if (input[i] > max_num)
@@ -56,6 +57,9 @@ namespace Mova
 			}
 			if (input.size() > 0)
 				m_last_register = input.size() - 1;
+			*/
+
+			int input_ptr = 0;
 
 			while (m_execution_ptr < code.size())
 			{
@@ -85,7 +89,7 @@ namespace Mova
 				case 0b1010: math(arguments, '/', 2); break;
 				case 0b1011: math(arguments, '<', 2); break;
 				case 0b1100: math(arguments, '>', 2); break;
-
+				case 0b1101: in(arguments, input, input_ptr); break;
 				case 0b1110: func(arguments); break;
 				case 0b1111: end(arguments); break;
 				}
@@ -98,6 +102,17 @@ namespace Mova
 				throw ProcessorException("Code: Function didn't found END (1111) command");
 
 			return m_registers;
+		}
+
+		void in(const std::vector<int>& arguments, const std::vector<double>& input, int& input_ptr)
+		{
+			if (input_ptr >= input.size())
+				throw ProcessorException("Runtime: Input stream is empty");
+			check_for_arguments(arguments, 1, 2);
+			if (arguments.size() == 1)
+				m_registers[get_index(arguments[0])] = input[input_ptr++];
+			else
+				m_registers[unsigned(m_registers[get_index(arguments[0])])] = input[input_ptr++];
 		}
 
 		void check_for_arguments(const std::vector<int>& arguments, size_t min, size_t max)
