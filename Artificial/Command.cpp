@@ -57,6 +57,8 @@ namespace Commands
 				}
 				else
 				{
+					if (divided.size() <= i + 1)
+						throw CommandException("(Command) Variable with ':' needs a value after. For example, command :val 5");
 					m_parameters[divided[i]] = divided[i + 1];
 					i++;
 				}
