@@ -19,9 +19,12 @@ namespace GUI
 		GUIHandler(Commands::ICommandExecutor* _core, Commands::UsersHandler* _users_handler,
 			SystemColourTheme theme);
 
-		void open_editor(const Memory::FullPath& path, const std::string& data, TextColourTheme theme, bool readonly);
-		void open_image(const std::string& name, const std::string& data, TextColourTheme theme);
+		void open_editor(const Memory::FullPath& path, const std::string& data, bool readonly);
+		void open_image(const std::string& name, const std::string& data);
 		void change_colours(SystemColourTheme theme);
+		void set_text_colours(TextColourTheme theme);
+
+		void change_colours_all_windows(SystemColourTheme newColourTheme);
 
 		void connect_to_core(Commands::ICommandExecutor* _core);
 		void connect_to_users(Commands::UsersHandler* _users);
@@ -37,7 +40,8 @@ namespace GUI
 		const int16_t c_vertical_margin = 1;
 		const int16_t c_tabs_height = 1;
 
-		SystemColourTheme m_theme;
+		SystemColourTheme m_systemTheme;
+		TextColourTheme m_textTheme = GUI::TextColourTheme();
 		
 		Size m_window_size{ 0, 0 };
 		std::mutex m_window_size_mutex;

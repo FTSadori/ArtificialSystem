@@ -38,10 +38,6 @@ namespace GUI
 		size_t m_line_num = 0;
 		size_t m_cursor_in_line = 0;
 
-		TextAttributes m_main = 15;
-		TextAttributes m_secondary = 6;
-		TextAttributes m_selection = 15 * 16;
-
 		Memory::FullPath m_file_path;
 
 		std::vector<std::string> m_lines;

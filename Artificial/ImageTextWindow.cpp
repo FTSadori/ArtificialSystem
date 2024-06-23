@@ -10,7 +10,7 @@ namespace GUI
 
     void ImageTextWindow::render_text()
     {
-        ScreenText text(m_size);
+        ScreenText text(m_size, m_main, m_secondary, m_third, m_selection);
         text.push_text(m_text_parts);
         text.render_text_from(m_position, m_render_from_line);
     }
@@ -18,7 +18,7 @@ namespace GUI
     void ImageTextWindow::set_text(const std::string image)
     {
         m_text_parts.clear();
-        m_text_parts.push_back(TextInfo{image, m_main});
+        m_text_parts.push_back(TextInfo{image, TextType::MAIN, m_main});
     }
     
     void ImageTextWindow::on_up()

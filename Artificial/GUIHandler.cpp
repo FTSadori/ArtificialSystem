@@ -8,31 +8,31 @@ namespace GUI
 	}
 
 	GUIHandler::GUIHandler(Commands::ICommandExecutor* _core, Commands::UsersHandler* _users_handler, SystemColourTheme theme)
-		: m_core(_core), m_users_handler(_users_handler), m_theme(theme)
+		: m_core(_core), m_users_handler(_users_handler), m_systemTheme(theme)
 	{
 		init();
 	}
 
-	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data, TextColourTheme theme, bool readonly)
+	void GUIHandler::open_editor(const Memory::FullPath& path, const std::string& data, bool readonly)
 	{
 		auto* ptr = new TextEditorWindow(path, get_windows_size(m_window_size), get_windows_start(), path.disk_path().file(), data);
 		ptr->set_readonly(readonly);
-		ptr->set_text_colours(theme);
+		ptr->set_window_colours(m_systemTheme.window, m_systemTheme.border);
+		ptr->set_text_colours(m_textTheme);
 		m_windows.emplace_back(ptr);
-		m_windows.back()->set_window_colours(m_theme.window, m_theme.border);
 		m_current_window = m_windows.size() - 1;
 		m_windows[0]->m_block = true;
 
 		render(m_current_window);
 	}
 
-	void GUIHandler::open_image(const std::string& name, const std::string& data, TextColourTheme theme)
+	void GUIHandler::open_image(const std::string& name, const std::string& data)
 	{
 		m_windows.emplace_back(new ImageTextWindow(get_windows_size(m_window_size), get_windows_start(), name));
-		m_windows.back()->set_window_colours(m_theme.window, m_theme.border);
+		m_windows.back()->set_window_colours(m_systemTheme.window, m_systemTheme.border);
 		ImageTextWindow* ptr = dynamic_cast<ImageTextWindow*>(m_windows.back().get());
+		ptr->set_text_colours(m_textTheme);
 		ptr->set_text(data);
-		ptr->set_text_colours(theme);
 		m_current_window = m_windows.size() - 1;
 		m_windows[0]->m_block = true;
 
@@ -41,8 +41,26 @@ namespace GUI
 
 	void GUIHandler::change_colours(SystemColourTheme theme)
 	{
-		m_theme = theme;
+		m_systemTheme = theme;
 		rerender();
+	}
+
+	void GUIHandler::set_text_colours(TextColourTheme theme)
+	{
+		m_textTheme = theme;
+	}
+
+	void GUIHandler::change_colours_all_windows(SystemColourTheme newColourTheme)
+	{
+		for (int i = 0; i < m_windows.size(); ++i)
+		{
+			m_windows[i]->set_window_colours(newColourTheme.window, newColourTheme.border);
+			//m_core.gui().set_text_colours()
+			if (i != m_current_window) continue;
+			m_windows[i]->render_border(newColourTheme.background);
+			m_windows[i]->rerender();
+		}
+		change_colours(newColourTheme);
 	}
 
 	void GUIHandler::connect_to_core(Commands::ICommandExecutor* _core)
@@ -63,7 +81,7 @@ namespace GUI
 		}
 		{
 			std::lock_guard lock(BaseWindow::m_render_mutex);
-			ConsoleWindow::fill_screen(m_theme.background);
+			ConsoleWindow::fill_screen(m_systemTheme.background);
 			set_size_to_all(get_windows_size(m_window_size));
 		}
 		render(m_current_window);
@@ -78,7 +96,7 @@ namespace GUI
 	void GUIHandler::init()
 	{
 		m_windows.emplace_back(new TerminalWindow({ 0, 0 }, get_windows_start(), "Terminal"));
-		m_windows[0]->set_window_colours(m_theme.window, m_theme.border);
+		m_windows[0]->set_window_colours(m_systemTheme.window, m_systemTheme.border);
 
 		start_resize_thread();
 		start_input_thread();
@@ -263,12 +281,12 @@ namespace GUI
 
 			if (i == window_num)
 			{
-				ConsoleWindow::set_text_colours(TextColours(m_theme.window, m_theme.border));
+				ConsoleWindow::set_text_colours(TextColours(m_systemTheme.window, m_systemTheme.border));
 				std::cout << " " + titles[i] + " ";
 			}
 			else
 			{
-				ConsoleWindow::set_text_colours(TextColours(m_theme.border, m_theme.window));
+				ConsoleWindow::set_text_colours(TextColours(m_systemTheme.border, m_systemTheme.window));
 				ConsoleWindow::set_text_borders(TextBorders(true, false, false, false));
 				std::cout << " ";
 				ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
@@ -286,13 +304,13 @@ namespace GUI
 		size_t window_width = max(double_margin, window_size.columns) - double_margin;
 
 		ConsoleWindow::set_cursor_position({ c_vertical_margin, c_horizontal_margin });
-		ConsoleWindow::set_text_colours(TextColours(m_theme.background, m_theme.background));
+		ConsoleWindow::set_text_colours(TextColours(m_systemTheme.background, m_systemTheme.background));
 		std::cout << std::string(window_width, ' ');
 	}
 
 	void GUIHandler::render_header_border(Size window_size)
 	{
-		ConsoleWindow::set_text_colours(TextColours(m_theme.border, m_theme.background));
+		ConsoleWindow::set_text_colours(TextColours(m_systemTheme.border, m_systemTheme.background));
 
 		ConsoleWindow::set_cursor_position({ SHORT(c_vertical_margin - 1), c_horizontal_margin });
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, true));
@@ -312,7 +330,7 @@ namespace GUI
 		BaseWindow* window = m_windows[window_num].get();
 
 		window->render_background();
-		window->render_border(m_theme.background);
+		window->render_border(m_systemTheme.background);
 		window->render_text();
 	}
 	

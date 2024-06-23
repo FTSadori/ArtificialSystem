@@ -14,21 +14,21 @@ namespace GUI
 
 	void TextEditorWindow::render_text()
 	{
-		ScreenText text(Size{ m_size.rows, uint16_t(m_size.columns - c_max_num_size) });
+		ScreenText text(Size{ m_size.rows, uint16_t(m_size.columns - c_max_num_size) }, m_main, m_secondary, m_third, m_selection);
 		std::vector<size_t> nums;
 		for (size_t i = 0; i < m_lines.size(); ++i)
 		{
 			nums.push_back(text.get_lines_num() - 1);
 			if (m_line_num == i)
 			{
-				text.push_text(m_lines[i].substr(0, m_cursor_in_line), m_main);
+				text.push_text(m_lines[i].substr(0, m_cursor_in_line), TextType::MAIN, m_main);
 				if (m_cursor_in_line < m_lines[i].size())
 				{
-					text.push_text(m_lines[i][m_cursor_in_line], m_selection);
-					text.push_text(m_lines[i].substr(m_cursor_in_line + 1), m_main);
+					text.push_text(m_lines[i][m_cursor_in_line], TextType::SELECTION, m_selection);
+					text.push_text(m_lines[i].substr(m_cursor_in_line + 1), TextType::MAIN, m_main);
 				}
 				else
-					text.push_text(" ", m_selection);
+					text.push_text(" ", TextType::SELECTION, m_selection);
 
 				if (text.get_lines_num() - 1 < m_render_from_line)
 					--m_render_from_line;
@@ -36,16 +36,16 @@ namespace GUI
 					++m_render_from_line;
 			}
 			else
-				text.push_text(m_lines[i], m_main);
-			text.push_text("\n", m_main);
+				text.push_text(m_lines[i], TextType::MAIN, m_main);
+			text.push_text("\n", TextType::MAIN, m_main);
 		}
 
-		ScreenText numbers(Size{ m_size.rows, c_max_num_size });
-		numbers.push_text(" 0", m_secondary);
+		ScreenText numbers(Size{ m_size.rows, c_max_num_size }, m_main, m_secondary, m_third, m_selection);
+		numbers.push_text(" 0", TextType::SECONDARY, m_secondary);
 		nums[0] = 0;
 		for (size_t i = 1; i < nums.size(); ++i)
 		{
-			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Parser::to_string(i), m_secondary);
+			numbers.push_text(std::string(nums[i] - nums[i - 1], '\n') + " " + Parser::to_string(i), TextType::SECONDARY, m_secondary);
 		}
 
 		text.render_text_from({ m_position.x, int16_t(m_position.y + c_max_num_size) }, m_render_from_line);

@@ -21,7 +21,7 @@ namespace GUI
 		void print_main(const std::string& line);
 		void print_secondary(const std::string& line);
 		void print_third(const std::string& line);
-		void print(const std::string& line, TextAttributes attributes);
+		void print(const std::string& line, TextType type, TextAttributes attributes);
 
 		void wait_for_input(TerminalInputType type);
 		std::string get_last_input();

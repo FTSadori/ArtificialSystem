@@ -35,10 +35,13 @@ namespace GUI
 	{
 		m_background = _background;
 		m_border = _border;
+		set_text_colours(m_theme);
 	}
 
 	void BaseWindow::set_text_colours(TextColourTheme theme)
 	{
+		m_theme = theme;
+
 		m_main = TextAttributes(TextColours(theme.main, m_background), TextBorders());
 		m_secondary = TextAttributes(TextColours(theme.secondary, m_background), TextBorders());
 		m_third = TextAttributes(TextColours(theme.third, m_background), TextBorders());

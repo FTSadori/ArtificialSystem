@@ -47,6 +47,8 @@ namespace GUI
 		Colours m_background = Colours::BLACK;
 		Colours m_border = Colours::WHITE;
 
+		TextColourTheme m_theme = TextColourTheme(Colours::WHITE, Colours::YELLOW, Colours::LIGHT_YELLOW);
+
 		TextAttributes m_main = 15;
 		TextAttributes m_secondary = 6;
 		TextAttributes m_third = 14;

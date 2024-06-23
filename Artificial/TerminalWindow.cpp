@@ -14,26 +14,26 @@ namespace GUI
 
 	void TerminalWindow::print_main(const std::string& line)
 	{
-		print(line, m_main);
+		print(line, TextType::MAIN, m_main);
 	}
 
 	void TerminalWindow::print_secondary(const std::string& line)
 	{
-		print(line, m_secondary);
+		print(line, TextType::SECONDARY, m_secondary);
 	}
 
 	void TerminalWindow::print_third(const std::string& line)
 	{
-		print(line, m_third);
+		print(line, TextType::THIRD, m_third);
 	}
 
-	void TerminalWindow::print(const std::string& line, TextAttributes attributes)
+	void TerminalWindow::print(const std::string& line, TextType type, TextAttributes attributes)
 	{
 		if (m_caninput) return;
 
 		{
 			std::lock_guard lock(m_text_mutex);
-			m_text_parts.emplace_back(line, attributes);
+			m_text_parts.emplace_back(line, type, attributes);
 		}
 	}
 
@@ -90,10 +90,10 @@ namespace GUI
 		case TerminalInputType::COMMAND:
 			m_buffer.push_back(m_last_input); // no break
 		case TerminalInputType::TEXT:
-			m_text_parts.emplace_back(m_last_input + '\n', m_main);
+			m_text_parts.emplace_back(m_last_input + '\n', TextType::MAIN, m_main);
 			break;
 		case TerminalInputType::PASSWORD:
-			m_text_parts.emplace_back(std::string(m_last_input.size(), '*') + '\n', m_main);
+			m_text_parts.emplace_back(std::string(m_last_input.size(), '*') + '\n', TextType::MAIN, m_main);
 			break;
 		default:
 			break;
@@ -160,7 +160,7 @@ namespace GUI
 	
 	ScreenText TerminalWindow::load_screen_text() const
 	{
-		ScreenText stext(m_size);
+		ScreenText stext(m_size, m_main, m_secondary, m_third, m_selection);
 		stext.push_text(m_text_parts);
 		
 		std::string input;
@@ -169,21 +169,21 @@ namespace GUI
 		else
 			input = m_last_input;
 
-		stext.push_text(input.substr(0, m_cursor_in_input), m_main);
+		stext.push_text(input.substr(0, m_cursor_in_input), TextType::MAIN, m_main);
 		if (m_cursor_in_input < input.size())
 		{
-			stext.push_text(input[m_cursor_in_input], m_selection);
-			stext.push_text(input.substr(m_cursor_in_input + 1), m_main);
+			stext.push_text(input[m_cursor_in_input], TextType::SELECTION, m_selection);
+			stext.push_text(input.substr(m_cursor_in_input + 1), TextType::MAIN, m_main);
 		}
 		else
-			stext.push_text(" ", m_selection);
+			stext.push_text(" ", TextType::SELECTION, m_selection);
 		return stext;
 	}
 
 	void TerminalWindow::start_new_command()
 	{
-		m_text_parts.emplace_back("(" + m_user + ") ", m_third);
-		m_text_parts.emplace_back(m_path_line + " $ ", m_secondary);
+		m_text_parts.emplace_back("(" + m_user + ") ", TextType::THIRD, m_third);
+		m_text_parts.emplace_back(m_path_line + " $ ", TextType::SECONDARY, m_secondary);
 
 		rerender();
 	}

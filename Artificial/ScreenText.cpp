@@ -4,9 +4,25 @@
 
 namespace GUI
 {
-	void ScreenText::push_text(const std::string& text, TextAttributes attributes)
+	void ScreenText::change_theme(TextAttributes _main, TextAttributes _secondary, TextAttributes _third, TextAttributes _selection)
+	{
+		m_main = _main;
+		m_secondary = _secondary;
+		m_third = _third;
+		m_selection = _selection;
+	}
+
+	void ScreenText::push_text(const std::string& text, TextType type, TextAttributes attributes)
 	{
 		if (text.empty()) return;
+
+		switch (type)
+		{
+		case GUI::TextType::MAIN:      attributes = m_main;      break;
+		case GUI::TextType::SECONDARY: attributes = m_secondary; break;
+		case GUI::TextType::THIRD:     attributes = m_third;     break;
+		case GUI::TextType::SELECTION: attributes = m_selection; break;
+		}
 		
 		auto lines = Separator::split(text, '\n');
 		size_t i = 0;
@@ -50,12 +66,12 @@ namespace GUI
 	void ScreenText::push_text(const std::vector<TextInfo>& info_array)
 	{
 		for (const auto& info : info_array)
-			push_text(info.text, info.attributes);
+			push_text(info.text, info.type, info.attributes);
 	}
 
-	void ScreenText::push_text(char c, TextAttributes attributes)
+	void ScreenText::push_text(char c, TextType type, TextAttributes attributes)
 	{
-		push_text(std::string(1, c), attributes);
+		push_text(std::string(1, c), type, attributes);
 	}
 
 	void ScreenText::render_text_from(ScreenPoint absolute, size_t line_num)

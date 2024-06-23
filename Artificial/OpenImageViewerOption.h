@@ -48,8 +48,7 @@ namespace Commands
 
 			Memory::DataQueue data = disk.read(path.disk_path(), sender.system());
 
-			// todo use colour themes
-			m_core.gui().open_image(path.disk_path().file(), std::string(data.get_data(), data.size()), GUI::TextColourTheme());
+			m_core.gui().open_image(path.disk_path().file(), std::string(data.get_data(), data.size()));
 
 			return;
 		}
