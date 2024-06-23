@@ -49,8 +49,7 @@ namespace Commands
 			bool readonly = sender.lvl() < perm.write_perm_lvl;
 			Memory::DataQueue data = disk.read(path.disk_path(), sender.system());
 			
-			// todo use colour themes
-			m_core.gui().open_editor(path, std::string(data.get_data(), data.size()), GUI::TextColourTheme(), readonly);
+			m_core.gui().open_editor(path, std::string(data.get_data(), data.size()), readonly);
 
 			return;
 		}

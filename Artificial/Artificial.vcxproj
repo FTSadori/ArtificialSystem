@@ -166,6 +166,7 @@
     <ClCompile Include="Sectors.cpp" />
     <ClCompile Include="BaseWindow.cpp" />
     <ClCompile Include="Size.cpp" />
+    <ClCompile Include="StringToColour.cpp" />
     <ClCompile Include="SymbolsModule.cpp" />
     <ClCompile Include="SystemDiskListOption.h" />
     <ClCompile Include="TerminalWindow.cpp" />
@@ -176,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseHelpOption.h" />
+    <ClInclude Include="ChangeColours.h" />
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
     <ClInclude Include="ComparingExpression.h" />
@@ -241,6 +243,7 @@
     <ClInclude Include="LRValue.h" />
     <ClInclude Include="RunProgramOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
+    <ClInclude Include="StringToColour.h" />
     <ClInclude Include="SymbolsModule.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
     <ClInclude Include="SystemAddDiskOption.h" />

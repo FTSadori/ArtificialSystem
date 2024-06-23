@@ -345,6 +345,9 @@
     <ClCompile Include="ComparingExpression.cpp">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClCompile>
+    <ClCompile Include="StringToColour.cpp">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -667,6 +670,12 @@
     </ClInclude>
     <ClInclude Include="JumpExpression.h">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeColours.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="StringToColour.h">
+      <Filter>Исходные файлы\Core\GUI\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

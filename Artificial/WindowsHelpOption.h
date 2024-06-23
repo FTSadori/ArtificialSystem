@@ -29,7 +29,8 @@ namespace Commands
 			ptr->print_main("Use next commands with ::help to get more info:\n");
 			ptr->print_third("- nano\n");
 			ptr->print_third("- lookat\n");
-			
+			ptr->print_third("- changecolours\n");
+
 			return;
 		}
 	};
