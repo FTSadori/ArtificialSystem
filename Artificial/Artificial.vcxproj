@@ -169,6 +169,7 @@
     <ClCompile Include="StringToColour.cpp" />
     <ClCompile Include="SymbolsModule.cpp" />
     <ClCompile Include="SystemDiskListOption.h" />
+    <ClCompile Include="TaskHandler.cpp" />
     <ClCompile Include="TerminalWindow.cpp" />
     <ClCompile Include="TextEditorWindow.cpp" />
     <ClCompile Include="UserExceptions.h" />
@@ -177,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseHelpOption.h" />
+    <ClInclude Include="BaseTask.h" />
     <ClInclude Include="ChangeColours.h" />
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
@@ -218,6 +220,7 @@
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="IMovaCommand.h" />
+    <ClInclude Include="IncrementTask.h" />
     <ClInclude Include="JumpExpression.h" />
     <ClInclude Include="LoadFileFromPortOption.h" />
     <ClInclude Include="MarkVector.h" />
@@ -244,6 +247,7 @@
     <ClInclude Include="LRValue.h" />
     <ClInclude Include="RunProgramOption.h" />
     <ClInclude Include="ShowFileListOption.h" />
+    <ClInclude Include="StoryExceptions.h" />
     <ClInclude Include="StringToColour.h" />
     <ClInclude Include="SymbolsModule.h" />
     <ClInclude Include="SystemCreationStartOption.h" />
@@ -252,6 +256,7 @@
     <ClInclude Include="SystemHelpOption.h" />
     <ClInclude Include="SystemOptionsLoader.h" />
     <ClInclude Include="SystemStartOption.h" />
+    <ClInclude Include="TaskHandler.h" />
     <ClInclude Include="Trim.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="AddUserOption.h" />

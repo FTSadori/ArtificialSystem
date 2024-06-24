@@ -214,6 +214,12 @@
     <Filter Include="Исходные файлы\Core\Story\Task">
       <UniqueIdentifier>{4d26dc72-b30f-443a-a190-369a1095b2fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Task\Tasks">
+      <UniqueIdentifier>{bd622e7c-4380-4cdb-bfdc-6e85a989b582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Exceptions">
+      <UniqueIdentifier>{df4a7195-1d12-406b-8fd3-c4c9192312c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -350,6 +356,9 @@
     </ClCompile>
     <ClCompile Include="StringToColour.cpp">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Task</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -682,6 +691,18 @@
     </ClInclude>
     <ClInclude Include="ChangeTextColours.h">
       <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseTask.h">
+      <Filter>Исходные файлы\Core\Story\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="IncrementTask.h">
+      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskHandler.h">
+      <Filter>Исходные файлы\Core\Story\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="StoryExceptions.h">
+      <Filter>Исходные файлы\Core\Story\Exceptions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
