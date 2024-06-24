@@ -63,6 +63,17 @@ namespace GUI
 		change_colours(newColourTheme);
 	}
 
+	void GUIHandler::change_text_colours_all_windows(TextColourTheme newTextTheme)
+	{
+		for (int i = 0; i < m_windows.size(); ++i)
+		{
+			m_windows[i]->set_text_colours(newTextTheme);
+			if (i != m_current_window) continue;
+			m_windows[i]->rerender();
+		}
+		set_text_colours(newTextTheme);
+	}
+
 	void GUIHandler::connect_to_core(Commands::ICommandExecutor* _core)
 	{
 		m_core = _core;

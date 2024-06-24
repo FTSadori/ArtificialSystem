@@ -25,6 +25,7 @@ namespace GUI
 		void set_text_colours(TextColourTheme theme);
 
 		void change_colours_all_windows(SystemColourTheme newColourTheme);
+		void change_text_colours_all_windows(TextColourTheme newTextTheme);
 
 		void connect_to_core(Commands::ICommandExecutor* _core);
 		void connect_to_users(Commands::UsersHandler* _users);
