@@ -1,14 +1,14 @@
 #pragma once
 #include "Colours.h"
 #include <string>
-#include <map>
+#include <unordered_map>
 
 namespace GUI 
 {
 	class StringToColour final
 	{
 	public:
-		static std::map<std::string, Colours> strToColour;
+		static std::unordered_map<std::string, Colours> strToColour;
 
 		static Colours ToColour(const std::string& line)
 		{
