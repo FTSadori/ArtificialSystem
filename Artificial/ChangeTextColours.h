@@ -28,6 +28,8 @@ namespace Commands
 				ptr->print_main("  main - (string) colour for background;\n");
 				ptr->print_main("  secondary - (string) colour for console background;\n");
 				ptr->print_main("  third - (string) colour for console border;\n");
+				ptr->print_secondary("List of colours: \n");
+				ptr->print_main("  black, blue, gray, green, lightblue, lightgray, lightgreen, lightred, lightturquoise, lightviolet, lightyellow, red, turquoise, violet, white, yellow\n");
 				return;
 			}
 
