@@ -3,13 +3,18 @@
 
 namespace Story
 {
+	using FloatMatrix = std::vector<std::vector<float>>;
+
 	class BaseTask
 	{
 	public:
-		BaseTask(const std::vector<std::vector<float>>& _ins, const std::vector<std::vector<float>>& _outs)
+		BaseTask()
+			: ins({ {} }), outs({ {} }) {}
+
+		BaseTask(const FloatMatrix& _ins, const FloatMatrix& _outs)
 			: ins(_ins), outs(_outs) {}
 
-		bool checkAnswer(const std::vector<std::vector<float>>& user_outs)
+		bool check_answer(const FloatMatrix& user_outs)
 		{
 			if (user_outs.size() != outs.size())
 				return false;
@@ -24,10 +29,15 @@ namespace Story
 			return true;
 		}
 
-		const std::vector<std::vector<float>> ins;
-	protected:
+		const FloatMatrix& get_ins()
+		{
+			return ins;
+		}
+
 		virtual ~BaseTask() = default;
 
-		const std::vector<std::vector<float>> outs;
+	protected:
+		FloatMatrix ins;
+		FloatMatrix outs;
 	};
 }
