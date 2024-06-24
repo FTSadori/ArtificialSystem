@@ -5,6 +5,7 @@
 #include "OpenTextEditorOption.h"
 #include "OpenImageViewerOption.h"
 #include "ChangeColours.h"
+#include "ChangeTextColours.h"
 
 namespace Commands
 {
@@ -17,6 +18,7 @@ namespace Commands
 			controller.add_option("nano", std::make_unique<OpenTextEditorOption>(core));
 			controller.add_option("lookat", std::make_unique<OpenImageViewerOption>(core));
 			controller.add_option("changecolours", std::make_unique<ChangeColours>(core));
+			controller.add_option("changetextcolours", std::make_unique<ChangeTextColours>(core));
 			return controller;
 		}
 	};

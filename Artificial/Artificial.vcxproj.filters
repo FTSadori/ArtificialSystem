@@ -211,6 +211,9 @@
     <Filter Include="Исходные файлы\Core\Mova\FinalModule">
       <UniqueIdentifier>{b1a33db5-b430-4f11-ba1a-0c7bc292fcae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Task">
+      <UniqueIdentifier>{4d26dc72-b30f-443a-a190-369a1095b2fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -676,6 +679,9 @@
     </ClInclude>
     <ClInclude Include="StringToColour.h">
       <Filter>Исходные файлы\Core\GUI\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeTextColours.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

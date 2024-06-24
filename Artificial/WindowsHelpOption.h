@@ -30,6 +30,7 @@ namespace Commands
 			ptr->print_third("- nano\n");
 			ptr->print_third("- lookat\n");
 			ptr->print_third("- changecolours\n");
+			ptr->print_third("- changetextcolours\n");
 
 			return;
 		}
