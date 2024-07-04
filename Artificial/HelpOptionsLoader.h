@@ -9,6 +9,7 @@
 #include "WindowsHelpOption.h"
 #include "DevicesHelpOption.h"
 #include "NetHelpOption.h"
+#include "MovaHelpOption.h"
 
 namespace Commands
 {
@@ -25,6 +26,7 @@ namespace Commands
 			controller.add_option("helpwindows", std::make_unique<WindowsHelpOption>(core));
 			controller.add_option("helpdevices", std::make_unique<DevicesHelpOption>(core));
 			controller.add_option("helpnet", std::make_unique<NetHelpOption>(core));
+			controller.add_option("helpmova", std::make_unique<MovaHelpOption>(core));
 			return controller;
 		}
 	};
