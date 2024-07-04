@@ -4,7 +4,7 @@
 
 namespace Story
 {
-	using FloatMatrix = std::vector<std::vector<float>>;
+	using DoubleMatrix = std::vector<std::vector<double>>;
 
 	class BaseTask
 	{
@@ -12,10 +12,10 @@ namespace Story
 		BaseTask()
 			: ins({ {} }), outs({ {} }) {}
 
-		BaseTask(const FloatMatrix& _ins, const FloatMatrix& _outs, const std::string& _name, const std::string& _description)
+		BaseTask(const DoubleMatrix& _ins, const DoubleMatrix& _outs, const std::string& _name, const std::string& _description)
 			: ins(_ins), outs(_outs), name(_name), description(_description) {}
 
-		bool check_answer(const FloatMatrix& user_outs)
+		bool check_answer(const DoubleMatrix& user_outs)
 		{
 			if (user_outs.size() != outs.size())
 				return false;
@@ -30,7 +30,7 @@ namespace Story
 			return true;
 		}
 
-		const FloatMatrix& get_ins()
+		const DoubleMatrix& get_ins()
 		{
 			return ins;
 		}
@@ -48,8 +48,8 @@ namespace Story
 		virtual ~BaseTask() = default;
 
 	protected:
-		FloatMatrix ins;
-		FloatMatrix outs;
+		DoubleMatrix ins;
+		DoubleMatrix outs;
 		std::string name;
 		std::string description;
 	};
