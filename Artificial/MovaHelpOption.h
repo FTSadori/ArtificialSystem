@@ -30,6 +30,7 @@ namespace Commands
 			ptr->print_third("- mova\n");
 			ptr->print_third("- tasks\n");
 			ptr->print_third("- showtask\n");
+			ptr->print_third("- runtests\n");
 
 			return;
 		}
