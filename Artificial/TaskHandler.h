@@ -24,7 +24,6 @@ namespace Story
 			return s_tasks[task]->check_answer(user_outs);
 		}
 
-	private:
 		static std::unordered_map<std::string, std::shared_ptr<BaseTask>> s_tasks;
 	};
 }
