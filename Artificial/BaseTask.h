@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 namespace Story
 {
@@ -11,8 +12,8 @@ namespace Story
 		BaseTask()
 			: ins({ {} }), outs({ {} }) {}
 
-		BaseTask(const FloatMatrix& _ins, const FloatMatrix& _outs)
-			: ins(_ins), outs(_outs) {}
+		BaseTask(const FloatMatrix& _ins, const FloatMatrix& _outs, const std::string& _name, const std::string& _description)
+			: ins(_ins), outs(_outs), name(_name), description(_description) {}
 
 		bool check_answer(const FloatMatrix& user_outs)
 		{
@@ -34,10 +35,22 @@ namespace Story
 			return ins;
 		}
 
+		const std::string& get_name()
+		{
+			return name;
+		}
+
+		const std::string& get_description()
+		{
+			return description;
+		}
+
 		virtual ~BaseTask() = default;
 
 	protected:
 		FloatMatrix ins;
 		FloatMatrix outs;
+		std::string name;
+		std::string description;
 	};
 }
