@@ -724,5 +724,8 @@
     <None Include="CommandExceptions.h">
       <Filter>Исходные файлы\Core\Commands\Exceptions</Filter>
     </None>
+    <None Include="RunTestsOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </None>
   </ItemGroup>
 </Project>

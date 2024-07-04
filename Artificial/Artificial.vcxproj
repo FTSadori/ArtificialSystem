@@ -299,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h" />
+    <None Include="RunTestsOption.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
