@@ -170,6 +170,7 @@
     <ClCompile Include="SymbolsModule.cpp" />
     <ClCompile Include="SystemDiskListOption.h" />
     <ClCompile Include="TaskHandler.cpp" />
+    <ClCompile Include="TaskStateHandler.cpp" />
     <ClCompile Include="TerminalWindow.cpp" />
     <ClCompile Include="TextEditorWindow.cpp" />
     <ClCompile Include="UserExceptions.h" />
@@ -187,6 +188,10 @@
     <ClInclude Include="ConstantsVector.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
+    <ClInclude Include="MovaHelpOption.h" />
+    <ClInclude Include="ShowOpenedTasksOption.h" />
+    <ClInclude Include="ShowTaskDetailsOption.h" />
+    <ClInclude Include="TaskStateHandler.h" />
     <ClInclude Include="DeleteUserOption.h" />
     <ClInclude Include="DevicesHelpOption.h" />
     <ClInclude Include="DevicesOptionsLoader.h" />

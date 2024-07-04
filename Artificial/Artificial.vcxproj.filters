@@ -360,6 +360,9 @@
     <ClCompile Include="TaskHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Task</Filter>
     </ClCompile>
+    <ClCompile Include="TaskStateHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Task</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -424,9 +427,6 @@
     </ClInclude>
     <ClInclude Include="BaseController.h">
       <Filter>Исходные файлы\Core\Commands\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="MemoryOptionsLoader.h">
-      <Filter>Исходные файлы\Core\Commands\Options\Memory</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
       <Filter>Исходные файлы\Core\Commands\Command</Filter>
@@ -703,6 +703,21 @@
     </ClInclude>
     <ClInclude Include="StoryExceptions.h">
       <Filter>Исходные файлы\Core\Story\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskStateHandler.h">
+      <Filter>Исходные файлы\Core\Story\Task</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowOpenedTasksOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="MovaHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowTaskDetailsOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
