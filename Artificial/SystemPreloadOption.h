@@ -1,6 +1,7 @@
 #pragma once
 #include "CommandExceptions.h"
 #include "Core.h"
+#include "TaskStateHandler.h"
 
 namespace Commands
 {
@@ -31,22 +32,42 @@ namespace Commands
 			auto& maindisk = m_core.memory().get_disk(m_core.memory_info().get_main_disk_info().mark);
 			if (!maindisk.is_exists(DiskPath("\\system")))
 				maindisk.create(DiskPath("\\system"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
-			
+
 			if (maindisk.is_exists(DiskPath("\\system\\.colours")))
 			{
-				DataQueue data = maindisk.read(DiskPath("\\system\\.colours"), true);
-				std::string colours = std::string(data.get_data(), data.size());
+				try {
+					DataQueue data = maindisk.read(DiskPath("\\system\\.colours"), true);
+					std::string colours = std::string(data.get_data(), data.size());
 
-				Command command_mk("\"" + _command.get("path") + "\"" + " changecolours " + colours);
-				m_core.execute(command_mk, sender);
+					Command command_mk("\"" + _command.get("path") + "\"" + " changecolours " + colours);
+					m_core.execute(command_mk, sender);
+				}
+				catch (Exception ex) {
+					ptr->print_secondary("(SystemPreloadOption) Bad .colours file (" + std::string(ex.what()) + ")\n");
+				}
 			}
 			if (maindisk.is_exists(DiskPath("\\system\\.textcolours")))
 			{
-				DataQueue data = maindisk.read(DiskPath("\\system\\.textcolours"), true);
-				std::string colours = std::string(data.get_data(), data.size());
+				try {
+					DataQueue data = maindisk.read(DiskPath("\\system\\.textcolours"), true);
+					std::string colours = std::string(data.get_data(), data.size());
 
-				Command command_mk("\"" + _command.get("path") + "\"" + " changetextcolours " + colours);
-				m_core.execute(command_mk, sender);
+					Command command_mk("\"" + _command.get("path") + "\"" + " changetextcolours " + colours);
+					m_core.execute(command_mk, sender);
+				}
+				catch (Exception ex) {
+					ptr->print_secondary("(SystemPreloadOption) Bad .textcolours file (" + std::string(ex.what()) + ")\n");
+				}
+			}
+			if (maindisk.is_exists(DiskPath("\\system\\.taskstates")))
+			{
+				try {
+					DataQueue data = maindisk.read(DiskPath("\\system\\.taskstates"), true);
+					Story::TaskStateHandler().load_from_data(data);
+				}
+				catch (Exception ex) {
+					ptr->print_secondary("(SystemPreloadOption) Bad .taskstates file (" + std::string(ex.what()) + ")\n");
+				}
 			}
 		}
 	};

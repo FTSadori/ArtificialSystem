@@ -94,7 +94,7 @@ namespace Commands
 			{
 				ptr->print_third("SUCCESS!!!\n");
 				task_info.state = Story::TaskState::COMPLETE;
-				task_info.firstComplitionAttempts = task_info.totalAttempts;
+				task_info.firstComplitionAttempts = min(task_info.firstComplitionAttempts, task_info.totalAttempts);
 				if (task_info.minLinesOfCode == -1)
 					task_info.minLinesOfCode = lines_num;
 				else
@@ -104,6 +104,17 @@ namespace Commands
 			{
 				ptr->print_third("FAILED...\n");
 			}
+			
+			using namespace Memory;
+
+			auto& maindisk = m_core.memory().get_disk(m_core.memory_info().get_main_disk_info().mark);
+			if (!maindisk.is_exists(DiskPath("\\system")))
+				maindisk.create(DiskPath("\\system"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
+			if (!maindisk.is_exists(DiskPath("\\system\\.taskstates")))
+				maindisk.create(DiskPath("\\system\\.taskstates"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
+
+			DataQueue data2 = Story::TaskStateHandler().get_as_data();
+			maindisk.write(DiskPath("\\system\\.taskstates"), data2, true);
 
 			return;
 		}
