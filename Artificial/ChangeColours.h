@@ -44,6 +44,19 @@ namespace Commands
 
 			m_core.gui().change_colours_all_windows(newColourTheme);
 
+			using namespace Memory;
+
+			auto& maindisk = m_core.memory().get_disk(m_core.memory_info().get_main_disk_info().mark);
+			if (!maindisk.is_exists(DiskPath("\\system")))
+				maindisk.create(DiskPath("\\system"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
+			if (!maindisk.is_exists(DiskPath("\\system\\.colours")))
+				maindisk.create(DiskPath("\\system", ".colours"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
+			
+			std::string strdata = _command.get("1") + " " + _command.get("2") + " " + _command.get("3");
+			DataQueue data = DataQueue(std::vector<char>(strdata.begin(), strdata.end()));
+
+			maindisk.write(DiskPath("\\system", ".colours"), data, true);
+
 			return;
 		}
 	};
