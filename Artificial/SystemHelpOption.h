@@ -31,7 +31,8 @@ namespace Commands
 			ptr->print_third("- cleardisks\n");
 			ptr->print_third("- startsystem\n");
 			ptr->print_third("- disklist\n");
-			
+			ptr->print_third("- preload\n");
+
 			return;
 		}
 	};
