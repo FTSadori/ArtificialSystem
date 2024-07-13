@@ -363,6 +363,9 @@
     <ClCompile Include="TaskStateHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Task</Filter>
     </ClCompile>
+    <ClCompile Include="SystemPreloadOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">

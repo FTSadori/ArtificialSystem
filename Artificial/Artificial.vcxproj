@@ -169,6 +169,7 @@
     <ClCompile Include="StringToColour.cpp" />
     <ClCompile Include="SymbolsModule.cpp" />
     <ClCompile Include="SystemDiskListOption.h" />
+    <ClCompile Include="SystemPreloadOption.h" />
     <ClCompile Include="TaskHandler.cpp" />
     <ClCompile Include="TaskStateHandler.cpp" />
     <ClCompile Include="TerminalWindow.cpp" />
