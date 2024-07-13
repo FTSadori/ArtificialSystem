@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "CommandExceptions.h"
 #include "Core.h"
 
