@@ -19,6 +19,9 @@ namespace Commands
 			m_gui.connect_to_users(&m_users);
 			m_gui.get_terminal_ptr()->set_user_name(m_users.get_current_user().name());
 			m_gui.get_terminal_ptr()->set_path(m_memory.get_start_path());
+
+			Command cmd("none:\\ preload");
+			execute(cmd, m_users.get_current_user());
 		}
 		catch (const Exception&)
 		{
