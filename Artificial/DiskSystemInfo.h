@@ -14,6 +14,10 @@ namespace Memory
         DiskSystemInfo(const std::vector<std::pair<std::string, DiskInfo>>& _info)
             : disks_info(_info) {}
 
+        const DiskInfo& get_main_disk_info() const {
+            return disks_info[main_disk].second;
+        }
+
         virtual DataQueue get_as_data() const override
         {
             DataQueue data;
