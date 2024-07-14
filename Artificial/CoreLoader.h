@@ -9,6 +9,7 @@
 #include "NetOptionsLoader.h"
 #include "NetFilesLoader.h"
 #include "MovaOptionsLoader.h"
+#include "StoryOptionsLoader.h"
 
 namespace Commands
 {
@@ -25,6 +26,7 @@ namespace Commands
 			core.add_controller(DevicesOptionsLoader::Load(core));
 			core.add_controller(NetOptionsLoader::Load(core));
 			core.add_controller(MovaOptionsLoader::Load(core));
+			core.add_controller(StoryOptionsLoader::Load(core));
 			NetFilesLoader::load(core);
 
 			core.load();
