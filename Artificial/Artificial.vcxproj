@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BannedNamesValidator.cpp" />
     <ClCompile Include="Base64.cpp" />
     <ClCompile Include="BaseException.h" />
     <ClCompile Include="ColoursThemesHandler.cpp" />
@@ -179,6 +180,7 @@
     <ClCompile Include="UserListOption.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BannedNamesValidator.h" />
     <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="BaseTask.h" />
     <ClInclude Include="ChangeColours.h" />
@@ -192,6 +194,9 @@
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="ShowOpenedTasksOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
+    <ClInclude Include="SpawnNovaOption.h" />
+    <ClInclude Include="StoryHelpOption.h" />
+    <ClInclude Include="StoryOptionsLoader.h" />
     <ClInclude Include="SystemRunScriptOption.h" />
     <ClInclude Include="TaskStateHandler.h" />
     <ClInclude Include="DeleteUserOption.h" />

@@ -220,6 +220,12 @@
     <Filter Include="Исходные файлы\Core\Story\Exceptions">
       <UniqueIdentifier>{df4a7195-1d12-406b-8fd3-c4c9192312c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Story">
+      <UniqueIdentifier>{75e0197d-fbd7-4142-ab8b-245670ff6a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Story\Options">
+      <UniqueIdentifier>{de5827b6-a14f-45e9-8881-a81ec7e3debf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -365,6 +371,9 @@
     </ClCompile>
     <ClCompile Include="SystemPreloadOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClCompile>
+    <ClCompile Include="BannedNamesValidator.cpp">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -724,6 +733,18 @@
     </ClInclude>
     <ClInclude Include="SystemRunScriptOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="StoryOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story</Filter>
+    </ClInclude>
+    <ClInclude Include="SpawnNovaOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="StoryHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="BannedNamesValidator.h">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
