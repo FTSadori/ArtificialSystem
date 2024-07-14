@@ -192,6 +192,7 @@
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="ShowOpenedTasksOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
+    <ClInclude Include="SystemRunScriptOption.h" />
     <ClInclude Include="TaskStateHandler.h" />
     <ClInclude Include="DeleteUserOption.h" />
     <ClInclude Include="DevicesHelpOption.h" />

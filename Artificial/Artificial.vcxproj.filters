@@ -722,6 +722,9 @@
     <ClInclude Include="ShowTaskDetailsOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
     </ClInclude>
+    <ClInclude Include="SystemRunScriptOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

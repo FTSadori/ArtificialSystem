@@ -32,6 +32,7 @@ namespace Commands
 			ptr->print_third("- startsystem\n");
 			ptr->print_third("- disklist\n");
 			ptr->print_third("- preload\n");
+			ptr->print_third("- run\n");
 
 			return;
 		}
