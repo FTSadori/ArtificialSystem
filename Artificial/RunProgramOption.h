@@ -27,7 +27,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Read permission lvl needed\n");
+				ptr->print_main("Execute permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
 				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::show]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
@@ -45,7 +45,7 @@ namespace Commands
 			if (disk.get_type(path.disk_path()) != Memory::FileT::FILE)
 				throw CommandException("(RunProgramOption) It's not a file");
 
-			if (sender.lvl() < perm.read_perm_lvl)
+			if (sender.lvl() < perm.exec_perm_lvl)
 				throw PermissionException("(RunProgramOption) Sender has low permission lvl");
 
 			m_core.passwords().check_password(ptr, perm.password_hash);

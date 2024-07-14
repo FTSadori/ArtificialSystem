@@ -21,7 +21,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Script file read (as minimum) permission lvl needed\n");
+				ptr->print_main("Script file execute (as minimum) permission lvl needed\n");
 				ptr->print_main("Runs script with system commands. May be from real file or from file in Artificial.\n");
 				ptr->print_secondary("run {path} [::real]\n");
 				ptr->print_main("  path - (string) path to file, either real or not;\n");
@@ -56,7 +56,7 @@ namespace Commands
 			if (disk.get_type(path.disk_path()) != Memory::FileT::FILE)
 				throw CommandException("(SystemRunScriptOption) It's not a file");
 
-			if (sender.lvl() < perm.read_perm_lvl)
+			if (sender.lvl() < perm.exec_perm_lvl)
 				throw PermissionException("(SystemRunScriptOption) Sender has low permission lvl");
 
 			if (perm.hidden && !sender.sudo())
