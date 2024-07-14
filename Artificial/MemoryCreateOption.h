@@ -5,6 +5,7 @@
 #include "Parser.h"
 #include "Command.h"
 #include "ICore.h"
+#include "BannedNamesValidator.h"
 #include <map>
 
 namespace Commands
@@ -43,6 +44,9 @@ namespace Commands
 			}
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
+
+			if (Story::BannedNamesValidator::is_banned(path.disk_path().file()))
+				throw CommandException("(MemoryCreateOption) File name is banned. Use story commands to create files with banned names");
 
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto dir_perm = disk.get_info(path.disk_path().dir(), sender.sudo()).permissions;
