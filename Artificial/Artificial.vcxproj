@@ -191,6 +191,7 @@
     <ClInclude Include="ConstantsVector.h" />
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
+    <ClInclude Include="GoNovaOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="ShowOpenedTasksOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
