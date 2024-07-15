@@ -28,6 +28,7 @@ namespace Commands
 			ptr->print_main("Use next commands with ::help to get more info:\n");
 			ptr->print_third("- spawnnova\n");
 			ptr->print_third("- go\n");
+			ptr->print_third("- mkitem\n");
 
 			return;
 		}
