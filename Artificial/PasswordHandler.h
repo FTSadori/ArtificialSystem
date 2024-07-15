@@ -31,6 +31,17 @@ namespace Commands
 			}
 		}
 
+		void check_password(hash_t needed, const std::string& entered)
+		{
+			if (needed != 0 && !is_password_entered(needed))
+			{
+				hash_t hash = std::hash<std::string>()(entered);
+				if (needed != hash)
+					throw WrongPasswordException("(PasswordHandler) Wrong password");
+				add_hash(needed);
+			}
+		}
+
 	private:
 		std::set<hash_t> m_set;
 	};
