@@ -372,7 +372,7 @@
     <ClCompile Include="SystemPreloadOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClCompile>
-    <ClCompile Include="BannedNamesValidator.cpp">
+    <ClCompile Include="BannedFileExtensionsHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Base</Filter>
     </ClCompile>
   </ItemGroup>
@@ -743,14 +743,14 @@
     <ClInclude Include="StoryHelpOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
     </ClInclude>
-    <ClInclude Include="BannedNamesValidator.h">
-      <Filter>Исходные файлы\Core\Story\Base</Filter>
-    </ClInclude>
     <ClInclude Include="GoNovaOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
     </ClInclude>
     <ClInclude Include="CreateItemOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="BannedFileExtensionsHandler.h">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

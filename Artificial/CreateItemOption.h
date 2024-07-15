@@ -6,7 +6,7 @@
 #include "Command.h"
 #include "ICore.h"
 #include "RealFileManager.h"
-#include "BannedNamesValidator.h"
+#include "BannedFileExtensionsHandler.h"
 #include "Base64.h"
 #include <map>
 #include <filesystem>
@@ -39,9 +39,6 @@ namespace Commands
 			}
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
-
-			if (Story::BannedNamesValidator::is_banned(path.disk_path().file()))
-				throw CommandException("(CreateItemOption) File name is banned. Use story commands to create files with banned names");
 
 			Command command("\"" + _command.get("path") + "\" mk \"" + _command.get("1") + ".item\" :wp 255" 
 				+ (_command.has("::sys") ? " ::sys" : "")

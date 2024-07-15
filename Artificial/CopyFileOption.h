@@ -35,8 +35,8 @@ namespace Commands
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 			Memory::FullPath new_path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("2"));
 
-			if (Story::BannedNamesValidator::is_banned(new_path.disk_path().file()))
-				throw CommandException("(CopyFileOption) New file name is banned. Use story commands to create files with banned names");
+			if (sender.lvl() < Story::BannedFileExtensionsHandler::get_min_level(new_path.disk_path().file()))
+				throw PermissionException("(CopyFileOption) Sender has low permission lvl");
 
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto& new_disk = m_core.memory().get_disk(new_path.mark());
