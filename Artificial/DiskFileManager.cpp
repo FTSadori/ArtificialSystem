@@ -83,13 +83,11 @@ namespace Memory
 		time_t a = perm_data.pop<time_t>();
 		time_t b = perm_data.pop<time_t>();
 		
-		DataQueue data = m_sectors.get_raw_file(ptr, system);
-		
 		m_sectors.delete_file(ptr, system);
 
 		FileInfo info = FileInfo(_per, a, b);
 		DataQueue fileData = info.get_as_data();
-		fileData.concat(data);
+		fileData.concat(perm_data);
 
 		uintptr_t new_ptr = m_sectors.put_raw_file(fileData, was_system);
 
