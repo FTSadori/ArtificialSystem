@@ -41,13 +41,14 @@ namespace Commands
 			{
 				ptr->print_main("Max entered permission lvl needed\n");
 				ptr->print_main("Changes modificators for file\n");
-				ptr->print_secondary("mkmod {path} [::h] [:p password] [:rp lvl] [:wp lvl] [:ep lvl]\n");
+				ptr->print_secondary("mkmod {path} [::h] [:p password] [:rp lvl] [:wp lvl] [:ep lvl] [:preenter password]\n");
 				ptr->print_main("  path - (string) file path;\n");
 				ptr->print_main("  ::h - (flag) inverse hidden file settings (needs root rights);\n");
 				ptr->print_main("  :p \"password\" - (flag + string) changes/sets up password on file/directory (works if dir doesn't have password yet);\n");
 				ptr->print_main("  :rp lvl - (flag + int) sets read permission lvl on file/directory;\n");
 				ptr->print_main("  :wp lvl - (flag + int) sets write permission lvl on file/directory;\n");
 				ptr->print_main("  :ep lvl - (flag + int) sets execution permission lvl on file;\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 
 				return;
 			}
@@ -107,13 +108,19 @@ namespace Commands
 						throw PermissionException("(ChangeModificatorsOption) Execution permission lvl is invalid");
 				}
 			}
-
-			m_core.passwords().check_password(ptr, perm.password_hash);
+	
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			if (_command.has("::h")) perm.hidden = !perm.hidden;
 
 			if (_command.has(":p"))
-				set_password_to_all_from(std::hash<std::string>()(_command.get(":p")), disk, perm.hidden, path.disk_path(), sender.system());
+			{
+				perm.password_hash = std::hash<std::string>()(_command.get(":p"));
+				set_password_to_all_from(perm.password_hash, disk, perm.hidden, path.disk_path(), sender.system());
+			}
 
 			disk.change_info(path.disk_path(), perm, sender.system());
 

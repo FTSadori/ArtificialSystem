@@ -24,9 +24,11 @@ namespace Commands
 			{
 				ptr->print_main("File write permission lvl needed\n");
 				ptr->print_main("Moves file or directory to another directory\n");
-				ptr->print_secondary("move {path} {new_path}\n");
+				ptr->print_secondary("move {path} {new_path} [:source_pass pass] [:dest_pass pass]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
 				ptr->print_main("  new_path - (string) destination path (directory);\n");
+				ptr->print_main("  :source_pass pass - (flag + string) password for {path} file if needed;\n");
+				ptr->print_main("  :dest_pass pass - (flag + string) password for {new_path} file if needed;\n");
 
 				return;
 			}
@@ -48,8 +50,15 @@ namespace Commands
 			if (perm.hidden && new_perm.hidden && !sender.sudo())
 				throw PermissionException("(MoveFileOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash, "Input password for source: ");
-			m_core.passwords().check_password(ptr, new_perm.password_hash, "Input password for destination: ");
+			if (_command.has(":source_pass"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":source_pass"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash, "Input password for source: ");
+
+			if (_command.has(":dest_pass"))
+				m_core.passwords().check_password(new_perm.password_hash, _command.get(":dest_pass"));
+			else
+				m_core.passwords().check_password(ptr, new_perm.password_hash, "Input password for destination: ");
 
 			if (path.mark() == new_path.mark())
 			{

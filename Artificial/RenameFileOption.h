@@ -24,9 +24,10 @@ namespace Commands
 			{
 				ptr->print_main("File write permission lvl needed\n");
 				ptr->print_main("Renames file or directory\n");
-				ptr->print_secondary("rename {path} {new_name}\n");
+				ptr->print_secondary("rename {path} {new_name} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
 				ptr->print_main("  new_name - (string) new name of file;\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 
 				return;
 			}
@@ -42,7 +43,10 @@ namespace Commands
 			if (perm.hidden && !sender.sudo())
 				throw PermissionException("(RenameFileOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			disk.rename(path.disk_path(), Memory::DiskPath(path.disk_path().dir(), _command.get("2")), sender.system());
 			return;

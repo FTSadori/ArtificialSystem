@@ -30,7 +30,7 @@ namespace Commands
 			{
 				ptr->print_main("Max entered permission lvl needed\n");
 				ptr->print_main("Creates file or directory. Your entered lvl can't be lower than lvl in directory\n");
-				ptr->print_secondary("mk {filename} [::dir] [::sys] [::h] [:p password] [:rp lvl] [:wp lvl] [:ep lvl]\n");
+				ptr->print_secondary("mk {filename} [::dir] [::sys] [::h] [:p password] [:rp lvl] [:wp lvl] [:ep lvl] [:preenter password]\n");
 				ptr->print_main("  filename - (string) name of the new file;\n");
 				ptr->print_main("  ::dir - (flag) create directory;\n");
 				ptr->print_main("  ::sys - (flag) create system file (needs 255 lvl);\n");
@@ -39,7 +39,7 @@ namespace Commands
 				ptr->print_main("  :rp lvl - (flag + int) sets read permission lvl on file/directory;\n");
 				ptr->print_main("  :wp lvl - (flag + int) sets write permission lvl on file/directory;\n");
 				ptr->print_main("  :ep lvl - (flag + int) sets execution permission lvl on file;\n");
-
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
 
@@ -73,7 +73,11 @@ namespace Commands
 			if (sender.lvl() < all_perm_lvls.back())
 				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, dir_perm.password_hash);
+
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(dir_perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, dir_perm.password_hash);
 
 			if (path.disk_path().dir() == "")
 				dir_perm.hidden = _command.has("::h");

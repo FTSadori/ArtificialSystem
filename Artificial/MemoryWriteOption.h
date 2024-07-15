@@ -24,9 +24,10 @@ namespace Commands
 			{
 				ptr->print_main("File write permission lvl needed\n");
 				ptr->print_main("Writes text in file\n");
-				ptr->print_secondary("write {path} {base64_text}\n");
+				ptr->print_secondary("write {path} {base64_text} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
 				ptr->print_main("  base64_text - (string) text in base64 format;\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 
 				return;
 			}
@@ -45,7 +46,10 @@ namespace Commands
 			if (perm.hidden && !sender.sudo())
 				throw PermissionException("(MemoryWriteOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			std::string str = b64decode(_command.get("2"));
 			Memory::DataQueue data;

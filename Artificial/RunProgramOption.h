@@ -29,11 +29,12 @@ namespace Commands
 			{
 				ptr->print_main("Execute permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
-				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::show]\n");
+				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::show] [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
 				ptr->print_main("  ... - (doubles) input stream;\n");
 				ptr->print_main("  ::show - (flag) on 4th module shows half-compiled code;\n");
 				ptr->print_main("  :r register_show_num - (flag + int) shows no less than entered number of registers\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
 
@@ -48,7 +49,10 @@ namespace Commands
 			if (sender.lvl() < perm.exec_perm_lvl)
 				throw PermissionException("(RunProgramOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			auto data = disk.read(path.disk_path(), sender.system());
 

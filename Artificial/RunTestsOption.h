@@ -31,9 +31,10 @@ namespace Commands
 			{
 				ptr->print_main("Read permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
-				ptr->print_secondary("runtests {path} {name}\n");
+				ptr->print_secondary("runtests {path} {name} [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
 				ptr->print_main("  name - (string) task name \n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
 
@@ -54,7 +55,10 @@ namespace Commands
 			if (!Story::TaskHandler::s_tasks.contains(_command.get("2")))
 				throw Story::TaskNameException("(RunTestsOption) TaskHandler doesn't know about " + _command.get("2") + " task");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			auto data = disk.read(path.disk_path(), sender.system());
 

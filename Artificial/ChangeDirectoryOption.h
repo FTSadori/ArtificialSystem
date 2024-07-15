@@ -24,9 +24,10 @@ namespace Commands
 			{
 				ptr->print_main("Different permission lvl needed\n");
 				ptr->print_main("Moves you to entered directory\n");
-				ptr->print_secondary("cd {path}\n");
+				ptr->print_secondary("cd {path} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
-				
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
+
 				return;
 			}
 
@@ -44,7 +45,10 @@ namespace Commands
 			if (path.disk_path().full_name() != "" && perm.hidden && !sender.sudo())
 				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			ptr->set_path(path);
 

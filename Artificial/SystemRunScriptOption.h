@@ -23,9 +23,10 @@ namespace Commands
 			{
 				ptr->print_main("Script file execute (as minimum) permission lvl needed\n");
 				ptr->print_main("Runs script with system commands. May be from real file or from file in Artificial.\n");
-				ptr->print_secondary("run {path} [::real]\n");
+				ptr->print_secondary("run {path} [::real] [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file, either real or not;\n");
 				ptr->print_main("  ::real - (flag) is used to indicate that real file will be used for script;\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 
 				return;
 			}
@@ -62,7 +63,10 @@ namespace Commands
 			if (perm.hidden && !sender.sudo())
 				throw PermissionException("(SystemRunScriptOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			Memory::DataQueue data = disk.read(path.disk_path(), sender.system());
 			std::string strdata(data.get_data(), data.size());

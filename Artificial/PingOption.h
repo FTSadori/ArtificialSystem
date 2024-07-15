@@ -26,8 +26,9 @@ namespace Commands
 			{
 				ptr->print_main("Server permission lvl needed\n");
 				ptr->print_main("Checks connection to server by address\n");
-				ptr->print_secondary("ping {address}\n");
+				ptr->print_secondary("ping {address} [:preenter password]\n");
 				ptr->print_main("  address - (string) address line;\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
 
@@ -42,8 +43,11 @@ namespace Commands
 			{
 				throw PermissionException("(PingOption) You need " + Parser::to_string((int)data.lvl) + " lvl to connect");
 			}
-			
-			m_core.passwords().check_password(ptr, data.password_hash);
+
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(data.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, data.password_hash);
 
 			ptr->print_third("Connection with " + _command.get("1") + " is successful" + '\n');
 

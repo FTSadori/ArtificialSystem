@@ -24,8 +24,9 @@ namespace Commands
 			{
 				ptr->print_main("Read file permission lvl needed\n");
 				ptr->print_main("Opens file in image viewer\n");
-				ptr->print_secondary("lookat {path}\n");
+				ptr->print_secondary("lookat {path} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
+				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 
 				return;
 			}
@@ -44,7 +45,10 @@ namespace Commands
 			if (perm.hidden && !sender.sudo())
 				throw PermissionException("(OpenTextEditorOption) Sender has low permission lvl");
 
-			m_core.passwords().check_password(ptr, perm.password_hash);
+			if (_command.has(":preenter"))
+				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));
+			else
+				m_core.passwords().check_password(ptr, perm.password_hash);
 
 			Memory::DataQueue data = disk.read(path.disk_path(), sender.system());
 
