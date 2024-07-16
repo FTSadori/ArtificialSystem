@@ -29,6 +29,7 @@ namespace Commands
 			ptr->print_third("- spawnnova\n");
 			ptr->print_third("- go\n");
 			ptr->print_third("- mkitem\n");
+			ptr->print_third("- pick\n");
 
 			return;
 		}

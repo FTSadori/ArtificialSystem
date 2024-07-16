@@ -752,6 +752,9 @@
     <ClInclude Include="BannedFileExtensionsHandler.h">
       <Filter>Исходные файлы\Core\Story\Base</Filter>
     </ClInclude>
+    <ClInclude Include="PickItemOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

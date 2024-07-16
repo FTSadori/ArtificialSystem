@@ -5,6 +5,7 @@
 #include "SpawnNovaOption.h"
 #include "GoNovaOption.h"
 #include "CreateItemOption.h"
+#include "PickItemOption.h"
 
 namespace Commands
 {
@@ -17,6 +18,7 @@ namespace Commands
 			controller.add_option("spawnnova", std::make_unique<SpawnNovaOption>(core));
 			controller.add_option("go", std::make_unique<GoNovaOption>(core));
 			controller.add_option("mkitem", std::make_unique<CreateItemOption>(core));
+			controller.add_option("pick", std::make_unique<PickItemOption>(core));
 			return controller;
 		}
 	};
