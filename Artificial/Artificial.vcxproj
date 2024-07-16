@@ -195,6 +195,7 @@
     <ClInclude Include="GoNovaOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="PickItemOption.h" />
+    <ClInclude Include="ShowInventoryOption.h" />
     <ClInclude Include="ShowOpenedTasksOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
     <ClInclude Include="SpawnNovaOption.h" />

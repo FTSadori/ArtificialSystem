@@ -30,6 +30,7 @@ namespace Commands
 			ptr->print_third("- go\n");
 			ptr->print_third("- mkitem\n");
 			ptr->print_third("- pick\n");
+			ptr->print_third("- inv\n");
 
 			return;
 		}
