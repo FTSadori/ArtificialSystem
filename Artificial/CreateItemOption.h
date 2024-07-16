@@ -29,7 +29,7 @@ namespace Commands
 				ptr->print_main("255 permission lvl needed\n");
 				ptr->print_main("Creates item file\n");
 				ptr->print_secondary("mkitem {filename} {itemname} {itemdesc} [::sys] [::h] [:p password]\n");
-				ptr->print_main("  filename - (string) name of the new file;\n");
+				ptr->print_main("  filename - (string) name of the new file (without .item);\n");
 				ptr->print_main("  itemname - (string) name of the new item;\n");
 				ptr->print_main("  itemdesc - (string) description of the description;\n");
 				ptr->print_main("  ::sys - (flag) create system file (needs 255 lvl);\n");
