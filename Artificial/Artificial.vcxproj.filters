@@ -381,6 +381,9 @@
     <ClCompile Include="BannedFileExtensionsHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Base</Filter>
     </ClCompile>
+    <ClCompile Include="ItemUsingHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Quest\UseItem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -763,6 +766,9 @@
     </ClInclude>
     <ClInclude Include="ShowInventoryOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemUsingHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\UseItem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
