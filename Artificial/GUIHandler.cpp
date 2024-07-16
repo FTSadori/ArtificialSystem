@@ -159,8 +159,9 @@ namespace GUI
 			Commands::Command cmd(te_ptr->get_file_path().full_dir_name()
 				+ " write \""
 				+ te_ptr->get_file_path().disk_path().file()
-				+ "\" "
-				+ text);
+				+ "\" \""
+				+ text
+				+ "\"");
 
 			if (m_core && m_users_handler)
 				m_core->execute(cmd, m_users_handler->get_current_user());
