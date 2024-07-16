@@ -46,7 +46,7 @@ namespace Commands
 				+ (_command.has(":p") ? (" :p " + _command.get(":p")) : ""));
 			m_core.execute(command, sender);
 
-			Command command2("\"" + _command.get("path") + "\" write \"" + _command.get("1") + ".item\" " + b64encode("=====" + _command.get("2") + "=====\n\n" + _command.get("3")));
+			Command command2("\"" + _command.get("path") + "\" write \"" + _command.get("1") + ".item\" " + b64encode("[" + _command.get("2") + "]\n\n" + _command.get("3")));
 			m_core.execute(command2, sender);
 
 			return;

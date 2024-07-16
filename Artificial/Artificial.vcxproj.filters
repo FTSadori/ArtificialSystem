@@ -226,6 +226,12 @@
     <Filter Include="Исходные файлы\Core\Commands\Options\Story\Options">
       <UniqueIdentifier>{de5827b6-a14f-45e9-8881-a81ec7e3debf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest">
+      <UniqueIdentifier>{67cacebf-cb1e-4573-9d6d-d24ac35ab0d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\UseItem">
+      <UniqueIdentifier>{3d6d8d98-1339-4852-9406-dc7117d90e29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
