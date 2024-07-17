@@ -110,9 +110,9 @@ namespace GUI
 					prev = point.symbol_num;
 					ConsoleWindow::set_text_attributes(point.attribute);
 				}
-				std::cout << m_text[i].substr(prev);
+				printf(m_text[i].substr(prev).c_str());
 			}
-			else std::cout << m_text[i];
+			else printf(m_text[i].c_str());
 			
 			absolute.x += 1;
 			rows_used += 1;

@@ -58,24 +58,24 @@ namespace GUI
 
 		ConsoleWindow::set_cursor_position({ (int16_t)(m_position.x - 1), m_position.y });
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, true));
-		std::cout << std::string(m_size.columns, ' ');
-		
+		printf(std::string(m_size.columns, ' ').c_str());
+
 		ConsoleWindow::set_cursor_position({ (int16_t)(m_position.x + m_size.rows), m_position.y });
 		ConsoleWindow::set_text_borders(TextBorders(false, true, false, false));
-		std::cout << std::string(m_size.columns, ' ');
+		printf(std::string(m_size.columns, ' ').c_str());
 
 		ConsoleWindow::set_text_borders(TextBorders(false, false, true, false));
 		for (int16_t i = 0; i < m_size.rows; ++i)
 		{
 			ConsoleWindow::set_cursor_position({ (int16_t)(m_position.x + i), (int16_t)(m_position.y - 1) });
-			std::cout << " ";
+			printf(" ");
 		}
 
 		ConsoleWindow::set_text_borders(TextBorders(true, false, false, false));
 		for (int16_t i = 0; i < m_size.rows; ++i)
 		{
 			ConsoleWindow::set_cursor_position({ (int16_t)(m_position.x + i), (int16_t)(m_position.y + m_size.columns) });
-			std::cout << " ";
+			printf(" ");
 		}
 
 		ConsoleWindow::set_text_borders(TextBorders(false, false, false, false));
@@ -87,7 +87,7 @@ namespace GUI
 		for (uint16_t i = 0; i < m_size.rows; ++i)
 		{
 			ConsoleWindow::set_cursor_position({ (SHORT)(m_position.x + i), m_position.y });
-			std::cout << std::string(m_size.columns, ' ');
+			printf(std::string(m_size.columns, ' ').c_str());
 		}
 	}
 
