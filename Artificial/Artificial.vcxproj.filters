@@ -776,6 +776,9 @@
     <ClInclude Include="EchoOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
     </ClInclude>
+    <ClInclude Include="DialogLineOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
