@@ -232,6 +232,9 @@
     <Filter Include="Исходные файлы\Core\Story\Quest\UseItem">
       <UniqueIdentifier>{3d6d8d98-1339-4852-9406-dc7117d90e29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\Dialog">
+      <UniqueIdentifier>{97502e61-cd29-4682-8566-ddf7bd6401a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -383,6 +386,9 @@
     </ClCompile>
     <ClCompile Include="ItemUsingHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\UseItem</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Quest\Dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -781,6 +787,9 @@
     </ClInclude>
     <ClInclude Include="ClearConsoleOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\Dialog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

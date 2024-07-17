@@ -140,6 +140,7 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
+    <ClCompile Include="DialogHandler.cpp" />
     <ClCompile Include="DiskFileManager.cpp" />
     <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
     <ClInclude Include="CreateItemOption.h" />
+    <ClInclude Include="DialogHandler.h" />
     <ClInclude Include="DialogLineOption.h" />
     <ClInclude Include="EchoOption.h" />
     <ClInclude Include="GoNovaOption.h" />
