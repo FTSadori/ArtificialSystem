@@ -76,6 +76,8 @@ namespace Commands
 				}
 			}
 
+			ptr->print_main("She doesn't have this item\n");
+
 			return;
 		}
 	};
