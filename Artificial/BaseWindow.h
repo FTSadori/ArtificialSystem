@@ -28,6 +28,8 @@ namespace GUI
 		virtual void render_text() = 0;
 		virtual void rerender();
 
+		virtual void clear();
+
 		virtual void key_pressed(KEY_EVENT_RECORD key_event);
 		
 		virtual void on_printable(SHORT code) = 0;

@@ -99,6 +99,12 @@ namespace GUI
 		render_text();
 	}
 
+	void BaseWindow::clear()
+	{
+		m_text_parts.clear();
+		rerender();
+	}
+
 	void BaseWindow::key_pressed(KEY_EVENT_RECORD key_event)
 	{
 		SHORT code = key_event.uChar.AsciiChar;
