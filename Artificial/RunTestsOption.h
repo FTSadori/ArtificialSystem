@@ -93,6 +93,8 @@ namespace Commands
 				matrix.emplace_back(m_core.processor().process(lines, in));
 			}
 
+
+			bool letsgo = false;
 			task_info.totalAttempts += 1;
 			if (task_ptr->check_answer(matrix))
 			{
@@ -100,7 +102,10 @@ namespace Commands
 				task_info.state = Story::TaskState::COMPLETE;
 				task_info.firstComplitionAttempts = min(task_info.firstComplitionAttempts, task_info.totalAttempts);
 				if (task_info.minLinesOfCode == -1)
+				{
+					letsgo = true;
 					task_info.minLinesOfCode = lines_num;
+				}
 				else
 					task_info.minLinesOfCode = min(lines_num, task_info.minLinesOfCode);
 			}
@@ -119,6 +124,12 @@ namespace Commands
 
 			DataQueue data2 = Story::TaskStateHandler().get_as_data();
 			maindisk.write(DiskPath("\\system\\.taskstates"), data2, true);
+
+			if (letsgo)
+			{
+				Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + task_ptr->get_completion_script() + "\"");
+				m_core.execute(cmd, User("amogus", true, 255));
+			}
 
 			return;
 		}

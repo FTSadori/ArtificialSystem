@@ -12,8 +12,8 @@ namespace Story
 		BaseTask()
 			: ins({ {} }), outs({ {} }) {}
 
-		BaseTask(const DoubleMatrix& _ins, const DoubleMatrix& _outs, const std::string& _name, const std::string& _description)
-			: ins(_ins), outs(_outs), name(_name), description(_description) {}
+		BaseTask(const DoubleMatrix& _ins, const DoubleMatrix& _outs, const std::string& _name, const std::string& _description, const std::string& _completion_script)
+			: ins(_ins), outs(_outs), name(_name), description(_description), completion_script(_completion_script) {}
 
 		bool check_answer(const DoubleMatrix& user_outs)
 		{
@@ -45,6 +45,11 @@ namespace Story
 			return description;
 		}
 
+		const std::string& get_completion_script()
+		{
+			return completion_script;
+		}
+
 		virtual ~BaseTask() = default;
 
 	protected:
@@ -52,5 +57,6 @@ namespace Story
 		DoubleMatrix outs;
 		std::string name;
 		std::string description;
+		std::string completion_script;
 	};
 }
