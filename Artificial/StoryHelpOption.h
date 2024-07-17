@@ -31,6 +31,7 @@ namespace Commands
 			ptr->print_third("- mkitem\n");
 			ptr->print_third("- pick\n");
 			ptr->print_third("- inv\n");
+			ptr->print_third("- useitem\n");
 
 			return;
 		}

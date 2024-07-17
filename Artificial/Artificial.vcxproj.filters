@@ -770,6 +770,12 @@
     <ClInclude Include="ItemUsingHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\UseItem</Filter>
     </ClInclude>
+    <ClInclude Include="UseItemOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="EchoOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

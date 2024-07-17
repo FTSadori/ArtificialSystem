@@ -193,6 +193,7 @@
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
     <ClInclude Include="CreateItemOption.h" />
+    <ClInclude Include="EchoOption.h" />
     <ClInclude Include="GoNovaOption.h" />
     <ClInclude Include="ItemUsingHandler.h" />
     <ClInclude Include="MovaHelpOption.h" />
@@ -276,6 +277,7 @@
     <ClInclude Include="SystemStartOption.h" />
     <ClInclude Include="TaskHandler.h" />
     <ClInclude Include="Trim.h" />
+    <ClInclude Include="UseItemOption.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="AddUserOption.h" />
     <ClInclude Include="ChangeUserOption.h" />
