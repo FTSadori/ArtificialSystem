@@ -11,6 +11,7 @@
 #include "DialogLineOption.h"
 #include "SetNewDialogOption.h"
 #include "TalkToOption.h"
+#include "DialogChoiceOption.h"
 
 namespace Commands
 {
@@ -29,6 +30,7 @@ namespace Commands
 			controller.add_option("d", std::make_unique<DialogLineOption>(core));
 			controller.add_option("setnewdialog", std::make_unique<SetNewDialogOption>(core));
 			controller.add_option("talkto", std::make_unique<TalkToOption>(core));
+			controller.add_option("choice", std::make_unique<DialogChoiceOption>(core));
 			return controller;
 		}
 	};

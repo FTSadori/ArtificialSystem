@@ -195,6 +195,7 @@
     <ClInclude Include="CopyFileOption.h" />
     <ClInclude Include="CoreLoader.h" />
     <ClInclude Include="CreateItemOption.h" />
+    <ClInclude Include="DialogChoiceOption.h" />
     <ClInclude Include="DialogHandler.h" />
     <ClInclude Include="DialogLineOption.h" />
     <ClInclude Include="EchoOption.h" />

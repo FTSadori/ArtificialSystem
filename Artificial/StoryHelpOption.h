@@ -35,6 +35,7 @@ namespace Commands
 			ptr->print_third("- setnewdialog\n");
 			ptr->print_third("- spawnnova\n");
 			ptr->print_third("- mkitem\n");
+			ptr->print_third("- choice\n");
 
 			return;
 		}
