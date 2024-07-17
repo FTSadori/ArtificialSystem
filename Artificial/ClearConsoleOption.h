@@ -5,15 +5,16 @@
 #include "Parser.h"
 #include "Command.h"
 #include "ICore.h"
+#include "StringToColour.h"
 #include <map>
 
 namespace Commands
 {
-	// helpwindows
-	class WindowsHelpOption final : public AbstractControllerOption
+	// clear
+	class ClearConsoleOption final : public AbstractControllerOption
 	{
 	public:
-		WindowsHelpOption(ICore& _core)
+		ClearConsoleOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -22,17 +23,12 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("\n");
+				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("Clears console\n");
 				return;
 			}
 
-			ptr->print_main("Use next commands with ::help to get more info:\n");
-			ptr->print_third("- nano\n");
-			ptr->print_third("- lookat\n");
-			ptr->print_third("- changecolours\n");
-			ptr->print_third("- changetextcolours\n");
-			ptr->print_third("- e\n");
-			ptr->print_third("- clear\n");
+			ptr->clear();
 
 			return;
 		}

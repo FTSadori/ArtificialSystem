@@ -188,6 +188,7 @@
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
     <ClInclude Include="ChangeTextColours.h" />
+    <ClInclude Include="ClearConsoleOption.h" />
     <ClInclude Include="ComparingExpression.h" />
     <ClInclude Include="ConstantsVector.h" />
     <ClInclude Include="CopyFileOption.h" />
