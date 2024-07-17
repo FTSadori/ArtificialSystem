@@ -24,10 +24,12 @@ namespace Commands
 			{
 				ptr->print_main("File write permission lvl needed\n");
 				ptr->print_main("Writes text in file\n");
-				ptr->print_secondary("write {path} {base64_text} [:preenter password]\n");
+				ptr->print_secondary("write {path} {base64_text} [:preenter password] [::nobase64] [::append]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
 				ptr->print_main("  base64_text - (string) text in base64 format;\n");
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
+				ptr->print_main("  ::nobase64 - (flag) allows to input text in decoded variant");
+				ptr->print_main("  ::append - (flag) appends new text to the end of the file");
 
 				return;
 			}
@@ -51,10 +53,17 @@ namespace Commands
 			else
 				m_core.passwords().check_password(ptr, perm.password_hash);
 
-			std::string str = b64decode(_command.get("2"));
+			std::string str = (_command.has("::nobase64") ? _command.get("2") : b64decode(_command.get("2")));
 			Memory::DataQueue data;
 			for (char c : str) data.push_char(c);
-			disk.write(path.disk_path(), data, sender.system());
+			if (_command.has("::append"))
+			{
+				Memory::DataQueue dataf = disk.read(path.disk_path(), sender.system());
+				dataf.concat(data);
+				disk.write(path.disk_path(), dataf, sender.system());
+			}
+			else
+				disk.write(path.disk_path(), data, sender.system());
 			return;
 		}
 	};
