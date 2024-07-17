@@ -31,6 +31,7 @@ namespace Commands
 			ptr->print_third("- lookat\n");
 			ptr->print_third("- changecolours\n");
 			ptr->print_third("- changetextcolours\n");
+			ptr->print_third("- e\n");
 
 			return;
 		}

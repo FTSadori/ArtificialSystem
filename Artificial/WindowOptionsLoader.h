@@ -6,6 +6,7 @@
 #include "OpenImageViewerOption.h"
 #include "ChangeColours.h"
 #include "ChangeTextColours.h"
+#include "EchoOption.h"
 
 namespace Commands
 {
@@ -19,6 +20,7 @@ namespace Commands
 			controller.add_option("lookat", std::make_unique<OpenImageViewerOption>(core));
 			controller.add_option("changecolours", std::make_unique<ChangeColours>(core));
 			controller.add_option("changetextcolours", std::make_unique<ChangeTextColours>(core));
+			controller.add_option("e", std::make_unique<EchoOption>(core));
 			return controller;
 		}
 	};
