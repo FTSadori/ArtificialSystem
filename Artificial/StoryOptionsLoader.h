@@ -10,6 +10,7 @@
 #include "UseItemOption.h"
 #include "DialogLineOption.h"
 #include "SetNewDialogOption.h"
+#include "TalkToOption.h"
 
 namespace Commands
 {
@@ -27,6 +28,7 @@ namespace Commands
 			controller.add_option("useitem", std::make_unique<UseItemOption>(core));
 			controller.add_option("d", std::make_unique<DialogLineOption>(core));
 			controller.add_option("setnewdialog", std::make_unique<SetNewDialogOption>(core));
+			controller.add_option("talkto", std::make_unique<TalkToOption>(core));
 			return controller;
 		}
 	};

@@ -794,6 +794,9 @@
     <ClInclude Include="SetNewDialogOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
     </ClInclude>
+    <ClInclude Include="TalkToOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
