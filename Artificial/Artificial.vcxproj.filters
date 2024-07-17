@@ -791,6 +791,9 @@
     <ClInclude Include="DialogHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Dialog</Filter>
     </ClInclude>
+    <ClInclude Include="SetNewDialogOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

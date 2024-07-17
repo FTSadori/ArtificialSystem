@@ -9,6 +9,7 @@
 #include "ShowInventoryOption.h"
 #include "UseItemOption.h"
 #include "DialogLineOption.h"
+#include "SetNewDialogOption.h"
 
 namespace Commands
 {
@@ -25,6 +26,7 @@ namespace Commands
 			controller.add_option("inv", std::make_unique<ShowInventoryOption>(core));
 			controller.add_option("useitem", std::make_unique<UseItemOption>(core));
 			controller.add_option("d", std::make_unique<DialogLineOption>(core));
+			controller.add_option("setnewdialog", std::make_unique<SetNewDialogOption>(core));
 			return controller;
 		}
 	};

@@ -33,6 +33,7 @@ namespace Commands
 			ptr->print_third("- inv\n");
 			ptr->print_third("- useitem\n");
 			ptr->print_third("- d\n");
+			ptr->print_third("- setnewdialog\n");
 
 			return;
 		}
