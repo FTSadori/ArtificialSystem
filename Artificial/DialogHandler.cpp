@@ -3,7 +3,8 @@
 namespace Story
 {
 	std::unordered_map<std::string, std::string> DialogHandler::s_dialog_map;
-	
+	bool DialogHandler::m_loaded = false;
+
 	std::string DialogHandler::get(const std::string& talk_path)
 	{
 		if (!s_dialog_map.contains(talk_path))
@@ -16,19 +17,20 @@ namespace Story
 	{
 		if (script_path == "" && s_dialog_map.contains(talk_path))
 			s_dialog_map.erase(talk_path);
-		s_dialog_map[talk_path] = script_path;
+		else
+			s_dialog_map[talk_path] = script_path;
 	}
 
 	void DialogHandler::load(const std::string& data)
 	{
 		s_dialog_map.clear();
 		int i = 0;
-		auto lines = Separator::split(data, ' ');
+		auto lines = Separator::split(data, '\n');
 		try
 		{
 			while (i < lines.size())
 			{
-				s_dialog_map.insert(lines[i], lines[i + 1]);
+				s_dialog_map.emplace(lines[i], lines[i + 1]);
 				i += 2;
 			}
 		}
@@ -36,6 +38,7 @@ namespace Story
 		{
 			throw Commands::CommandException("(DialogHandler::load) Bad dialogs file");
 		}
+		m_loaded = true;
 	}
 	
 	std::string DialogHandler::to_data()
@@ -48,5 +51,10 @@ namespace Story
 		}
 
 		return fulldata.substr(0, fulldata.size() - 1);
+	}
+
+	bool DialogHandler::is_loaded()
+	{
+		return m_loaded;
 	}
 }
