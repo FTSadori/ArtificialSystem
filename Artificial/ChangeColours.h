@@ -23,6 +23,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
+				ptr->print_main("System permission lvl needed\n");
 				ptr->print_main("Changes background, console and border colours.\n");
 				ptr->print_secondary("changecolours {background} {console} {border}\n");
 				ptr->print_main("  background - (string) colour for background;\n");
