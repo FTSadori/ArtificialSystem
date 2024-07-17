@@ -40,6 +40,12 @@ namespace GUI
 			m_point_map[cur_lines - 1].push_back({ last_size, attributes });
 
 			size_t remains = c_size.columns - last_size;
+			
+			//
+			if (lines.size() == 0)
+				lines.push_back("");
+			//
+			
 			if (lines[0].size() <= remains)
 			{
 				m_text.back() += lines[0];
