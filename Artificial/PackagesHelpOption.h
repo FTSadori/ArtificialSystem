@@ -28,6 +28,7 @@ namespace Commands
 			ptr->print_main("Use next commands with ::help to get more info:\n");
 			ptr->print_third("- spawnpackmi\n");
 			ptr->print_third("- mkpack\n");
+			ptr->print_third("- addpack\n");
 
 			return;
 		}

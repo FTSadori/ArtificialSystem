@@ -830,6 +830,9 @@
     <ClInclude Include="CreatePackageOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Packages\Options</Filter>
     </ClInclude>
+    <ClInclude Include="AddPackOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Packages\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

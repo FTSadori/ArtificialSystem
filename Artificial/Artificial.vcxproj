@@ -183,6 +183,7 @@
     <ClCompile Include="UserListOption.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddPackOption.h" />
     <ClInclude Include="BannedFileExtensionsHandler.h" />
     <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="BaseTask.h" />
