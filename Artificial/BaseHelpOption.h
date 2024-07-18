@@ -35,6 +35,7 @@ namespace Commands
 			ptr->print_third("- helpnet\n");
 			ptr->print_third("- helpmova\n");
 			ptr->print_third("- helpstory\n");
+			ptr->print_third("- helppackages\n");
 
 			return;
 		}

@@ -11,6 +11,7 @@
 #include "NetHelpOption.h"
 #include "StoryHelpOption.h"
 #include "MovaHelpOption.h"
+#include "PackagesHelpOption.h"
 
 namespace Commands
 {
@@ -29,6 +30,7 @@ namespace Commands
 			controller.add_option("helpnet", std::make_unique<NetHelpOption>(core));
 			controller.add_option("helpmova", std::make_unique<MovaHelpOption>(core));
 			controller.add_option("helpstory", std::make_unique<StoryHelpOption>(core));
+			controller.add_option("helppackages", std::make_unique<PackagesHelpOption>(core));
 			return controller;
 		}
 	};

@@ -34,7 +34,6 @@ namespace Commands
 			controller.add_option("choice", std::make_unique<DialogChoiceOption>(core));
 			controller.add_option("lookaround", std::make_unique<LookAroundOption>(core));
 			controller.add_option("spawnnova", std::make_unique<SpawnNovaOption>(core));
-			controller.add_option("spawnpackmi", std::make_unique<SpawnPackmiOption>(core));
 			return controller;
 		}
 	};

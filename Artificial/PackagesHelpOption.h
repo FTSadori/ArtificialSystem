@@ -8,11 +8,11 @@
 
 namespace Commands
 {
-	// helpstory
-	class StoryHelpOption final : public AbstractControllerOption
+	// helppackages
+	class PackagesHelpOption final : public AbstractControllerOption
 	{
 	public:
-		StoryHelpOption(ICore& _core)
+		PackagesHelpOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -26,18 +26,8 @@ namespace Commands
 			}
 
 			ptr->print_main("Use next commands with ::help to get more info:\n");
-			ptr->print_third("- go\n");
-			ptr->print_third("- talkto\n");
-			ptr->print_third("- pick\n");
-			ptr->print_third("- inv\n");
-			ptr->print_third("- useitem\n");
-			ptr->print_third("- d\n");
-			ptr->print_third("- setnewdialog\n");
-			ptr->print_third("- mkitem\n");
-			ptr->print_third("- choice\n");
-			ptr->print_third("- lookaround\n");
-			ptr->print_third("- spawnnova\n");
-			
+			ptr->print_third("- spawnpackmi\n");
+
 			return;
 		}
 	};

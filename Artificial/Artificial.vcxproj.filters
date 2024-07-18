@@ -238,6 +238,12 @@
     <Filter Include="Исходные файлы\Core\Story\Quest\Surroundings">
       <UniqueIdentifier>{b66172da-74d6-44ec-9907-c5a2e442cba0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Packages">
+      <UniqueIdentifier>{841e07c2-c8e1-4fe1-a6db-8a59da0c7009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Commands\Options\Packages\Options">
+      <UniqueIdentifier>{603509ee-27af-4694-8fbf-924fe07fd48f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -812,8 +818,14 @@
     <ClInclude Include="SurroundingsHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Surroundings</Filter>
     </ClInclude>
+    <ClInclude Include="PackageOptionsLoader.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Packages</Filter>
+    </ClInclude>
     <ClInclude Include="SpawnPackmiOption.h">
-      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+      <Filter>Исходные файлы\Core\Commands\Options\Packages\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="PackagesHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
