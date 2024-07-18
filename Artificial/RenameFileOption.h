@@ -34,6 +34,9 @@ namespace Commands
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
+			if (sender.lvl() < Story::BannedFileExtensionsHandler::get_min_level(_command.get("2")))
+				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
+
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.system()).permissions;
 
