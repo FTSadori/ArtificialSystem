@@ -212,6 +212,7 @@
     <ClInclude Include="ShowOpenedTasksOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
     <ClInclude Include="SpawnNovaOption.h" />
+    <ClInclude Include="CreatePackageOption.h" />
     <ClInclude Include="SpawnPackmiOption.h" />
     <ClInclude Include="StoryHelpOption.h" />
     <ClInclude Include="StoryOptionsLoader.h" />

@@ -3,6 +3,7 @@
 #include "BaseController.h"
 #include "GUIHandler.h"
 #include "SpawnPackmiOption.h"
+#include "CreatePackageOption.h"
 
 namespace Commands
 {
@@ -13,7 +14,7 @@ namespace Commands
 		{
 			BaseController controller;
 			controller.add_option("spawnpackmi", std::make_unique<SpawnPackmiOption>(core));
-
+			controller.add_option("mkpack", std::make_unique<CreatePackageOption>(core));
 			return controller;
 		}
 	};
