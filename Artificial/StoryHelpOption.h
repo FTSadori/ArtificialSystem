@@ -36,6 +36,7 @@ namespace Commands
 			ptr->print_third("- spawnnova\n");
 			ptr->print_third("- mkitem\n");
 			ptr->print_third("- choice\n");
+			ptr->print_third("- lookaround\n");
 
 			return;
 		}

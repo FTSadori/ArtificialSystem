@@ -235,6 +235,9 @@
     <Filter Include="Исходные файлы\Core\Story\Quest\Dialog">
       <UniqueIdentifier>{97502e61-cd29-4682-8566-ddf7bd6401a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\Surroundings">
+      <UniqueIdentifier>{b66172da-74d6-44ec-9907-c5a2e442cba0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -389,6 +392,9 @@
     </ClCompile>
     <ClCompile Include="DialogHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="SurroundingsHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Quest\Surroundings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -799,6 +805,12 @@
     </ClInclude>
     <ClInclude Include="DialogChoiceOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="LookAroundOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="SurroundingsHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\Surroundings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

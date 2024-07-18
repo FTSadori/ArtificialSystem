@@ -170,6 +170,7 @@
     <ClCompile Include="BaseWindow.cpp" />
     <ClCompile Include="Size.cpp" />
     <ClCompile Include="StringToColour.cpp" />
+    <ClCompile Include="SurroundingsHandler.cpp" />
     <ClCompile Include="SymbolsModule.cpp" />
     <ClCompile Include="SystemDiskListOption.h" />
     <ClCompile Include="SystemPreloadOption.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="EchoOption.h" />
     <ClInclude Include="GoNovaOption.h" />
     <ClInclude Include="ItemUsingHandler.h" />
+    <ClInclude Include="LookAroundOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="PickItemOption.h" />
     <ClInclude Include="SetNewDialogOption.h" />
@@ -210,6 +212,7 @@
     <ClInclude Include="SpawnNovaOption.h" />
     <ClInclude Include="StoryHelpOption.h" />
     <ClInclude Include="StoryOptionsLoader.h" />
+    <ClInclude Include="SurroundingsHandler.h" />
     <ClInclude Include="SystemRunScriptOption.h" />
     <ClInclude Include="TalkToOption.h" />
     <ClInclude Include="TaskStateHandler.h" />
