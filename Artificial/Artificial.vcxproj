@@ -160,6 +160,7 @@
     <ClCompile Include="NameValidator.cpp" />
     <ClCompile Include="DiskPath.cpp" />
     <ClCompile Include="NetContainer.cpp" />
+    <ClCompile Include="PackagesHandler.cpp" />
     <ClCompile Include="Permissions.h" />
     <ClCompile Include="RealFileManager.cpp" />
     <ClCompile Include="RealFileManager.h" />
@@ -206,7 +207,9 @@
     <ClInclude Include="LookAroundOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="PackageOptionsLoader.h" />
+    <ClInclude Include="PackagesHandler.h" />
     <ClInclude Include="PackagesHelpOption.h" />
+    <ClInclude Include="PackmiOption.h" />
     <ClInclude Include="PickItemOption.h" />
     <ClInclude Include="SetNewDialogOption.h" />
     <ClInclude Include="ShowInventoryOption.h" />

@@ -29,6 +29,7 @@ namespace Commands
 			ptr->print_third("- spawnpackmi\n");
 			ptr->print_third("- mkpack\n");
 			ptr->print_third("- addpack\n");
+			ptr->print_third("- packmi\n");
 
 			return;
 		}
