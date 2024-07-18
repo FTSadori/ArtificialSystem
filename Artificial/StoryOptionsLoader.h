@@ -13,6 +13,7 @@
 #include "TalkToOption.h"
 #include "DialogChoiceOption.h"
 #include "LookAroundOption.h"
+#include "SpawnPackmiOption.h"
 
 namespace Commands
 {
@@ -22,7 +23,6 @@ namespace Commands
 		static BaseController Load(ICore& core)
 		{
 			BaseController controller;
-			controller.add_option("spawnnova", std::make_unique<SpawnNovaOption>(core));
 			controller.add_option("go", std::make_unique<GoNovaOption>(core));
 			controller.add_option("mkitem", std::make_unique<CreateItemOption>(core));
 			controller.add_option("pick", std::make_unique<PickItemOption>(core));
@@ -33,6 +33,8 @@ namespace Commands
 			controller.add_option("talkto", std::make_unique<TalkToOption>(core));
 			controller.add_option("choice", std::make_unique<DialogChoiceOption>(core));
 			controller.add_option("lookaround", std::make_unique<LookAroundOption>(core));
+			controller.add_option("spawnnova", std::make_unique<SpawnNovaOption>(core));
+			controller.add_option("spawnpackmi", std::make_unique<SpawnPackmiOption>(core));
 			return controller;
 		}
 	};

@@ -812,6 +812,9 @@
     <ClInclude Include="SurroundingsHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Surroundings</Filter>
     </ClInclude>
+    <ClInclude Include="SpawnPackmiOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
