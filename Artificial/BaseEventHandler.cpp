@@ -13,7 +13,7 @@ namespace Story
 			return s_map[talk_path];
 	}
 
-	void BaseEventHandler::set_new_dialog(const std::string& talk_path, const std::string& script_path)
+	void BaseEventHandler::set_new_pair(const std::string& talk_path, const std::string& script_path)
 	{
 		if (script_path == "" && s_map.contains(talk_path))
 			s_map.erase(talk_path);

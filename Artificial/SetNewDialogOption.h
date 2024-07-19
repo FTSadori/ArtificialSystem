@@ -61,10 +61,10 @@ namespace Commands
 				if (!disk2.is_exists(path2.disk_path()))
 					throw CommandException("(SetNewDialogOption) Wrong scriptpath");
 
-				Story::DialogHandler::set_new_dialog(path1.full_path_str(), path2.full_path_str());
+				Story::DialogHandler::set_new_pair(path1.full_path_str(), path2.full_path_str());
 			}
 			else
-				Story::DialogHandler::set_new_dialog(path1.full_path_str(), "");
+				Story::DialogHandler::set_new_pair(path1.full_path_str(), "");
 			
 			auto new_data = Story::DialogHandler::to_data();
 

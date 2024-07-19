@@ -4,4 +4,4 @@
 namespace Story
 {
 	class PathEventsHandler : public BaseEventHandler {};
-}
+}  

@@ -11,7 +11,7 @@ namespace Story
 	{
 	public:
 		static std::string get(const std::string& talk_path);
-		static void set_new_dialog(const std::string& talk_path, const std::string& script_path = "");
+		static void set_new_pair(const std::string& talk_path, const std::string& script_path = "");
 		static void load(const std::string& data);
 		static std::string to_data();
 		static bool is_loaded();
