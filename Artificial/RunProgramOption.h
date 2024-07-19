@@ -9,6 +9,7 @@
 #include "HexModule.h"
 #include "SymbolsModule.h"
 #include "FinalModule.h"
+#include "MovaVersionHandler.h"
 #include <map>
 #include <filesystem>
 
@@ -29,12 +30,19 @@ namespace Commands
 			{
 				ptr->print_main("Execute permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
-				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::show] [:preenter password]\n");
+				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::v] [::show] [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
 				ptr->print_main("  ... - (doubles) input stream;\n");
+				ptr->print_main("  ::v - (flag) print max version");
 				ptr->print_main("  ::show - (flag) on 4th module shows half-compiled code;\n");
 				ptr->print_main("  :r register_show_num - (flag + int) shows no less than entered number of registers\n");
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
+				return;
+			}
+
+			if (_command.has("::v"))
+			{
+				ptr->print_main(Mova::MovaVersionHandler::get_line() + '\n');
 				return;
 			}
 
