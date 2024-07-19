@@ -12,7 +12,7 @@ namespace Mova
 	public:
 		static void add_package(const std::string& name);
 		static std::string get_line();
-		static bool is_good(const std::string& entered_version);
+		static void reset();
 
 	private:
 		static std::array<int, 6> s_version;
