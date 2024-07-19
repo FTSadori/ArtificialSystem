@@ -28,8 +28,8 @@ namespace Commands
 				ptr->print_main("  path - (string) absolute or relative path;\n");
 				ptr->print_main("  base64_text - (string) text in base64 format;\n");
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
-				ptr->print_main("  ::nobase64 - (flag) allows to input text in decoded variant");
-				ptr->print_main("  ::append - (flag) appends new text to the end of the file");
+				ptr->print_main("  ::nobase64 - (flag) allows to input text in decoded variant;\n");
+				ptr->print_main("  ::append - (flag) appends new text to the end of the file;\n");
 
 				return;
 			}
