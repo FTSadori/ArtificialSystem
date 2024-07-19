@@ -250,6 +250,12 @@
     <Filter Include="Исходные файлы\Core\Mova\MovaVersion">
       <UniqueIdentifier>{87d0eab0-7f51-49e4-82e0-eca23467956d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\PathEvents">
+      <UniqueIdentifier>{7aa25a0a-4e04-45c5-add1-ac9a476f7995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\Base">
+      <UniqueIdentifier>{417e5ad1-f4d4-4c75-a6bd-74e3edf299bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -402,9 +408,6 @@
     <ClCompile Include="ItemUsingHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\UseItem</Filter>
     </ClCompile>
-    <ClCompile Include="DialogHandler.cpp">
-      <Filter>Исходные файлы\Core\Story\Quest\Dialog</Filter>
-    </ClCompile>
     <ClCompile Include="SurroundingsHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\Surroundings</Filter>
     </ClCompile>
@@ -413,6 +416,9 @@
     </ClCompile>
     <ClCompile Include="MovaVersionHandler.cpp">
       <Filter>Исходные файлы\Core\Mova\MovaVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseEventHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Quest\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -856,6 +862,12 @@
     </ClInclude>
     <ClInclude Include="MovaVersionHandler.h">
       <Filter>Исходные файлы\Core\Mova\MovaVersion</Filter>
+    </ClInclude>
+    <ClInclude Include="PathEventsHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\PathEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseEventHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

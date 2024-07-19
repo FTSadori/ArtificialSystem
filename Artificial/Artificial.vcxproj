@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="BannedFileExtensionsHandler.cpp" />
     <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="BaseEventHandler.cpp" />
     <ClCompile Include="BaseException.h" />
     <ClCompile Include="ColoursThemesHandler.cpp" />
     <ClCompile Include="Command.cpp" />
@@ -140,7 +141,6 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DataQueue.cpp" />
     <ClCompile Include="DataQueueExceptions.h" />
-    <ClCompile Include="DialogHandler.cpp" />
     <ClCompile Include="DiskFileManager.cpp" />
     <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
@@ -187,6 +187,7 @@
   <ItemGroup>
     <ClInclude Include="AddPackOption.h" />
     <ClInclude Include="BannedFileExtensionsHandler.h" />
+    <ClInclude Include="BaseEventHandler.h" />
     <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="BaseTask.h" />
     <ClInclude Include="ChangeColours.h" />
@@ -213,6 +214,7 @@
     <ClInclude Include="PackagesHandler.h" />
     <ClInclude Include="PackagesHelpOption.h" />
     <ClInclude Include="PackmiOption.h" />
+    <ClInclude Include="PathEventsHandler.h" />
     <ClInclude Include="PickItemOption.h" />
     <ClInclude Include="SetNewDialogOption.h" />
     <ClInclude Include="ShowInventoryOption.h" />
