@@ -40,12 +40,14 @@ namespace Commands
 			if (!disk.is_exists(nova_path.disk_path()))
 				throw CommandException("(PickItemOption) Nova is not here");
 
-			if (_command.get("1").find('\\') != std::string::npos)
+			std::string itemfile = _command.get("1") + ".item";
+
+			if (itemfile.find('\\') != std::string::npos)
 				throw CommandException("(PickItemOption) You can use only files in current directory");
 
-			FullPath new_path = RelativePathCreator::combine(_command.get("path"), _command.get("1"));
-			if (disk.get_type(new_path.disk_path()) != FileT::FILE || !_command.get("1").ends_with(".item"))
-				throw CommandException("(PickItemOption) " + _command.get("1") + " is not a *.item file");
+			FullPath new_path = RelativePathCreator::combine(_command.get("path"), itemfile);
+			if (disk.get_type(new_path.disk_path()) != FileT::FILE)
+				throw CommandException("(PickItemOption) " + itemfile + " is not a file");
 
 			std::string mainmark = m_core.memory_info().get_main_disk_info().mark;
 			auto& maindisk = m_core.memory().get_disk(mainmark);
