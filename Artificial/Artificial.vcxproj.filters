@@ -247,6 +247,9 @@
     <Filter Include="Исходные файлы\Core\Story\Quest\Packages">
       <UniqueIdentifier>{50216711-8be9-4219-b3a8-c541d26f9acf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Mova\MovaVersion">
+      <UniqueIdentifier>{87d0eab0-7f51-49e4-82e0-eca23467956d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -407,6 +410,9 @@
     </ClCompile>
     <ClCompile Include="PackagesHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\Packages</Filter>
+    </ClCompile>
+    <ClCompile Include="MovaVersionHandler.cpp">
+      <Filter>Исходные файлы\Core\Mova\MovaVersion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -844,6 +850,12 @@
     </ClInclude>
     <ClInclude Include="PackagesHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Packages</Filter>
+    </ClInclude>
+    <ClInclude Include="MovaVersionLoadOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="MovaVersionHandler.h">
+      <Filter>Исходные файлы\Core\Mova\MovaVersion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

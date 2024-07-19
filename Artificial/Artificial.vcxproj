@@ -156,6 +156,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MathExpression.cpp" />
     <ClCompile Include="MemoryCreateOption.h" />
+    <ClCompile Include="MovaVersionHandler.cpp" />
     <ClCompile Include="NameExceptions.h" />
     <ClCompile Include="NameValidator.cpp" />
     <ClCompile Include="DiskPath.cpp" />
@@ -206,6 +207,8 @@
     <ClInclude Include="ItemUsingHandler.h" />
     <ClInclude Include="LookAroundOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
+    <ClInclude Include="MovaVersionHandler.h" />
+    <ClInclude Include="MovaVersionLoadOption.h" />
     <ClInclude Include="PackageOptionsLoader.h" />
     <ClInclude Include="PackagesHandler.h" />
     <ClInclude Include="PackagesHelpOption.h" />

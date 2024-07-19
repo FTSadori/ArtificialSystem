@@ -5,6 +5,7 @@
 #include "ShowOpenedTasksOption.h"
 #include "ShowTaskDetailsOption.h"
 #include "RunTestsOption.h"
+#include "MovaVersionLoadOption.h"
 
 namespace Commands
 {
@@ -18,6 +19,7 @@ namespace Commands
 			controller.add_option("tasks", std::make_unique<ShowOpenedTasksOption>(core));
 			controller.add_option("showtask", std::make_unique<ShowTaskDetailsOption>(core));
 			controller.add_option("runtests", std::make_unique<RunTestsOption>(core));
+			controller.add_option("movavload", std::make_unique<MovaVersionLoadOption>(core));
 			return controller;
 		}
 	};
