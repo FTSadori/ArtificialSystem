@@ -37,6 +37,7 @@ namespace Commands
 			auto& maindisk = m_core.memory().get_disk(mainmark);
 			if (!maindisk.is_exists(DiskPath("\\system\\.installedpacks")))
 			{
+				Mova::MovaVersionHandler::reset();
 				return;
 			}
 

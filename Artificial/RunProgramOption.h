@@ -65,6 +65,9 @@ namespace Commands
 			auto data = disk.read(path.disk_path(), sender.system());
 
 			auto lines = Separator::split(std::string(data.get_data(), data.size()), '\n');
+			if (lines[0] != "mova")
+				throw CommandException("(RunProgramOption) First line in mova file must be 'mova'");
+			lines.erase(lines.begin());
 
 			std::vector<double> args;
 			size_t num = 2;
@@ -74,14 +77,15 @@ namespace Commands
 				num++;
 			}
 
-			// currently we have only first module
-			Mova::Version ver = lines[0];
+			Mova::Version ver = Mova::MovaVersionHandler::get_line().substr(1);
 			m_core.processor().set_version(ver);
-			lines.erase(lines.begin());
-
+			
 			auto num_size = m_core.processor().get_current_num_size();
 			switch (ver.module_lvl)
 			{
+			case 0: 
+				ptr->print_main("Mova is locked\n");
+				return;
 			case 2: lines = Mova::HexModule::compile(lines); break;
 			case 3: lines = Mova::SymbolsModule::compile(lines, num_size); break;
 			case 4:
