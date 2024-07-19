@@ -14,6 +14,7 @@
 #include "DialogChoiceOption.h"
 #include "LookAroundOption.h"
 #include "SpawnPackmiOption.h"
+#include "SetPathPairOption.h"
 
 namespace Commands
 {
@@ -34,6 +35,7 @@ namespace Commands
 			controller.add_option("choice", std::make_unique<DialogChoiceOption>(core));
 			controller.add_option("lookaround", std::make_unique<LookAroundOption>(core));
 			controller.add_option("spawnnova", std::make_unique<SpawnNovaOption>(core));
+			controller.add_option("setnewpath", std::make_unique<SetPathPairOption>(core));
 			return controller;
 		}
 	};

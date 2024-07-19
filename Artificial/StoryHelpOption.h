@@ -33,6 +33,7 @@ namespace Commands
 			ptr->print_third("- useitem\n");
 			ptr->print_third("- d\n");
 			ptr->print_third("- setnewdialog\n");
+			ptr->print_third("- setnewpath\n");
 			ptr->print_third("- mkitem\n");
 			ptr->print_third("- choice\n");
 			ptr->print_third("- lookaround\n");

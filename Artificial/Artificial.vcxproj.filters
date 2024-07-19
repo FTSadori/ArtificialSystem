@@ -869,6 +869,9 @@
     <ClInclude Include="BaseEventHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Base</Filter>
     </ClInclude>
+    <ClInclude Include="SetPathPairOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
