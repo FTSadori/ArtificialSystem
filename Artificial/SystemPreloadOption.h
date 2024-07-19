@@ -69,6 +69,8 @@ namespace Commands
 					ptr->print_secondary("(SystemPreloadOption) Bad .taskstates file (" + std::string(ex.what()) + ")\n");
 				}
 			}
+			Command movavload("\"" + _command.get("path") + "\"" + " movavload");
+			m_core.execute(movavload, sender);
 		}
 	};
 }

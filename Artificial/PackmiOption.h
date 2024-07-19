@@ -8,6 +8,7 @@
 #include "ICore.h"
 #include "RealFileManager.h"
 #include "PackagesHandler.h"
+#include "MovaVersionHandler.h"
 #include <map>
 #include <filesystem>
 
@@ -89,6 +90,9 @@ namespace Commands
 				if (!maindisk.is_exists(DiskPath("\\system\\.installedpacks")))
 					maindisk.create(DiskPath("\\system\\.installedpacks"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
 
+				if (!maindisk.is_exists("\\system\\.availablepacks\\" + _command.get(":install")))
+					throw CommandException("(PackmiOption) This package doesn't exist");
+
 				Command cmd("\"" + _command.get("path") + "\" move \"" + mainmark + ":\\system\\.availablepacks\\" + _command.get(":install")
 					+ "\" \"" +
 					mainmark + ":\\system\\.installedpacks\"");
@@ -99,6 +103,8 @@ namespace Commands
 					Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + Story::PackagesHandler::s_map.at(_command.get(":install")) + "\"");
 					m_core.execute(cmd, User("amogus", true, 255));
 				}
+
+				Mova::MovaVersionHandler::add_package(_command.get(":install"));
 			}
 
 			return;
