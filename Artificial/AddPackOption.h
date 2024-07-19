@@ -29,7 +29,7 @@ namespace Commands
 				ptr->print_main("You need to have nova.girl file in current directory\n");
 				ptr->print_main("Works only with *.pack files\n");
 				ptr->print_secondary("addpack {packfile}\n");
-				ptr->print_main("  packfile - (string) name of file to pick up;\n");
+				ptr->print_main("  packfile - (string) name of pack to pick up;\n");
 				return;
 			}
 
@@ -40,12 +40,14 @@ namespace Commands
 			if (!disk.is_exists(nova_path.disk_path()))
 				throw CommandException("(AddPackOption) Nova is not here");
 
-			if (_command.get("1").find('\\') != std::string::npos)
+			std::string pack_name = _command.get("1") + ".pack";
+
+			if (pack_name.find('\\') != std::string::npos)
 				throw CommandException("(AddPackOption) You can use only files in current directory");
 
-			FullPath new_path = RelativePathCreator::combine(_command.get("path"), _command.get("1"));
-			if (disk.get_type(new_path.disk_path()) != FileT::FILE || !_command.get("1").ends_with(".pack"))
-				throw CommandException("(AddPackOption) " + _command.get("1") + " is not a *.pack file");
+			FullPath new_path = RelativePathCreator::combine(_command.get("path"), pack_name);
+			if (disk.get_type(new_path.disk_path()) != FileT::FILE)
+				throw CommandException("(AddPackOption) " + pack_name + " is not a file");
 
 			std::string mainmark = m_core.memory_info().get_main_disk_info().mark;
 			auto& maindisk = m_core.memory().get_disk(mainmark);

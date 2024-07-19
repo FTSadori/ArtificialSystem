@@ -90,21 +90,22 @@ namespace Commands
 				if (!maindisk.is_exists(DiskPath("\\system\\.installedpacks")))
 					maindisk.create(DiskPath("\\system\\.installedpacks"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
 
-				if (!maindisk.is_exists("\\system\\.availablepacks\\" + _command.get(":install")))
+				std::string pack_name = _command.get(":install") + ".pack";
+				if (!maindisk.is_exists("\\system\\.availablepacks\\" + pack_name))
 					throw CommandException("(PackmiOption) This package doesn't exist");
 
-				Command cmd("\"" + _command.get("path") + "\" move \"" + mainmark + ":\\system\\.availablepacks\\" + _command.get(":install")
+				Command cmd("\"" + _command.get("path") + "\" move \"" + mainmark + ":\\system\\.availablepacks\\" + pack_name
 					+ "\" \"" +
 					mainmark + ":\\system\\.installedpacks\"");
 				m_core.execute(cmd, User("hand of god", true, 255));
 
-				if (Story::PackagesHandler::s_map.contains(_command.get(":install")))
+				if (Story::PackagesHandler::s_map.contains(pack_name))
 				{
-					Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + Story::PackagesHandler::s_map.at(_command.get(":install")) + "\"");
+					Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + Story::PackagesHandler::s_map.at(pack_name) + "\"");
 					m_core.execute(cmd, User("amogus", true, 255));
 				}
 
-				Mova::MovaVersionHandler::add_package(_command.get(":install"));
+				Mova::MovaVersionHandler::add_package(pack_name);
 			}
 
 			return;

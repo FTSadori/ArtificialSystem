@@ -39,6 +39,9 @@ namespace Commands
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
+			if (!_command.has("2"))
+				throw CommandException("(CreatePackageOption) Add description to package");
+				
 			Command command("\"" + _command.get("path") + "\" mk \"" + _command.get("1") + ".pack\" :wp 255"
 				+ (_command.has("::sys") ? " ::sys" : "")
 				+ (_command.has("::h") ? " ::h" : "")
