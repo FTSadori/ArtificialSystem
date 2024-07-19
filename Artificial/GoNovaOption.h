@@ -6,6 +6,7 @@
 #include "Command.h"
 #include "ICore.h"
 #include "RealFileManager.h"
+#include "PathEventsHandler.h"
 #include <map>
 #include <filesystem>
 
@@ -48,6 +49,28 @@ namespace Commands
 			m_core.execute(cmd, sender);
 
 			disk.move(nova_path.disk_path(), new_path.disk_path(), sender.system());
+
+			using namespace Memory;
+			std::string mainmark = m_core.memory_info().get_main_disk_info().mark;
+			auto& maindisk = m_core.memory().get_disk(mainmark);
+			if (!maindisk.is_exists(DiskPath("\\system")))
+				maindisk.create(DiskPath("\\system"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
+			if (!maindisk.is_exists(DiskPath("\\system\\.goevent")))
+				maindisk.create(DiskPath("\\system\\.goevent"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
+
+			if (!Story::PathEventsHandler::is_loaded())
+			{
+				auto data = maindisk.read(DiskPath("\\system\\.goevent"), true);
+				Story::PathEventsHandler::load(std::string(data.get_data(), data.size()));
+			}
+
+			FullPath str_path = RelativePathCreator::combine(_command.get("path"), _command.get("1"));
+			const auto& str = Story::PathEventsHandler::get(str_path.full_path_str());
+			if (str != "")
+			{
+				Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + str + "\"");
+				m_core.execute(cmd, User("amogus", true, 255));
+			}
 
 			return;
 		}
