@@ -57,6 +57,8 @@ namespace Commands
 				maindisk.create(DiskPath("\\system"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
 			if (!maindisk.is_exists(DiskPath("\\system\\.goevent")))
 				maindisk.create(DiskPath("\\system\\.goevent"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
+			if (!maindisk.is_exists(DiskPath("\\system\\.save")))
+				maindisk.create(DiskPath("\\system\\.save"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
 
 			if (!Story::PathEventsHandler::is_loaded())
 			{
@@ -71,6 +73,9 @@ namespace Commands
 				Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + str + "\"");
 				m_core.execute(cmd, User("amogus", true, 255));
 			}
+
+			Command cmdsave("\"" + ptr->get_path().full_path_str() + "\" write \"" + mainmark + ":\\system\\.save\" \"" + ptr->get_path().full_path_str() + "\" ::nobase64");
+			m_core.execute(cmdsave, User("amogus", true, 255));
 
 			return;
 		}

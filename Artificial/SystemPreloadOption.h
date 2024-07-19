@@ -71,6 +71,21 @@ namespace Commands
 			}
 			Command movavload("\"" + _command.get("path") + "\"" + " movavload");
 			m_core.execute(movavload, sender);
+			if (maindisk.is_exists(DiskPath("\\system\\.save")))
+			{
+				DataQueue data = maindisk.read(DiskPath("\\system\\.save"), true);
+				std::string str(data.get_data(), data.size());
+				try {
+					FullPath fp(str);
+					auto& savedisk = m_core.memory().get_disk(fp.mark());
+					if (!savedisk.is_exists(fp.disk_path()))
+						ptr->print_secondary("(SystemPreloadOption) Wrong path in .save file\n");
+					ptr->set_path(fp);
+				}
+				catch (Exception ex) {
+					ptr->print_secondary("(SystemPreloadOption) Bad .save file (" + std::string(ex.what()) + ")\n");
+				}
+			}
 		}
 	};
 }
