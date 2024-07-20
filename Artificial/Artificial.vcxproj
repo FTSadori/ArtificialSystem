@@ -334,6 +334,7 @@
     <ClInclude Include="UsersOptionsLoader.h" />
     <ClInclude Include="VarVector.h" />
     <ClInclude Include="Version.h" />
+    <ClInclude Include="VisitorHelpOption.h" />
     <ClInclude Include="WindowOptionsLoader.h" />
     <ClInclude Include="WindowsHelpOption.h" />
   </ItemGroup>

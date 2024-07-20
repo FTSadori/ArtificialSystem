@@ -875,6 +875,9 @@
     <ClInclude Include="AddLvlsToUserOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
     </ClInclude>
+    <ClInclude Include="VisitorHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

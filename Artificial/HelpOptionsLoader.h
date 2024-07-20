@@ -12,6 +12,7 @@
 #include "StoryHelpOption.h"
 #include "MovaHelpOption.h"
 #include "PackagesHelpOption.h"
+#include "VisitorHelpOption.h"
 
 namespace Commands
 {
@@ -31,6 +32,8 @@ namespace Commands
 			controller.add_option("helpmova", std::make_unique<MovaHelpOption>(core));
 			controller.add_option("helpstory", std::make_unique<StoryHelpOption>(core));
 			controller.add_option("helppackages", std::make_unique<PackagesHelpOption>(core));
+
+			controller.add_option("visitorhelp", std::make_unique<VisitorHelpOption>(core));
 			return controller;
 		}
 	};
