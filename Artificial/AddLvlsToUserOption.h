@@ -36,6 +36,12 @@ namespace Commands
 			data.at(_command.get("1")).user.set_lvl(
 				data.at(_command.get("1")).user.lvl() + Parser::from_string<int>(_command.get("2"))
 			);
+
+			m_core.users().reload_current_user();
+
+			std::string mark = m_core.memory().get_start_path().mark();
+			Memory::DataQueue data2 = m_core.users().get_data().get_as_data();
+			m_core.memory().get_disk(mark).write(Memory::DiskPath("\\users.txt"), data2, true);
 		}
 	};
 }

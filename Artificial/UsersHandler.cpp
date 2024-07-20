@@ -37,6 +37,12 @@ namespace Commands
 		
 		m_current_user = m_users.m_data[name].user;
 	}
+
+	void UsersHandler::reload_current_user()
+	{
+		m_current_user = m_users.m_data[m_current_user.name()].user;
+	}
+
 	Memory::UsersData& UsersHandler::get_data()
 	{
 		return m_users;
