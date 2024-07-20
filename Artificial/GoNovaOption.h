@@ -49,7 +49,7 @@ namespace Commands
 				throw CommandException("(GoNovaOption) " + _command.get("1") + " is not a directory");
 
 			Command cmd("\"" + _command.get("path") + "\" cd \"" + new_path.full_path_str() + "\"");
-			m_core.execute(cmd, sender);
+			m_core.execute(cmd, User("system", true, 255));
 
 			disk.move(nova_path.disk_path(), new_path.disk_path(), sender.system());
 

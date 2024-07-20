@@ -28,8 +28,7 @@ namespace Commands
 			if (_command.has("::help"))
 			{
 				ptr->print_main("No permission lvl needed\n");
-				ptr->print_main("Makes Nova speak with someone\n");
-				ptr->print_main("Nova must be in current directory\n");
+				ptr->print_main("Gives the user a choice\n");
 				ptr->print_secondary("choice [:op1 option1] [:sc1 script1] [:op2 option2] [:sc2 script2] ...\n");
 				ptr->print_main("  :op1 option1 - (string) option to choose;\n");
 				ptr->print_main("  :sc1 script1 - (string) script that activates after choice;\n");
