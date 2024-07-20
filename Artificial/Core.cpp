@@ -21,7 +21,7 @@ namespace Commands
 			m_gui.get_terminal_ptr()->set_path(m_memory.get_start_path());
 
 			Command cmd("none:\\ preload");
-			execute(cmd, m_users.get_current_user());
+			execute(cmd, User("system", true, 255));
 		}
 		catch (const Exception&)
 		{
