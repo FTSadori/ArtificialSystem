@@ -25,12 +25,15 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("2 permission lvl needed\n");
 				ptr->print_main("Shows files in Nova's inventory\n");
 				return;
 			}
 
 			using namespace Memory;
+
+			if (sender.lvl() < 2)
+				throw PermissionException("(ShowInventoryOption) Sender has low permission lvl");
 
 			std::string mainmark = m_core.memory_info().get_main_disk_info().mark;
 			auto& maindisk = m_core.memory().get_disk(mainmark);

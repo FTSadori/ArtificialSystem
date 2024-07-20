@@ -27,7 +27,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("3 permission lvl needed\n");
 				ptr->print_main("Makes Nova speak with someone\n");
 				ptr->print_main("Nova must be in current directory\n");
 				ptr->print_secondary("talkto {name}\n");
@@ -36,6 +36,9 @@ namespace Commands
 			}
 
 			using namespace Memory;
+
+			if (sender.lvl() < 3)
+				throw PermissionException("(TalkToOption) Sender has low permission lvl");
 
 			FullPath nova_path = RelativePathCreator::combine(_command.get("path"), "nova.girl");
 			auto& disk = m_core.memory().get_disk(nova_path.mark());

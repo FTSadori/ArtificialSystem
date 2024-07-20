@@ -24,7 +24,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("2 permission lvl needed\n");
 				ptr->print_main("Moves chosen item file to Nova's inventory\n");
 				ptr->print_main("You need to have nova.girl file in current directory\n");
 				ptr->print_main("Works only with *.item files\n");
@@ -34,6 +34,9 @@ namespace Commands
 			}
 
 			using namespace Memory;
+
+			if (sender.lvl() < 2)
+				throw PermissionException("(PickItemOption) Sender has low permission lvl");
 
 			FullPath nova_path = RelativePathCreator::combine(_command.get("path"), "nova.girl");
 			auto& disk = m_core.memory().get_disk(nova_path.mark());

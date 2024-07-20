@@ -38,6 +38,9 @@ namespace Commands
 				return;
 			}
 
+			if (!sender.system())
+				throw PermissionException("(CreateItemOption) Sender has low permission lvl");
+
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
 			Command command("\"" + _command.get("path") + "\" mk \"" + _command.get("1") + ".item\" :wp 255" 

@@ -26,7 +26,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("2 permission lvl needed\n");
 				ptr->print_main("Uses item from Nova's inventory\n");
 				ptr->print_main("Nova must be in current directory\n");
 				ptr->print_secondary("useitem {name}\n");
@@ -36,10 +36,13 @@ namespace Commands
 
 			using namespace Memory;
 
+			if (sender.lvl() < 2)
+				throw PermissionException("(UseItemOption) Sender has low permission lvl");
+
 			FullPath nova_path = RelativePathCreator::combine(_command.get("path"), "nova.girl");
 			auto& disk = m_core.memory().get_disk(nova_path.mark());
 			if (!disk.is_exists(nova_path.disk_path()))
-				throw CommandException("(PickItemOption) Nova is not here");
+				throw CommandException("(UseItemOption) Nova is not here");
 
 			std::string mainmark = m_core.memory_info().get_main_disk_info().mark;
 			auto& maindisk = m_core.memory().get_disk(mainmark);

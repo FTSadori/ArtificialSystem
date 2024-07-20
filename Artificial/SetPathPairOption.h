@@ -36,6 +36,9 @@ namespace Commands
 
 			using namespace Memory;
 
+			if (!sender.system())
+				throw PermissionException("(SetPathPairOption) Sender has low permission lvl");
+
 			std::string mainmark = m_core.memory_info().get_main_disk_info().mark;
 			auto& maindisk = m_core.memory().get_disk(mainmark);
 			if (!maindisk.is_exists(DiskPath("\\system")))
