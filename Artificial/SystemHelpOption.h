@@ -33,6 +33,7 @@ namespace Commands
 			ptr->print_third("- disklist\n");
 			ptr->print_third("- preload\n");
 			ptr->print_third("- run\n");
+			ptr->print_third("- passreload\n");
 
 			return;
 		}

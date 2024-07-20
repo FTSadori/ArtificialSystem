@@ -881,6 +881,9 @@
     <ClInclude Include="CallForHerOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
     </ClInclude>
+    <ClInclude Include="PasswordsReloadOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

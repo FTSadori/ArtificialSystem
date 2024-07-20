@@ -216,6 +216,7 @@
     <ClInclude Include="PackagesHandler.h" />
     <ClInclude Include="PackagesHelpOption.h" />
     <ClInclude Include="PackmiOption.h" />
+    <ClInclude Include="PasswordsReloadOption.h" />
     <ClInclude Include="PathEventsHandler.h" />
     <ClInclude Include="PickItemOption.h" />
     <ClInclude Include="SetNewDialogOption.h" />

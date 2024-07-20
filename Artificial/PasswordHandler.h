@@ -42,6 +42,11 @@ namespace Commands
 			}
 		}
 
+		void reset()
+		{
+			m_set.clear();
+		}
+
 	private:
 		std::set<hash_t> m_set;
 	};
