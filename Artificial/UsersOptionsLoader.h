@@ -4,6 +4,7 @@
 #include "ChangeUserOption.h"
 #include "UserListOption.h"
 #include "DeleteUserOption.h"
+#include "AddLvlsToUserOption.h"
 
 namespace Commands
 {
@@ -17,6 +18,7 @@ namespace Commands
 			controller.add_option("userlist", std::make_unique<UserListOption>(core));
 			controller.add_option("changeuser", std::make_unique<ChangeUserOption>(core));
 			controller.add_option("deleteuser", std::make_unique<DeleteUserOption>(core));
+			controller.add_option("addlvls", std::make_unique<AddLvlsToUserOption>(core));
 			return controller;
 		}
 	};

@@ -872,6 +872,9 @@
     <ClInclude Include="SetPathPairOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
     </ClInclude>
+    <ClInclude Include="AddLvlsToUserOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Users\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

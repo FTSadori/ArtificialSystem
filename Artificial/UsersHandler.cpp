@@ -37,7 +37,7 @@ namespace Commands
 		
 		m_current_user = m_users.m_data[name].user;
 	}
-	const Memory::UsersData& UsersHandler::get_data()
+	Memory::UsersData& UsersHandler::get_data()
 	{
 		return m_users;
 	}

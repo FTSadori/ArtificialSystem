@@ -14,6 +14,7 @@ namespace Commands
 		uint8_t lvl() const { return m_lvl; }
 		std::string name() const { return m_name; }
 		bool system() const { return m_lvl == m_system_lvl; }
+		void set_lvl(uint8_t lvl) { m_lvl = lvl; }
 
 	protected:
 		bool m_sudo;

@@ -31,6 +31,7 @@ namespace Commands
 			ptr->print_third("- changeuser\n");
 			ptr->print_third("- deleteuser\n");
 			ptr->print_third("- userlist\n");
+			ptr->print_third("- addlvls\n");
 
 			return;
 		}

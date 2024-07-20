@@ -17,7 +17,7 @@ namespace Commands
 		void add_user(const std::string& name, User user, hash_t pass_hash = 0);
 		User get_current_user();
 		void try_change_user(const std::string& name, const std::string& pass = "");
-		const Memory::UsersData& get_data();
+		Memory::UsersData& get_data();
 		void remove_user(const std::string& name);
 
 	private:
