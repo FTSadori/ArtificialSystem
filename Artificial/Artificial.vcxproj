@@ -191,6 +191,7 @@
     <ClInclude Include="BaseEventHandler.h" />
     <ClInclude Include="BaseHelpOption.h" />
     <ClInclude Include="BaseTask.h" />
+    <ClInclude Include="CallForHerOption.h" />
     <ClInclude Include="ChangeColours.h" />
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />

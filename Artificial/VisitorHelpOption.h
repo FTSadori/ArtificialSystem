@@ -28,6 +28,7 @@ namespace Commands
 
 			ptr->print_main("Use next commands with ::help to get more info:\n");
 			ptr->print_third("- ls (0 lvl)\n");
+			ptr->print_third("- callnova (0 lvl)\n");
 			ptr->print_third("- go (1 lvl)\n");
 			ptr->print_third("- lookaround (1 lvl)\n");
 			ptr->print_third("- pick (2 lvl)\n");

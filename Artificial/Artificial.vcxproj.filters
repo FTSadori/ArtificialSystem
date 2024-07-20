@@ -878,6 +878,9 @@
     <ClInclude Include="VisitorHelpOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
     </ClInclude>
+    <ClInclude Include="CallForHerOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

@@ -15,6 +15,7 @@
 #include "LookAroundOption.h"
 #include "SpawnPackmiOption.h"
 #include "SetPathPairOption.h"
+#include "CallForHerOption.h"
 
 namespace Commands
 {
@@ -36,6 +37,7 @@ namespace Commands
 			controller.add_option("lookaround", std::make_unique<LookAroundOption>(core));
 			controller.add_option("spawnnova", std::make_unique<SpawnNovaOption>(core));
 			controller.add_option("setnewpath", std::make_unique<SetPathPairOption>(core));
+			controller.add_option("callnova", std::make_unique<CallForHerOption>(core));
 			return controller;
 		}
 	};
