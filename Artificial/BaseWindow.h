@@ -65,6 +65,7 @@ namespace GUI
 
 	public:
 		bool m_block = false;
+		bool m_allow_input = true;
 		static std::mutex m_render_mutex;
 	};
 }

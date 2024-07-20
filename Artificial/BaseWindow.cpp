@@ -107,6 +107,8 @@ namespace GUI
 
 	void BaseWindow::key_pressed(KEY_EVENT_RECORD key_event)
 	{
+		if (!m_allow_input) return;
+
 		SHORT code = key_event.uChar.AsciiChar;
 
 		if (code >= 32 && code <= 126)

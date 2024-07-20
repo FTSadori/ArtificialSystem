@@ -25,13 +25,16 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("1 permission lvl needed\n");
 				ptr->print_main("Moves Nova by one level up or down in file hierarchy\n");
 				ptr->print_main("You need to have nova.girl file in current directory\n");
 				ptr->print_secondary("go {directory}\n");
 				ptr->print_main("  directory - (string) name of directory to go or .. to go back;\n");
 				return;
 			}
+
+			if (sender.lvl() < 1)
+				throw PermissionException("(GoNovaOption) Sender has low permission lvl");
 
 			Memory::FullPath nova_path = Memory::RelativePathCreator::combine(_command.get("path"), "nova.girl");
 			auto& disk = m_core.memory().get_disk(nova_path.mark());

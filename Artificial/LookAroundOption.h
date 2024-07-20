@@ -25,13 +25,16 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("1 permission lvl needed\n");
 				ptr->print_main("Makes Nova to look around\n");
 				ptr->print_main("You need to have nova.girl file in current directory\n");
 				return;
 			}
 
 			using namespace Memory;
+
+			if (sender.lvl() < 1)
+				throw PermissionException("(LookAroundOption) Sender has low permission lvl");
 
 			FullPath nova_path = RelativePathCreator::combine(_command.get("path"), "nova.girl");
 			auto& disk = m_core.memory().get_disk(nova_path.mark());

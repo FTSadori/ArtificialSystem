@@ -41,10 +41,22 @@ namespace Commands
 			Command create_command("\"" + _command.get("path") + "\" mk \"" + _command.get("3") + "\"");
 			m_core.execute(create_command, sender);
 
-			Memory::RealFileManager fm;
-			auto data = fm.read_from_real_file(_command.get("1"), _command.get("2"));
-			std::string str = std::string(data.get_data(), data.size());
+			//
+			std::ifstream in(_command.get("1") + "\\" + _command.get("2"));
+			if (!in.is_open())
+				throw CommandException("(LoadFileFromPortOption) Could not open the file");
 
+			std::string str = "";
+
+			while (!in.eof())
+			{
+				std::string line;
+				std::getline(in, line);
+				str += line + "\n";
+			}
+			str.substr(0, str.size() - 1);
+			//
+			
 			Command write_command("\"" + _command.get("path") + "\" write \"" + _command.get("3") + "\" " + b64encode(str));
 			m_core.execute(write_command, sender);
 

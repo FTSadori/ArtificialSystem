@@ -38,6 +38,9 @@ namespace Commands
 			
 			if (disk.get_type(path.disk_path()) == Memory::FileT::FILE)
 				throw CommandException("(ChangeDirectoryOption) It's not a directory");
+			
+			if (sender.lvl() < 100)
+				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");
 
 			if (sender.lvl() < perm.read_perm_lvl)
 				throw PermissionException("(ChangeDirectoryOption) Sender has low permission lvl");

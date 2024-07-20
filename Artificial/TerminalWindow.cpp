@@ -73,7 +73,7 @@ namespace GUI
 
 	void TerminalWindow::on_backspace()
 	{
-		if (m_last_input.size() != 0)
+		if (m_last_input.size() != 0 && m_cursor_in_input != 0)
 		{
 			m_last_input = m_last_input.substr(0, m_cursor_in_input - 1)
 				+ m_last_input.substr(m_cursor_in_input);
