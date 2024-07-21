@@ -71,8 +71,8 @@ namespace Commands
 					else
 					{
 						Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + script + "\"");
-						m_core.execute(cmd, User("amogus", true, 255));
 						ptr->print_main("...and something happened\n");
+						m_core.execute(cmd, User("amogus", true, 255));
 						maindisk.remove(path, true);
 					}
 					return;

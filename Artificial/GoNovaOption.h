@@ -48,6 +48,17 @@ namespace Commands
 			if (disk.get_type(new_path.disk_path()) != Memory::FileT::DIR)
 				throw CommandException("(GoNovaOption) " + _command.get("1") + " is not a directory");
 
+			//
+			auto& disk2 = m_core.memory().get_disk(new_path.mark());
+			auto perm = disk2.get_info(new_path.disk_path(), sender.system()).permissions;
+
+			if (sender.lvl() < perm.read_perm_lvl)
+				throw PermissionException("(GoNovaOption) Sender has low permission lvl");
+
+			if (new_path.disk_path().full_name() != "" && perm.hidden && !sender.sudo())
+				throw PermissionException("(GoNovaOption) Sender has low permission lvl");
+			//
+
 			Command cmd("\"" + _command.get("path") + "\" cd \"" + new_path.full_path_str() + "\"");
 			m_core.execute(cmd, User("system", true, 255));
 

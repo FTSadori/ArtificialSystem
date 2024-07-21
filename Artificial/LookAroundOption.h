@@ -43,7 +43,7 @@ namespace Commands
 
 			if (Story::SurroundingsHandler::s_map.contains(ptr->get_path().full_path_str()))
 			{
-				Command cmd("\"" + _command.get("path") + "\" lookat \"" + Story::SurroundingsHandler::s_map.at(ptr->get_path().full_path_str()) + "\"");
+				Command cmd("\"" + _command.get("path") + "\" run \"" + Story::SurroundingsHandler::s_map.at(ptr->get_path().full_path_str()) + "\"");
 				m_core.execute(cmd, User("hand of god", true, 255));
 			}
 			else
