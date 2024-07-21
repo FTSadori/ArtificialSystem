@@ -1,0 +1,9 @@
+setnewpath CORRIDOR:\light ""
+clear
+d "AAaaahhh!!!" ::bysymbol :sl 100
+d "So bright!!!" ::bysymbol :sl 100
+d "..." ::bysymbol :sl 100 ::noenter
+changecolours lightturquoise black lightturquoise
+changetextcolours turquoise lightturquoise white
+clear
+cd OVERWORLD:

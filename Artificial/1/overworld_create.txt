@@ -1,0 +1,38 @@
+cd OVERWORLD:
+spawnnova
+mkitem flower "Water flower" "A flower growing out of glass and fed by water, forever standing above the transparent surface. The flower is transparent too, with liquid shimmering inside, but it is hard and glassy on the outside."
+mk flower1
+mk flower2
+mk largetree ::dir
+mk flower3
+mk flower4
+mk flower5
+cd largetree
+mk darkgorge1 ::dir
+mk darkgorge2 ::dir
+mk darkgorge3 ::dir
+cd darkgorge1
+mkitem key "Glass key" "A transparent key that grew out of the glass soil like a plant."
+setnewpath OVERWORLD:\largetree\darkgorge1 CORE:\.scripts\chapter1\nova_gorge_1.txt
+cd ..
+cd darkgorge2
+mk woodencase ::dir :p "3104"
+cd woodencase :preenter "3104"
+mkitem key2 "Glass key" "A transparent key that grew out of the glass soil like a plant."
+cd ..
+cd ..
+cd darkgorge3
+mk door ::dir :rp 100
+mkitem weepingflower1 "Weeping flower" "A flower that could not stand all the water inside and bent to the ground, dripping liquid onto the floor. There are no dry roots around it."
+mkitem weepingflower2 "Weeping flower" "A flower that could not stand all the water inside and bent to the ground, dripping liquid onto the floor. There are no dry roots around it."
+cd door
+mk blockeddoor ::dir :rp 100
+cd blockeddoor
+mk anotherdoor ::dir :rp 100
+setnewpath OVERWORLD:\largetree\darkgorge3\door CORE:\.scripts\chapter1\nova_bldoor.txt
+setnewpath OVERWORLD:\largetree\darkgorge3\door\blockeddoor CORE:\.scripts\chapter1\nova_andoor.txt
+setnewpath OVERWORLD:\largetree\darkgorge3\door\blockeddoor\anotherdoor CORE:\.scripts\chapter1\nova_pcdoor.txt
+cd anotherdoor
+mk blockedexit ::dir :rp 100
+cd blockedexit
+mk deadbody.girl

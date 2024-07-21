@@ -1,0 +1,3 @@
+d "Another door?!"
+d "Will it ever end?"
+setnewpath OVERWORLD:\largetree\darkgorge3\door\blockeddoor ""

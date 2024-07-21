@@ -1,0 +1,24 @@
+d "*She lifted the flower above the roots*"
+d "*The drops from the petals made the dry roots dissolve*"
+d "*Packmi seems to be happy*"
+d "..." :sl 100 ::bysymbol
+d "Aaaand like this"
+d "- Thank you, kitty!"
+d "- That's why I carry a water pistol in my pocket."
+d "- But these roots blocked my hands!"
+d "- By the way, my name is Packmi."
+d "I'm Nova."
+d "..." :sl 100 ::bysymbol
+d "Nice to meet you."
+d "- Nice to meet you too, Nova!"
+d "- I often walk here, but I didn't think that someone else would be here so soon."
+d "How... How did I end up here?"
+d "- Honestly, I don't know."
+d "Fine."
+d "- I'll take you to the city."
+d "- Talk to me when you decide to come with me."
+addlvls visitor 1
+d "*You have raised the level by 1*"
+d "*Check your level with 'userlist'*"
+spawnpackmi
+setnewdialog OVERWORLD:\largetree\darkgorge3\door\blockeddoor\anotherdoor\packmi.girl CORE:\.scripts\chapter1\packmi_0.txt

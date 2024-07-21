@@ -1,0 +1,3 @@
+d "I-I heard a girl's voice!"
+d "What happened here?"
+setnewpath OVERWORLD:\largetree\darkgorge3\door\blockeddoor\anotherdoor ""

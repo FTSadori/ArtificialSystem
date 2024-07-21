@@ -1,0 +1,13 @@
+d "..?" :sl 200 ::bysymbol
+d "I'm sure... I heard something."
+d "I don't know anything about this place."
+d "Well, I don't know much about myself either."
+d "..." :sl 100 ::bysymbol
+d "Uh..."
+d "Well, my name is Nova."
+d "..." :sl 100 ::bysymbol
+d "You must be quite silent."
+d "So I will call you Voice."
+d "Simple, isn't it?"
+mk CORE:\.awareness ::sys ::h
+choice :op1 "..." :sc1 "CORE:\.scripts\chapter1\nova_0_1.txt" :op2 "Greetings" :sc2 "CORE:\.scripts\chapter1\nova_0_2.txt" :op3 "How can you talk?" :sc3 "CORE:\.scripts\chapter1\nova_0_3.txt"

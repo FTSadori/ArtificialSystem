@@ -1,0 +1,3 @@
+d "There is another door in front of me..."
+d "...but it's blocked by the roots of this tree."
+setnewpath OVERWORLD:\largetree\darkgorge3\door ""

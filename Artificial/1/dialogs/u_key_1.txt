@@ -1,0 +1,5 @@
+d "*She held the key up to the door*"
+chmod OVERWORLD:\largetree\darkgorge3\door :rp 0 :wp 0
+d "*The door opened!*"
+d "Oh, how strange..."
+d "Looks more like the door is afraid of this key."

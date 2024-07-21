@@ -1,0 +1,6 @@
+d "Command?.."
+d "I don't know any... commands."
+write CORE:\.awareness 0 ::nobase64 ::append
+addlvls visitor 1
+d "*You have raised the level by 1*" :color 2
+d "*Check your level with 'userlist'*" :color 2

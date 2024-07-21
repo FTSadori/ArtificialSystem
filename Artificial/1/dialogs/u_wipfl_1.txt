@@ -1,0 +1,5 @@
+d "*She lifted the flower above the roots*"
+d "*The drops from the petals made the dry roots dissolve*"
+chmod OVERWORLD:\largetree\darkgorge3\door\blockeddoor :rp 0 :wp 0
+d "*The door opened!*"
+d "..." :sl 100 ::bysymbol

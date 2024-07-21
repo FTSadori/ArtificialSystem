@@ -1,0 +1,4 @@
+d "*She held the key up to the door*"
+chmod OVERWORLD:\largetree\darkgorge3\door\blockeddoor\anotherdoor :rp 0 :wp 0
+d "*The door opened!*"
+d "..." :sl 100 ::bysymbol

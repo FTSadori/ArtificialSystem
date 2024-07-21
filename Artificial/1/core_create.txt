@@ -1,0 +1,32 @@
+cd CORE:
+mk .charas ::h ::sys ::dir
+cd .charas
+mk packmi
+cd ..
+mk .scripts ::h ::sys ::dir
+cd .scripts
+mk chapter1 ::dir
+cd chapter1
+fromport 1 dialogs\core_greetings.txt core_greetings.txt
+fromport 1 dialogs\nova_0.txt nova_0.txt
+fromport 1 dialogs\nova_0_1.txt nova_0_1.txt
+fromport 1 dialogs\nova_0_2.txt nova_0_2.txt
+fromport 1 dialogs\nova_0_3.txt nova_0_3.txt
+fromport 1 dialogs\nova_1.txt nova_1.txt
+fromport 1 dialogs\nova_2.txt nova_2.txt
+fromport 1 dialogs\nova_gorge_1.txt nova_gorge_1.txt
+fromport 1 dialogs\la_corridor.txt la_corridor.txt
+fromport 1 dialogs\la_overworld.txt la_overworld.txt
+fromport 1 dialogs\la_gorge_2.txt la_gorge_2.txt
+fromport 1 dialogs\la_packmi.txt la_packmi.txt
+fromport 1 dialogs\nova_bldoor.txt nova_bldoor.txt
+fromport 1 dialogs\nova_andoor.txt nova_andoor.txt
+fromport 1 dialogs\nova_pcdoor.txt nova_pcdoor.txt
+fromport 1 dialogs\packmi_0.txt packmi_0.txt
+fromport 1 dialogs\nova_gorge_1_1.txt nova_gorge_1_1.txt
+fromport 1 dialogs\nova_gorge_1_2.txt nova_gorge_1_2.txt
+fromport 1 dialogs\u_key_1.txt u_key_1.txt
+fromport 1 dialogs\u_key_2.txt u_key_2.txt
+fromport 1 dialogs\u_wipfl_1.txt u_wipfl_1.txt
+fromport 1 dialogs\u_wipfl_2.txt u_wipfl_2.txt
+fromport 1 dialogs\u_fl.txt u_fl.txt

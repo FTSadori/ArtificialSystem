@@ -1,0 +1,6 @@
+d "Well, I see dry and thick wooden walls."
+d "Dry branches and roots are intertwined in various shapes on the walls."
+d "Rhombus, line and point."
+d "There were four rhombus."
+d "One line and three points."
+d "What did that tell you, Voice?"

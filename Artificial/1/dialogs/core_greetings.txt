@@ -1,0 +1,47 @@
+changecolours black black black
+changetextcolours white white white
+clear
+d "..." :sl 100 ::bysymbol
+d "GREeTInGS" :sl 70 ::bysymbol
+d "THANK yOU FOr USInG" :sl 70
+d "MY ARTIFiCIAL SySTEM" :sl 70
+d "..." :sl 100 ::bysymbol
+d "I PrOmISE YooU'lL LOve IT" :sl 70
+d "IF YoU'RE SmART ENoUGH" :sl 70
+d "..." :sl 100 ::bysymbol
+d "I HOpE YoU WIlL BE A gOOD PaRTNEr" :sl 70
+d "AND YoU'LL DO WHaT'S REQUirED OF yOU" :sl 70
+d "YOu ARe NOW A ViSItOR TO tHIS sYSTEM, PARTnER" :sl 70
+d "ReMEMBER OnE THING" :sl 70
+clear
+d "IT'S ALL JUST FILES" :sl 70 ::noenter ::bysymbol
+d "IT'S ALL JUST FILES" :sl 30 ::noenter ::bysymbol
+d "IT'S ALL JUST FILES" :sl 20 ::noenter
+d "IT'S ALL JUST FILES" :sl 10 ::noenter
+d "IT'S ALL JUST FILES" :sl 10 ::noenter
+d "IT'S ALL JUST FILES" :sl 10 ::noenter
+d "IT'S ALL JUST FILES" :sl 5 ::noenter
+d "IT'S ALL JUST FILES" :sl 5 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+d "IT'S ALL JUST FILES" :sl 2 ::noenter
+changecolours white white white
+changetextcolours black black black
+clear
+d "*Use 'visitorhelp' command to find out what you can do*" :sl 70
+changeuser visitor
+mk CORE:\system\.save ::sys ::h
+write CORE:\system\.save "CORRIDOR:" ::nobase64
+cd CORRIDOR:

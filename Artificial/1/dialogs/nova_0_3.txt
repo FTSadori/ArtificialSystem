@@ -1,0 +1,7 @@
+write CORE:\.awareness 00 ::nobase64 ::append
+d "Huh?.."
+d "Why not?"
+d "I have a mouth, after all."
+d "It was a strange question for a first meeting."
+d "It would be nice to understand how you speak, Voice!"
+run CORE:\.scripts\chapter1\nova_1.txt

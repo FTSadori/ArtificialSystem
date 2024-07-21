@@ -1,0 +1,12 @@
+adddisk CORE 1000000 1000 ::main
+adddisk CORRIDOR 1000000 1000
+adddisk OVERWORLD 1000000 1000
+adddisk GLASSTOWN 1000000 1000
+startsystem
+adduser visitor 0
+run 1\core_create.txt ::real
+run 1\corridor_create.txt ::real
+run 1\overworld_create.txt ::real
+run 1\glasstown_create.txt ::real
+passreload
+run CORE:\.scripts\chapter1\core_greetings.txt

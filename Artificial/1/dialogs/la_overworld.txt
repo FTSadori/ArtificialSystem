@@ -1,0 +1,8 @@
+d "Now I'm standing on an endless flat glass."
+d "There is water on it that can barely cover the toes of my bare feet."
+d "Every step I take makes the water sparkle and create the sound of a bell."
+d "Also, beautiful flowers grow from the glass here."
+d "Their glassy roots can be seen running down below the surface."
+d "But the widest and longest root came out of the tree in the middle of the space."
+d "It's branches hang down, and the leaves on them have different ascii symbols engraved on them, replacing each other."
+d "It's just amazing."

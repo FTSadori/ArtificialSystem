@@ -1,0 +1,31 @@
+d "..." :sl 100 ::bysymbol
+d "There's a girl here."
+d "And she's in danger, I suppose."
+d "The girl looks scared and a little nervous, but still cheerful."
+d "Is it some kind of game?" ::noenter
+d "                   game?" ::noenter :sl 30
+d "                   game?" ::noenter :sl 5
+d "                   game?" ::noenter :sl 2
+d "                   game?" ::noenter :sl 2
+d "                   game?" ::noenter :sl 1
+d "                   game?" ::noenter :sl 1
+write CORE:\.awareness 0 ::nobase64 ::append
+clear
+d "As for her appearance, she was quite pretty."
+d "Her orange hair was tied up in a single ponytail, but two long curls still hung down near her face..."
+d "...probably due to the attack of those insidious roots"
+d "Her clothing suggests that she is a mechanic of some sort."
+d "She wears an orange robe, although it is completely clean."
+d "Under the robe she has a black tank top and shorts on her legs."
+d "She is wearing large rough black gloves, although they look stylish somehow."
+d "And... I can see her flaming lush tail and sharp and long ears."
+d "- Hey!"
+d "- Who are you talking to?"
+d "- And... why are you describing me out loud?"
+d "Huh?"
+d "S-sorry!"
+d "- Although thank you for saying I'm 'quite pretty'."
+d "- Maybe it's your peculiarity, kitty, we all have peculiarities here."
+d "K-kitty?"
+d "Oh, right, my ears..."
+d "- But it doesn't matter, can you save me somehow, please?"

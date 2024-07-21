@@ -1,0 +1,4 @@
+write CORE:\.awareness 0 ::nobase64 ::append
+d "Oh, there you are."
+d "I'm glad I didn't imagine it."
+run CORE:\.scripts\chapter1\nova_1.txt

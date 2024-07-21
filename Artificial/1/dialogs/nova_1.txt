@@ -1,0 +1,9 @@
+d "..." :sl 100 ::bysymbol
+d "Oh, okay."
+d "We need to get out of here."
+d "It's so bright here."
+d "I wouldn't mind if you walked me out, Voice."
+addlvls visitor 1
+d "*You have raised the level by 1*"
+d "*Check your level with 'userlist'*"
+setnewpath CORRIDOR:\light CORE:\.scripts\chapter1\nova_2.txt

@@ -1,0 +1,19 @@
+d "- Oh, so you're ready!"
+d "- That's great."
+d "- Now we will go to our glass town."
+d "- Let's go!"
+d "..." :sl 100 ::bysymbol
+setnewdialog OVERWORLD:\largetree\darkgorge3\door\blockeddoor\anotherdoor\packmi.girl ""
+changecolours lightblue blue white
+changetextcolours white lightturquoise lightgray
+rm CORE:\system\.inventory
+cd GLASSTOWN:
+clear
+d "- Here we are."
+d "- Now let's get out through the passage and get to the city."
+d "- And... one more thing."
+d "- If you are an ordinary girl, you cannot carry things between worlds."
+d "- I probably should have said this earlier, hehe."
+d "..." :sl 100 ::bysymbol
+d "Yes"
+d "- Let's go!"

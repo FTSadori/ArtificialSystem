@@ -1,0 +1,8 @@
+d "Okay..."
+d "..." :sl 100 ::bysymbol
+pick key
+d "*She successfully picked up the key!*" :color 2
+d "It's so pretty!"
+addlvls visitor 1
+d "*You have raised the level by 1*" :color 2
+d "*Check your level with 'userlist'*" :color 2

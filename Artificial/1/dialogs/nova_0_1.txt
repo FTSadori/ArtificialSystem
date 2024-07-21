@@ -1,0 +1,4 @@
+d "Uh..."
+d "Okay."
+d "But know that I heard you, Voice."
+run CORE:\.scripts\chapter1\nova_1.txt

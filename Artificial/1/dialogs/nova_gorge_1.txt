@@ -1,0 +1,4 @@
+d "Oh, there is a key!"
+d "What should I do?"
+choice :op1 "Try to pick it up" :sc1 "CORE:\.scripts\chapter1\nova_gorge_1_1.txt" :op2 "Do you know a command for picking things up?" :sc2 "CORE:\.scripts\chapter1\nova_gorge_1_2.txt"
+setnewpath OVERWORLD:\largetree\darkgorge1 ""
