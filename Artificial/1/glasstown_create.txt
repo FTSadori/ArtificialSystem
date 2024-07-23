@@ -2,3 +2,140 @@ cd GLASSTOWN:
 mk forbittenpassage ::dir
 cd forbittenpassage
 spawnnova
+cd ..
+mk bubblemountain ::dir :rp 10
+cd bubblemountain
+mk infobubbles ::dir
+cd infobubbles
+mk infobubble1
+mk infobubble2
+mk infobubble3
+mk infobubble4
+mk infobubble5
+mk infobubble6
+mk infobubble7
+write infobubble1 "Bulb! I hate even numbers, all bubbles with even numbers lie!" ::nobase64
+write infobubble2 "Bulb-bulb, I know that the password is in the third bubble!" ::nobase64
+write infobubble3 "Bulb? I like number 3. The password should definitely have the number three." ::nobase64
+write infobubble4 "Blob-blob! I hate odd numbers, all bubbles with odd numbers lie!" ::nobase64
+write infobubble5 "Bulb?! It's a cringe, girl. And it's also a cringe not to know how old my mom is." ::nobase64
+write infobubble6 "I'll keep quiet." ::nobase64
+write infobubble7 "I personally added sevens to all passwords, because for some reason they were not there." ::nobase64
+cd ..
+mk passwordbubbles ::dir
+cd passwordbubbles
+mk passwordbubble1
+mk passwordbubble2
+mk passwordbubble3
+mk passwordbubble4
+mk passwordbubble5
+write passwordbubble1 "7568" ::nobase64
+write passwordbubble2 "12237" ::nobase64
+write passwordbubble3 "3773" ::nobase64
+write passwordbubble4 "90327" ::nobase64
+write passwordbubble5 "1370" ::nobase64
+cd ..
+cd ..
+mk town ::dir
+cd town
+mk smallshop ::dir
+cd smallshop
+spawnpackmi
+cd ..
+mk largebuilding ::dir
+cd largebuilding
+mk smart.girl :wp 100
+write smart.girl ""
+mk shelf1 ::dir
+cd shelf1
+mk aboutelpa.book
+write aboutelpa.book "Elpa is a woman from the distant past, when similar creatures lived on our land. All the data about her we received exclusively from her writings. Her books are the only source of scientific information. She wrote about using files, saving information, manipulating materials, and more. We cannot know if she and others like her are alive." ::nobase64
+mk ancienthistory.book
+write ancienthistory.book "Powerful creatures used to live on these lands of the glass town where we live how. These beings could manipulate everything around them without any problems. Creation and destruction had no limits for them. Some could see into the soul, and some could compress entire worlds into a seed. But their strength pulled them down. The surface under their feet could no longer support them, and we, the weaker creatures, appeared above. Sometimes, looking down, we could see the carved and beautifully decorated roofs of buildings, but the darkness made it impossible to see anything else." ::nobase64
+cd ..
+mk shelf2 ::dir
+cd shelf2
+mkpack mova1.0.0.0.0.0 "Contains the first version of the ancient language. Smart was able to create a package based on Elpa's records, but hasn't been able to use it yet. The rules are written in mova1.0.0.0.0.0.info."
+mk mova1.0.0.0.0.0.info :rp 11
+write mova1.0.0.0.0.0.info "VGhlIGxhbmd1YWdlIGlzIGJhc2VkIG9uIGEgcmVnaXN0ZXIgbWFjaGluZS4gVGhpcyB2ZXJzaW9uIG9mIG1vdmEgY29uc2lzdHMgb2YgZm91ciBjb21tYW5kczoKMDAwMCAtIHplcm9pbmc7CjAwMDEgLSBpbmNyZW1lbnQ7CjAwMTAgLSB0cmFuc2ZlcjsKMDAxMSAtIGp1bXA7CkV2ZXJ5IGNvbW1hbmQgY29uc2lzdHMgb2YgNCBiaXRzLiBUaGUgc2l6ZSBvZiB0aGUgYXJndW1lbnRzIGlzIGFsc28gNCBiaXRzLgonWmVyb2luZycgcmVzZXRzIHRoZSB2YXJpYWJsZSBieSBudW1iZXIuIFNvLCAnMDAwMDAwMTEnIHJlc2V0cyB2YXJpYWJsZSBudW1iZXIgdGhyZWUgKFsyLCA0LCAxLCAzLCA1XSA9PiBbMiwgNCwgMSwgMCwgNV0pLgonSW5jcmVtZW50JyBhZGRzIG9uZSB0byB2YXJpYWJsZS4gU28sICcwMDAxMDAxMCcgd2lsbCBjaGFuZ2UgWzIsIDQsIDEsIDMsIDVdIHRvIFsyLCA0LCAyLCAzLCA1XS4KJ1RyYW5zZmVyJyBjb3BpZXMgYSB2YWx1ZSBmcm9tIG9uZSB2YXJpYWJsZSB0byBhbm90aGVyLiBTbywgJzAwMTAwMDAwMDAwMScgd2lsbCBjaGFuZ2UgWzIsIDQsIDEsIDMsIDVdIHRvIFsyLCAyLCAxLCAzLCA1XS4KJ0p1bXAnIGNoZWNrcyB3aGV0aGVyIHRoZSB2YWx1ZXMgYXJlIHRoZSBzYW1lLCBhbmQgaWYgc28sIGV4ZWN1dGVzIHRoZSBzZWxlY3RlZCBsaW5lIG5leHQsIG90aGVyd2lzZSB0aGUgbmV4dCBsaW5lIGluIHRoZSBmaWxlLiBTbywgJzAwMTEwMDAwMDAwMTAwMTEnIHdpbGwgZXhlY3V0ZSB0aGUgdGhpcmQgbGluZSBuZXh0LCBpZiB0aGUgemVybyBhbmQgZmlyc3QgdmFsdWVzIGFyZSB0aGUgc2FtZS4KCkZpbGUgbXVzdCBzdGFydCBmcm9tICdtb3ZhJyBsaW5lLiBBZnRlciB0aGF0LCB5b3UgbmVlZCB0byB3cml0ZSBvbmx5IG9uZSBjb21tYW5kIHBlciBsaW5lIG9mIHRoZSBmaWxlLg=="
+cd ..
+mk shelf3 ::dir
+cd shelf3
+mk myresearch1.book
+write myresearch1.book "I found Elpa's books, some of which were left in the ruins of the building that was probably her workplace. Part of the building seemed to have sunk to the floor, so I thought that Elpa and her friends were also down there. I created this library to explore all the questions about why such powerful beings were trapped." ::nobase64
+mk myresearch2.book
+write myresearch2.book "Glass is the best material we have here. It's so versatile that we can make everything from writing tablets to houses out of it. But there is only one problem with it: we are not strong enough to break it. That's why all of our buildings have smooth corners - we just can't bend it any harder. Our buildings are double-layered, and we pour a jelly mass between the glass plates to make the walls opaque. Updated: Only superior beings can handle glass, an example of which is Packmi." ::nobase64
+mk myresearch3.book
+write myresearch3.book "I began to learn the language from Elpa's records. This language was invented by another higher being - Mova. It did not use letters, but numbers, and for some reason it used nothing but 0 and 1, which was impossible for ordinary creatures to understand, but its true essence was that it had the power to communicate with the world itself." ::nobase64
+cd ..
+cd ..
+mk museum ::dir :rp 10
+cd museum
+mkitem glassknife "Glass knife" "It's sharp enough to cut through bubble wrap. But it doesn't seem that sturdy."
+mk bubblewithperl ::dir :rp 100
+cd bubblewithperl
+mkitem perl "Shiny perl" "Incredibly beautiful and shiny. In their reflection, I see a triple me. Or do they just look like me?"
+cd ..
+mk roomofgoddesses ::dir
+cd roomofgoddesses
+mk nanoroom ::dir
+cd nanoroom
+mkpack nanoblessing "The blessing of the all-seeing Nano"
+cd ..
+mk mikiroom ::dir :p "130"
+cd mikiroom :preenter "130"
+mkpack mikiblessing "The blessing of the all-creative Miki"
+cd ..
+mk elparoom ::dir :rp 90
+cd elparoom
+mkpack elpablessing "The blessing of the all-knowing Elpa"
+cd ..
+cd ..
+cd ..
+mk house ::dir :rp 10
+cd house
+mk sleepy.girl :wp 100
+write sleepy.girl ""
+mk room ::dir :rp 100
+cd room
+mk powerfigure
+mk jokerfigure
+mk aihoshinofigure
+mk marinfigure
+mk albedofigure
+cd ..
+cd ..
+mk lake ::dir :rp 10
+cd lake
+mk extractormachine1 ::dir
+mk extractormachine2 ::dir
+mk extractormachine3 ::dir
+cd extractormachine3
+mkitem mass "Jelly mass" "A jelly mass the color of the liquid underfoot. It is used in construction to make the material strong and opaque."
+cd ..
+cd ..
+cd ..
+mk roots ::dir
+cd roots
+mk root1 ::dir
+mk root2 ::dir
+mk root3 ::dir
+cd root2
+mkitem glassfruit "Glass fruit" "A glass formation that grows directly from the roots of a tree, like a fruit. These fruits are the main and only source of glass for the town's population."
+cd ..
+mk deeper ::dir :rp 15
+cd deeper
+mk darkroots ::dir
+cd darkroots
+mk crazy.girl :wp 100
+write crazy.girl ""
+cd ..
+mk sevenseeds ::dir
+cd sevenseeds
+mk black.7z ::dir :p "REM"
+mk red.7z ::dir :p "l0velyF0x_"
+mk yellow.7z ::dir :rp 40
+mk violet.7z ::dir :rp 30
+mk blue.7z ::dir :rp 20
+mk green.7z ::dir :rp 20
+mk white.7z ::dir :rp 35 :p "bW92YQ=="
