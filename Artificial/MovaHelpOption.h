@@ -32,6 +32,7 @@ namespace Commands
 			ptr->print_third("- showtask\n");
 			ptr->print_third("- runtests\n");
 			ptr->print_third("- movavload\n");
+			ptr->print_third("- opentask\n");
 
 			return;
 		}

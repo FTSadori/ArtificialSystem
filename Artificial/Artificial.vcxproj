@@ -212,6 +212,7 @@
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="MovaVersionHandler.h" />
     <ClInclude Include="MovaVersionLoadOption.h" />
+    <ClInclude Include="OpenTaskOption.h" />
     <ClInclude Include="PackageOptionsLoader.h" />
     <ClInclude Include="PackagesHandler.h" />
     <ClInclude Include="PackagesHelpOption.h" />

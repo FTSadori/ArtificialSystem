@@ -884,6 +884,9 @@
     <ClInclude Include="PasswordsReloadOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
+    <ClInclude Include="OpenTaskOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
