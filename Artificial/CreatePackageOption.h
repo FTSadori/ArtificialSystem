@@ -39,6 +39,9 @@ namespace Commands
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
+			if (!sender.system())
+				throw PermissionException("(CreatePackageOption) Sender has low permission lvl");
+
 			if (!_command.has("2"))
 				throw CommandException("(CreatePackageOption) Add description to package");
 				
