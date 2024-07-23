@@ -7,7 +7,9 @@ setnewdialog OVERWORLD:\largetree\darkgorge3\door\blockeddoor\anotherdoor\packmi
 changecolours lightblue blue white
 changetextcolours white lightturquoise lightgray
 rm CORE:\system\.inventory
-cd GLASSTOWN:
+cd GLASSTOWN:\forbittenpassage
+spawnnova
+write CORE:\system\.save "GLASSTOWN:\forbittenpassage" ::nobase64
 clear
 d "- Here we are."
 d "- Now let's get out through the passage and get to the city."

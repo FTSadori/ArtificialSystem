@@ -7,3 +7,4 @@ changecolours lightturquoise black lightturquoise
 changetextcolours turquoise lightturquoise white
 clear
 cd OVERWORLD:
+write CORE:\system\.save "OVERWORLD:" ::nobase64
