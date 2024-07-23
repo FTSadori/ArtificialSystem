@@ -27,6 +27,8 @@ namespace Commands
 			{
 				ptr->print_main("2 permission lvl needed\n");
 				ptr->print_main("Shows files in Nova's inventory\n");
+				ptr->print_secondary("inv [::short]\n");
+				ptr->print_main("  ::short - (flag) for more compact output;\n");
 				return;
 			}
 
@@ -48,23 +50,25 @@ namespace Commands
 			{
 				auto path = Memory::DiskPath("\\system\\.inventory", list[i]);
 				
-				ptr->print_main(Parser::to_string(i) + ". ");
-				
 				DataQueue data = maindisk.read(path, true);
 				std::string strdata(data.get_data(), data.size());
 				try
 				{
 					auto splitted = Separator::split(strdata, '\n');
-					ptr->print_main(splitted[0] + '\n');
-					ptr->print_third(splitted[2]);
+					if (_command.has("::short"))
+						ptr->print_main(splitted[0] + '\t');
+					else
+					{
+						ptr->print_main(Parser::to_string(i) + ". " + splitted[0] + '\n');
+						ptr->print_third(splitted[2] + '\n');
+					}
 				}
 				catch (...)
 				{
-					ptr->print_secondary("BAD FILE");
-				}
-				
-				ptr->print_main("\n");
+					ptr->print_secondary("BAD FILE\n");
+				}				
 			}
+			if (_command.has("::short")) ptr->print_main("\n");
 
 			return;
 		}
