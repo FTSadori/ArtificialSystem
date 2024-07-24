@@ -44,7 +44,7 @@ spawnpackmi
 cd ..
 mk largebuilding ::dir
 cd largebuilding
-mk smart.girl :wp 100
+mk smart.girl :wp 99
 write smart.girl ""
 mk shelf1 ::dir
 cd shelf1
@@ -94,7 +94,7 @@ cd ..
 cd ..
 mk house ::dir :rp 10
 cd house
-mk sleepy.girl :wp 100
+mk sleepy.girl :wp 99
 write sleepy.girl ""
 mk room ::dir :rp 100
 cd room
@@ -127,7 +127,7 @@ mk deeper ::dir :rp 15
 cd deeper
 mk darkroots ::dir
 cd darkroots
-mk crazy.girl :wp 100
+mk crazy.girl :wp 99
 write crazy.girl ""
 cd ..
 mk sevenseeds ::dir
