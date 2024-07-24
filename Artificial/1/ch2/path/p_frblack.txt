@@ -1,0 +1,6 @@
+changecolours lightblue blue white
+changetextcolours white lightturquoise lightgray
+clear
+cd GLASSTOWN:\roots\deeper\sevenseeds\black.7z
+d "Thanks God, I'm back here..."
+write CORE:\system\.save "GLASSTOWN:\roots\deeper\sevenseeds\black.7z" ::nobase64

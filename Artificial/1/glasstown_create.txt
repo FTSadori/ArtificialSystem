@@ -139,3 +139,4 @@ mk violet.7z ::dir :rp 30
 mk blue.7z ::dir :rp 20
 mk green.7z ::dir :rp 20
 mk white.7z ::dir :rp 35 :p "bW92YQ=="
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\black.7z CORE:\.scripts\chapter2\p_toblack.txt

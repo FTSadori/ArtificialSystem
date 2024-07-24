@@ -1,0 +1,75 @@
+cd BLACK:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath BLACK:\exit CORE:\.scripts\chapter2\p_frblack.txt
+cd ..
+mk trash1
+mk trash2
+mk trash3
+mk trash4
+mk trash5
+write trash1 ";;;[[[;;;[[[;;;.;;[[[[[[[[[;;;;;;[[[;;;;;;;;;;;;[[[[[[[[[;;;;" ::nobase64
+write trash2 ";.;[[[;;;[[[;;;;;;[[[;;;;;;;.;;;;[[[;;;;;;;;.;;;[[[;.;[[[;;;;" ::nobase64
+write trash3 ";;;[[[[[[[[[;.;;;;[[[[[[[[[;;;;;;[[[;;;.;;;;;;;;[[[[[[[[[;.;;" ::nobase64
+write trash4 ";;;[[[.;;[[[;;;;;;[[[;;;;;;;;.;;;[[[;;;;;;;;;;;;[[[;;;;;;;;;;" ::nobase64
+write trash5 ";;;[[[;;;[[[;;;;.;[[[[[[[[[;;;;;;[[[[[[[[[;.;;;;[[[;;;;;.;;;;" ::nobase64
+mk pileofdust ::dir
+cd pileofdust
+mk dust1
+mk dust2
+mk dust3
+write dust1 "...---..." ::nobase64
+write dust2 "...---..." ::nobase64
+write dust3 "...---..." ::nobase64
+mk doorinfloor ::dir :rp 20
+setnewpath BLACK:\pileofdust\doorinfloor CORE:\.scripts\chapter2\p_black2.txt
+cd doorinfloor
+mk shatteredface1
+write shatteredface1 ""
+mk shatteredbody1
+write shatteredbody1 ""
+mk shatteredface2
+write shatteredface2 ""
+mk shatteredbody2
+write shatteredbody2 ""
+mk largehead1 ::dir
+cd largehead1
+mk distorted.girl :wp 99
+write distorted.girl ""
+cd ..
+mk largehead2 ::dir
+cd largehead2
+mk smashed.girl :wp 99
+write smashed.girl ""
+cd ..
+mk largehead3 ::dir
+setnewpath BLACK:\pileofdust\doorinfloor\largehead3 CORE:\.scripts\chapter2\p_black_head.txt
+cd largehead3
+mk aaaaaaaaaaaaaaaaaaa.girl :wp 99
+write aaaaaaaaaaaaaaaaaaa.girl "XFxcXFxcClxcXFxcXApcXFxcXFw="
+cd ..
+mk largehead4 ::dir :rp 30
+setnewpath BLACK:\pileofdust\doorinfloor\largehead4 CORE:\.scripts\chapter2\p_black3.txt
+cd largehead4
+mk diIiiiiiiIIIistOor.giII :wp 99
+mk aaaaAAAaaaaaaaaAAa.aaAa :wp 99
+mk smAAaaaaaaShhEeeDD.gIig :wp 99
+mk heEEEEEEEEEELllPPp.Geee :wp 99
+mk SsshaAAAAAAAAtTTte.ssOL :wp 99
+mk TooRRRNNNNNNNToRNN.gGLL :wp 99
+mk diIiiIIIiIIIistOor.giII :wp 99
+mk aaaaAaAaaaaaaaaAAa.aaAa :wp 99
+mk smAAaAaaaaShhEeeDD.gIig :wp 99
+mk BODYTHRONE ::dir
+mk heEEEEEEEeeELllPPp.Geee :wp 99
+mk SsshaAaaAAAAAtTTte.ssOL :wp 99
+mk TooRRRNNNnnNNToRNN.gGLL :wp 99
+mk diIiiiIIiIIIiStOor.giII :wp 99
+mk aaaaAAAaaaaaAAaAAa.aaAa :wp 99
+mk smAAaaaaaaSHhEeeDD.gIig :wp 99
+mk heEEeeeEEEEELllPPp.Geee :wp 99
+mk SsshaAAaAAAAAtTTte.ssOL :wp 99
+mk TooRRRNNnnNNNToRNN.gGLL :wp 99
+cd BODYTHRONE
+mkpack remblessing "The blessing of the all-destroying Rem"

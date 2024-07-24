@@ -1,0 +1,7 @@
+changecolours red red red
+changetextcolours white black white
+d "Why are we coming here?!"
+d "This place is terrible."
+d "I feel as if I will be with them soon."
+write CORE:\.awareness 00 ::nobase64 ::append
+setnewpath BLACK:\pileofdust\doorinfloor\largehead4 CORE:\.scripts\chapter2\p_black3n.txt

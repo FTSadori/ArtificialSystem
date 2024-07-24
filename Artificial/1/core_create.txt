@@ -30,3 +30,12 @@ fromport 1 dialogs\u_key_2.txt u_key_2.txt
 fromport 1 dialogs\u_wipfl_1.txt u_wipfl_1.txt
 fromport 1 dialogs\u_wipfl_2.txt u_wipfl_2.txt
 fromport 1 dialogs\u_fl.txt u_fl.txt
+cd ..
+mk chapter2 ::dir
+cd chapter2
+fromport 1 ch2\path\p_toblack.txt p_toblack.txt
+fromport 1 ch2\path\p_frblack.txt p_frblack.txt
+fromport 1 ch2\path\p_black2.txt p_black2.txt
+fromport 1 ch2\path\p_black_head.txt p_black_head.txt
+fromport 1 ch2\path\p_black3.txt p_black3.txt
+fromport 1 ch2\path\p_black3n.txt p_black3n.txt

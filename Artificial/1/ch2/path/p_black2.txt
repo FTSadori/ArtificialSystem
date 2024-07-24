@@ -1,0 +1,3 @@
+changetextcolours black black black
+changecolours black red black
+d "I hate this place."

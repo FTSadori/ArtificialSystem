@@ -1,0 +1,5 @@
+changecolours black gray black
+changetextcolours black black black
+clear
+cd BLACK:\exit
+write CORE:\system\.save "BLACK:\exit" ::nobase64
