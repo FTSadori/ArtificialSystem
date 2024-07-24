@@ -752,9 +752,6 @@
     <ClInclude Include="BaseTask.h">
       <Filter>Исходные файлы\Core\Story\Task</Filter>
     </ClInclude>
-    <ClInclude Include="IncrementTask.h">
-      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
-    </ClInclude>
     <ClInclude Include="TaskHandler.h">
       <Filter>Исходные файлы\Core\Story\Task</Filter>
     </ClInclude>
@@ -886,6 +883,9 @@
     </ClInclude>
     <ClInclude Include="OpenTaskOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="StarterTasks.h">
+      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

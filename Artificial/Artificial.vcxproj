@@ -228,6 +228,7 @@
     <ClInclude Include="SpawnNovaOption.h" />
     <ClInclude Include="CreatePackageOption.h" />
     <ClInclude Include="SpawnPackmiOption.h" />
+    <ClInclude Include="StarterTasks.h" />
     <ClInclude Include="StoryHelpOption.h" />
     <ClInclude Include="StoryOptionsLoader.h" />
     <ClInclude Include="SurroundingsHandler.h" />
@@ -267,7 +268,6 @@
     <ClInclude Include="GUIHandler.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="IMovaCommand.h" />
-    <ClInclude Include="IncrementTask.h" />
     <ClInclude Include="JumpExpression.h" />
     <ClInclude Include="LoadFileFromPortOption.h" />
     <ClInclude Include="MarkVector.h" />
