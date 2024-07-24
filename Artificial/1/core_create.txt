@@ -39,3 +39,16 @@ fromport 1 ch2\path\p_black2.txt p_black2.txt
 fromport 1 ch2\path\p_black_head.txt p_black_head.txt
 fromport 1 ch2\path\p_black3.txt p_black3.txt
 fromport 1 ch2\path\p_black3n.txt p_black3n.txt
+fromport 1 ch2\path\p_tored.txt p_tored.txt
+fromport 1 ch2\path\p_frred.txt p_frred.txt
+fromport 1 ch2\path\p_toyellow.txt p_toyellow.txt
+fromport 1 ch2\path\p_fryellow.txt p_fryellow.txt
+fromport 1 ch2\path\p_togreen.txt p_togreen.txt
+fromport 1 ch2\path\p_frgreen.txt p_frgreen.txt
+fromport 1 ch2\path\p_toviolet.txt p_toviolet.txt
+fromport 1 ch2\path\p_frviolet.txt p_frviolet.txt
+fromport 1 ch2\path\p_toblue.txt p_toblue.txt
+fromport 1 ch2\path\p_frblue.txt p_frblue.txt
+fromport 1 ch2\path\p_akesi.txt p_akesi.txt
+fromport 1 ch2\path\p_towhite.txt p_towhite.txt
+fromport 1 ch2\path\p_frwhite.txt p_frwhite.txt

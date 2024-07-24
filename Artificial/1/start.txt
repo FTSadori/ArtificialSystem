@@ -16,5 +16,11 @@ run 1\corridor_create.txt ::real
 run 1\overworld_create.txt ::real
 run 1\glasstown_create.txt ::real
 run 1\black_create.txt ::real
+run 1\red_create.txt ::real
+run 1\yellow_create.txt ::real
+run 1\green_create.txt ::real
+run 1\violet_create.txt ::real
+run 1\blue_create.txt ::real
+run 1\white_create.txt ::real
 passreload
 run CORE:\.scripts\chapter1\core_greetings.txt

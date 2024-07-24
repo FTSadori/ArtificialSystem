@@ -1,0 +1,13 @@
+cd VIOLET:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath VIOLET:\exit CORE:\.scripts\chapter2\p_frviolet.txt
+cd ..
+mk web1
+mk web2
+mk largeweb ::dir
+cd largeweb
+mk web1
+mk web2
+mk strange.girl :wp 99

@@ -1,0 +1,5 @@
+changecolours lightblue blue white
+changetextcolours white lightturquoise lightgray
+clear
+cd GLASSTOWN:\roots\deeper\sevenseeds\yellow.7z
+write CORE:\system\.save "GLASSTOWN:\roots\deeper\sevenseeds\yellow.7z" ::nobase64

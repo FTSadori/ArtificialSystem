@@ -1,0 +1,13 @@
+cd WHITE:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath WHITE:\exit CORE:\.scripts\chapter2\p_frwhite.txt
+cd ..
+mk wires ::dir
+cd wires
+mk wires ::dir
+cd wires
+mk wires ::dir
+cd wires
+mk mova.girl :wp 255

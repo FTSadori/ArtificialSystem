@@ -1,0 +1,5 @@
+changecolours black black lightviolet
+changetextcolours lightviolet violet lightviolet
+clear
+cd VIOLET:\exit
+write CORE:\system\.save "VIOLET:\exit" ::nobase64

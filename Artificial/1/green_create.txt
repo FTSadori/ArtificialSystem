@@ -1,0 +1,20 @@
+cd GREEN:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath GREEN:\exit CORE:\.scripts\chapter2\p_frgreen.txt
+cd ..
+mk field ::dir
+cd field
+mk yellowpencil
+mk redpencil
+mkitem flower "Button flower" "A flower in the from of a button growing out of a pencil. The button seemed to look at us and spun happily."
+mk bigflower1 ::dir
+cd bigflower1
+mk orangepencil
+mk greenpencil
+cd ..
+mk bigflower2 ::dir
+cd bigflower2
+mkitem violetpencil "Violet pencil" "I like this color."
+mk pinkpencil

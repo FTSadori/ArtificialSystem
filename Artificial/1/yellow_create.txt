@@ -1,0 +1,22 @@
+cd YELLOW:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath YELLOW:\exit CORE:\.scripts\chapter2\p_fryellow.txt
+cd ..
+mk woods ::dir
+cd woods
+mk tree1 ::dir
+mk tree2 ::dir
+mk tree3 ::dir
+mk groundbell1
+mk groundbell2
+cd tree1
+mkitem bell1 "Melodic bell" "A bell grown on a yellow garden tree rings from time to time, playing a beautiful melody."
+cd ..
+cd tree2
+mkitem bell2 "Strong bell" "A bell grown on a yellow garden tree rings from time to time, playing a powerful melody."
+cd ..
+cd tree3
+mkitem bell3 "Energetic bell" "A bell grown on a yellow garden tree rings from time to time, playing a dynamic melody."
+cd ..

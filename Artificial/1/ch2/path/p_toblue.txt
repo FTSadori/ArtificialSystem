@@ -1,0 +1,5 @@
+changecolours black blue lightblue
+changetextcolours lightturquoise turquoise lightblue
+clear
+cd BLUE:\exit
+write CORE:\system\.save "BLUE:\exit" ::nobase64

@@ -140,3 +140,9 @@ mk blue.7z ::dir :rp 20
 mk green.7z ::dir :rp 20
 mk white.7z ::dir :rp 35 :p "bW92YQ=="
 setnewpath GLASSTOWN:\roots\deeper\sevenseeds\black.7z CORE:\.scripts\chapter2\p_toblack.txt
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\red.7z CORE:\.scripts\chapter2\p_tored.txt
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\white.7z CORE:\.scripts\chapter2\p_towhite.txt
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\yellow.7z CORE:\.scripts\chapter2\p_toyellow.txt
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\blue.7z CORE:\.scripts\chapter2\p_toblue.txt
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\green.7z CORE:\.scripts\chapter2\p_togreen.txt
+setnewpath GLASSTOWN:\roots\deeper\sevenseeds\violet.7z CORE:\.scripts\chapter2\p_toviolet.txt

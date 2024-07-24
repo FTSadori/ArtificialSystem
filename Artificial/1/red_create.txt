@@ -1,0 +1,30 @@
+cd RED:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath RED:\exit CORE:\.scripts\chapter2\p_frred.txt
+cd ..
+mk tools1 :wp 100
+mk tools2 :wp 100
+mk myfigures ::dir
+cd myfigures
+mk sadstatue :wp 100
+write sadstatue "0/3" ::nobase64
+mk sleepystatue :wp 100
+write sleepystatue "0/3" ::nobase64
+mk smartstatue :wp 100
+write smartstatue "0/3" ::nobase64
+mk strangestatue :wp 100
+write strangestatue "0/3" ::nobase64
+mk crazystatue :wp 100
+write crazystatue "0/3" ::nobase64
+cd ..
+mk mystory ::dir
+cd mystory
+mk story1.book
+write story1.book "Ugh, where to start... As I was told, I was the last of all the known 'systemic' ones to be created. To be honest, I didn't like living down here at all: it was dark, almost empty, and completely uninteresting. Personally, I guess. Because everyone else didn't seem to care. Rem and Miki's powers extended to the whole world, and Mova had a personal connection to the world. Elpa was unhappy about losing some of her work and her library, but because of that, she created an even more incredible library downstairs." ::nobase64
+mk story2.book
+write story2.book "Using my mind, I was able to create a personal development! They were boots that allowed me to walk on the surface of the systemic fluid. The main thing was that Rem didn't see me coming to the surface, because she doesn't like it when things don't go according to plan." ::nobase64
+mk story3.book
+write story3.book "Oh, I must have done something wrong. When I came to the surface as a guest, I built myself a small shop. Everyone was in wild shock that I was able to break the glass. Now I'm helping them with it, hoping that Rem won't find out, haha." ::nobase64
+cd ..

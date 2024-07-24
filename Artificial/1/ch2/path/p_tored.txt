@@ -1,0 +1,5 @@
+changecolours lightred red white
+changetextcolours white lightred lightgray
+clear
+cd RED:\exit
+write CORE:\system\.save "RED:\exit" ::nobase64

@@ -1,0 +1,41 @@
+cd BLUE:
+mk exit ::dir
+cd exit
+spawnnova
+setnewpath BLUE:\exit CORE:\.scripts\chapter2\p_frblue.txt
+cd ..
+mk tomosuli ::dir
+mk lipu
+write lipu "o tawa weka" ::nobase64
+mk sitelen
+write sitelen ""
+cd tomosuli
+mk tomolili1 ::dir
+mk tomolili2 ::dir
+mk lipu
+write lipu "mi kute e kalama utasina pali e seme?" ::nobase64
+mkitem ilositelen "Ilo sitelen" "It's just a blue pensil. It was probably used to draw most of what I see here."
+mk akesilaso
+setnewpath BLUE:\tomosuli\tomolili1 CORE:\.scripts\chapter2\p_akesi.txt
+setnewpath BLUE:\tomosuli\tomolili2 CORE:\.scripts\chapter2\p_akesi.txt
+cd tomolili1
+mk lipu1
+write lipu1 "sina pali e seme?" ::nobase64
+mk lipu2
+write lipu2 "mi toki suli tawa sina" ::nobase64
+mkitem lipu "Lipu" "A blank piece of paper"
+cd ..
+cd tomolili2
+mk sad.girl :wp 99
+write sad.girl ""
+mk lipu1
+mk lipu2
+mk lipu3
+mk lipu4
+write lipu1 "ike" ::nobase64
+write lipu2 "ike" ::nobase64
+write lipu3 "ike" ::nobase64
+write lipu4 "ike" ::nobase64
+mk lipupisunoale ::dir :p 13
+cd lipupisunoale :preenter 13
+mkpack tokipona "Toki pona translator"
