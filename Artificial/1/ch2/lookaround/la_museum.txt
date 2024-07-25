@@ -1,0 +1,4 @@
+d "Oh, I get it, it's a museum!"
+d "There are some strange things here, like this bubble with a pearl inside!"
+d "And this beautiful glass knife, which is probably the work of Packmi."
+d "But the most important thing should be behind the door, it the 'Room of the Goddesses'."

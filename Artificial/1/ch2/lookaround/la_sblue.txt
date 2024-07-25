@@ -1,0 +1,4 @@
+d "There are a lot of corridors around here with a huge number of rooms that they connect."
+d "There is also a lot of text on the walls that I cannot understand."
+d "It looks like some other language, althrough the word construction and symbols are familiar."
+d "I can also see some scribbly creatures walking around."

@@ -1,0 +1,3 @@
+d "It's dark in here."
+d "There is a lot of garbage and dust around."
+d "I don't like it, but i feel their thoughts."

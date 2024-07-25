@@ -1,0 +1,3 @@
+d "That's strange."
+d "I don't see any way out."
+d "How did we even get here!"

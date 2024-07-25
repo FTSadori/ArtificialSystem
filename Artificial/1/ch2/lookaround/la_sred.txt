@@ -1,0 +1,2 @@
+d "Oh, this is what her home looks like."
+d "It is much less clean than her shop."

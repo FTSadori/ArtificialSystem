@@ -1,0 +1,5 @@
+d "Roots seeping through the ground."
+d "The closer they are to the ground, the blacker ther become."
+d "A thick blue liquid runs through the roots and shines on them."
+d "It's look like veins in a skinny arm."
+d "Also, some roots are connected to large colorful seeds."

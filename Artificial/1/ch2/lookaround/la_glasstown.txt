@@ -1,0 +1,10 @@
+d "From here I can see the glass town itself."
+d "But the first thing that surprised me was the atmosphere."
+d "Instead of air, there was some kind of liquid that was so thin that you could move freely in it."
+d "After standing on the ground, I felt that it was not completely solid."
+d "It was also a liquid, but much, much thicker and even jelly-like!"
+d "Packmi even put on some boots so that she could walk freely."
+d "..." :sl 100 ::bysymbol
+d "Oh, there are also a lot of big bubbles flying around!"
+d "Sometimes they are so big that they stick to the surface and turn into hills."
+d "There are even whole mountains nearby!"

@@ -1,0 +1,3 @@
+d "These... these are corpses!"
+d "It's terrible, their bodies were definitely abused."
+d "I really don't want to be in their shoes."

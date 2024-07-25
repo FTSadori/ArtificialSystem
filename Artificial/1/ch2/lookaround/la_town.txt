@@ -1,0 +1,8 @@
+d "On the inside, this city is even more fabulous than is looks from the outside."
+d "Oddly shaped glass buildings that don't even have a corner."
+d "The only building that stands out from the rest is a small shop that is perfectly flat and beautifully decorated."
+d "As for the other building, there are a few more, one of which is relatively huge, standing almost in the middle of the town."
+d "There are also a few smaller buildings that are probably houses."
+d "But even though the houses are made of glass, they are not transparent."
+d "It's because the liquid we are walking on has been used to fill the walls inside."
+d "It's a strange and beautiful sight."

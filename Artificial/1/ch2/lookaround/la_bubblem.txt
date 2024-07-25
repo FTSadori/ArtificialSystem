@@ -1,0 +1,6 @@
+d "..." :sl 100 ::bysymbol
+d "I think I've lost my mind."
+d "These bubbles speak to me!"
+d "But... I can't understand them."
+d "It would be really great to be able to read minds."
+d "Maybe they will help me find a new password."

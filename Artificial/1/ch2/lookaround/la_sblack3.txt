@@ -1,0 +1,3 @@
+d "W...what the hell?"
+d "The floor is covered with... corpses."
+d "Or what it is..."

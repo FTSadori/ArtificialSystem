@@ -1,0 +1,10 @@
+d "As it usually happends in various games, we calmly entered someone else's house."
+d "Although this girl let us in, she looked like she wanted to do something else than talk to us."
+d "Behind her on the bed was a pile of plush toys."
+d "It must be comfortable!"
+d "I wonder how they found a way to make such soft toys here."
+d "Could it be some kind of substance made from the jelly underfoot?"
+d "Most likely, Packmi brought something here."
+d "..." :sl 100 ::bysymbol
+d "The girl herself was wearing light blue dress."
+d "Her cap, from which her solf purple hair falls down in lush curls."

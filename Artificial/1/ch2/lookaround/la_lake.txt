@@ -1,0 +1,6 @@
+d "Personally, I don't really understand how it was possible to create a lake here."
+d "But they did it!"
+d "Some kind of machine with a needle sucks out the liquid from below, piercing the surface."
+d "..." :sl 100 ::bysymbol
+d "I hate needles."
+d "They always give me unpleasant visions."

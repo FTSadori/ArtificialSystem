@@ -1,0 +1,4 @@
+d "There are endless black trees around, with bells hanging from their branches."
+d "Rain falls on the bells, making them sound even louder."
+d "But..."
+d "Everything is so harmonious that it is unbelievable."
