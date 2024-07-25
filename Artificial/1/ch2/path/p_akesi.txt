@@ -1,2 +1,3 @@
 d "I can't get around this monster..."
+d "Maybe something from this world can help."
 go ..
