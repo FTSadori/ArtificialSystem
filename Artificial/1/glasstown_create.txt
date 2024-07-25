@@ -56,7 +56,7 @@ cd ..
 mk shelf2 ::dir
 cd shelf2
 mkpack mova1.0.0.0.0.0 "Contains the first version of the ancient language. Smart was able to create a package based on Elpa's records, but hasn't been able to use it yet. The rules are written in mova1.0.0.0.0.0.info."
-mk mova1.0.0.0.0.0.info :rp 11
+mk mova1.0.0.0.0.0.info :rp 13
 write mova1.0.0.0.0.0.info "VGhlIGxhbmd1YWdlIGlzIGJhc2VkIG9uIGEgcmVnaXN0ZXIgbWFjaGluZS4gVGhpcyB2ZXJzaW9uIG9mIG1vdmEgY29uc2lzdHMgb2YgZm91ciBjb21tYW5kczoKMDAwMCAtIHplcm9pbmc7CjAwMDEgLSBpbmNyZW1lbnQ7CjAwMTAgLSB0cmFuc2ZlcjsKMDAxMSAtIGp1bXA7CkV2ZXJ5IGNvbW1hbmQgY29uc2lzdHMgb2YgNCBiaXRzLiBUaGUgc2l6ZSBvZiB0aGUgYXJndW1lbnRzIGlzIGFsc28gNCBiaXRzLgonWmVyb2luZycgcmVzZXRzIHRoZSB2YXJpYWJsZSBieSBudW1iZXIuIFNvLCAnMDAwMDAwMTEnIHJlc2V0cyB2YXJpYWJsZSBudW1iZXIgdGhyZWUgKFsyLCA0LCAxLCAzLCA1XSA9PiBbMiwgNCwgMSwgMCwgNV0pLgonSW5jcmVtZW50JyBhZGRzIG9uZSB0byB2YXJpYWJsZS4gU28sICcwMDAxMDAxMCcgd2lsbCBjaGFuZ2UgWzIsIDQsIDEsIDMsIDVdIHRvIFsyLCA0LCAyLCAzLCA1XS4KJ1RyYW5zZmVyJyBjb3BpZXMgYSB2YWx1ZSBmcm9tIG9uZSB2YXJpYWJsZSB0byBhbm90aGVyLiBTbywgJzAwMTAwMDAwMDAwMScgd2lsbCBjaGFuZ2UgWzIsIDQsIDEsIDMsIDVdIHRvIFsyLCAyLCAxLCAzLCA1XS4KJ0p1bXAnIGNoZWNrcyB3aGV0aGVyIHRoZSB2YWx1ZXMgYXJlIHRoZSBzYW1lLCBhbmQgaWYgc28sIGV4ZWN1dGVzIHRoZSBzZWxlY3RlZCBsaW5lIG5leHQsIG90aGVyd2lzZSB0aGUgbmV4dCBsaW5lIGluIHRoZSBmaWxlLiBTbywgJzAwMTEwMDAwMDAwMTAwMTEnIHdpbGwgZXhlY3V0ZSB0aGUgdGhpcmQgbGluZSBuZXh0LCBpZiB0aGUgemVybyBhbmQgZmlyc3QgdmFsdWVzIGFyZSB0aGUgc2FtZS4KCkZpbGUgbXVzdCBzdGFydCBmcm9tICdtb3ZhJyBsaW5lLiBBZnRlciB0aGF0LCB5b3UgbmVlZCB0byB3cml0ZSBvbmx5IG9uZSBjb21tYW5kIHBlciBsaW5lIG9mIHRoZSBmaWxlLg=="
 cd ..
 mk shelf3 ::dir
@@ -146,3 +146,4 @@ setnewpath GLASSTOWN:\roots\deeper\sevenseeds\yellow.7z CORE:\.scripts\chapter2\
 setnewpath GLASSTOWN:\roots\deeper\sevenseeds\blue.7z CORE:\.scripts\chapter2\p_toblue.txt
 setnewpath GLASSTOWN:\roots\deeper\sevenseeds\green.7z CORE:\.scripts\chapter2\p_togreen.txt
 setnewpath GLASSTOWN:\roots\deeper\sevenseeds\violet.7z CORE:\.scripts\chapter2\p_toviolet.txt
+setnewpath GLASSTOWN: CORE:\.scripts\chapter2\p_glasstown.txt
