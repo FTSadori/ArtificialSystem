@@ -1,0 +1,19 @@
+d "- ..." :sl 100 ::bysymbol
+d "- W-what now?"
+d "..." sl 100 ::bysymbol
+d "- Don't scare me like that, assistant."
+d "With Packmi's help, I was able to use the packages of Miki and Nano that I had taken from the museum."
+d "- ?!!!" sl 100 ::bysymbol
+d "- You've only been in this city for ten bloody minutes!"
+d "Have I?"
+d "- ..." sl 100 ::bysymbol
+d "I'm sorry."
+d "But... Now I can help you with something."
+d "- Uh... Okay, then."
+d "- Try to solve one problem."
+opentask increment
+d "- Read the Mova manual on the second shelf."
+d "- Good luck."
+addlvls citizen 1
+d "*You have raised the level by 1*"
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

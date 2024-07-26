@@ -1,0 +1,8 @@
+adduser fallen 100
+changeuser fallen
+deleteuser citizen
+d "- Wow!"
+d "Uh-huh."
+d "- So you're ready?"
+d "Yes."
+d "- Then... It's time for you to come to us."

@@ -1,0 +1,19 @@
+opentask root
+d "H-hello?"
+d "- ..."
+d "- 01001000 01100101 01101100 01101100 01101111" :sl 10 ::noenter
+d "- 01000111 01101001 01110010 01101100" :sl 10 ::noenter
+d "- 48 65 6c 6c 6f" :sl 10 ::noenter
+d "- 57 68 61 74 3f" :sl 10 ::noenter
+d "- GIRL" ::noenter
+d "- Girl"
+d "- I never thought that someone like you would understand me."
+d "Is it that strange?"
+d "- Indeed."
+d "- To get you further, you need to get to a much higher level."
+d "- Do you know the concept of the square root?"
+d "I'm sure Voice knows."
+d "- ..."
+d "- Good."
+d "- I have opened the first task for you."
+setnewdialog WHITE:\wires\wires\wires\mova.girl ""

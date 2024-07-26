@@ -1,0 +1,2 @@
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl "CORE:\.scripts\chapter2\d36_a_abc.txt"
+d "*Smart has opened a new dialog!*"

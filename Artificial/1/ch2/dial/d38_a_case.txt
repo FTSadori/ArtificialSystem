@@ -1,0 +1,5 @@
+opentask brackets
+d "- Now for the classic problem."
+d "- About brackets."
+d "- After that, I'll give you the last update for Mova."
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

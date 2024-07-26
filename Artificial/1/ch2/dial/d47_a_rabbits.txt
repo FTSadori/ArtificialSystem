@@ -1,0 +1,10 @@
+opentask sort
+addlvls citizen 20
+d "- Yes."
+d "- I don't know who you are."
+d "- But I know you'll surprise me."
+d "- I'm sure you know about sorting algorithms."
+d "- I won't tell you which algorithm to use, it's up to you."
+d "- I'll wait."
+setnewdialog WHITE:\wires\wires\wires\mova.girl ""
+d "*You have raised the level by 20*"

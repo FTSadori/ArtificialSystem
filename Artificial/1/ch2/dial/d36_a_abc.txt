@@ -1,0 +1,4 @@
+opentask case
+d "- Now try reverse the cases of characters in the input word!"
+d "- It should be easy!"
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

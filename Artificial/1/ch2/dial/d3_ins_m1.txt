@@ -1,0 +1,13 @@
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl CORE:\.scripts\chapter2\d4_smart2.txt
+d "- Whoa, whoa, girl!"
+d "- Is this really Mova's teaching?"
+d "- She's cool, but she's too mysterious, and I've never been able to understand her."
+d "- Like, no one could."
+d "Who is this Mova?"
+d "- I think you'll see for yourself."
+d "- It's not very nice to talk about the one who can hear us."
+d "W-well."
+d "It's not very nice to eavesdrop on us either!"
+d "- Haha!"
+d "- You're right, girl."
+d "- But she doesn't have much choice."

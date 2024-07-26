@@ -1,0 +1,17 @@
+opentask rabbits
+addlvls citizen 5
+cd GLASSTOWN:\roots\root1
+mkitem rareglass "Rare glass" "Rare and beautiful glass fruit."
+cd WHITE:\wires\wires\wires
+d "- Interesting."
+d "- Voice."
+d "- I want to see how much you know."
+d "- Do you know the problem about the number of rabbits?"
+d "- Let's do a little simulation."
+d "- First, we have one small rabbit."
+d "- After a day, it grows. And after another day, hit gives birth to another rabbit."
+d "- So, with all these rules..."
+d "- How many rabbits will there be on the Nth day?"
+d "- I'll wait."
+setnewdialog WHITE:\wires\wires\wires\mova.girl ""
+d "*You have raised the level by 5*"

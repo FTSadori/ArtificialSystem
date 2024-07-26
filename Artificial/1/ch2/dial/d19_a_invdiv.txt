@@ -1,0 +1,15 @@
+mkitem testtube "Test tube" "Don't make me tell you what it's made of again."
+pick testtube
+cd shelf2
+mkpack mova2.4.1.0.0.0.pack "Second module. Instead of the binary system, you must now use hexadecimal. It's better, trust me."
+cd ..
+addlvls citizen 1
+d "- Now it's time for a massive update!"
+d "- Do you like hexadecimal numbers?"
+d "No."
+d "- Good."
+d "- With the new update, writing code will now be much easier."
+d "- But before we continue, go down to the deep roots and fill the test tube I'm going to give you."
+d "*You have got a test tube*"
+d "*You have raised the level by 1*"
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

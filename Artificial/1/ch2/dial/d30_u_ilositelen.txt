@@ -1,0 +1,9 @@
+mkitem ilositelen "Ilo sitelen" "It's just a blue pensil. It was probably used to draw most of what I see here."
+pick ilositelen
+rm pona.txt
+rm akesilaso
+setnewpath BLUE:\tomosuli\tomolili1 ""
+setnewpath BLUE:\tomosuli\tomolili2 ""
+d "*The monster is dissolved*"
+rm CORE:\system\.inventory\ilositelen.item
+setnewdialog BLUE:\tomosuli\tomolili2\sad.girl CORE:\.scripts\chapter2\d31_sad.txt

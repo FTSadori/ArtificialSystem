@@ -1,0 +1,4 @@
+opentask hello
+d "*New task is opened*"
+d ""
+setnewdialog BLUE:\tomosuli\tomolili2\sad.girl CORE:\.scripts\chapter2\d32_sad2.txt

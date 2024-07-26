@@ -1,0 +1,4 @@
+mkitem filledfruit "Filled fruit" "The most common combo of materials that can be found here."
+pick filledfruit
+d "*You have filled a hollow glass fruit.*"
+d "*You get the fruit with the liquid.*"

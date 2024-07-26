@@ -1,0 +1,5 @@
+opentask sum
+d "- Thank you."
+d "Why do you need it?"
+d "- I'll make a new update for Mova out of this when I get to know it better with you."
+d "- I have a new task for you, try it."

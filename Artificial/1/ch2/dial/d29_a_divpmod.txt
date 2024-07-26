@@ -1,0 +1,13 @@
+opentask divpmod
+addlvls citizen 5
+cd shelf2
+mkpack mova3.8.2.1.3.0.pack "Symbolic Mova."
+cd ..
+d "- I didn't think you were so good at it."
+d "- With you, we will learn Mova much faster than I could have imagined."
+d "- ..."
+d "- I heard an interesting thing."
+d "- One of the seeds must contain a world where a strange language is spoken."
+d "- I want you to explore it."
+d "*You have raised the level by 5*"
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

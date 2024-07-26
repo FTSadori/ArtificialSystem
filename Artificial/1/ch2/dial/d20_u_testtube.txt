@@ -1,0 +1,4 @@
+mkitem filledtesttube "Filled test tube" "A tube of information liquid made by wood, sucking out information about the state of the world."
+pick filledtesttube
+d "*Another substance flowed from a small incision on the black roots.*"
+d "*You have got a filled test tube*"

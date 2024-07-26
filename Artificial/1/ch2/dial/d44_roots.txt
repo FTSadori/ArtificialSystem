@@ -1,0 +1,2 @@
+setnewdialog WHITE:\wires\wires\wires\mova.girl "CORE:\.scripts\chapter2\d45_a_roots.txt"
+d "*Mova has opened a new dialog!*"

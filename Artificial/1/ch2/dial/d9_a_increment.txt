@@ -1,0 +1,13 @@
+addlvls citizen 1
+d "*You have raised the level by 1*"
+d "- Hm?"
+d "- Have you figured it out?"
+d "I think so."
+d "- Hmm, great. It's good that my assistan can think."
+d "Eh?"
+d "- Good, then you can start performing real tasks."
+d "- But before that, I need another glass writing board."
+d "- You can find glass fruits in the roots, fill it with liquid and bring it to me."
+d "- Ah.. yes."
+d "- 'Please'."
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

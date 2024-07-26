@@ -1,0 +1,15 @@
+opentask decrement
+cd shelf2
+mkpack mova0.2.0.0.0.0.pack "Adds two bits to numbers. If the command loocked like '001100000001', now it's '0011000000000001'. This allows you to use more lines and larger numbers."
+cd ..
+d "- Great!"
+d "Maybe I'll like it."
+d "- In honor of this, I'll give you a new task."
+d "Yaaay."
+d "- But this time I made new changes to Mova."
+d "- I was able to expand the size of the numbers by two bits, so after running the update..."
+d "- ...you will have to write 4 bits for the command number and 6 bits for each of the arguments."
+d "Okay, I'll try."
+d "Write down some new instructions for me then."
+d "- Fine, look at the second shelf then."
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

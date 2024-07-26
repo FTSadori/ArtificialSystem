@@ -1,0 +1,20 @@
+d "- Come here, quickly!"
+d "What happened?"
+d "- What happened was that you didn't lie."
+d "- I gave you a copy of a file that no one could use properly anyway."
+d "- But now I have access to the first version of Mova on my screen connected to the tree roots."
+d "..." :sl 100 ::bysymbol
+d "Yaaay!"
+d "- It's not just 'yay'!"
+d "- This is a breakthrough!"
+d "Oh, okay, cool."
+d "- Since you are the new Nova in this town, I'll give you a badge."
+d "*Use 'citizenhelp' command to find out what you can do*" :sl 50
+adduser citizen 10
+changeuser citizen
+deleteuser visitor
+d "- Now you can walk around the city. Have fun."
+d "So abrupt!"
+d "- Yes, do not disturb me."
+d "Hmph."
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

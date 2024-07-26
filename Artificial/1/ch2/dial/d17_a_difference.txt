@@ -1,0 +1,7 @@
+opentask intdiv
+cd shelf2
+mkpack mova0.4.0.0.0.0.pack "Another +2 bits. Live with that."
+cd ..
+d "- Then now... There will be one last task before the massive update."
+d "- And check the second shelf. There's a surprise."
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

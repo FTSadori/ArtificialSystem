@@ -1,0 +1,9 @@
+addlvls citizen 1
+d "*You have raised the level by 1*"
+d "*Check your level with 'userlist'*"
+d "- Interesting, interesting!"
+d "- It seems that this town has collected a lot of treasures."
+d "- Although I don't think the girls left it here..."
+d "- Could it be Elpa? She's always so kind."
+d "I'm not even going to ask anything, it's all very confusing."
+d "- Haha! Fine."

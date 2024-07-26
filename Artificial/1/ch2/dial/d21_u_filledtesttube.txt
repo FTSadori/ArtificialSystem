@@ -1,0 +1,4 @@
+opentask mult
+d "- Oh, girl, I've been waiting for you."
+d "- Do you want to try the new version?"
+d "- I've opened a new task for you, and I'll continue to study this further."

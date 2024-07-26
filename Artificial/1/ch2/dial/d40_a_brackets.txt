@@ -1,0 +1,17 @@
+addlvls citizen 10
+mkitem MATHTASK "Equations" "A piece of paper with mathematical equations."
+cd shelf2
+mkpack mova4.16.9.9.9.9.pack "Symbolic Mova."
+cd ..
+d "- Behold."
+d "- The latest version is on the shelf."
+d "- Now I think we can talk to her."
+d "With whom?"
+d "- With Mova herself."
+d "- She is still available, but in order to understand her, is was necessary to study how she communicates with the world."
+d "- Find the purple seed and understand how to get the data from www.mova.com."
+d "Why me again?"
+d "- Because now you are already higher level than me."
+d "*You have raised the level by 10*"
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""
+setnewdialog VIOLET:\largeweb\strange.girl CORE:\.scripts\chapter2\d41_strange.txt
