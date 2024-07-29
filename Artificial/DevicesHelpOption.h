@@ -29,6 +29,7 @@ namespace Commands
 			ptr->print_main("Use next commands with ::help to get more info:\n");
 			ptr->print_third("- fromport\n");
 			ptr->print_third("- openport\n");
+			ptr->print_third("- allfromport\n");
 
 			return;
 		}

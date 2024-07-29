@@ -378,9 +378,6 @@
     <ClCompile Include="SymbolsModule.cpp">
       <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
     </ClCompile>
-    <ClCompile Include="FinalModule.cpp">
-      <Filter>Исходные файлы\Core\Mova\Compilers</Filter>
-    </ClCompile>
     <ClCompile Include="FinalModuleKeyWords.cpp">
       <Filter>Исходные файлы\Core\Mova\FinalModule</Filter>
     </ClCompile>
@@ -886,6 +883,9 @@
     </ClInclude>
     <ClInclude Include="StarterTasks.h">
       <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadAllFromPortOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Devices\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

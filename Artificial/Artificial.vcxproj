@@ -145,7 +145,6 @@
     <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
-    <ClCompile Include="FinalModule.cpp" />
     <ClCompile Include="FinalModuleKeyWords.cpp" />
     <ClCompile Include="FullPath.cpp" />
     <ClCompile Include="GUIHandler.cpp" />
@@ -208,6 +207,7 @@
     <ClInclude Include="EchoOption.h" />
     <ClInclude Include="GoNovaOption.h" />
     <ClInclude Include="ItemUsingHandler.h" />
+    <ClInclude Include="LoadAllFromPortOption.h" />
     <ClInclude Include="LookAroundOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
     <ClInclude Include="MovaVersionHandler.h" />
