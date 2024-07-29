@@ -33,7 +33,7 @@ namespace Commands
 				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::v] [::show] [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
 				ptr->print_main("  ... - (doubles) input stream;\n");
-				ptr->print_main("  ::v - (flag) print max version");
+				ptr->print_main("  ::v - (flag) print max version\n");
 				ptr->print_main("  ::show - (flag) on 4th module shows half-compiled code;\n");
 				ptr->print_main("  :r register_show_num - (flag + int) shows no less than entered number of registers\n");
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
@@ -116,14 +116,13 @@ namespace Commands
 					break;
 			ptr->print_third("0]\n");
 
-			// line starts from [res[0]] symbol
-			for (size_t i = res[0]; i < res.size(); ++i)
+			for (size_t i = 0; i < res.size(); ++i)
 				if (i < checker || res[i] != 0)
 				{
 					try
 					{
 						if (res[i] >= 32 && res[i] <= 255)
-							str_res.push_back((char)res[i]);
+							str_res += (char)res[i];
 					}
 					catch (...) { }
 				}

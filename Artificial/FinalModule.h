@@ -38,12 +38,23 @@ namespace Mova
 			return { "IN " + data.ptr + ((data.asterisk) ? " 0" : "") };
 		}
 
+		static std::vector<std::string> check_output(const std::vector<std::string>& parts, VarVector& vv, ConstantsVector& cv, MarkVector& mv, size_t code_len, size_t line)
+		{
+			if (parts.size() != 2)
+				throw ProcessorException("Compile: Wrong expression (Line " + Parser::to_string(line + 1) + ")");
+
+			auto data = LRValue::get_rvalue(parts[1], vv, cv, line);
+			return { "OUT " + data.first + ((data.second == 0) ? "" : " 1")};
+		}
+
 		static std::vector<std::string> check_all(const std::vector<std::string>& parts, VarVector& vv, ConstantsVector& cv, MarkVector& mv, size_t code_len, size_t line)
 		{
 			if (parts[0] == "goto")
 				return JumpExpression::convert_goto(parts, vv, cv, mv, line);
 			else if (parts[0] == ">>")
 				return check_input(parts, vv, cv, mv, code_len, line);
+			else if (parts[0] == "<<")
+				return check_output(parts, vv, cv, mv, code_len, line);
 			else
 				return check_undefined(parts, vv, cv, mv, code_len, line);
 		}

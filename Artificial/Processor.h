@@ -72,16 +72,22 @@ namespace Mova
 				case 0b1011: math(arguments, '<', 2); break;
 				case 0b1100: math(arguments, '>', 2); break;
 				case 0b1101: in(arguments, input, input_ptr); break;
-				case 0b1110: func(arguments); break;
-				case 0b1111: end(arguments); break;
+				case 0b1110: 
+					if (out(arguments) >= m_registers.size())
+						throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Wrong out argument. Registers array only "
+							+ Parser::to_string(c_registers_size) + " numbers long");
+					m_registers = std::vector<double>(m_registers.begin() + out(arguments), m_registers.end());
+					return m_registers;
+				//case 0b1110: func(arguments); break;
+				//case 0b1111: end(arguments); break;
 				}
 
-				if (num != 0b0011 && num != 0b1110)
+				if (num != 0b0011)
 					m_execution_ptr++;
 			}
 
-			if (m_func_mode)
-				throw ProcessorException("Code: Function didn't found END (1111) command");
+			//if (m_func_mode)
+			//	throw ProcessorException("Code: Function didn't found END (1111) command");
 
 			return m_registers;
 		}
@@ -218,6 +224,16 @@ namespace Mova
 			m_last_register = max(m_last_register, get_index(arguments[0]));
 		}
 
+		int out(const std::vector<int>& arguments)
+		{
+			check_for_arguments(arguments, 1, 2);
+			if (arguments.size() == 1)
+				return get_index(arguments[0]);
+			else
+				return unsigned(m_registers[get_index(arguments[0])]);
+		}
+
+		/*
 		void func(const std::vector<int>& arguments)
 		{
 			check_for_arguments(arguments, 1, 2);
@@ -250,7 +266,7 @@ namespace Mova
 			if (m_call_stack.empty())
 				m_func_mode = false;
 		}
-
+		*/
 	private:
 		std::vector<double> m_registers;
 		int m_stack_ptr = 0;
