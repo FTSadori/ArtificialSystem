@@ -1,4 +1,4 @@
 d "- Oh?"
 d "- Is this for me?"
 d "- That's so nice, kitty!"
-write CORE:\.charas\packmi 0 ::nobase64 ::append
+mk RED:\flower

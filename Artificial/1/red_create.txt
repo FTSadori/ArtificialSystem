@@ -8,16 +8,16 @@ mk tools1 :wp 100
 mk tools2 :wp 100
 mk myfigures ::dir
 cd myfigures
-mk sadstatue :wp 100
-write sadstatue "0/3" ::nobase64
-mk sleepystatue :wp 100
-write sleepystatue "0/3" ::nobase64
-mk smartstatue :wp 100
-write smartstatue "0/3" ::nobase64
-mk strangestatue :wp 100
-write strangestatue "0/3" ::nobase64
-mk crazystatue :wp 100
-write crazystatue "0/3" ::nobase64
+mk sadfigurine :wp 100
+write sadfigurine "0/3" ::nobase64
+mk sleepyfigurine :wp 100
+write sleepyfigurine "0/3" ::nobase64
+mk smartfigurine :wp 100
+write smartfigurine "0/3" ::nobase64
+mk strangefigurine :wp 100
+write strangefigurine "0/3" ::nobase64
+mk crazyfigurine :wp 100
+write crazyfigurine "0/3" ::nobase64
 cd ..
 mk mystory ::dir
 cd mystory

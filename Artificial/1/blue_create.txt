@@ -23,7 +23,6 @@ mk lipu1
 write lipu1 "sina pali e seme?" ::nobase64
 mk lipu2
 write lipu2 "mi toki suli tawa sina" ::nobase64
-mkitem lipu "Lipu" "A blank piece of paper"
 cd ..
 cd tomolili2
 mk sad.girl :wp 99
@@ -34,7 +33,7 @@ mk lipu3
 mk lipu4
 write lipu1 "ike" ::nobase64
 write lipu2 "ike" ::nobase64
-write lipu3 "ike" ::nobase64
+write lipu3 "ike ike ike" ::nobase64
 write lipu4 "ike" ::nobase64
 mk lipupisunoale ::dir :p 13
 cd lipupisunoale :preenter 13

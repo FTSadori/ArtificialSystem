@@ -9,6 +9,7 @@ adddisk VIOLET 1000000 1000
 adddisk BLUE 1000000 1000
 adddisk GREEN 1000000 1000
 adddisk WHITE 1000000 1000
+adddisk SYSTEMTOWN 1000000 1000
 startsystem
 adduser visitor 0
 run 1\core_create.txt ::real
@@ -22,5 +23,6 @@ run 1\green_create.txt ::real
 run 1\violet_create.txt ::real
 run 1\blue_create.txt ::real
 run 1\white_create.txt ::real
+run 1\systemtown_create.txt ::real
 passreload
 run CORE:\.scripts\chapter1\core_greetings.txt
