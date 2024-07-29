@@ -1,0 +1,9 @@
+d "Hey, Packmi!"
+d "- Oh, hello!"
+d "This is for you..."
+d "- Oh.. my.. goddess!"
+d "- Thank you, kitty!"
+d "- You're veeery perceptive, I like that about you so much."
+d "- I'm going to take this home!"
+mk RED:\myfigures\packmifigurine :rp 100
+write RED:\myfigures\packmifigurine "5/5"

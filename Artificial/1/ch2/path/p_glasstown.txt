@@ -1,0 +1,6 @@
+d "- Here comes the town!"
+d "Oh. He's very beautiful from here."
+d "- Yeah!"
+d "- And know that I will always be waiting for you in my shop."
+d "Okay!"
+setnewpath GLASSTOWN: ""

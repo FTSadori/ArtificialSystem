@@ -1,0 +1,14 @@
+d "W-well."
+d "Hello!"
+d "My name is Nova."
+d "I like to communicate with different people!"
+d "I also like exploring and looking at beautiful landscapes."
+d "Oh, I also love to hear the sounds of nature!"
+d "..."
+d "- ..."
+d "- 00k44i..."
+d "Oh, sorry!"
+d "I didn't realize you couldn't get out of here..."
+mk letter2
+write letter2 "Can you bring me these... 'sounds of nature'?" ::nobase64
+setnewdialog VIOLET:\largeweb\strange.girl ""

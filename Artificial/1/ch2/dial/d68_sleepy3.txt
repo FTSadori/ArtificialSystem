@@ -1,0 +1,4 @@
+write music.txt " (...)" ::append
+write RED:\myfigures\sleepyfigurine "3/3"
+d "- Thank you."
+setnewdialog GLASSTOWN:\town\house\sleepy.girl ""

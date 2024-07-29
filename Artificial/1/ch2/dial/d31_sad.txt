@@ -1,4 +1,9 @@
 opentask hello
+d "Hello?"
+d "- Sina seme?"
+d "W-what?"
+d "- Sina kama tawa ni kepeken seme?"
+d "I-i don't understand!"
+d "- Mi kin ala sona e sina."
 d "*New task is opened*"
-d ""
 setnewdialog BLUE:\tomosuli\tomolili2\sad.girl CORE:\.scripts\chapter2\d32_sad2.txt

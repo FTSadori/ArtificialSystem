@@ -1,0 +1,21 @@
+write RED:\myfigures\smartfigurine "2/3"
+mk TASKS
+write TASKS ""
+mk chest ::dir :p "0"
+cd chest :preenter "0"
+mkitem note "Note" "Do you want to be friends?"
+cd ..
+passreload
+d "- Music?"
+d "- How do you know what kind of music I like?"
+d "Somehow..."
+d "I just figured it out."
+d "- Hmm..."
+d "- Do you want to do..."
+d "- ...some math?"
+d "Oh!"
+d "I don't mind!"
+d "- I'll leave you a note with the tasks, add the answers and get the password."
+d "- Then you can open the chest."
+d "- It's like a quest... for you."
+d "Interesting!"

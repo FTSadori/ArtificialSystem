@@ -1,0 +1,9 @@
+opentask mzzz
+d "- Zzzz....." ::bysymbol
+d "H-hey..."
+d "- Zzzzzzzz....." ::bysymbol
+d "H-" ::noenter
+d "- ZZZZzzzzzzzzz......." ::bysymbol
+d "Sorry!"
+d "*You have unlocked a new task*"
+setnewdialog GLASSTOWN:\town\house\sleepy.girl ""

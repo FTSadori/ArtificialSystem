@@ -1,0 +1,2 @@
+setnewdialog GLASSTOWN:\town\house\sleepy.girl "CORE:\.scripts\chapter2\d65_a_mzzz.txt"
+d "*Sleepy has opened a new dialog!*"

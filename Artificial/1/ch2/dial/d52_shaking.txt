@@ -1,0 +1,2 @@
+setnewdialog GLASSTOWN:\roots\deeper\darkroots\crazy.girl "CORE:\.scripts\chapter2\d54_a_shaking.txt"
+d "*Crazy has opened a new dialog!*"

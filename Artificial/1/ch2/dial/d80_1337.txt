@@ -1,0 +1,2 @@
+setnewdialog VIOLET:\largeweb\strange.girl "CORE:\.scripts\chapter2\d81_a_1337.txt"
+d "*Strange has opened a new dialog!*"

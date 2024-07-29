@@ -1,0 +1,6 @@
+write RED:\myfigures\strangefigurine "2/3"
+opentask 1337
+d "- ..."
+d "- 17 s00... 834u71fu1..."
+d "- ..."
+d "*You have unlocked a new task*"

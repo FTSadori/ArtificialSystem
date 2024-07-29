@@ -1,4 +1,3 @@
-opentask sort
 addlvls citizen 20
 d "- Incredible."
 d "- This time Elpa quessed right."

@@ -1,0 +1,9 @@
+opentask bintodec
+d "- Wow, is that for me?"
+d "- Thank you!"
+d "- By the way, I heard about your achievements."
+d "- Mova will be veeery pleased!"
+d "- As for her, I've never understood what kind of strange numbers she uses."
+d "- Can you help me understand some of them?"
+d "*You have unlocked a new task*"
+setnewdialog GLASSTOWN:\town\smallshop\packmi.girl ""

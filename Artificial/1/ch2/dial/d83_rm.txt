@@ -1,0 +1,3 @@
+write CORE:\removed "0" ::nobase64 ::append
+clear
+d "AAAAAAAAAAHHHHHHH[HHHHHHHHH\Hhh]hhhh\hhh[hhhhhhhhhh\hhh[[hh[hhhhhhh!!![\!!\!![!!\!!][[!}{!\]![" ::bysymbol :sl 1

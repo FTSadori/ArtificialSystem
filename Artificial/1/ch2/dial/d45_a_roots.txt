@@ -1,7 +1,7 @@
 opentask rabbits
 addlvls citizen 5
 cd GLASSTOWN:\roots\root1
-mkitem rareglass "Rare glass" "Rare and beautiful glass fruit."
+mkitem amazingfruit "Amazing glass fruit" "Ultra rare and exceptionally beautiful glass fruit."
 cd WHITE:\wires\wires\wires
 d "- Interesting."
 d "- Voice."

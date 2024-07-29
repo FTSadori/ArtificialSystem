@@ -1,0 +1,11 @@
+mk CORE:\removed ::h ::sys
+rm GLASSTOWN:\roots\deeper\sevenseeds\white.7z
+d "- ..."
+d "- Haha!"
+d "- Interesting, girl!"
+d "- I had no idea Rem was so problematic."
+d "- But look, be careful with this toy."
+d "- I warned you."
+adduser remover 99
+changeuser remover
+d "*You have reached level 99*"

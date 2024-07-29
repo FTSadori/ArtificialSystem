@@ -1,0 +1,4 @@
+d "I don't understand what you're talking about."
+d "I also can't figure out if you are the only one of your kind."
+write CORE:\.awareness 0 ::nobase64 ::append
+d "I feel that this girl knows a lot."

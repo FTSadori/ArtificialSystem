@@ -1,0 +1,3 @@
+opentask mathtask
+d "For some reason, I suddenly wanted to deal with these equations."
+d "*You have unlocked a new task*"

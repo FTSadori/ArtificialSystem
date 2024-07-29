@@ -1,0 +1,2 @@
+setnewdialog GLASSTOWN:\town\smallshop\packmi.girl "CORE:\.scripts\chapter2\d60_a_bintodec.txt"
+d "*Packmi has opened a new dialog!*"

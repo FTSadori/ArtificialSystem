@@ -1,0 +1,6 @@
+write RED:\myfigures\sadfigurine "1/3"
+d "*You gave the girl a flower*"
+d "*She stopped and took it slowly*"
+d "*She put a piece of paper on the floor*"
+mk lipu5
+write lipu5 "ike -> 1, ike ike ike -> 3, ~ike -> 0" ::nobase64

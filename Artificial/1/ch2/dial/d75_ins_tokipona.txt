@@ -1,0 +1,2 @@
+setnewdialog BLUE:\tomosuli\tomolili2\sad.girl CORE:\.scripts\chapter2\d76_sad3.txt
+d "*Sad has opened a new dialog!*"

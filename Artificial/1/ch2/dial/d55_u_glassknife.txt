@@ -1,0 +1,3 @@
+chmod GLASSTOWN:\town\museum\bubblewithperl :rp 10
+d "*You broke a bubble with a knife*"
+d "*The knife also broke*"

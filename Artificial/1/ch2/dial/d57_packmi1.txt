@@ -1,0 +1,3 @@
+d "- You know, I really like making things out of glass."
+d "- It's so soft!"
+d "- If you ever find some nice glass, please bring it to me."

@@ -1,0 +1,11 @@
+write RED:\myfigures\strangefigurine "1/3"
+d "- 000h..."
+d "*She picked up a pencil*"
+d "*She clearly liked it*"
+d "*Then she took out a piece of paper from the pile of papers and started writing*"
+d "- h...3110"
+d "*She gave the letter to us*"
+mk letter
+write letter "Hello. What's your name? How are you? Who are you?" ::nobase64
+nano letter
+setnewdialog VIOLET:\largeweb\strange.girl CORE:\.scripts\chapter2\d78_strange3.txt

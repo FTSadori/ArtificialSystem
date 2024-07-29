@@ -1,0 +1,8 @@
+d "- Sina tawa ni tan seme?"
+d "- Ike."
+d "- Jan ale li lon seme?"
+d "- Ike."
+d "- Jan soweli ike li ken ala pana e mi tan ni."
+d "- Ike."
+d "- Kama la sina ken sona e ijo."
+d "- Ike. Ike. Ike."
