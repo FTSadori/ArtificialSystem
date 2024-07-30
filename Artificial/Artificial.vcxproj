@@ -186,6 +186,7 @@
   <ItemGroup>
     <ClInclude Include="AddLvlsToUserOption.h" />
     <ClInclude Include="AddPackOption.h" />
+    <ClInclude Include="AdvancedTasks.h" />
     <ClInclude Include="BannedFileExtensionsHandler.h" />
     <ClInclude Include="BaseEventHandler.h" />
     <ClInclude Include="BaseHelpOption.h" />
@@ -205,11 +206,14 @@
     <ClInclude Include="DialogHandler.h" />
     <ClInclude Include="DialogLineOption.h" />
     <ClInclude Include="EchoOption.h" />
+    <ClInclude Include="FinalTasks.h" />
+    <ClInclude Include="GirlTasks.h" />
     <ClInclude Include="GoNovaOption.h" />
     <ClInclude Include="ItemUsingHandler.h" />
     <ClInclude Include="LoadAllFromPortOption.h" />
     <ClInclude Include="LookAroundOption.h" />
     <ClInclude Include="MovaHelpOption.h" />
+    <ClInclude Include="MovaTasks.h" />
     <ClInclude Include="MovaVersionHandler.h" />
     <ClInclude Include="MovaVersionLoadOption.h" />
     <ClInclude Include="OpenTaskOption.h" />

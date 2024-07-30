@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
 #include "StarterTasks.h"
+#include "AdvancedTasks.h"
+#include "FinalTasks.h"
+#include "MovaTasks.h"
+#include "GirlTasks.h"
 #include "StoryExceptions.h"
 #include <memory>
 #include <unordered_map>

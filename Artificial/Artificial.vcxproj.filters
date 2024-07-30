@@ -887,6 +887,18 @@
     <ClInclude Include="LoadAllFromPortOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Devices\Options</Filter>
     </ClInclude>
+    <ClInclude Include="AdvancedTasks.h">
+      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalTasks.h">
+      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="MovaTasks.h">
+      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="GirlTasks.h">
+      <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
