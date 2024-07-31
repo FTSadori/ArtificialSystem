@@ -256,6 +256,9 @@
     <Filter Include="Исходные файлы\Core\Story\Quest\Base">
       <UniqueIdentifier>{417e5ad1-f4d4-4c75-a6bd-74e3edf299bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\Remove">
+      <UniqueIdentifier>{35f977d8-2064-466f-88d9-0e602b6ef0d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -416,6 +419,9 @@
     </ClCompile>
     <ClCompile Include="BaseEventHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Quest\Remove</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -898,6 +904,9 @@
     </ClInclude>
     <ClInclude Include="GirlTasks.h">
       <Filter>Исходные файлы\Core\Story\Task\Tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\Remove</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

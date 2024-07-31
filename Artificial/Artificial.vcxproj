@@ -164,6 +164,7 @@
     <ClCompile Include="Permissions.h" />
     <ClCompile Include="RealFileManager.cpp" />
     <ClCompile Include="RealFileManager.h" />
+    <ClCompile Include="RemoveHandler.cpp" />
     <ClCompile Include="ScreenText.cpp" />
     <ClCompile Include="SectorInfo.cpp" />
     <ClCompile Include="SectorName.cpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="PasswordsReloadOption.h" />
     <ClInclude Include="PathEventsHandler.h" />
     <ClInclude Include="PickItemOption.h" />
+    <ClInclude Include="RemoveHandler.h" />
     <ClInclude Include="SetNewDialogOption.h" />
     <ClInclude Include="SetPathPairOption.h" />
     <ClInclude Include="ShowInventoryOption.h" />
