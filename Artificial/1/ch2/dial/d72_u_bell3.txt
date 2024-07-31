@@ -1,8 +1,8 @@
 write RED:\myfigures\smartfigurine "2/3"
 mk TASKS
-write TASKS ""
-mk chest ::dir :p "0"
-cd chest :preenter "0"
+write TASKS "There is a 1x10 cell field. You also have three different smaller boards, one, two and three cells long. How many ways can you arrange the three boards on a 1x10 field if each square must be either completely covered by one board or completely free. Also, the boards must all be directly on the 1x10 cell field."
+mk chest ::dir :p "210"
+cd chest :preenter "210"
 mkitem note "Note" "Do you want to be friends?"
 cd ..
 passreload
