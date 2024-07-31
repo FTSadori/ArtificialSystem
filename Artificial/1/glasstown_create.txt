@@ -106,12 +106,9 @@ cd ..
 cd ..
 mk lake ::dir :rp 10
 cd lake
-mk extractormachine1 ::dir
-mk extractormachine2 ::dir
-mk extractormachine3 ::dir
-cd extractormachine3
-mkitem mass "Jelly mass" "A jelly mass the color of the liquid underfoot. It is used in construction to make the material strong and opaque."
-cd ..
+mk extractormachine1
+mk extractormachine2
+mk extractormachine3
 cd ..
 cd ..
 mk roots ::dir :rp 14
