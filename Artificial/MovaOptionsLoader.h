@@ -7,6 +7,7 @@
 #include "RunTestsOption.h"
 #include "MovaVersionLoadOption.h"
 #include "OpenTaskOption.h"
+#include "SkipTaskOption.h"
 
 namespace Commands
 {
@@ -22,6 +23,8 @@ namespace Commands
 			controller.add_option("runtests", std::make_unique<RunTestsOption>(core));
 			controller.add_option("movavload", std::make_unique<MovaVersionLoadOption>(core));
 			controller.add_option("opentask", std::make_unique<OpenTaskOption>(core));
+			controller.add_option("opentask", std::make_unique<OpenTaskOption>(core));
+			controller.add_option("skiptask", std::make_unique<SkipTaskOption>(core));
 			return controller;
 		}
 	};

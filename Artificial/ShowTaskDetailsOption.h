@@ -44,6 +44,9 @@ namespace Commands
 			case Story::TaskState::CLOSED:
 				ptr->print_third("State: CLOSED\n");
 				break;
+			case Story::TaskState::SKIPPED:
+				ptr->print_third("State: SKIPPED\n");
+				break;
 			}
 
 			if (info.state == Story::TaskState::CLOSED)

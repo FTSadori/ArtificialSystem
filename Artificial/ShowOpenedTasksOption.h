@@ -41,6 +41,9 @@ namespace Commands
 				case Story::TaskState::CLOSED:
 					ptr->print_third(Parser::to_string(i) + ". ------\n");
 					break;
+				case Story::TaskState::SKIPPED:
+					ptr->print_main(Parser::to_string(i) + ". " + pair.first + " (SKIPPED)\n");
+					break;
 				}
 			}
 			

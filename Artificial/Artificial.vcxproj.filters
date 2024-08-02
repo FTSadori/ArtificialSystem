@@ -905,6 +905,9 @@
     <ClInclude Include="RemoveHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Remove</Filter>
     </ClInclude>
+    <ClInclude Include="SkipTaskOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Mova\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

@@ -11,6 +11,7 @@ namespace Story
 		CLOSED,
 		OPEN,
 		COMPLETE,
+		SKIPPED,
 	};
 
 	struct TaskInfo
