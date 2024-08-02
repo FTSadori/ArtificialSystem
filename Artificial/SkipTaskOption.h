@@ -20,13 +20,16 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Ne permission lvl needed\n");
+				ptr->print_main("13 permission lvl needed\n");
 				ptr->print_main("Skip task\n");
 				ptr->print_secondary("skiptask {name} {endgamepassword}\n");
 				ptr->print_main("  name - (string) key name of task \n");
 				ptr->print_main("  endgamepassword - (string) password given to you after first-time complition \n");
 				return;
 			}
+
+			if (sender.lvl() < 13)
+				throw PermissionException("(SkipTaskOption) Sender has low permission lvl");
 
 			if (!Story::TaskStateHandler::s_states.contains(_command.get("1")))
 				throw Story::TaskNameException("(SkipTaskOption) TaskStateHandler doesn't know about " + _command.get("1") + " task");

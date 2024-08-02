@@ -28,7 +28,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Execute permission lvl needed\n");
+				ptr->print_main("13 or execute permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
 				ptr->print_secondary("mova {path} [...] [:r register_show_num] [::v] [::show] [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
@@ -39,6 +39,9 @@ namespace Commands
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
+
+			if (sender.lvl() < 99)
+				throw PermissionException("(RunProgramOption) Sender has low permission lvl");
 
 			if (_command.has("::v"))
 			{

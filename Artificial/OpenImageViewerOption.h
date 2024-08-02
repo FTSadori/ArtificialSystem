@@ -22,7 +22,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Read file permission lvl needed\n");
+				ptr->print_main("11 permission lvl needed\n");
 				ptr->print_main("Opens file in image viewer\n");
 				ptr->print_secondary("lookat {path} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
@@ -31,19 +31,22 @@ namespace Commands
 				return;
 			}
 
+			if (sender.lvl() < 11)
+				throw PermissionException("(OpenImageViewerOption) Sender has low permission lvl");
+
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.system()).permissions;
 
 			if (disk.get_type(path.disk_path()) != Memory::FileT::FILE)
-				throw CommandException("(OpenTextEditorOption) It's not a file");
+				throw CommandException("(OpenImageViewerOption) It's not a file");
 
 			if (sender.lvl() < perm.read_perm_lvl)
-				throw PermissionException("(OpenTextEditorOption) Sender has low permission lvl");
+				throw PermissionException("(OpenImageViewerOption) Sender has low permission lvl");
 
 			if (perm.hidden && !sender.sudo())
-				throw PermissionException("(OpenTextEditorOption) Sender has low permission lvl");
+				throw PermissionException("(OpenImageViewerOption) Sender has low permission lvl");
 
 			if (_command.has(":preenter"))
 				m_core.passwords().check_password(perm.password_hash, _command.get(":preenter"));

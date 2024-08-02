@@ -22,7 +22,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("File write permission lvl needed\n");
+				ptr->print_main("11 or file write permission lvl needed\n");
 				ptr->print_main("Copy file or directory to another path\n");
 				ptr->print_secondary("copy {path} {new_path} [:source_pass pass] [:dest_pass pass]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
@@ -31,6 +31,9 @@ namespace Commands
 				ptr->print_main("  :dest_pass pass - (flag + string) password for {new_path} file if needed;\n");
 				return;
 			}
+
+			if (sender.lvl() < 11)
+				throw PermissionException("(CopyFileOption) Sender has low permission lvl");
 
 			// todo fix copypast
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));

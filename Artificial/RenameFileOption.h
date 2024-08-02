@@ -22,7 +22,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("File write permission lvl needed\n");
+				ptr->print_main("99 or file write permission lvl needed\n");
 				ptr->print_main("Renames file or directory\n");
 				ptr->print_secondary("rename {path} {new_name} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
@@ -32,10 +32,13 @@ namespace Commands
 				return;
 			}
 
+			if (sender.lvl() < 99)
+				throw PermissionException("(RenameFileOption) Sender has low permission lvl");
+
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
 			if (sender.lvl() < Story::BannedFileExtensionsHandler::get_min_level(_command.get("2")))
-				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
+				throw PermissionException("(RenameFileOption) Sender has low permission lvl");
 
 			auto& disk = m_core.memory().get_disk(path.mark());
 			auto perm = disk.get_info(path.disk_path(), sender.system()).permissions;

@@ -20,6 +20,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
+				ptr->print_main("13 permission level needed\n");
 				ptr->print_main("Shows information about task with entered name\n");
 				ptr->print_secondary("showtask {name}\n");
 				ptr->print_main("  name - (string) key name of task \n");

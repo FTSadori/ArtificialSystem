@@ -22,7 +22,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("File write permission lvl needed\n");
+				ptr->print_main("11 or file write permission lvl needed\n");
 				ptr->print_main("Writes text in file\n");
 				ptr->print_secondary("write {path} {base64_text} [:preenter password] [::nobase64] [::append]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
@@ -33,6 +33,9 @@ namespace Commands
 
 				return;
 			}
+
+			if (sender.lvl() < 11)
+				throw PermissionException("(MemoryWriteOption) Sender has low permission lvl");
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 

@@ -28,7 +28,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Max entered permission lvl needed\n");
+				ptr->print_main("12 or max entered permission lvl needed\n");
 				ptr->print_main("Creates file or directory. Your entered lvl can't be lower than lvl in directory\n");
 				ptr->print_secondary("mk {filename} [::dir] [::sys] [::h] [:p password] [:rp lvl] [:wp lvl] [:ep lvl] [:preenter password]\n");
 				ptr->print_main("  filename - (string) name of the new file;\n");
@@ -44,6 +44,9 @@ namespace Commands
 			}
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
+
+			if (sender.lvl() < 12)
+				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");
 
 			if (sender.lvl() < Story::BannedFileExtensionsHandler::get_min_level(path.disk_path().file()))
 				throw PermissionException("(MemoryCreateOption) Sender has low permission lvl");

@@ -27,7 +27,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("4 permission lvl needed\n");
 				ptr->print_main("Asks Packmi to install packages or show lists\n");
 				ptr->print_main("You need to have nova.girl and packmi.girl files in current directory\n");
 				ptr->print_secondary("packmi [::list] [::list_ins] [:install name]\n");
@@ -37,6 +37,9 @@ namespace Commands
 
 				return;
 			}
+
+			if (sender.lvl() < 4)
+				throw PermissionException("(PackmiOption) Sender has low permission lvl");
 
 			using namespace Memory;
 

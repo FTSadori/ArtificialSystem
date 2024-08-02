@@ -22,7 +22,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("File write permission lvl needed\n");
+				ptr->print_main("99 or file write permission lvl needed\n");
 				ptr->print_main("Moves file or directory to another directory\n");
 				ptr->print_secondary("move {path} {new_path} [:source_pass pass] [:dest_pass pass]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
@@ -32,6 +32,9 @@ namespace Commands
 
 				return;
 			}
+
+			if (sender.lvl() < 99)
+				throw PermissionException("(MoveFileOption) Sender has low permission lvl");
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 			Memory::FullPath new_path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("2"));

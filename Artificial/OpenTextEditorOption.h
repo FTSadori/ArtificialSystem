@@ -22,7 +22,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Read/write file permission lvl needed\n");
+				ptr->print_main("Minimum 11 permission lvl needed\n");
 				ptr->print_main("Opens file in text editor\n");
 				ptr->print_secondary("nano {path} [:preenter password]\n");
 				ptr->print_main("  path - (string) absolute or relative path;\n");
@@ -30,6 +30,9 @@ namespace Commands
 
 				return;
 			}
+
+			if (sender.lvl() < 11)
+				throw PermissionException("(OpenTextEditorOption) Sender has low permission lvl");
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 

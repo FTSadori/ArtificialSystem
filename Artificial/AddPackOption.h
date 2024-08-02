@@ -24,7 +24,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("No permission lvl needed\n");
+				ptr->print_main("4 permission lvl needed\n");
 				ptr->print_main("Adds chosen package to package list for future installation\n");
 				ptr->print_main("You need to have nova.girl file in current directory\n");
 				ptr->print_main("Works only with *.pack files\n");
@@ -32,6 +32,9 @@ namespace Commands
 				ptr->print_main("  packfile - (string) name of pack to pick up;\n");
 				return;
 			}
+			
+			if (sender.lvl() < 4)
+				throw PermissionException("(AddPackOption) Sender has low permission lvl");
 
 			using namespace Memory;
 

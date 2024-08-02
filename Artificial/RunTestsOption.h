@@ -29,7 +29,7 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Read permission lvl needed\n");
+				ptr->print_main("13 or read permission lvl needed\n");
 				ptr->print_main("Runs program using MOVA processor\n");
 				ptr->print_secondary("runtests {path} {name} [:preenter password]\n");
 				ptr->print_main("  path - (string) path to file with code;\n");
@@ -37,6 +37,9 @@ namespace Commands
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
+
+			if (sender.lvl() < 13)
+				throw PermissionException("(RunTestsOption) Sender has low permission lvl");
 
 			Memory::FullPath path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 
