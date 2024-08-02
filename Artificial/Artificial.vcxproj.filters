@@ -232,9 +232,6 @@
     <Filter Include="Исходные файлы\Core\Story\Quest\UseItem">
       <UniqueIdentifier>{3d6d8d98-1339-4852-9406-dc7117d90e29}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Story\Quest\Dialog">
-      <UniqueIdentifier>{97502e61-cd29-4682-8566-ddf7bd6401a9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Core\Story\Quest\Surroundings">
       <UniqueIdentifier>{b66172da-74d6-44ec-9907-c5a2e442cba0}</UniqueIdentifier>
     </Filter>
@@ -250,14 +247,14 @@
     <Filter Include="Исходные файлы\Core\Mova\MovaVersion">
       <UniqueIdentifier>{87d0eab0-7f51-49e4-82e0-eca23467956d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Core\Story\Quest\PathEvents">
-      <UniqueIdentifier>{7aa25a0a-4e04-45c5-add1-ac9a476f7995}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\Core\Story\Quest\Base">
       <UniqueIdentifier>{417e5ad1-f4d4-4c75-a6bd-74e3edf299bc}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Core\Story\Quest\Remove">
       <UniqueIdentifier>{35f977d8-2064-466f-88d9-0e602b6ef0d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Core\Story\Quest\DynamicEvents">
+      <UniqueIdentifier>{2f889c60-b2c3-480e-bba9-6171a97e41e7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -422,6 +419,12 @@
     </ClCompile>
     <ClCompile Include="RemoveHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\Remove</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicEventsHandler.h">
+      <Filter>Исходные файлы\Core\Story\Quest\DynamicEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicEventsHandler.cpp">
+      <Filter>Исходные файлы\Core\Story\Quest\DynamicEvents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -818,9 +821,6 @@
     <ClInclude Include="ClearConsoleOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Windows\Options</Filter>
     </ClInclude>
-    <ClInclude Include="DialogHandler.h">
-      <Filter>Исходные файлы\Core\Story\Quest\Dialog</Filter>
-    </ClInclude>
     <ClInclude Include="SetNewDialogOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
     </ClInclude>
@@ -862,9 +862,6 @@
     </ClInclude>
     <ClInclude Include="MovaVersionHandler.h">
       <Filter>Исходные файлы\Core\Mova\MovaVersion</Filter>
-    </ClInclude>
-    <ClInclude Include="PathEventsHandler.h">
-      <Filter>Исходные файлы\Core\Story\Quest\PathEvents</Filter>
     </ClInclude>
     <ClInclude Include="BaseEventHandler.h">
       <Filter>Исходные файлы\Core\Story\Quest\Base</Filter>

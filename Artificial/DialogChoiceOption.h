@@ -8,7 +8,6 @@
 #include "ICore.h"
 #include "RealFileManager.h"
 #include "ItemUsingHandler.h"
-#include "DialogHandler.h"
 #include <map>
 #include <filesystem>
 

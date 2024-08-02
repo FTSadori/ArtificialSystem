@@ -7,7 +7,7 @@
 #include "Command.h"
 #include "ICore.h"
 #include "RealFileManager.h"
-#include "DialogHandler.h"
+#include "DynamicEventsHandler.h"
 #include <map>
 #include <filesystem>
 
@@ -46,10 +46,10 @@ namespace Commands
 			if (!maindisk.is_exists(DiskPath("\\system\\.dialogs")))
 				maindisk.create(DiskPath("\\system", ".dialogs"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
 
-			if (!Story::DialogHandler::is_loaded())
+			if (!Story::DynamicEventsHandler::s_dialogHandler.is_loaded())
 			{
 				auto data = maindisk.read(DiskPath("\\system\\.dialogs"), true);
-				Story::DialogHandler::load(std::string(data.get_data(), data.size()));
+				Story::DynamicEventsHandler::s_dialogHandler.load(std::string(data.get_data(), data.size()));
 			}
 
 			Memory::FullPath path1 = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
@@ -64,12 +64,12 @@ namespace Commands
 				if (!disk2.is_exists(path2.disk_path()))
 					throw CommandException("(SetNewDialogOption) Wrong scriptpath");
 
-				Story::DialogHandler::set_new_pair(path1.full_path_str(), path2.full_path_str());
+				Story::DynamicEventsHandler::s_dialogHandler.set_new_pair(path1.full_path_str(), path2.full_path_str());
 			}
 			else
-				Story::DialogHandler::set_new_pair(path1.full_path_str(), "");
+				Story::DynamicEventsHandler::s_dialogHandler.set_new_pair(path1.full_path_str(), "");
 			
-			auto new_data = Story::DialogHandler::to_data();
+			auto new_data = Story::DynamicEventsHandler::s_dialogHandler.to_data();
 
 			Memory::DataQueue data;
 			for (char c : new_data)

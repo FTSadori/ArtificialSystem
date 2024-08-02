@@ -2,9 +2,6 @@
 
 namespace Story
 {
-	std::unordered_map<std::string, std::string> BaseEventHandler::s_map;
-	bool BaseEventHandler::m_loaded = false;
-
 	std::string BaseEventHandler::get(const std::string& talk_path)
 	{
 		if (!s_map.contains(talk_path))

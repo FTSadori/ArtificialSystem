@@ -143,6 +143,8 @@
     <ClCompile Include="DataQueueExceptions.h" />
     <ClCompile Include="DiskFileManager.cpp" />
     <ClCompile Include="DiskSystem.cpp" />
+    <ClCompile Include="DynamicEventsHandler.cpp" />
+    <ClCompile Include="DynamicEventsHandler.h" />
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="FinalModuleKeyWords.cpp" />
@@ -204,7 +206,6 @@
     <ClInclude Include="CoreLoader.h" />
     <ClInclude Include="CreateItemOption.h" />
     <ClInclude Include="DialogChoiceOption.h" />
-    <ClInclude Include="DialogHandler.h" />
     <ClInclude Include="DialogLineOption.h" />
     <ClInclude Include="EchoOption.h" />
     <ClInclude Include="FinalTasks.h" />
@@ -223,7 +224,6 @@
     <ClInclude Include="PackagesHelpOption.h" />
     <ClInclude Include="PackmiOption.h" />
     <ClInclude Include="PasswordsReloadOption.h" />
-    <ClInclude Include="PathEventsHandler.h" />
     <ClInclude Include="PickItemOption.h" />
     <ClInclude Include="RemoveHandler.h" />
     <ClInclude Include="SetNewDialogOption.h" />

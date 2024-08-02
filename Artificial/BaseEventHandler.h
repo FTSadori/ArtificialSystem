@@ -10,16 +10,14 @@ namespace Story
 	class BaseEventHandler
 	{
 	public:
-		static std::string get(const std::string& talk_path);
-		static void set_new_pair(const std::string& talk_path, const std::string& script_path = "");
-		static void load(const std::string& data);
-		static std::string to_data();
-		static bool is_loaded();
+		std::string get(const std::string& talk_path);
+		void set_new_pair(const std::string& talk_path, const std::string& script_path = "");
+		void load(const std::string& data);
+		std::string to_data();
+		bool is_loaded();
 
-	protected:
-		static bool m_loaded;
-		static std::unordered_map<std::string, std::string> s_map;
-
-		virtual ~BaseEventHandler() = default;
+	private:
+		bool m_loaded = false;
+		std::unordered_map<std::string, std::string> s_map;
 	};
 }
