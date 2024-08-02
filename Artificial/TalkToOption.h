@@ -8,7 +8,7 @@
 #include "ICore.h"
 #include "RealFileManager.h"
 #include "ItemUsingHandler.h"
-#include "DialogHandler.h"
+#include "DynamicEventsHandler.h"
 #include <map>
 #include <filesystem>
 
@@ -52,14 +52,14 @@ namespace Commands
 			if (!maindisk.is_exists(DiskPath("\\system\\.dialogs")))
 				maindisk.create(DiskPath("\\system", ".dialogs"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
 
-			if (!Story::DialogHandler::is_loaded())
+			if (!Story::DynamicEventsHandler::s_dialogHandler.is_loaded())
 			{
 				auto data = maindisk.read(DiskPath("\\system\\.dialogs"), true);
-				Story::DialogHandler::load(std::string(data.get_data(), data.size()));
+				Story::DynamicEventsHandler::s_dialogHandler.load(std::string(data.get_data(), data.size()));
 			}
 
 			FullPath str_path = RelativePathCreator::combine(_command.get("path"), _command.get("1"));
-			const auto& str = Story::DialogHandler::get(str_path.full_path_str());
+			const auto& str = Story::DynamicEventsHandler::s_dialogHandler.get(str_path.full_path_str());
 			if (str == "")
 				ptr->print_main("She was unable to start a dialog...\n");
 			else

@@ -36,6 +36,18 @@ namespace Commands
 
 			if (info.state == Story::TaskState::CLOSED)
 				info.state = Story::TaskState::OPEN;
+			
+			using namespace Memory;
+
+			auto& maindisk = m_core.memory().get_disk(m_core.memory_info().get_main_disk_info().mark);
+			if (!maindisk.is_exists(DiskPath("\\system")))
+				maindisk.create(DiskPath("\\system"), Permissions(true, 255, 255, 255, 0), FileT::DIR, true);
+			if (!maindisk.is_exists(DiskPath("\\system\\.taskstates")))
+				maindisk.create(DiskPath("\\system\\.taskstates"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
+
+			DataQueue data2 = Story::TaskStateHandler().get_as_data();
+			maindisk.write(DiskPath("\\system\\.taskstates"), data2, true);
+
 
 			return;
 		}

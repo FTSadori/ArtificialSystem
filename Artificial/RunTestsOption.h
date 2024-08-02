@@ -52,6 +52,9 @@ namespace Commands
 			if (!Story::TaskStateHandler::s_states.contains(_command.get("2")))
 				throw Story::TaskNameException("(RunTestsOption) TaskStateHandler doesn't know about " + _command.get("2") + " task");
 
+			if (Story::TaskStateHandler::s_states[_command.get("2")].state == Story::TaskState::CLOSED)
+				throw Story::TaskNameException("(RunTestsOption) This task is closed");
+
 			if (!Story::TaskHandler::s_tasks.contains(_command.get("2")))
 				throw Story::TaskNameException("(RunTestsOption) TaskHandler doesn't know about " + _command.get("2") + " task");
 
@@ -64,9 +67,12 @@ namespace Commands
 
 			auto lines = Separator::split(std::string(data.get_data(), data.size()), '\n');
 
-			Mova::Version ver = lines[0];
-			m_core.processor().set_version(ver);
+			if (lines[0] != "mova")
+				throw CommandException("(RunTestsOption) First line in mova file must be 'mova'");
 			lines.erase(lines.begin());
+
+			Mova::Version ver = Mova::MovaVersionHandler::get_line().substr(1);
+			m_core.processor().set_version(ver);
 
 			int lines_num = lines.size();
 
@@ -100,7 +106,11 @@ namespace Commands
 			{
 				ptr->print_third("SUCCESS!!!\n");
 				task_info.state = Story::TaskState::COMPLETE;
-				task_info.firstComplitionAttempts = min(task_info.firstComplitionAttempts, task_info.totalAttempts);
+				if (task_info.firstComplitionAttempts == -1)
+					task_info.firstComplitionAttempts = task_info.totalAttempts;
+				else
+					task_info.firstComplitionAttempts = min(task_info.firstComplitionAttempts, task_info.totalAttempts);
+
 				if (task_info.minLinesOfCode == -1)
 				{
 					letsgo = true;

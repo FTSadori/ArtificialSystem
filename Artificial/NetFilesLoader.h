@@ -10,9 +10,7 @@ namespace Commands
 		{
 			std::hash<std::string> hasher;
 
-			core.net().add_new("google.bom", NetData("RklSRSBJTiBUSEUgSExM", "PRAY.txt", 0, 0));
-			core.net().add_new("google.chmom", NetData("T01PUg==", "mar.txt", hasher("password"), 10));
-			core.net().add_new("google.vroomvroom", NetData("SXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIEl0IHdhcyBhbiBhY2NpZGVudCEgSXQgd2FzIGFuIGFjY2lkZW50ISBJdCB3YXMgYW4gYWNjaWRlbnQhIElUIFdBUyBBTiBBQ0NJREVOVCE=", "SHE", 0, 100));
+			core.net().add_new("www.mova.com", NetData("Ylc5MllRPT0=", "___password___.txt", 0, 0));
 		}
 	};
 }

@@ -20,8 +20,8 @@ namespace Commands
 			if (_command.has("::help"))
 			{
 				ptr->print_main("Shows all tasks and their states\n");
-				ptr->print_secondary("tasks ::noclosed\n");
-				ptr->print_main("  ::noclosed - (flag) hides all tasks with CLOSED state\n");
+				ptr->print_secondary("tasks [::open]\n");
+				ptr->print_main("  ::open - (flag) shown all tasks with OPEN state\n");
 				return;
 			}
 	
@@ -29,7 +29,7 @@ namespace Commands
 			for (const auto& pair : Story::TaskStateHandler::s_states)
 			{
 				++i;
-				if (pair.second.state == Story::TaskState::CLOSED && _command.has("::noclosed")) continue;
+				if (pair.second.state != Story::TaskState::OPEN && _command.has("::open")) continue;
 				switch (pair.second.state)
 				{
 				case Story::TaskState::OPEN:

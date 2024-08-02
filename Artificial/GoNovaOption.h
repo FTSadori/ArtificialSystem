@@ -6,7 +6,7 @@
 #include "Command.h"
 #include "ICore.h"
 #include "RealFileManager.h"
-#include "PathEventsHandler.h"
+#include "DynamicEventsHandler.h"
 #include <map>
 #include <filesystem>
 
@@ -74,14 +74,14 @@ namespace Commands
 			if (!maindisk.is_exists(DiskPath("\\system\\.save")))
 				maindisk.create(DiskPath("\\system\\.save"), Permissions(true, 255, 255, 255, 0), FileT::FILE, true);
 
-			if (!Story::PathEventsHandler::is_loaded())
+			if (!Story::DynamicEventsHandler::s_pathHandler.is_loaded())
 			{
 				auto data = maindisk.read(DiskPath("\\system\\.goevent"), true);
-				Story::PathEventsHandler::load(std::string(data.get_data(), data.size()));
+				Story::DynamicEventsHandler::s_pathHandler.load(std::string(data.get_data(), data.size()));
 			}
 
 			FullPath str_path = RelativePathCreator::combine(_command.get("path"), _command.get("1"));
-			const auto& str = Story::PathEventsHandler::get(str_path.full_path_str());
+			const auto& str = Story::DynamicEventsHandler::s_pathHandler.get(str_path.full_path_str());
 			if (str != "")
 			{
 				Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + str + "\"");

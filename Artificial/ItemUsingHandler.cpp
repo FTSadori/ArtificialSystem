@@ -12,7 +12,7 @@ namespace Story
 		{ "[Filled fruit] GLASSTOWN:\\town\\largebuilding", "CORE:\\.scripts\\chapter2\\d11_u_filledfruit.txt" },
 		{ "[Test tube] GLASSTOWN:\\roots\\deeper\\darkroots", "CORE:\\.scripts\\chapter2\\d20_u_testtube.txt" },
 		{ "[Filled test tube] GLASSTOWN:\\town\\largebuilding", "CORE:\\.scripts\\chapter2\\d21_u_filledtesttube.txt" },
-		{ "[Ilo sitelen] BLUE:\\tomosuli", "CORE:\\.scripts\\chapter2\\d22_u_ilositelen.txt" },
+		{ "[Ilo sitelen] BLUE:\\tomosuli", "CORE:\\.scripts\\chapter2\\d30_u_ilositelen.txt" },
 		{ "[Glass knife] GLASSTOWN:\\town\\museum", "CORE:\\.scripts\\chapter2\\d55_u_glassknife.txt" },
 		{ "[Shiny perl] GLASSTOWN:\\roots\\deeper\\darkroots", "CORE:\\.scripts\\chapter2\\d56_u_perl.txt" },
 		{ "[Rare glass fruit] GLASSTOWN:\\town\\smallshop", "CORE:\\.scripts\\chapter2\\d58_u_rarefruit.txt" },
