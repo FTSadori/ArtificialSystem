@@ -190,7 +190,9 @@ namespace Mova
 		void math(const std::vector<int>& arguments, char symb, int needed_base_lvl)
 		{
 			check_for_arguments(arguments, 2, 4);
-			if (m_version.math_lvl < needed_base_lvl || (arguments.size() >= 3 && m_version.math_lvl < 3))
+			if (m_version.math_lvl < needed_base_lvl 
+				|| (arguments.size() >= 4 && m_version.math_lvl < 3) 
+				|| (arguments.size() >= 3 && arguments[2] == 2 && m_version.math_lvl < 3))
 				throw ProcessorException("Line " + Parser::to_string(m_execution_ptr + 1) + ": Low MOVA level");
 			double second = arguments[1];
 			if (arguments.size() >= 3)
