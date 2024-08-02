@@ -18,12 +18,12 @@ namespace Story
 	class SumOfSquaresTask final : public BaseTask
 	{
 	public:
-		SumOfSquaresTask() : BaseTask({ {1.0, 6.0}, {20.0, 3.0}, {4.0, 5.0} }, { {37.0}, {409.0}, {36.0} }, "Sum of squares", "Return the value of (A*A + B*B), where A and B are entered values.", "CORE:\\.scripts\\chapter2\\d26_sumsquare.txt") {}
+		SumOfSquaresTask() : BaseTask({ {1.0, 6.0}, {20.0, 3.0}, {4.0, 5.0} }, { {37.0}, {409.0}, {41.0} }, "Sum of squares", "Return the value of (A*A + B*B), where A and B are entered values.", "CORE:\\.scripts\\chapter2\\d26_sumsquare.txt") {}
 	};
 
 	class DivPlusModTask final : public BaseTask
 	{
 	public:
-		DivPlusModTask() : BaseTask({ {4.0, 2.0}, {20.0, 3.0}, {4.0, 5.0} }, { {2.0}, {8.0}, {4.0} }, "Integer division plus module", "Return the value of (A//B + A%B), where A and B are entered values, // is integer division and % is module", "CORE:\\.scripts\\chapter2\\d28_divpmod.txt") {}
+		DivPlusModTask() : BaseTask({ {4.0, 2.0}, {20.0, 3.0}, {4.0, 5.0} }, { {2.0}, {8.0}, {4.0} }, "Integer division plus module", "Return the value of (A//B + A mod B), where A and B are entered values, // is integer division and 'mod' is module. B is never zero.", "CORE:\\.scripts\\chapter2\\d28_divpmod.txt") {}
 	};
 }

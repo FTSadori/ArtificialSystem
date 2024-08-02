@@ -18,7 +18,7 @@ namespace Story
 	class MzzzTask final : public BaseTask
 	{
 	public:
-		MzzzTask() : BaseTask({ {3.0}, {8.0}, {22.0}, {31.0} }, { {3.0}, {2,0}, {3.0}, {4.0} }, "MZzzzz...", "Get a number and return the minimum number of letters that can be used to split the number according to the following rule: 'M' - 10, 'Z' - 6, 'z' - 4, '.' - 1.", "CORE:\\.scripts\\chapter2\\d64_mzzz.txt") {}
+		MzzzTask() : BaseTask({ {3.0}, {8.0}, {22.0}, {31.0}, {9.0}, {15.0}, {26.0}, {29.0} }, { {3.0}, {2,0}, {3.0}, {4.0}, {3.0}, {3.0}, {3.0}, {5.0} }, "MZzzzz...", "Get a number and return the minimum number of letters that can be used to split the number according to the following rule: 'M' - 10, 'Z' - 6, 'z' - 4, '.' - 1.", "CORE:\\.scripts\\chapter2\\d64_mzzz.txt") {}
 	};
 
 	class MathTask final : public BaseTask

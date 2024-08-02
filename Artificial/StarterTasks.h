@@ -18,13 +18,13 @@ namespace Story
 	class DecrementTask final : public BaseTask
 	{
 	public:
-		DecrementTask() : BaseTask({ {1.0}, {2.0}, {532.0} }, { {0.0}, {1.0}, {531.0} }, "Decrement", "Return a value that is 1 less than the entered value.", "CORE:\\.scripts\\chapter2\\d14_decrement.txt") {}
+		DecrementTask() : BaseTask({ {1.0}, {2.0}, {532.0} }, { {0.0}, {1.0}, {531.0} }, "Decrement", "Return a value that is 1 less than the entered value. (Entered value starts from 1)", "CORE:\\.scripts\\chapter2\\d14_decrement.txt") {}
 	};
 
 	class DifferenceTask final : public BaseTask
 	{
 	public:
-		DifferenceTask() : BaseTask({ {6.0, 2.0}, {15.0, 2.0}, {5.0, 4.0} }, { {4.0}, {13.0}, {1.0} }, "Difference", "Return the diffference between two entered values.", "CORE:\\.scripts\\chapter2\\d16_difference.txt") {}
+		DifferenceTask() : BaseTask({ {6.0, 2.0}, {15.0, 2.0}, {5.0, 4.0} }, { {4.0}, {13.0}, {1.0} }, "Difference", "Return the difference between two entered values. (The first one is always bigger)", "CORE:\\.scripts\\chapter2\\d16_difference.txt") {}
 	};
 
 	class IntDivTask final : public BaseTask

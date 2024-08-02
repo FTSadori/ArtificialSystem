@@ -24,6 +24,6 @@ namespace Story
 	class BracketsTask final : public BaseTask
 	{
 	public:
-		BracketsTask() : BaseTask({ {'[', '{', '[', ']', '}', '(', ')', '\0'}, {'{', '}', '{', '\0'}, {'[', ']', '(', ')', '(', '\0'}}, {{']'}, {'}'}, {')'}}, "Brackets", "Take a string (stop input when you get '\0') and return what bracket (']', '}' or ')') needs to be added at the end of the line to make the line valid. ('{[]' => '}')", "CORE:\\.scripts\\chapter2\\d39_brackets.txt") {}
+		BracketsTask() : BaseTask({ {'[', '{', '[', ']', '}', '(', ')', '\0'}, {'{', '}', '{', '\0'}, {'[', ']', '(', ')', '(', '\0'}}, {{']'}, {'}'}, {')'}}, "Brackets", "Take a string (stop input when you get '\\0') and return what bracket (']', '}' or ')') needs to be added at the end of the line to make the line valid. ('{[]' => '}')", "CORE:\\.scripts\\chapter2\\d39_brackets.txt") {}
 	};
 }
