@@ -1,6 +1,7 @@
 opentask abc
 d "- Oh yes, working with strings is a new era!"
 d "- Like, with a sequence of characters."
-d "- There will be no updates for now, but I'm preparing somethin really cool."
+d "- There will be no updates for now, but I'm preparing somethin' really cool."
 d "- But that's if we research the strings well enough."
+d "*You have unlocked a new task*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

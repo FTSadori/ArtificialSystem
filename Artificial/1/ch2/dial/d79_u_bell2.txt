@@ -1,4 +1,4 @@
-write RED:\myfigures\strangefigurine "2/3"
+write RED:\myfigures\strangefigurine "2/3" ::nobase64
 opentask 1337
 d "- ..."
 d "- 17 s00... 834u71fu1..."

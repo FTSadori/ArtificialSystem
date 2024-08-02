@@ -14,5 +14,6 @@ d "- When you pick them up, they will be automatically transferred to me."
 d "- Then come to me and choose which one you want to install."
 d "Fine."
 setnewdialog GLASSTOWN:\town\smallshop\packmi.girl "CORE:\.scripts\chapter2\d57_packmi1.txt"
+addlvls visitor 1
 d "*You have raised the level by 1*"
 d "*Check your level with 'userlist'*"

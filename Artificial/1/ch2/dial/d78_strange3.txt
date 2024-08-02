@@ -11,4 +11,5 @@ d "Oh, sorry!"
 d "I didn't realize you couldn't get out of here..."
 mk letter2
 write letter2 "Can you bring me these... 'sounds of nature'?" ::nobase64
+nano letter2
 setnewdialog VIOLET:\largeweb\strange.girl ""

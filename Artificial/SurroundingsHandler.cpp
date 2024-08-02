@@ -7,7 +7,7 @@ namespace Story
 		{ "OVERWORLD:", "CORE:\\.scripts\\chapter1\\la_overworld.txt" },
 		{ "OVERWORLD:\\largetree\\darkgorge2", "CORE:\\.scripts\\chapter1\\la_gorge_2.txt" },
 		{ "OVERWORLD:\\largetree\\darkgorge3\\door\\blockeddoor\\anotherdoor", "CORE:\\.scripts\\chapter1\\la_packmi.txt" },
-		{ "GLASSTOWN\\bubblemountain", "CORE:\\.scripts\\chapter2\\la_bubblem.txt" },
+		{ "GLASSTOWN:\\bubblemountain", "CORE:\\.scripts\\chapter2\\la_bubblem.txt" },
 		{ "GLASSTOWN:\\darkpassage", "CORE:\\.scripts\\chapter2\\la_darkpassage.txt" },
 		{ "GLASSTOWN:\\roots\\deeper\\darkroots", "CORE:\\.scripts\\chapter2\\la_darkroots.txt" },
 		{ "GLASSTOWN:\\roots\\deeper", "CORE:\\.scripts\\chapter2\\la_deeper.txt" },

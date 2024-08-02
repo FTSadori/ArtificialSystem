@@ -1,4 +1,4 @@
-write RED:\myfigures\sadfigurine "3/3"
+write RED:\myfigures\sadfigurine "3/3" ::nobase64
 d "- ..."
 d "Hello!"
 d "- ..?"

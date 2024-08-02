@@ -1,8 +1,10 @@
 opentask sumsquare
 cd shelf2
-mkpack mova0.0.0.1.0.0.pack "Adds new settings to the jump (0011 or 3) command. The fourth argument now indicates which comparison will be used (0 is ==, 1 is <, 2 is >)."
+mkpack mova0.0.0.1.0.0 "Adds new settings to the jump (0011 or 3) command. The fourth argument now indicates which comparison will be used (0 is ==, 1 is <, 2 is >)."
 cd ..
 d "- Great!"
 d "- Now we can use simpler loops!"
-d "- Next task will be easy to you."
+d "- Next task will be easy for you."
+d "*You have unlocked a new task*"
+d "*You have unlocked a new update*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

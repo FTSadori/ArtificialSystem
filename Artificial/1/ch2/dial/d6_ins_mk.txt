@@ -1,3 +1,4 @@
 addlvls citizen 1
-setnewdialog GLASSTOWN:\town\largebuilding\smart.girl CORE:\.scripts\chapter2\d7_smart3.txt d "*You have raised the level by 1*"
-d "- Hehe, new the Smart won't let you go for sure."
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl CORE:\.scripts\chapter2\d7_smart3.txt
+d "*You have raised the level by 1*"
+d "- Hehe, now the Smart won't let you go for sure."

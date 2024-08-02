@@ -1,8 +1,5 @@
 cd GLASSTOWN:
 mk forbittenpassage ::dir
-cd forbittenpassage
-spawnnova
-cd ..
 mk bubblemountain ::dir :rp 10
 cd bubblemountain
 mk infobubbles ::dir
@@ -41,6 +38,7 @@ cd town
 mk smallshop ::dir
 cd smallshop
 spawnpackmi
+setnewdialog GLASSTOWN:\town\smallshop\packmi.girl "CORE:\.scripts\chapter2\d1_packmi.txt"
 cd ..
 mk largebuilding ::dir
 cd largebuilding
@@ -70,7 +68,10 @@ cd ..
 cd ..
 mk museum ::dir :rp 10
 cd museum
+mk glassbottle ::dir :rp 100
+cd glassbottle
 mkitem glassknife "Glass knife" "It's sharp enough to cut through bubble wrap. But it doesn't seem that sturdy."
+cd ..
 mk bubblewithperl ::dir :rp 100
 cd bubblewithperl
 mkitem perl "Shiny perl" "Incredibly beautiful and shiny. In their reflection, I see a triple me. Or do they just look like me?"
@@ -125,6 +126,7 @@ mk darkroots ::dir
 cd darkroots
 mk crazy.girl :wp 99
 write crazy.girl ""
+setnewdialog GLASSTOWN:\roots\deeper\darkroots\crazy.girl CORE:\.scripts\chapter2\d51_crazy.txt
 cd ..
 mk sevenseeds ::dir
 cd sevenseeds

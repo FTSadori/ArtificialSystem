@@ -1,7 +1,9 @@
 opentask cube
 cd shelf2
-mkpack mova0.0.0.0.1.0.pack "Adds an addition (0101 or 5) and subtraction (0110 or 6) command. First argument is the number of the register, second argument is a number that is added to/subtracted from the register value."
+mkpack mova0.0.0.0.1.0 "Adds an addition (0101 or 5) and subtraction (0110 or 6) command. The first argument is the register number, the second argument is a number to be added/subtracted from the register value. If the third argument is present and equal to 1, the second argument also indicates the register number."
 cd ..
 d "- Now we move on to the math, assistant."
 d "- Check out the new update, you'll like it."
+d "*You have unlocked a new task*"
+d "*You have unlocked a new update*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

@@ -35,6 +35,6 @@ write lipu1 "ike" ::nobase64
 write lipu2 "ike" ::nobase64
 write lipu3 "ike ike ike" ::nobase64
 write lipu4 "ike" ::nobase64
-mk lipupisunoale ::dir :p 13
+mk lipupisunoale ::dir :p 13 :rp 100
 cd lipupisunoale :preenter 13
 mkpack tokipona "Toki pona translator"

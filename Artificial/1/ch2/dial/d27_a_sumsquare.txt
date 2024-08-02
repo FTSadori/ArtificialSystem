@@ -1,7 +1,5 @@
 opentask divpmod
-cd shelf2
-mkpack mova0.8.0.0.0.0.pack "Adds 8 bits to numbers (+2 symbols in hexadecimal)."
-cd ..
-d "- I have prepared a simple update because I am preparing for one incredible update in the future."
+d "- I did not prepare an update this time because I am preparing for one incredible update in the future."
 d "- Then you can finally write with symbols and use the decimal system!"
+d "*You have unlocked a new task*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

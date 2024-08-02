@@ -1,4 +1,5 @@
-write music.txt " (...)" ::append
-write RED:\myfigures\sleepyfigurine "3/3"
+write music.txt " (...)" ::append ::nobase64
+write RED:\myfigures\sleepyfigurine "3/3" ::nobase64
+chmod GLASSTOWN:\town\house\room :rp 30
 d "- Thank you."
 setnewdialog GLASSTOWN:\town\house\sleepy.girl ""

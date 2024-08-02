@@ -1,6 +1,6 @@
 opentask decrement
 cd shelf2
-mkpack mova0.2.0.0.0.0.pack "Adds two bits to numbers. If the command loocked like '001100000001', now it's '0011000000000001'. This allows you to use more lines and larger numbers."
+mkpack mova0.2.0.0.0.0 "Adds two bits to numbers. If the command loocked like '001100000001', now it's '0011000000000001'. This allows you to use more lines and larger numbers."
 cd ..
 d "- Great!"
 d "Maybe I'll like it."
@@ -12,4 +12,6 @@ d "- ...you will have to write 4 bits for the command number and 6 bits for each
 d "Okay, I'll try."
 d "Write down some new instructions for me then."
 d "- Fine, look at the second shelf then."
+d "*You have unlocked a new task*"
+d "*You have unlocked a new update*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

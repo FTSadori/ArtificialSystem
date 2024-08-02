@@ -2,8 +2,8 @@ mkitem testtube "Test tube" "Don't make me tell you what it's made of again."
 pick testtube
 cd shelf2
 mk mova2.book
-write move2.book Rm9yIHRoZSBzZWNvbmQgdmVyc2lvbiBvZiBNb3ZhLCB3ZSB1c2UgaGV4YWRlY2ltYWwgbm90YXRpb24uIEVhY2ggY29tbWFuZCBjYW4gYmUgZGVzY3JpYmVkIGluIG9uZSBzeW1ib2wgKDAwMDAgYXMgMCwgMDAwMSBhcyAxLCAuLi4sIDEwMTAgYXMgYSwgLi4uLCAxMTExIGFzIGYpLiBBbHNvLCBlYWNoIGFyZ3VtZW50IHVzZXMgdHdvIGNoYXJhY3RlcnMgKGZvciBleGFtcGxlLCAwMTAxMDAxMSBhcyA1Myku
-mkpack mova2.4.1.0.0.0.pack "Second module. Instead of the binary system, you must now use hexadecimal. It's better, trust me."
+write mova2.book Rm9yIHRoZSBzZWNvbmQgdmVyc2lvbiBvZiBNb3ZhLCB3ZSB1c2UgaGV4YWRlY2ltYWwgbm90YXRpb24uIEVhY2ggY29tbWFuZCBjYW4gYmUgZGVzY3JpYmVkIGluIG9uZSBzeW1ib2wgKDAwMDAgYXMgMCwgMDAwMSBhcyAxLCAuLi4sIDEwMTAgYXMgYSwgLi4uLCAxMTExIGFzIGYpLiBBbHNvLCBlYWNoIGFyZ3VtZW50IHVzZXMgdHdvIGNoYXJhY3RlcnMgKGZvciBleGFtcGxlLCAwMTAxMDAxMSBhcyA1Myku
+mkpack mova2.4.1.0.0.0 "Second module. Instead of the binary system, you must now use hexadecimal. It's better, trust me."
 cd ..
 addlvls citizen 1
 d "- Now it's time for a massive update!"
@@ -14,4 +14,5 @@ d "- With the new update, writing code will now be much easier."
 d "- But before we continue, go down to the deep roots and fill the test tube I'm going to give you."
 d "*You have got a test tube*"
 d "*You have raised the level by 1*"
+d "*You have unlocked a new update*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

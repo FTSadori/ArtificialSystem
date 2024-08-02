@@ -1,8 +1,10 @@
 opentask difference
 cd shelf2
-mkpack mova0.0.1.0.0.0.pack "Adds new command - decrement (0100). This, in turn, opens up negative numbers. The command is used as follows. '0100000011', which will decrease the value of register 3 by 1."
+mkpack mova0.0.1.0.0.0 "Adds new command - decrement (0100). This, in turn, opens up negative numbers. The command is used as follows. '0100000011', which will decrease the value of register 3 by 1."
 cd ..
 d "- With your decrement, we can now reach negative numbers!"
 d "- I've made a new update on this, check it out."
 d "- But we're not stopping, we've got another one task to do."
+d "*You have unlocked a new task*"
+d "*You have unlocked a new update*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

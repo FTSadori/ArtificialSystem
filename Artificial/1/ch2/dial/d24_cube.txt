@@ -1,2 +1,2 @@
-setnewdialog GLASSTOWN:\town\largebuilding\smart.girl "CORE:\.scripts\chapter2\d24_a_cube.txt"
+setnewdialog GLASSTOWN:\town\largebuilding\smart.girl "CORE:\.scripts\chapter2\d25_a_cube.txt"
 d "*Smart has opened a new dialog!*"

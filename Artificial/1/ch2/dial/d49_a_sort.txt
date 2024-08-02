@@ -1,9 +1,10 @@
-addlvls citizen 20
+addlvls citizen 30
 d "- Incredible."
 d "- This time Elpa quessed right."
 d "- Now you are allowed to receive her blessing."
 d "- But use it only when you're ready."
 d "- You'll lose all items in your inventory."
-d "- But you can't go back either."
+d "- And you can't go back either."
+d "*You have unlocked a new task*"
 setnewdialog WHITE:\wires\wires\wires\mova.girl ""
 d "*You have raised the level by 30*"

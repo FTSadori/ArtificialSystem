@@ -1,4 +1,5 @@
 opentask case
 d "- Now try reverse the cases of characters in the input word!"
 d "- It should be easy!"
+d "*You have unlocked a new task*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

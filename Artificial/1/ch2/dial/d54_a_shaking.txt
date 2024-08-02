@@ -1,4 +1,4 @@
-write RED:\myfigures\crazyfigurine "2/3"
+write RED:\myfigures\crazyfigurine "2/3" ::nobase64
 d "- Wha... what? How did you do that?"
 d "- Thank you."
 d "- I can't believe it, but the strange sounds have somehow dissappeared."
@@ -16,3 +16,4 @@ d "- A pearl in the museum will allow me to see my friend."
 d "- Or her soul, to be exact."
 d "..."
 d "Okay."
+setnewdialog GLASSTOWN:\roots\deeper\darkroots\crazy.girl ""

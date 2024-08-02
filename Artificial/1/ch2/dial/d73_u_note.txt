@@ -1,4 +1,4 @@
-write RED:\myfigures\smartfigurine "3/3"
+write RED:\myfigures\smartfigurine "3/3" ::nobase64
 d "- So?.."
 d "Yes!"
 d "- W-wow"

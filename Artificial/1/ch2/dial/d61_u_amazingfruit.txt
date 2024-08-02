@@ -16,4 +16,5 @@ d "- Hm... okay."
 d "- But i will keep the material that remains."
 d "Okay!"
 mkitem packmifigurine "Packmi figurine" "I want to eat it"
+pick packmifigurine
 d "*You have got the Packmi figurine*"

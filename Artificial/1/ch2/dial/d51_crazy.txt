@@ -1,5 +1,5 @@
 opentask shaking
-write RED:\myfigures\crazyfigurine "1/3"
+write RED:\myfigures\crazyfigurine "1/3" ::nobase64
 d "H-hey!"
 d "Who are you?"
 d "- ..."
@@ -14,4 +14,5 @@ d "Oh, we?"
 d "- We, N|]]ov{as."
 d "*You have unlocked a new task*"
 setnewdialog GLASSTOWN:\roots\deeper\darkroots\crazy.girl ""
+chmod GLASSTOWN:\town\museum\glassbottle :rp 10
 choice :op1 "So you're not the only one, Nova." :sc1 "CORE:\.scripts\chapter2\d53_crazy_ch_1.txt"

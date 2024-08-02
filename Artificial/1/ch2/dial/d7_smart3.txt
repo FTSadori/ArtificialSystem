@@ -14,6 +14,7 @@ d "- Try to solve one problem."
 opentask increment
 d "- Read the Mova manual on the second shelf."
 d "- Good luck."
+d "*You have unlocked a new task*"
 addlvls citizen 1
 d "*You have raised the level by 1*"
 setnewdialog GLASSTOWN:\town\largebuilding\smart.girl ""

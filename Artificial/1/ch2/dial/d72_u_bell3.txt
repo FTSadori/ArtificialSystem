@@ -1,6 +1,6 @@
-write RED:\myfigures\smartfigurine "2/3"
+write RED:\myfigures\smartfigurine "2/3" ::nobase64
 mk TASKS
-write TASKS "There is a 1x10 cell field. You also have three different smaller boards, one, two and three cells long. How many ways can you arrange the three boards on a 1x10 field if each square must be either completely covered by one board or completely free. Also, the boards must all be directly on the 1x10 cell field."
+write TASKS "There is a 1x10 cell field. You also have three different smaller boards, one, two and three cells long. How many ways can you arrange the three boards on a 1x10 field if each square must be either completely covered by one board or completely free. Also, the boards must all be directly on the 1x10 cell field." ::nobase64
 mk chest ::dir :p "210"
 cd chest :preenter "210"
 mkitem note "Note" "Do you want to be friends?"
@@ -15,7 +15,7 @@ d "- Do you want to do..."
 d "- ...some math?"
 d "Oh!"
 d "I don't mind!"
-d "- I'll leave you a note with the tasks, add the answers and get the password."
+d "- I'll leave you a note with the task, find the answer and use as password."
 d "- Then you can open the chest."
 d "- It's like a quest... for you."
 d "Interesting!"
