@@ -230,6 +230,7 @@
     <ClInclude Include="SetPathPairOption.h" />
     <ClInclude Include="ShowInventoryOption.h" />
     <ClInclude Include="ShowOpenedTasksOption.h" />
+    <ClInclude Include="ShowStatsOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
     <ClInclude Include="SkipTaskOption.h" />
     <ClInclude Include="SpawnNovaOption.h" />

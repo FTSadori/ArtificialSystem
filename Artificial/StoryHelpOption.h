@@ -39,6 +39,7 @@ namespace Commands
 			ptr->print_third("- lookaround\n");
 			ptr->print_third("- spawnnova\n");
 			ptr->print_third("- callnova\n");
+			ptr->print_third("- showstats\n");
 
 			return;
 		}
