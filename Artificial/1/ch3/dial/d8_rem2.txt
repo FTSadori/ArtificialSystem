@@ -1,0 +1,8 @@
+d "- The sister was wrong..."
+d "- Someone will get here one day."
+d "- I can't imagine what fate awaits you."
+d "- But know that I can still kill you."
+d "- I'm not destroying everything I could."
+d "- Because I don't want to go crazy myself."
+rm REM.girl
+setnewpath REMTOWN:\rubyarch\corridor ""

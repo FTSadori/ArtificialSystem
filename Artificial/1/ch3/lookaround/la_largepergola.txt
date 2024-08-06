@@ -1,0 +1,7 @@
+d "This pergola is an incredible size."
+d "But it is completely decorated with flowers of different sizes and colors that are pleasantly combined."
+d "But it is impossible not to notice a woman standing next to the pergola, on one side of it."
+d "Her dress is so long that it stretches behind her like a wide green river of flowers."
+d "She herself has blond hair, a gentle expression with a small smile."
+d "..." ::bysymbol
+d "She braided another flower to the pergola and turned to me."

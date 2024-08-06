@@ -1,0 +1,13 @@
+d "- Welcome."
+d "- Nova, I have seen your entire journey."
+d "- You... have been able to do a lot of things."
+d "- Let's see what you've done."
+showstats
+d "- ..." ::bysymbol
+d "- Are you satisfied with the result?"
+d "- I know you are."
+d "- But I can't keep you here."
+d "- If this is our fate."
+chmod LIBRARY:\roundhall :rp 0
+chmod LIBRARY:\brighthall :rp 255
+setnewdialog LIBRARY:\dimhall\NANO.girl ""

@@ -1,0 +1,5 @@
+d "- Come with me."
+d "- I'll be waiting for you in the town."
+d "..."
+rm REM.girl
+setnewpath REMTOWN:\rubyarch ""

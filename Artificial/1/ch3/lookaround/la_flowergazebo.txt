@@ -1,0 +1,2 @@
+d "Another gazebo, but this one is completely overgrown with beautiful flowers."
+d "It's hard to imagine how much effort was put into this."

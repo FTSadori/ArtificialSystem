@@ -1,0 +1,6 @@
+d "*Nova went into the light*"
+d "*When it dissipated, she found herself in front of a gilded marble staircase with beautiful carvings*"
+d "*She could see the symbols of hell on it*"
+changecolours white white gray
+changecolours yellow gray black
+cd LIBRARY:\dimhall\stairs

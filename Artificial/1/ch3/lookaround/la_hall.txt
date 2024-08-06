@@ -1,0 +1,6 @@
+d "The hall is long and shines with golden light on the marble floor."
+d "Some girl is waiting for me."
+d "She looks dignified, wearing a thin robe with incredibly wide sleeves."
+d "Her robe is embroidered with gold threads, and several gold ribbons are woven into her pure black hair."
+d "Her hair was carefully tied back, and her eyes were closed..."
+d "With only the third eye on her forehead looking straight into my soul."

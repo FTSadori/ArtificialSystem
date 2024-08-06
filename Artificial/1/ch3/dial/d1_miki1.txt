@@ -1,0 +1,10 @@
+d "- Greetings, Nova."
+d "..."
+d "H-hello."
+d "- I'm so happy you could make it here."
+d "- I think you're exactly waht the CORE needs."
+d "You're... you're a goddess, right?"
+d "- Hah, I suppose so... Maybe that's what they think I am."
+d "- Come on, I'd love to chat with you while we take a tour of my grounds."
+setnewpath MIKITOWN:\flowergazebo ""
+rm MIKI.girl

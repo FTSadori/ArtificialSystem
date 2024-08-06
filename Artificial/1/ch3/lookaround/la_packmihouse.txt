@@ -1,0 +1,3 @@
+d "I didn't think she could have a weapon..."
+d "Does she know how to use it?"
+d "It looks dangerous..."

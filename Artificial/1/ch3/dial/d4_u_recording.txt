@@ -1,0 +1,7 @@
+d "- So that's what happened to her."
+d "- You really shouldn't be underestimated."
+d "- Okay, I won't keep you any longer."
+d "- You can go on."
+d "- I'll wait for you in the corridor."
+setnewpath MIKITOWN:\bloomingarch\corridor ""
+rm MIKI.girl

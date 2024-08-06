@@ -1,0 +1,3 @@
+d "A large field filled with obsidian tombstones."
+d "There are no bodies here, and the only thing that could be seen of the remains were obsidian bones."
+d "But some of the tombstones could suprise you when you read some of the names."

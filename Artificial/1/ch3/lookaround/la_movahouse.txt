@@ -1,0 +1,4 @@
+d "The remains of her wires shill lie here."
+d "She must have moved higher so that one of us could try to understand her."
+d "It must be incredibly difficult not to have ways to communicate through language..."
+d "But we helped her!"

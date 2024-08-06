@@ -1,0 +1,2 @@
+d "Something stopped me from going in there."
+go ..
