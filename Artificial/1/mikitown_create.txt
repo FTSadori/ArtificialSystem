@@ -1,0 +1,62 @@
+cd MIKITOWN:
+mk marblegazebo ::dir
+cd marblegazebo
+mk flowerfield ::dir
+cd flowerfield
+mk marbleflower1
+mk marbleflower2
+mk marbleflower3
+spawnnova
+mk marblesign
+write marblesign "Please do not walk on the flowers." ::nobase64
+cd ..
+mk bench1
+mk bench2
+mk largepergola ::dir
+cd largepergola
+mk marblesign
+write marblesign "I add a new flower to the pergola every time my sister kills a soul." ::nobase64
+mk MIKI.girl :wp 255
+write MIKI.girl ""
+cd ..
+cd ..
+mk flowergazebo ::dir
+cd flowergazebo
+mk bench1
+mk bench2
+mk MIKI.girl :wp 255
+write MIKI.girl ""
+cd ..
+mk flowerinscription
+write flowerinscription ""
+mk bloomingarch ::dir
+cd bloomingarch
+mk MIKI.girl :wp 255
+write MIKI.girl ""
+mk movahouse ::dir
+cd movahouse
+mk wires
+mkitem recording "Voice recording" "Mova asks whoever understands her to tell Miki that she is in GLASSTOWN, in one of the seeds. So that she can find her. She also thanks whoever is listening to this recording, because it means that Mova can now communicate."
+cd ..
+mk packmihouse ::dir
+cd packmihouse
+mk mechanicalsword1
+mk mechanicalsword2
+mk mechanicalsword3
+cd ..
+mk corridor ::dir
+cd corridor
+mk MIKI.girl :wp 255
+write MIKI.girl ""
+mk passage ::dir
+cd passage
+mk lightbeam ::dir
+setnewpath MIKITOWN:\flowergazebo "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath MIKITOWN:\bloomingarch "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath MIKITOWN:\bloomingarch\corridor "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath MIKITOWN:\bloomingarch\corridor\passage "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath MIKITOWN:\bloomingarch\corridor\passage\lightbeam "CORE:\.scripts\chapter3\p_miki_lightbeam.txt"
+setnewdialog MIKITOWN:\largepergola\MIKI.girl "CORE:\.scripts\chapter3\d1_miki1.txt"
+setnewdialog MIKITOWN:\flowergazebo\MIKI.girl "CORE:\.scripts\chapter3\d2_miki2.txt"
+setnewdialog MIKITOWN:\bloomingarch\MIKI.girl "CORE:\.scripts\chapter3\d3_miki3.txt"
+setnewdialog MIKITOWN:\bloomingarch\corridor\MIKI.girl "CORE:\.scripts\chapter3\d5_miki4.txt"

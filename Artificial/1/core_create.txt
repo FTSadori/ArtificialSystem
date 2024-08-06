@@ -14,3 +14,8 @@ cd chapter2
 allfromport 1 ch2\path
 allfromport 1 ch2\dial
 allfromport 1 ch2\lookaround
+cd ..
+mk chapter3 ::dir
+allfromport 1 ch3\path
+allfromport 1 ch3\dial
+allfromport 1 ch3\lookaround

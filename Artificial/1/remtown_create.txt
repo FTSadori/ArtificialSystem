@@ -1,0 +1,55 @@
+cd REMTOWN:
+mk gloomydesert ::dir :wp 255
+cd gloomydesert
+mk rubyspikes ::dir
+cd rubyspikes
+mk spike1
+mk spike2
+mk spike3
+spawnnova
+mk emptytombstone
+cd ..
+mk obsidianbones1
+mk obsidianbones2
+mk obsidiancemetery ::dir
+cd obsidiancemetery
+mk tombstone0
+write tombstone0 "creative" ::nobase64
+mk tombstone1
+write tombstone1 "crazy" ::nobase64
+cd ..
+cd ..
+mk rubydesert ::dir :wp 255
+cd rubydesert
+mk obsidianbones1
+mk obsidianbones2
+mk REM.girl :wp 255
+write REM.girl ""
+cd ..
+mk boneformation :wp 255
+write boneformation ""
+mk rubyarch ::dir :wp 255
+cd rubyarch
+mk REM.girl :wp 255
+write REM.girl ""
+mk ziphouse ::dir
+cd ziphouse
+mk ZIP.girl :wp 255
+write ZIP.girl ""
+cd ..
+mk emptyhouse ::dir
+mk corridor ::dir
+cd corridor
+mk REM.girl :wp 255
+write REM.girl ""
+mk passage ::dir
+cd passage
+mk lightbeam ::dir
+setnewpath REMTOWN:\rubyarch "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath REMTOWN:\rubyarch\corridor "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath REMTOWN:\rubyarch\corridor\passage "CORE:\.scripts\chapter3\p_cant_go_in.txt"
+setnewpath REMTOWN:\rubyarch\corridor\passage\lightbeam "CORE:\.scripts\chapter3\p_rem_lightbeam.txt"
+setnewdialog REMTOWN:\rubydesert\REM.girl CORE:\.scripts\chapter3\d7_rem1.txt
+setnewdialog REMTOWN:\rubyarch\REM.girl CORE:\.scripts\chapter3\d8_rem2.txt
+setnewdialog REMTOWN:\rubyarch\corridor\REM.girl CORE:\.scripts\chapter3\d9_rem3.txt
+setnewdialog REMTOWN:\rubyarch\ziphouse\ZIP.girl CORE:\.scripts\chapter3\d14_zip.txt

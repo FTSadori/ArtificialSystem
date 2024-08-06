@@ -1,0 +1,42 @@
+cd LIBRARY:
+mk brighthall ::dir :wp 255
+cd brighthall
+mk NANO.girl :wp 255
+write NANO.girl ""
+mk pillar1
+mk pillar2
+mk pillar3
+mk pillar4
+mk pillar5
+mk pillar6
+mk pillar7
+mk stairs ::dir
+cd stairs
+spawnnova
+cd ..
+cd ..
+mk dimhall ::dir :wp 255
+cd dimhall
+mk NANO.girl :wp 255
+write NANO.girl ""
+mk pillar1
+mk pillar2
+mk pillar3
+mk pillar4
+mk pillar5
+mk pillar6
+mk stairs ::dir
+cd stairs
+spawnnova
+cd ..
+cd ..
+mk roundhall ::dir :wp 255
+cd roundhall
+mk unreadablebook1 :rp 255
+mk unreadablebook2 :rp 255
+mk unreadablebook3 :rp 255
+mk unreadablebook4 :rp 255
+mk ELPA.girl
+mk descent ::dir :rp 150
+setnewdialog LIBRARY:\brighthall\NANO.girl CORE:\.scripts\chapter3\d11_nano1.txt
+setnewdialog LIBRARY:\dimhall\NANO.girl CORE:\.scripts\chapter3\d12_nano2.txt
