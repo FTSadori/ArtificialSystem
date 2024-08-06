@@ -5,3 +5,6 @@ d "Uh-huh."
 d "- So you're ready?"
 d "Yes."
 d "- Then... It's time for you to come to us."
+cd MIKITOWN:\marblegazebo\flowerfield
+changetextcolours green yellow lightgreen
+changecolours black black green

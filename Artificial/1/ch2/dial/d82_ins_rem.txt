@@ -1,5 +1,9 @@
 mk CORE:\removed ::h ::sys
 rm GLASSTOWN:\roots\deeper\sevenseeds\white.7z
+cd GLASSTOWN:\town\museum\roomofgoddesses\elparoom
+rm elpablessing.pack
+mkpack elpablessing1 "The blessing of the all-knowing Elpa..."
+cd GLASSTOWN:\town\smallshop
 d "- ..."
 d "- Haha!"
 d "- Interesting, girl!"
