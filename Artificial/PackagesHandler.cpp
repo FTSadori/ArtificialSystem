@@ -9,5 +9,6 @@ namespace Story
 		{ "tokipona.pack", "CORE:\\.scripts\\chapter2\\d75_ins_tokipona.txt" },
 		{ "remblessing.pack", "CORE:\\.scripts\\chapter2\\d82_ins_rem.txt" },
 		{ "elpablessing.pack", "CORE:\\.scripts\\chapter2\\d50_packmi.txt" },
+		{ "elpablessing1.pack", "CORE:\\.scripts\\chapter2\\d85_ins_elpa1.txt" },
 	};
 }

@@ -25,6 +25,7 @@ namespace Story
 		{ "[Button flower] BLUE:\\tomosuli\\tomolili2", "CORE:\\.scripts\\chapter2\\d74_u_buttonflower.txt" },
 		{ "[Violet pencil] VIOLET:\\largeweb", "CORE:\\.scripts\\chapter2\\d77_u_purplepensil.txt" },
 		{ "[Strong bell] VIOLET:\\largeweb", "CORE:\\.scripts\\chapter2\\d79_u_bell2.txt" },
+		{ "[Voice reconding] MIKITOWN:\\bloomingarch", "CORE:\\.scripts\\chapter3\\d4_u_recording.txt" },
 	};
 
 	std::string ItemUsingHandler::get_script_for_event(const Memory::FullPath& position, const std::string& item_name)
