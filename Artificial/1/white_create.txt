@@ -10,4 +10,4 @@ mk wires ::dir
 cd wires
 mk wires ::dir
 cd wires
-mk mova.girl :wp 255
+mk MOVA.girl :wp 255

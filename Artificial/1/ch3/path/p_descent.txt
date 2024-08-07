@@ -1,0 +1,5 @@
+cd DEPTH:
+clear
+changecolours black black white
+changetextcolours white white white
+d "Where are we going after all..."

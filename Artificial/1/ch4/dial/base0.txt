@@ -1,0 +1,13 @@
+d "Hm."
+d "Okay."
+d "- YOU aRE VeRY SMArT" :colour 2
+d "- VOIcE" :colour 2
+clear
+d "- BUT StiLL nOT EnOuGH" :colour 2
+d "- TRY AGaIN" :colour 2 ::bysymbol
+changecolours red red red
+changetextcolours black black black
+mk end
+write end "\\\" ::nobase64
+lookat end
+shutdown :after 3 ::DELETESYSTEM

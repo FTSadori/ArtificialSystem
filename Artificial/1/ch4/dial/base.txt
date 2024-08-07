@@ -1,0 +1,22 @@
+clear
+changecolours black black gray
+changetextcolours gray red gray
+d "Where... where am I?"
+d "- OooOOHhh yeeEs." :colour 2
+d "- IiiiI coULD nOT EXPEcT tHIS." :colour 2
+d "I-- what the hell?!"
+d "Who are you?"
+d "- I'vVe KNOwN YOu fOR a LONG TiME, BUT YoU'RE NeVERRR, eveR maDE IT To THE HalFWAY POINt." :colour 2
+d "- BuT RiGHT heRE?" :colour 2
+d "- InCREDIBle." :colour 2
+d "Are you..."
+d "Are you going to tell me who you are?"
+d "I don't know anything about you. I've never heard of you."
+d "You look like a woman's head sticking out of the wall."
+d "Are you in charge here?"
+d "- AhahaH, sOO yOU dIDN't STAY HEre for LONG." :colour 2
+d "- I COnGratuLATE YoU." :colour 2
+d "- YOU aRE ReALLY vERY smaRT." :colour 2
+d "Uh... Thanks."
+d "- COMe CLosER AnD I WilL reWARD YoU." :colour 2
+choice :op1 "Do it" :sc1 "CORE:\.scripts\chapter4\base0.txt" :op2 "Run away" :sc2 "CORE:\.scripts\chapter4\base1.txt"

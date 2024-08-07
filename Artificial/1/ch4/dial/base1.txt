@@ -1,0 +1,25 @@
+d "- WHEErEE aRE yOU RuNNING tOO??" :colour 2
+d "- COOOMeEEE BAaacK!!!" :colour 2 ::bysymbol
+d "..."
+clear
+changetextcolours green yellow lightgreen
+changecolours black black green
+d "Ugh..."
+d "Oh, shit..."
+d "I'm never going back there again."
+d "..."
+d "Miki?"
+d "- You're so out of breath."
+d "- Is everything okay?"
+d "I.. I don't know."
+d "- You can stay here."
+d "- I.. I don't think anyone will come after you."
+d "..."
+d "I see."
+d "- You have to be very careful with Rem."
+d "- Even if you haven't seen her yet."
+d "- Try to relax."
+mk end
+write end "\\\" ::nobase64
+lookat end
+shutdown :after 3 ::DELETESYSTEM

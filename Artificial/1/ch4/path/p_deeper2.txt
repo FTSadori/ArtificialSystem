@@ -1,0 +1,5 @@
+addlvls fallen 30
+setnewpath DEPTH:\deeper\deeper ""
+changecolours black black gray
+changetextcolours gray gray gray
+d "It's getting darker..."

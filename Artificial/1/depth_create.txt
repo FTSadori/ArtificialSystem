@@ -1,1 +1,11 @@
 cd DEPTH:
+spawnnova
+mk deeper ::dir
+cd deeper
+mk deeper ::dir
+cd deeper
+mk deeper ::dir
+cd deeper
+setnewpath DEPTH:\deeper CORE:\.scripts\chapter4\p_deeper1.txt
+setnewpath DEPTH:\deeper\deeper CORE:\.scripts\chapter4\p_deeper2.txt
+setnewpath DEPTH:\deeper\deeper\deeper CORE:\.scripts\chapter4\p_fall.txt

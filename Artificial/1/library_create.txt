@@ -40,3 +40,4 @@ mk ELPA.girl
 mk descent ::dir :rp 150
 setnewdialog LIBRARY:\brighthall\NANO.girl CORE:\.scripts\chapter3\d11_nano1.txt
 setnewdialog LIBRARY:\dimhall\NANO.girl CORE:\.scripts\chapter3\d12_nano2.txt
+setnewpath LIBRARY:\roundhall\descent CORE:\.scripts\chapter3\p_descent.txt

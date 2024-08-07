@@ -1,0 +1,5 @@
+addlvls fallen 20
+setnewpath DEPTH:\deeper ""
+changecolours black black lightgray
+changetextcolours lightgray lightgray lightgray
+d "Someone very important is waiting for me..."

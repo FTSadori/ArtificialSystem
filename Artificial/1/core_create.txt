@@ -1,8 +1,4 @@
 cd CORE:
-mk .charas ::h ::sys ::dir
-cd .charas
-mk packmi
-cd ..
 mk .scripts ::h ::sys ::dir
 cd .scripts
 mk chapter1 ::dir
@@ -16,6 +12,13 @@ allfromport 1 ch2\dial
 allfromport 1 ch2\lookaround
 cd ..
 mk chapter3 ::dir
+cd chapter3
 allfromport 1 ch3\path
 allfromport 1 ch3\dial
 allfromport 1 ch3\lookaround
+cd ..
+mk chapter4 ::dir
+cd chapter4
+allfromport 1 ch4\path
+allfromport 1 ch4\dial
+allfromport 1 ch4\lookaround

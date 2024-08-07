@@ -1,0 +1,5 @@
+addlvls fallen 35
+clear
+d "Aaaaaaaaaaaaa!!!" ::bysymbol :sl 5
+clear
+choosecore
