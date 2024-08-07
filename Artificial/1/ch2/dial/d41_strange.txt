@@ -1,5 +1,5 @@
 setnewdialog VIOLET:\largeweb\strange.girl CORE:\.scripts\chapter2\d42_strange2.txt
-setnewdialog WHITE:\wires\wires\wires\mova.girl CORE:\.scripts\chapter2\d43_mova.txt
+setnewdialog WHITE:\wires\wires\wires\MOVA.girl CORE:\.scripts\chapter2\d43_mova.txt
 addlvls citizen 5
 d "Girl came closer and put an envelope with a piece of paper and a pen in my hands."
 d "Is this where I should write the address?"

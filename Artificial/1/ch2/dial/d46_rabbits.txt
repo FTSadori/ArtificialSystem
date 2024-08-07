@@ -1,2 +1,2 @@
-setnewdialog WHITE:\wires\wires\wires\mova.girl "CORE:\.scripts\chapter2\d47_a_rabbits.txt"
+setnewdialog WHITE:\wires\wires\wires\MOVA.girl "CORE:\.scripts\chapter2\d47_a_rabbits.txt"
 d "*Mova has opened a new dialog!*"
