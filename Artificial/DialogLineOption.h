@@ -26,7 +26,7 @@ namespace Commands
 				ptr->print_main("No permission lvl needed\n");
 				ptr->print_main("Prints text to terminal\n");
 				ptr->print_main("You can set timer between symbols and set if user need to press enter after line\n");
-				ptr->print_secondary("d {line} [:color {1|2|3}] [:sl ms] [::noenter] [::bysymbol]\n");
+				ptr->print_secondary("d {line} [:colour {1|2|3}] [:sl ms] [::noenter] [::bysymbol]\n");
 				ptr->print_main("  line - (string) line to output;\n");
 				ptr->print_main("  :color 1|2|3 - (flag + integer) color console to apply to text (1 - main, 2 - secondary, 3 - third);\n");
 				ptr->print_main("  :sl ms - (flag + integer) time in milliseconds between symbols printing;\n");
@@ -43,9 +43,9 @@ namespace Commands
 				ptr->m_allow_input = false;
 				for (char c : _command.get("1"))
 				{
-					if (_command.has(":color") && _command.get(":color") == "2")
+					if (_command.has(":colour") && _command.get(":colour") == "2")
 						ptr->print_secondary(std::string(1, c));
-					else if (_command.has(":color") && _command.get(":color") == "3")
+					else if (_command.has(":colour") && _command.get(":colour") == "3")
 						ptr->print_third(std::string(1, c));
 					else
 						ptr->print_main(std::string(1, c));
@@ -60,9 +60,9 @@ namespace Commands
 				ptr->m_allow_input = false;
 				for (const auto& s : Separator::split(_command.get("1"), ' '))
 				{
-					if (_command.has(":color") && _command.get(":color") == "2")
+					if (_command.has(":colour") && _command.get(":colour") == "2")
 						ptr->print_secondary(s + " ");
-					else if (_command.has(":color") && _command.get(":color") == "3")
+					else if (_command.has(":colour") && _command.get(":colour") == "3")
 						ptr->print_third(s + " ");
 					else
 						ptr->print_main(s + " ");

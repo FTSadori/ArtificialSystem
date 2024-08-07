@@ -55,14 +55,14 @@ namespace Commands
 			Memory::FullPath path1 = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));
 			auto& disk1 = m_core.memory().get_disk(path1.mark());
 			if (!disk1.is_exists(path1.disk_path()))
-				throw CommandException("(SetNewDialogOption) Wrong talkpath");
+				throw CommandException("(SetNewDialogOption) Wrong talkpath (" + path1.full_path_str() + ")");
 
 			if (_command.get("2") != "")
 			{
 				Memory::FullPath path2 = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("2"));
 				auto& disk2 = m_core.memory().get_disk(path2.mark());
 				if (!disk2.is_exists(path2.disk_path()))
-					throw CommandException("(SetNewDialogOption) Wrong scriptpath");
+					throw CommandException("(SetNewDialogOption) Wrong scriptpath (" + path2.full_path_str() + ")");
 
 				Story::DynamicEventsHandler::s_dialogHandler.set_new_pair(path1.full_path_str(), path2.full_path_str());
 			}

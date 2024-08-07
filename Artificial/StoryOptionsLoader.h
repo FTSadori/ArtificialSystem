@@ -17,6 +17,7 @@
 #include "SetPathPairOption.h"
 #include "CallForHerOption.h"
 #include "ShowStatsOption.h"
+#include "ChooseCoreOption.h"
 
 namespace Commands
 {
@@ -40,6 +41,7 @@ namespace Commands
 			controller.add_option("setnewpath", std::make_unique<SetPathPairOption>(core));
 			controller.add_option("callnova", std::make_unique<CallForHerOption>(core));
 			controller.add_option("showstats", std::make_unique<ShowStatsOption>(core));
+			controller.add_option("choosecore", std::make_unique<ChooseCoreOption>(core));
 			return controller;
 		}
 	};

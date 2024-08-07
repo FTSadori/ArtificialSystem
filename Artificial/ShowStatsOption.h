@@ -7,6 +7,7 @@
 #include "ICore.h"
 #include "RealFileManager.h"
 #include "SurroundingsHandler.h"
+#include "EndingData.h"
 #include <filesystem>
 
 namespace Commands
@@ -35,9 +36,22 @@ namespace Commands
 			auto& maindisk = m_core.memory().get_disk(info);
 
 			try {
+				auto a = maindisk.read(DiskPath("\\.awareness"), true);
+				ptr->print_main("Awareness: ");
+				ptr->print_secondary(Parser::to_string(a.size()) + "\n");
+
+				Story::EndingData::awareness = (a.size() < 10) ? Story::Awareness::LOW : Story::Awareness::MEDIUM;
+			}
+			catch (...) {}
+
+			try {
 				auto a = maindisk.read(DiskPath("\\removed"), true);
 				ptr->print_main("Killed: ");
 				ptr->print_secondary(Parser::to_string(a.size()) + "\n");
+
+				Story::EndingData::awareness = Story::Awareness::RZERO;
+				if (a.size() > 0)
+					Story::EndingData::awareness = (a.size() >= 5) ? Story::Awareness::RALL : Story::Awareness::RMEDIUM;
 			}
 			catch (...) {}
 			
@@ -56,6 +70,10 @@ namespace Commands
 			catch (...) {}
 			ptr->print_main("Friendliness: ");
 			ptr->print_secondary(Parser::to_string(fr) + "\n");
+			if (fr < 8)
+				Story::EndingData::friendliness = Story::Friendliness::LOW;
+			else
+				Story::EndingData::friendliness = (fr == 20) ? Story::Friendliness::MAX : Story::Friendliness::MEDIUM;
 
 			return;
 		}

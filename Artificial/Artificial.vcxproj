@@ -145,6 +145,8 @@
     <ClCompile Include="DiskSystem.cpp" />
     <ClCompile Include="DynamicEventsHandler.cpp" />
     <ClCompile Include="DynamicEventsHandler.h" />
+    <ClCompile Include="EndingChooser.cpp" />
+    <ClCompile Include="EndingData.cpp" />
     <ClCompile Include="FileHierarchy.cpp" />
     <ClCompile Include="FileHierarchy.h" />
     <ClCompile Include="FinalModuleKeyWords.cpp" />
@@ -199,6 +201,7 @@
     <ClInclude Include="ChangeDirectoryOption.h" />
     <ClInclude Include="ChangeModificatorsOption.h" />
     <ClInclude Include="ChangeTextColours.h" />
+    <ClInclude Include="ChooseCoreOption.h" />
     <ClInclude Include="ClearConsoleOption.h" />
     <ClInclude Include="ComparingExpression.h" />
     <ClInclude Include="ConstantsVector.h" />
@@ -208,6 +211,8 @@
     <ClInclude Include="DialogChoiceOption.h" />
     <ClInclude Include="DialogLineOption.h" />
     <ClInclude Include="EchoOption.h" />
+    <ClInclude Include="EndingChooser.h" />
+    <ClInclude Include="EndingData.h" />
     <ClInclude Include="FinalTasks.h" />
     <ClInclude Include="GirlTasks.h" />
     <ClInclude Include="GoNovaOption.h" />
@@ -232,6 +237,7 @@
     <ClInclude Include="ShowOpenedTasksOption.h" />
     <ClInclude Include="ShowStatsOption.h" />
     <ClInclude Include="ShowTaskDetailsOption.h" />
+    <ClInclude Include="ShutDownOption.h" />
     <ClInclude Include="SkipTaskOption.h" />
     <ClInclude Include="SpawnNovaOption.h" />
     <ClInclude Include="CreatePackageOption.h" />

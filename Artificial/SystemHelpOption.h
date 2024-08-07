@@ -34,6 +34,7 @@ namespace Commands
 			ptr->print_third("- preload\n");
 			ptr->print_third("- run\n");
 			ptr->print_third("- passreload\n");
+			ptr->print_third("- shutdown\n");
 
 			return;
 		}

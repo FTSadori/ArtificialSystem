@@ -25,15 +25,15 @@ namespace Commands
 			{
 				ptr->print_main("No permission lvl needed\n");
 				ptr->print_main("Prints text to terminal\n");
-				ptr->print_secondary("e {line} [:color {1|2|3}]\n");
+				ptr->print_secondary("e {line} [:colour {1|2|3}]\n");
 				ptr->print_main("  line - (string) line to output;\n");
-				ptr->print_main("  :color 1|2|3 - (flag + integer) color console to apply to text (1 - main, 2 - secondary, 3 - third);\n");
+				ptr->print_main("  :colour 1|2|3 - (flag + integer) color console to apply to text (1 - main, 2 - secondary, 3 - third);\n");
 				return;
 			}
 			
-			if (_command.has(":color") && _command.get(":color") == "2")
+			if (_command.has(":colour") && _command.get(":colour") == "2")
 				ptr->print_secondary(_command.get("1") + "\n");
-			else if (_command.has(":color") && _command.get(":color") == "3")
+			else if (_command.has(":colour") && _command.get(":colour") == "3")
 				ptr->print_third(_command.get("1") + "\n");
 			else
 				ptr->print_main(_command.get("1") + "\n");

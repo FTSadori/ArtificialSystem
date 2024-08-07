@@ -426,6 +426,12 @@
     <ClCompile Include="DynamicEventsHandler.cpp">
       <Filter>Исходные файлы\Core\Story\Quest\DynamicEvents</Filter>
     </ClCompile>
+    <ClCompile Include="EndingData.cpp">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="EndingChooser.cpp">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SectorInfo.h">
@@ -910,6 +916,18 @@
     </ClInclude>
     <ClInclude Include="ShowStatsOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingData.h">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="EndingChooser.h">
+      <Filter>Исходные файлы\Core\Story\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ChooseCoreOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="ShutDownOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

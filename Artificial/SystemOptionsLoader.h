@@ -8,6 +8,7 @@
 #include "SystemPreloadOption.h"
 #include "SystemRunScriptOption.h"
 #include "PasswordsReloadOption.h"
+#include "ShutDownOption.h"
 
 namespace Commands
 {
@@ -25,6 +26,7 @@ namespace Commands
 			controller.add_option("preload", std::make_unique<SystemPreloadOption>(core));
 			controller.add_option("run", std::make_unique<SystemRunScriptOption>(core));
 			controller.add_option("passreload", std::make_unique<PasswordsReloadOption>(core));
+			controller.add_option("shutdown", std::make_unique<ShutDownOption>(core));
 			return controller;
 		}
 	};
