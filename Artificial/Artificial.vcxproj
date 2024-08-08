@@ -214,6 +214,7 @@
     <ClInclude Include="EchoOption.h" />
     <ClInclude Include="EndingChooser.h" />
     <ClInclude Include="EndingData.h" />
+    <ClInclude Include="FallenHelpOption.h" />
     <ClInclude Include="FinalTasks.h" />
     <ClInclude Include="GirlTasks.h" />
     <ClInclude Include="GoNovaOption.h" />

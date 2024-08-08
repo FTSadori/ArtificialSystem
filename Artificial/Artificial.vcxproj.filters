@@ -935,6 +935,9 @@
     <ClInclude Include="CitizenHelpOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
     </ClInclude>
+    <ClInclude Include="FallenHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">

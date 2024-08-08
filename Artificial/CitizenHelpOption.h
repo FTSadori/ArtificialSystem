@@ -9,11 +9,11 @@
 
 namespace Commands
 {
-	// visitorhelp
-	class VisitorHelpOption final : public AbstractControllerOption
+	// citizenhelp
+	class CitizenHelpOption final : public AbstractControllerOption
 	{
 	public:
-		VisitorHelpOption(ICore& _core)
+		CitizenHelpOption(ICore& _core)
 			: AbstractControllerOption(_core) {}
 
 		virtual void execute(const ICommand& _command, const User& sender) override
@@ -27,16 +27,13 @@ namespace Commands
 			}
 
 			ptr->print_main("Use next commands with ::help to get more info:\n");
-			ptr->print_third("- ls (0 lvl)\n");
-			ptr->print_third("- callnova (0 lvl)\n");
-			ptr->print_third("- go (1 lvl)\n");
-			ptr->print_third("- lookaround (1 lvl)\n");
-			ptr->print_third("- pick (2 lvl)\n");
-			ptr->print_third("- inv (2 lvl)\n");
-			ptr->print_third("- useitem (2 lvl)\n");
-			ptr->print_third("- talkto (3 lvl)\n");
-			ptr->print_third("- addpack (4 lvl)\n");
-			ptr->print_third("- packmi (4 lvl)\n");
+			ptr->print_third("- nano (11 lvl)\n");
+			ptr->print_third("- mk (12 lvl)\n");
+			ptr->print_third("- mova (13 lvl)\n");
+			ptr->print_third("- tasks (13 lvl)\n");
+			ptr->print_third("- showtask (13 lvl)\n");
+			ptr->print_third("- runtests (13 lvl)\n");
+			ptr->print_third("- rm (99 lvl)\n");
 			
 			return;
 		}
