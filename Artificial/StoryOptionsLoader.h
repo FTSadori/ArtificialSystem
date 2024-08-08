@@ -18,6 +18,7 @@
 #include "CallForHerOption.h"
 #include "ShowStatsOption.h"
 #include "ChooseCoreOption.h"
+#include "KillCoreOption.h"
 
 namespace Commands
 {
@@ -42,6 +43,7 @@ namespace Commands
 			controller.add_option("callnova", std::make_unique<CallForHerOption>(core));
 			controller.add_option("showstats", std::make_unique<ShowStatsOption>(core));
 			controller.add_option("choosecore", std::make_unique<ChooseCoreOption>(core));
+			controller.add_option("killcore", std::make_unique<KillCoreOption>(core));
 			return controller;
 		}
 	};

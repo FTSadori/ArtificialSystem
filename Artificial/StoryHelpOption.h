@@ -41,6 +41,7 @@ namespace Commands
 			ptr->print_third("- callnova\n");
 			ptr->print_third("- showstats\n");
 			ptr->print_third("- choosecore\n");
+			ptr->print_third("- killcore\n");
 
 			return;
 		}

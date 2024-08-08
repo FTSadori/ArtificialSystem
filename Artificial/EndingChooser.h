@@ -10,7 +10,6 @@ namespace Story
 		Base,
 		BaseFriend,
 		Zero,
-		OneOrTrue,
 		NaN,
 		NaNFriend,
 		NaNKilled,

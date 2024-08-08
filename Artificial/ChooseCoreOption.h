@@ -55,7 +55,6 @@ namespace Commands
 			{ Story::Endings::NaNFriend, "nanfriend.txt" },
 			{ Story::Endings::NaNKilled, "nankilled.txt" },
 			{ Story::Endings::NaNKilledPlus, "nankilledplus.txt" },
-			{ Story::Endings::OneOrTrue, "oneortrue.txt" },
 			{ Story::Endings::Zero, "zero.txt" },
 		};
 	};

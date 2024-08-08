@@ -929,6 +929,12 @@
     <ClInclude Include="ShutDownOption.h">
       <Filter>Исходные файлы\Core\Commands\Options\SystemCreation\Options</Filter>
     </ClInclude>
+    <ClInclude Include="KillCoreOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Story\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="CitizenHelpOption.h">
+      <Filter>Исходные файлы\Core\Commands\Options\Help\Options</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="CommandExceptions.h">
