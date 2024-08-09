@@ -1,0 +1,10 @@
+d "- GREEEaTTT!" :colour 2
+d "- NoW YoU'RE ClOSE ENouGH..." :colour 2
+d "Wait, Voi-" ::noenter
+changecolours red red red
+changetextcolours black black black
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
+mk end
+write end "\\\" ::nobase64
+lookat end
+shutdown :after 3 ::DELETESYSTEM

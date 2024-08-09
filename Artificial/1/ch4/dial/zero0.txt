@@ -1,0 +1,3 @@
+d "Y-yes!"
+d "Check them out... somehow."
+d "- STOp dOING STuPid ThInGs!" :colour 2

@@ -1,0 +1,37 @@
+changecolours black black gray
+changetextcolours gray red gray
+d "Where is this... main one."
+d "- Oh, NO, NO-nO." :colour 2
+d "- I'M NoT STUpID EnOUGH TO LeT yOU COme HERE." :colour 2
+d "- I CAn SeNSE YOuR STreNGTH." :colour 2
+d "- And WORSE, YoUr AbiLITY To kILL." :colour 2
+d "..."
+d "- YoUR ScYTHE oF REm cAN GROW StROnGER FrOM THeSE KILLS." :colour 2
+d "Thanks for the info, but now let me in, you bastard."
+d "- No." :colour 2
+clear
+changecolours red red red
+changetextcolours black white black
+d "- GO To HELL." ::bysymbol :colour 2
+clear
+changetextcolours red violet lightred
+changecolours black black red
+d "Uhhh??"
+d "Oh shiiiit!"
+d "She didn't even let me go to the end!!!"
+d "..."
+d "- Are you done?"
+d "..."
+d "Rem?"
+d "- I guess you're stuck with me."
+d "- Take that empty house."
+d "- I have nothing else for you."
+d "I can't believe it..."
+d "- I have never liked killing mindlessly."
+d "- But I see that you are doing a good job with it."
+d "- You will help me."
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
+mk end
+write end "\\\" ::nobase64
+lookat end
+shutdown :after 3 ::DELETESYSTEM

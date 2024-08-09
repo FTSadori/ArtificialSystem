@@ -1,0 +1,41 @@
+clear
+d "- WHa-" ::noenter ::bysymbol
+clear
+changecolours black black black
+changetextcolours red white red
+d "- WHaaAAATTT???"
+d "- YOuu STUpiD BAaaastardDDD!"
+d "- YOu"
+d "- YOU WILL diE WITh ME." :colour 2
+d "Wha... what?"
+changecolours red red red
+changetextcolours black white black
+d "- I AM THe CO-" ::noenter
+changecolours black black black
+changetextcolours red white red
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours red red red
+changetextcolours black white black
+d "-Re oF This FuC-" ::noenter
+changecolours black black black
+changetextcolours red white red
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+changecolours red red red
+changetextcolours black white black
+d "-King WORlD!!'
+d "I'm.. really scared."
+d "V..voice."
+clear
+d "Save me next time, Voice." ::bysymbol
+d "I trust you." ::bysymbol
+mk end
+write end "\\\" ::nobase64
+lookat end
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
+shutdown :after 3 ::DELETESYSTEM

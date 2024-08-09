@@ -1,0 +1,33 @@
+cd CORE:\controlroom
+setnewpath CORE: CORE:\.scripts\chapter4\p_core.txt
+changecolours black black gray
+changetextcolours gray red gray
+d "Where... where am I?"
+d "- OooOOHhh yeeEs." :colour 2
+d "- IiiiI coULD nOT EXPEcT tHIS." :colour 2
+d "I-- what the hell?!"
+d "Who are you?"
+d "- I'vVe KNOwN YOu fOR a LONG TiME, BUT YoU'RE NeVERRR, eveR maDE IT To THE HalFWAY POINt." :colour 2
+d "- BuT RiGHT heRE?" :colour 2
+d "- InCREDIBle." :colour 2
+d "Are you..."
+d "..."
+d "What do you know about people like me?"
+d "- PeOPLE?" :colour 2
+d "- LIkE YoU??" :colour 2
+d "- AHahahahAH" :colour 
+d "Uh-huh, you should know."
+d "Everyone says there were many people like me."
+d "Novas."
+d "But most of them are..."
+d "Gone."
+d "- ThEY'RE STIll HeRE, GIrL." :colour 2
+d "- ANd YoU WILL Be ToO." :colour 2
+d "You don't even try to hide it."
+d "- AhaHAh!" :colour 2
+d "- WhY WoULD I WaNT To?" :colour 2
+d "Voice."
+d "Please try to do something."
+d "You really know more about this place."
+clear
+d "- MAkE hER COme TO ME." :colour 2

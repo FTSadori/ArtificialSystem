@@ -1,0 +1,128 @@
+changecolours black black gray
+changetextcolours gray red gray
+d "Now I'm ready."
+d "The scythe I received from Rem's blessing is burning hot."
+d "I have to do it alone."
+d "- OH nO, GIrL." :colour 2
+d "- It'S ToOoo muCH." :colour 2
+d "I'm not asking you."
+d "- Eh?" :colour 2 ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "- HOw DiD YOu Get IN HERE?!!!"
+d "- E-" ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "- AAAAaahHHhhh!!!"
+d "- WhaT ThE FuCK IS GoING ON???"
+d "- WHa-" ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "- WHa-" ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "Wha-- what?"
+d "What the hell?"
+d "- I'LL JuST TaKE You WheRE YOu NEED to BE."
+d "- LeT hER dEAL WitH YOu."
+d "- I caN't VanquISH yOU anYWAy."
+d "D-" ::noenter
+d "Don't you dare!"
+clear
+changecolours black black black
+changetextcolours white white white
+d "AAAAaaaahhhh!" ::bysymbol
+clear
+changetextcolours red violet lightred
+changecolours black black red
+d "..."
+d "Even so..."
+d "I'm back in this hell with Rem."
+d "- You look too worried." :colour 2
+d "- Nova." :colour 2
+d "Uh?"
+d "Rem, what are you doing?"
+d "- I kill very rarely." :colour 2
+d "- Only when the victim interferes with the peaceful life of others." :colour 2
+d "- That much." :colour 2
+d "It was you who left me this blessing."
+d "- It would be nice if someone took this job away from me." :colour 2
+d "- So that this someone could send souls to hell much easier." :colour 2
+d "- But one thing I hate for sure is loneliness." :colour 2
+d "- You will kill everyone, so I have to kill you first." :colour 2
+d "Then attack." ::noenter ::bysymbol
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "Uh!"
+d "Hm-" ::noenter
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "- ..."
+d "Sto-" ::noenter
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "Stop i-" ::noenter
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "Aaaaargh!"
+d "Damn.. you..."
+d "- I will bury you so deeply that you will never see the light of day again." :colour 2
+d "..."
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+mk end
+write end "\\\" ::nobase64
+lookat end
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
+shutdown :after 3 ::DELETESYSTEM

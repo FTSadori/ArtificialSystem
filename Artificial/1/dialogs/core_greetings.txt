@@ -1,18 +1,19 @@
 changecolours black black black
 changetextcolours white white white
 clear
+d "TESTING, TESTING..." sl 100
 d "..." :sl 100 ::bysymbol
-d "GREeTInGS" :sl 70 ::bysymbol
-d "THANK yOU FOr USInG" :sl 70
-d "MY ARTIFiCIAL SySTEM" :sl 70
+d "GREETINGS" :sl 70 ::bysymbol
+d "THANK YOU FOR USING" :sl 70
+d "MY ARTIFICIAL SYSTEM" :sl 70
 d "..." :sl 100 ::bysymbol
-d "I PrOmISE YooU'lL LOve IT" :sl 70
-d "IF YoU'RE SmART ENoUGH" :sl 70
+d "I PrOMISE YOU'LL LOVE IT" :sl 70
+d "IF YOU'RE SMART ENOUGH" :sl 70
 d "..." :sl 100 ::bysymbol
-d "I HOpE YoU WIlL BE A gOOD PaRTNEr" :sl 70
-d "AND YoU'LL DO WHaT'S REQUirED OF yOU" :sl 70
-d "YOu ARe NOW A ViSItOR TO tHIS sYSTEM, PARTnER" :sl 70
-d "ReMEMBER OnE THING" :sl 70
+d "I HOPE YOU WILL BE A GOOD PARTNER" :sl 70
+d "AND YOU'LL DO WHAT'S REQUIRED OF YOU" :sl 70
+d "YOU ARE NOW A VISITOR TO THIS SYSTEM" :sl 70
+d "REMEMBER ONE THING" :sl 70
 clear
 d "IT'S ALL JUST FILES" :sl 70 ::noenter ::bysymbol
 d "IT'S ALL JUST FILES" :sl 30 ::noenter ::bysymbol

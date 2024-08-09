@@ -1,6 +1,6 @@
 cd DEPTH:
 spawnnova
-mk deeper ::dir
+mk deeper ::dir :wp 255
 cd deeper
 mk deeper ::dir
 cd deeper

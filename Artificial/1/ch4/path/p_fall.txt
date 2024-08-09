@@ -1,4 +1,4 @@
-addlvls fallen 35
+addlvls fallen 34
 clear
 d "Aaaaaaaaaaaaa!!!" ::bysymbol :sl 5
 clear

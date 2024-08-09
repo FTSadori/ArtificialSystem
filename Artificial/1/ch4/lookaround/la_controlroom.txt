@@ -1,0 +1,12 @@
+d "It scares me."
+d "It's a woman's head sticking out of the wall."
+d "It's read and looks at me with crazy eyes."
+d "From her neck there are wires running down the wall, along which a red pulsates."
+d "..."
+d "- MAkE hER COme TO ME." :colour 2
+d "- AND It wILL EnD." :colour 2
+d "..."
+d "..."
+d "We have become so strong..."
+d "Shouldn't we learn new..."
+choice :op1 "...commands" :sc1 "CORE:\.scripts\chapter4\zero0.txt"

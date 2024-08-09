@@ -5,6 +5,7 @@ d "- VOIcE" :colour 2
 clear
 d "- BUT StiLL nOT EnOuGH" :colour 2
 d "- TRY AGaIN" :colour 2 ::bysymbol
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 changecolours red red red
 changetextcolours black black black
 mk end

@@ -2,10 +2,6 @@ adduser fallen 100
 changeuser fallen
 d "- Rem is definitely waiting for you."
 d "..."
-d "- I don't know what you want, but you better stop doing it."
-d "- It won't do anything, but at least these souls lived a better life than in a trash can."
-d "- You didn't know that, did you?"
-d "- But maybe you're just fucked up."
 d "- Haha..."
 d "- Good luck."
 cd REMTOWN:\gloomydesert\rubyspikes

@@ -50,7 +50,7 @@ namespace Commands
 	private:
 		std::unordered_map<Story::Endings, std::string> s_scripts = {
 			{ Story::Endings::Base, "base.txt" },
-			{ Story::Endings::BaseFriend, "basefriend.txt" },
+			{ Story::Endings::BaseFriend, "friend.txt" },
 			{ Story::Endings::NaN, "nan.txt" },
 			{ Story::Endings::NaNFriend, "nanfriend.txt" },
 			{ Story::Endings::NaNKilled, "nankilled.txt" },

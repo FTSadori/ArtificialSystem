@@ -1,4 +1,9 @@
 cd CORE:
+mk controlroom ::h ::sys ::dir
+cd controlroom
+spawnnova
+mk CORE.GIRL
+cd ..
 mk .scripts ::h ::sys ::dir
 cd .scripts
 mk chapter1 ::dir

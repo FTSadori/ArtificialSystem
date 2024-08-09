@@ -1,0 +1,62 @@
+clear
+d "Uh!"
+d "V..Voice?"
+changecolours red red red
+changetextcolours black white black
+d "- WhYYY diD yOU dO IT???"
+d "- AAAAAA-" ::noenter
+changecolours black black black
+changetextcolours red white red
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours red red red
+changetextcolours black white black
+d "- Hhhhhhhh!!!"
+d "I..."
+d "I can see..." ::noenter
+changecolours black black black
+changetextcolours red white red
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+d "-" ::noenter :sl 5
+changecolours red red red
+changetextcolours black white black
+d "The exit!"
+d "- STOooooOO-" ::noenter
+changecolours black black black
+changetextcolours red white red
+d "- o" ::noenter :sl 5
+d "- o" ::noenter :sl 5
+changecolours red red red
+changetextcolours black white black
+d "- O" ::noenter :sl 5
+changecolours lightred lightred lightred
+changetextcolours black white black
+d "- O" ::noenter :sl 5
+changecolours black black black
+changetextcolours red white red
+d "I have to run away!"
+d "Thank-" ::noenter
+changecolours red red red
+changetextcolours black white black
+d "- O" ::noenter :sl 5
+changecolours yellow yellow yellow
+changetextcolours black white black
+d "- O" ::noenter :sl 5
+changecolours green green green
+changetextcolours black white black
+d "- O" ::noenter :sl 5
+changecolours blue blue blue
+changetextcolours white white white
+clear
+mk end
+write end "\\\" ::nobase64
+lookat end
+createsavesfile "nova.girl" "OOO"
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
+createsavesfile "RECORDING2" "SVQnUyBJTkNSRURJQkxFClJFQUxMWSBJTkNSRURJQkxFClBBUlRORVIsIFlPVSBUVVJORUQgT1VUIFRPIEJFIE1VQ0ggU01BUlRFUiBUSEFOIEkgSU1BR0lORUQKSVQnUyBKVVNUIEEgR0FNRSwgQlVUIFlPVSdSRSBSRUFMTFkgTUFTVEVSRUQgSVQKSSwgQVMgVEhFIEFVVEhPUiBPRiBUSEUgQVJUSUZJQ0lBTCBTWVNURU0sIENPTkdSQVRVTEFURSBZT1UKCkJVVCBUSEUgVEVTVElORyBJUyBOT1QgT1ZFUgpBTkQgSVQgV09OJ1QgRU5EIFdISUxFIFNIRSdTIEhFUkUKQU5ZT05FIENBTiBSVU4gVEhFIFNZU1RFTSBBUyBMT05HIEFTIElUJ1MgUE9XRVJFRCBCWSBIVU1BTiBJTlRFTExJR0VOQ0UKCkkgTEVGVCBIRVIsIE1ZIFRFU1QgU1VCSkVDVCwgTE9ORyBBR08KQVMgV0VMTCBBUyBUSEUgU1lTVEVNCkJVVCBTSEUnUyBTVElMTCBUSEVSRQoKVU5USUwgU0hFIERJRVMsIE9SIEdFVFMgT1VULCBJIFdJTEwgQ09OVElOVUUgVE8gTE9PSyBGT1IgUEVPUExFIExJS0UgWU9VCgpNQVlCRSBZT1VSIEJSQUlOIFdJTEwgTUFLRSBUSEUgU1lTVEVNIFdPUksgRVZFTiBCRVRURVIKCkdPT0QgTFVDSw=="
+shutdown :after 3 ::DELETESYSTEM

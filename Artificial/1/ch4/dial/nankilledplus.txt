@@ -1,0 +1,310 @@
+changecolours black black gray
+changetextcolours gray red gray
+d "Now I'm ready."
+d "The scythe I received from Rem's blessing is burning hot."
+d "Even... my hands, too."
+d "..."
+d "I have to do it alone."
+d "- OH nO, GIrL." :colour 2
+d "- It'S ToOoo muCH." :colour 2
+d "I'm not asking you."
+d "- Eh?" :colour 2 ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "- HOw DiD YOu Get IN HERE?!!!"
+d "- E-" ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "- AAAAaahHHhhh!!!"
+d "- WhaT ThE FuCK IS GoING ON???"
+d "- WHa-" ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "- WHa-" ::noenter
+changecolours red red red
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changecolours black black black
+changetextcolours red red red
+clear
+d "Gr..."
+d "Why are you so bloody tough?!"
+d "- I wOOn'T last ThaT looNG."
+d "- I'LL JuST TaKE You WheRE YOu NEED to BE."
+d "- LeT hER dEAL WitH YOu."
+d "- As soOON aS PossIBLE."
+d "Don't you dare!"
+clear
+changecolours black black black
+changetextcolours white white white
+d "..." ::bysymbol
+clear
+changetextcolours red violet lightred
+changecolours black black red
+d "..."
+d "Even so..."
+d "I'm back in this hell with Rem."
+d "- You look too worried." :colour 2
+d "- Nova." :colour 2
+d "..."
+d "Rem, stay away."
+d "- I kill very rarely." :colour 2
+d "- Only when the victim interferes with the peaceful life of others." :colour 2
+d "- That much." :colour 2
+d "It was you who left me this blessing."
+d "- It would be nice if someone took this job away from me." :colour 2
+d "- So that this someone could send souls to hell much easier." :colour 2
+d "- But..." :colour 2
+d "- But I could not imagine that someone would kill in such a way." :colour 2
+d "You are so weak in spirit."
+d "I have only one goal, and I have to fulfill it."
+d "These killings make me much stronger, so..."
+d "I need to use it."
+d "- Then att-" ::noenter ::bysymbol :colour 2
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "- Gr!" :colour 2
+d "- Uh-" ::noenter :colour 2
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "- ..." :colour 2
+d "- You-" ::noenter :colour 2
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "- Argh-" ::noenter :colour 2
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "- Uuuhhh!" :colour 2
+d "- Remember..." :colour 2
+d "- You-" ::noenter :colour 2
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "..."
+d "- You are not t-the strongest..." :colour 2
+d "- And you ne-" ::noenter :colour 2
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "- And y-you never w-will b-be" :colour 2
+d "..." :sl 100
+changecolours red red violet
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours red violet lightred
+changecolours black black red
+clear
+d "..." :sl 100
+d "It's all..."
+d "It's all over."
+d "I have to look for the next victim."
+d "..." :sl 500 ::bysymbol
+clear
+changetextcolours gray yellow gray
+changecolours black black yellow
+d "..." :sl 500 ::bysymbol
+d "It's quiet."
+d "Zip's not here."
+d "Did someone tell her to get out of here?"
+d "..."
+d "That beam is gone, too."
+d "Argh!"
+d "I'm still gonna get you, Core!"
+d "..." :sl 500 ::bysymbol
+d "What's that sound?"
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "Uh?"
+d "W-who the hell are you?"
+d "Did you fall from above?"
+d "- I DIDN'T PREPARE FOR THE DIALOGUES" :colour 2
+d "- THE TARGET MUST BE DESTROYED AS SOON AS POSSIBLE" :colour 2
+d "What the fuck kind of robot is that?!"
+d "*The robot pulls out two swords, the blades glowing orange*"
+d "*It then took off and quickly attacked Nova*"
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "Grr!"
+d "Prepare to be purged from this world, once and for all!"
+d "I will not hold back."
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "-" ::noenter :sl 10
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "- PROBABLE TARGET LEVEL 255, SYSTEMIC" :colour 2
+d "- MULTITASKING SUPPORT PACKAGE: ACTIVATED" :colour 2
+d "*Several swords on the robot's back broke away and started attacking Nova individually*"
+d "*Nova twirled her scythe and with a strong swing, she cleared two of the swords flying at her*"
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "I'm going to delete you in a heartbeat."
+d "You're just gonna make me stronger."
+d "Hah, how could I possible object to that?"
+d "*The robot jet-propelled off its feet and hovered in midair*"
+d "- TARGET ANALYZED" :colour 2
+d "- PREPARING TO LAUNCH CORROSIVE BULLETS" :colour 2
+d "- TARGET: FILE BYTE CODE NOVA.GIRL" :colour 2
+d "Enough with this circus!"
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "Ah?"
+d "A---" ::noenter
+changecolours red red red
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours yellow yellow yellow
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours green green green
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours blue blue blue
+changetextcolours white white white
+d "-" ::noenter :sl 5
+changetextcolours gray yellow gray
+changecolours black black yellow
+d "--T-the fuck was that?!"
+d "-M--y hand?!"
+d "- VIRUS ATTACHMENT: SUCCESSFUL" :colour 2
+d "Grr!"
+d "- PREPARING TO ACTIVATE THE ANTIVIRUS MODE" :colour 2
+d "Wha-t a--re you talk--ing abo--ut?!"
+d "A---" ::noenter
+changecolours red red red
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours yellow yellow yellow
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours green green green
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours blue blue blue
+changetextcolours white white white
+d "-" ::noenter :sl 5
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "*The robot accelerated and swung its burning swords*"
+d "*Despite the pain, Nova hit her opponent's helmet with her scythe*"
+changecolours yellow yellow gray
+changetextcolours black black black
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+d "-" ::noenter :sl 10
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "*Half of the mask has fallen off*"
+d "- Antivirus mode is activated." :colour 2
+d "P..packm-" ::noenter ::bysymbol
+changecolours red red red
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changecolours yellow yellow yellow
+changetextcolours black white black
+d "-" ::noenter :sl 5
+changetextcolours gray yellow gray
+changecolours black black yellow
+clear
+d "- The quarantine mode has been applied." :colour 2
+d "- ..." :colour 2
+d "*You hear crying*"
+createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
+mk end
+write end "\\\" ::nobase64
+lookat end
+shutdown :after 3 ::DELETESYSTEM

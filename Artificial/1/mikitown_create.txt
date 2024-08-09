@@ -1,7 +1,7 @@
 cd MIKITOWN:
-mk marblegazebo ::dir
+mk marblegazebo ::dir :wp 255
 cd marblegazebo
-mk flowerfield ::dir
+mk flowerfield ::dir :wp 255
 cd flowerfield
 mk marbleflower1
 mk marbleflower2
@@ -12,7 +12,7 @@ write marblesign "Please do not walk on the flowers." ::nobase64
 cd ..
 mk bench1
 mk bench2
-mk largepergola ::dir
+mk largepergola ::dir :wp 255
 cd largepergola
 mk marblesign
 write marblesign "I add a new flower to the pergola every time my sister kills a soul." ::nobase64
@@ -20,7 +20,7 @@ mk MIKI.girl :wp 255
 write MIKI.girl ""
 cd ..
 cd ..
-mk flowergazebo ::dir
+mk flowergazebo ::dir :wp 255
 cd flowergazebo
 mk bench1
 mk bench2
@@ -29,7 +29,7 @@ write MIKI.girl ""
 cd ..
 mk flowerinscription
 write flowerinscription ""
-mk bloomingarch ::dir
+mk bloomingarch ::dir :wp 255
 cd bloomingarch
 mk MIKI.girl :wp 255
 write MIKI.girl ""

@@ -1,0 +1,5 @@
+d "- WRooooOOOOnG!" :colour 2
+d "- YoU'RE WeAK." :colour 2
+d "Oh, shit..."
+d "- MAkE hER COme TO ME." :colour 2
+d "- AND It wILL EnD." :colour 2
