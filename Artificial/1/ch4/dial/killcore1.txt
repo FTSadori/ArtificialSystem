@@ -54,7 +54,7 @@ changecolours blue blue blue
 changetextcolours white white white
 clear
 mk end
-write end "\\\" ::nobase64
+write end "1 END" ::nobase64
 lookat end
 createsavesfile "nova.girl" "OOO"
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"

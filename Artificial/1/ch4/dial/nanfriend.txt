@@ -37,6 +37,6 @@ d "..."
 d "- I can't trust you."
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 mk end
-write end "\\\" ::nobase64
+write end "NaN: KILLER END" ::nobase64
 lookat end
 shutdown :after 3 ::DELETESYSTEM

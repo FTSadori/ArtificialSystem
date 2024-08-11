@@ -21,6 +21,6 @@ d "- Even if you haven't seen her yet."
 d "- Try to relax."
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 mk end
-write end "\\\" ::nobase64
+write end "EXIT END" ::nobase64
 lookat end
 shutdown :after 3 ::DELETESYSTEM

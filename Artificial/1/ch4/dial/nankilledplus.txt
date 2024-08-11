@@ -305,6 +305,6 @@ d "- ..." :colour 2
 d "*You hear crying*"
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 mk end
-write end "\\\" ::nobase64
+write end "NaN: KILLED TRUE END" ::nobase64
 lookat end
 shutdown :after 3 ::DELETESYSTEM

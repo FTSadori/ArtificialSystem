@@ -122,7 +122,7 @@ d "-" ::noenter :sl 10
 d "-" ::noenter :sl 10
 d "-" ::noenter :sl 10
 mk end
-write end "\\\" ::nobase64
+write end "NaN: KILLED END" ::nobase64
 lookat end
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 shutdown :after 3 ::DELETESYSTEM

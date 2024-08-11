@@ -32,6 +32,6 @@ d "- But I see that you are doing a good job with it."
 d "- You will help me."
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 mk end
-write end "\\\" ::nobase64
+write end "NaN END" ::nobase64
 lookat end
 shutdown :after 3 ::DELETESYSTEM

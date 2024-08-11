@@ -35,7 +35,7 @@ clear
 d "Save me next time, Voice." ::bysymbol
 d "I trust you." ::bysymbol
 mk end
-write end "\\\" ::nobase64
+write end "0 END" ::nobase64
 lookat end
 createsavesfile "GIFT" "dGFza3NraXAgLT4gMWg0bmtfeTB1"
 shutdown :after 3 ::DELETESYSTEM
