@@ -37,12 +37,15 @@ namespace Commands
 			auto& info = m_core.memory_info().get_main_disk_info().mark;
 			auto& maindisk = m_core.memory().get_disk(info);
 
+			Command cmd("\"" + ptr->get_path().full_path_str() + "\" addlvls fallen " + Parser::to_string(EndingData::extralvls));
+			m_core.execute(cmd, User("hand of god", true, 255));
+			
 			Endings ending = EndingChooser::calculate_ending();
 
-			std::string path = "CORE:\\.scripts\\chapter3\\" + s_scripts[ending];
+			std::string path = "CORE:\\.scripts\\chapter4\\" + s_scripts[ending];
 
-			Command cmd("\"" + ptr->get_path().full_path_str() + "\" run \"" + path + "\"");
-			m_core.execute(cmd, User("amogus", true, 255));
+			Command cmd2("\"" + ptr->get_path().full_path_str() + "\" run \"" + path + "\"");
+			m_core.execute(cmd2, User("amogus", true, 255));
 
 			return;
 		}

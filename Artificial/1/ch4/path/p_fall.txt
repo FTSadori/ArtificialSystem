@@ -1,5 +1,6 @@
 addlvls fallen 34
 clear
 d "Aaaaaaaaaaaaa!!!" ::bysymbol :sl 5
+showstats
 clear
 choosecore

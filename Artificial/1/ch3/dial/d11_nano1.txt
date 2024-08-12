@@ -6,6 +6,7 @@ showstats
 d "- ..." ::bysymbol
 d "- Are you satisfied with the result?"
 d "- Now you can go."
+changeuser fallen
+deleteuser citizen
 chmod LIBRARY:\roundhall :rp 0
-chmod LIBRARY:\dimhall :rp 255
 setnewdialog LIBRARY:\brighthall\NANO.girl ""

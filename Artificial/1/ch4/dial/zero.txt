@@ -1,4 +1,5 @@
 cd CORE:\controlroom
+write CORE:\system\.save "CORE:\controlroom" ::nobase64
 setnewpath CORE: CORE:\.scripts\chapter4\p_core.txt
 changecolours black black gray
 changetextcolours gray red gray
@@ -15,7 +16,7 @@ d "..."
 d "What do you know about people like me?"
 d "- PeOPLE?" :colour 2
 d "- LIkE YoU??" :colour 2
-d "- AHahahahAH" :colour 
+d "- AHahahahAH" :colour 2
 d "Uh-huh, you should know."
 d "Everyone says there were many people like me."
 d "Novas."

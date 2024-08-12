@@ -40,7 +40,7 @@ namespace Commands
 				return;
 			}
 
-			if (sender.lvl() < 99)
+			if (sender.lvl() < 13)
 				throw PermissionException("(RunProgramOption) Sender has low permission lvl");
 
 			if (_command.has("::v"))

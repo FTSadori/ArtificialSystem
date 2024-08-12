@@ -30,7 +30,7 @@ cd stairs
 spawnnova
 cd ..
 cd ..
-mk roundhall ::dir :wp 255
+mk roundhall ::dir :rp 150 :wp 255
 cd roundhall
 mk unreadablebook1 :rp 255
 mk unreadablebook2 :rp 255
@@ -41,4 +41,5 @@ write ELPA.girl "QEBAQEBAQEBAQEBAQCUgICAgIEBAQEBAQEBAQEBAQEBAQEBAQEAgICAgICAgIEB
 mk descent ::dir :rp 150
 setnewdialog LIBRARY:\brighthall\NANO.girl CORE:\.scripts\chapter3\d11_nano1.txt
 setnewdialog LIBRARY:\dimhall\NANO.girl CORE:\.scripts\chapter3\d12_nano2.txt
+setnewdialog LIBRARY:\roundhall\ELPA.girl CORE:\.scripts\chapter3\d13_elpa.txt
 setnewpath LIBRARY:\roundhall\descent CORE:\.scripts\chapter3\p_descent.txt

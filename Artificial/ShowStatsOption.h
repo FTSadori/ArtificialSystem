@@ -51,7 +51,7 @@ namespace Commands
 
 				Story::EndingData::awareness = Story::Awareness::RZERO;
 				if (a.size() > 0)
-					Story::EndingData::awareness = (a.size() >= 5) ? Story::Awareness::RALL : Story::Awareness::RMEDIUM;
+					Story::EndingData::awareness = ((a.size() >= 5) ? Story::Awareness::RALL : Story::Awareness::RMEDIUM);
 			}
 			catch (...) {}
 			
@@ -74,6 +74,8 @@ namespace Commands
 				Story::EndingData::friendliness = Story::Friendliness::LOW;
 			else
 				Story::EndingData::friendliness = (fr == 20) ? Story::Friendliness::MAX : Story::Friendliness::MEDIUM;
+
+			Story::EndingData::extralvls = fr;
 
 			return;
 		}

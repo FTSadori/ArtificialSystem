@@ -8,6 +8,8 @@ d "- Are you satisfied with the result?"
 d "- I know you are."
 d "- But I can't keep you here."
 d "- If this is our fate."
+changeuser fallen
+deleteuser remover
+deleteuser citizen
 chmod LIBRARY:\roundhall :rp 0
-chmod LIBRARY:\brighthall :rp 255
 setnewdialog LIBRARY:\dimhall\NANO.girl ""

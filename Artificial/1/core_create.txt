@@ -1,5 +1,5 @@
 cd CORE:
-mk controlroom ::h ::sys ::dir
+mk controlroom ::sys ::dir
 cd controlroom
 spawnnova
 mk CORE.GIRL
@@ -28,3 +28,4 @@ cd chapter4
 allfromport 1 ch4\path
 allfromport 1 ch4\dial
 allfromport 1 ch4\lookaround
+setnewdialog CORE:\controlroom\CORE.GIRL CORE:\.scripts\chapter4\zerotalk.txt

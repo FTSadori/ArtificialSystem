@@ -61,7 +61,7 @@ namespace Commands
 			if (sender.lvl() < perm.write_perm_lvl)
 				throw PermissionException("(ChangeModificatorsOption) Sender has low permission lvl");
 
-			Memory::Permissions max_perm;
+			Memory::Permissions max_perm (false, 255, 255, 255, 0);
 
 			if (disk.get_type(path.disk_path()) == Memory::FileT::DIR)
 			{

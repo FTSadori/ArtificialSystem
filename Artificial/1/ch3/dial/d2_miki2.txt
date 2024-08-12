@@ -5,5 +5,5 @@ d "Your sister is..."
 d "- Rem. You really shouldn't say her name yet, not when you're this close to her."
 d "Uh, okay."
 d "- Let's go into the town, it's small, but it's very nice."
-setnewpath MIKITOWN:\bloomingarch "p_cant_go_in.txt"
+setnewpath MIKITOWN:\bloomingarch ""
 rm MIKI.girl

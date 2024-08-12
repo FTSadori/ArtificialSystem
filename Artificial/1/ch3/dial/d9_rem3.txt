@@ -3,3 +3,4 @@ d "- I hope you will somehow make it out alive.""
 d "- Come in."
 d "- Make the right choice."
 setnewdialog REMTOWN:\rubyarch\corridor\REM.girl CORE:\.scripts\chapter3\d10_rem4.txt
+setnewpath REMTOWN:\rubyarch\corridor\passage ""

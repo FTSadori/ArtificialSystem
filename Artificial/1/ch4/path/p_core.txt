@@ -1,2 +1,2 @@
-d "- YOUr PAth IS NoW BLOckED."
+d "- YOUr PAth IS NoW BLOckED." :colour 2
 go controlroom

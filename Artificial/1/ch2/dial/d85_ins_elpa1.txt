@@ -7,3 +7,6 @@ d "- Good luck."
 cd REMTOWN:\gloomydesert\rubyspikes
 changetextcolours red violet lightred
 changecolours black black red
+rm CORE:\system\.inventory
+clear
+write CORE:\system\.save "REMTOWN:\gloomydesert\rubyspikes" ::nobase64

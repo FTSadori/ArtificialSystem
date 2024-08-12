@@ -1,4 +1,5 @@
 cd DEPTH:
+write CORE:\system\.save "DEPTH:" ::nobase64
 clear
 changecolours black black white
 changetextcolours white white white

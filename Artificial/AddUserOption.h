@@ -33,7 +33,7 @@ namespace Commands
 				throw MemoryIsNotLoadedException("(AddUserOption) Memory is not loaded. Try using 'startsystem' command after setting up DiskSystemInfo file.");
 
 			uint8_t perm_lvl = Parser::from_string<int>(_command.get("2"));
-			if (sender.lvl() < perm_lvl || perm_lvl == 255)
+			if (sender.lvl() < perm_lvl)
 				throw PermissionException("(AddUserOption) Sender has low permission lvl");
 
 			if (!sender.sudo() && _command.has("::root"))

@@ -8,3 +8,6 @@ d "- Then... It's time for you to come to us."
 cd MIKITOWN:\marblegazebo\flowerfield
 changetextcolours green yellow lightgreen
 changecolours black black green
+rm CORE:\system\.inventory
+clear
+write CORE:\system\.save "MIKITOWN:\marblegazebo\flowerfield" ::nobase64

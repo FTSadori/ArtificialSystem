@@ -8,6 +8,7 @@
 #include "ChangeTextColours.h"
 #include "EchoOption.h"
 #include "ClearConsoleOption.h"
+#include "SudoOption.h"
 
 namespace Commands
 {
@@ -23,6 +24,7 @@ namespace Commands
 			controller.add_option("changetextcolours", std::make_unique<ChangeTextColours>(core));
 			controller.add_option("e", std::make_unique<EchoOption>(core));
 			controller.add_option("clear", std::make_unique<ClearConsoleOption>(core));
+			controller.add_option("sudo", std::make_unique<SudoOption>(core));
 			return controller;
 		}
 	};

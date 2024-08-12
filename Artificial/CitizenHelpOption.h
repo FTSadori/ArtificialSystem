@@ -34,6 +34,8 @@ namespace Commands
 			ptr->print_third("- showtask (13 lvl)\n");
 			ptr->print_third("- runtests (13 lvl)\n");
 			ptr->print_third("- skiptask (13 lvl)\n");
+			ptr->print_third("- ping (35 lvl)\n");
+			ptr->print_third("- download (35 lvl)\n");
 			ptr->print_third("- rm (99 lvl)\n");
 			
 			return;

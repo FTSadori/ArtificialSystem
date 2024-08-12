@@ -12,7 +12,7 @@ d "*Now get ready to go even lower*"
 d "*I only chose you, and I will not judge you*"
 d "*Because I have no right to judge a person*"
 d "*Let someone who has power over them do it*"
-d "**"
+d "*...*"
 addlvls fallen 50
 d "*You have raised the level by 50*"
 setnewdialog LIBRARY:\roundhall\ELPA.girl ""

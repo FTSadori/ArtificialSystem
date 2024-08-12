@@ -19,11 +19,15 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
+				ptr->print_main("13 permission level needed\n");
 				ptr->print_main("Shows all tasks and their states\n");
 				ptr->print_secondary("tasks [::open]\n");
 				ptr->print_main("  ::open - (flag) shown all tasks with OPEN state\n");
 				return;
 			}
+
+			if (sender.lvl() < 13)
+				throw PermissionException("(ShowOpenedTasksOption) Sender has low permission lvl");
 	
 			int i = -1;
 			for (const auto& pair : Story::TaskStateHandler::s_states)

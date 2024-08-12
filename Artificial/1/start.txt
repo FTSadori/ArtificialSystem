@@ -15,6 +15,8 @@ adddisk LIBRARY 1000000 1000
 adddisk DEPTH 1000000 1000
 startsystem
 adduser visitor 0
+changeuser visitor
+deleteuser system
 run 1\core_create.txt ::real
 run 1\corridor_create.txt ::real
 run 1\overworld_create.txt ::real

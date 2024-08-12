@@ -33,6 +33,7 @@ namespace Commands
 			ptr->print_third("- changetextcolours\n");
 			ptr->print_third("- e\n");
 			ptr->print_third("- clear\n");
+			ptr->print_third("- sudo\n");
 
 			return;
 		}

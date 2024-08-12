@@ -27,6 +27,9 @@ namespace Commands
 				return;
 			}
 
+			if (sender.lvl() < 13)
+				throw PermissionException("(ShowTaskDetailsOption) Sender has low permission lvl");
+
 			if (!Story::TaskStateHandler::s_states.contains(_command.get("1")))
 				throw Story::TaskNameException("(ShowTaskDetailsOption) TaskStateHandler doesn't know about " + _command.get("1") + " task");
 			if (!Story::TaskHandler::s_tasks.contains(_command.get("1")))

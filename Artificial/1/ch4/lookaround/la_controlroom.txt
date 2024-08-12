@@ -1,6 +1,6 @@
 d "It scares me."
 d "It's a woman's head sticking out of the wall."
-d "It's read and looks at me with crazy eyes."
+d "It's red and looks at me with crazy eyes."
 d "From her neck there are wires running down the wall, along which a red pulsates."
 d "..."
 d "- MAkE hER COme TO ME." :colour 2

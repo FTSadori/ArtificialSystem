@@ -2,5 +2,8 @@ d "*Nova went into the light*"
 d "*When it dissipated, she found herself in front of a gilded marble staircase with beautiful carvings*"
 d "*She could see the symbols of hell on it*"
 changecolours white white gray
-changecolours yellow gray black
+changetextcolours yellow gray black
 cd LIBRARY:\dimhall\stairs
+write CORE:\system\.save "LIBRARY:\dimhall\stairs" ::nobase64
+rm LIBRARY:\brighthall
+clear

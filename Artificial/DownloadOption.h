@@ -24,12 +24,15 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Server permission lvl needed\n");
+				ptr->print_main("35 or server permission lvl needed\n");
 				ptr->print_main("Checks connection to server by address and tries to download data from it\n");
 				ptr->print_secondary("download {address}\n");
 				ptr->print_main("  address - (string) address line;\n");
 				return;
 			}
+
+			if (sender.lvl() < 35)
+				throw PermissionException("(DownloadOption) Sender has low permission lvl");
 
 			Command command("\"" + _command.get("path") + "\"" + " ping " + "\"" + _command.get("1") + "\"");
 			m_core.execute(command, sender);

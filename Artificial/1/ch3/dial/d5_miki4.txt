@@ -4,3 +4,4 @@ d "- Our smartest, Elpa, is waiting for you there."
 d "Thank you."
 d "- Make the right choice."
 setnewdialog MIKITOWN:\bloomingarch\corridor\MIKI.girl CORE:\.scripts\chapter3\d6_miki5.txt
+setnewpath MIKITOWN:\bloomingarch\corridor\passage ""

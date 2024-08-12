@@ -7,6 +7,8 @@ namespace Commands
 {
 	Command::Command(const std::string& line)
 	{
+		m_line = line;
+
 		// Dividing by '\n'
 		size_t text_size = line.find('\n');
 		std::string text;
@@ -78,5 +80,9 @@ namespace Commands
 	bool Command::has(const std::string& _key) const
 	{
 		return m_parameters.find(_key) != m_parameters.end();
+	}
+	std::string Command::getwholeline() const
+	{
+		return m_line;
 	}
 }

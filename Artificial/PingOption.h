@@ -24,13 +24,16 @@ namespace Commands
 
 			if (_command.has("::help"))
 			{
-				ptr->print_main("Server permission lvl needed\n");
+				ptr->print_main("35 or server permission lvl needed\n");
 				ptr->print_main("Checks connection to server by address\n");
 				ptr->print_secondary("ping {address} [:preenter password]\n");
 				ptr->print_main("  address - (string) address line;\n");
 				ptr->print_main("  :preenter password - (flag + string) you can enter password here if command needs it;\n");
 				return;
 			}
+
+			if (sender.lvl() < 35)
+				throw PermissionException("(PingOption) Sender has low permission lvl");
 
 			if (!m_core.net().has(_command.get("1")))
 			{

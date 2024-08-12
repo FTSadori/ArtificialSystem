@@ -41,7 +41,7 @@ namespace Commands
 			if (!disk.is_exists(nova_path.disk_path()))
 				throw CommandException("(GoNovaOption) Nova is not here");
 
-			if (_command.get("1").find('\\') != std::string::npos)
+			if (_command.get("1").find('\\') != std::string::npos || _command.get("1").find(':') != std::string::npos)
 				throw CommandException("(GoNovaOption) You can use only directories in current directory or '..' literal to go back");
 
 			Memory::FullPath new_path = Memory::RelativePathCreator::combine(_command.get("path"), _command.get("1"));

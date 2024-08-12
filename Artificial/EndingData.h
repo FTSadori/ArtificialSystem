@@ -20,6 +20,7 @@ namespace Story
 
 	struct EndingData
 	{
+		static int extralvls;
 		static Awareness awareness;
 		static Friendliness friendliness;
 	};
