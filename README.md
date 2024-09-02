@@ -14,7 +14,7 @@ To view a list of commands, use `help`. If you want to see a description of a sp
 
 ![image](Pictures/commands-info.png)
 
-### Level 11
+### Level 11+
 When you reach **level 11 and above**, you will have additional commands available. Use the following commands to work with subwindows:  
 ```
 SHIFT+Q - close the subwindow
@@ -27,4 +27,6 @@ SHIFT+X - go to the subwindow on the right
 
 ### MOVA 4+
 The last note applies to **MOVA version 4 and above**, *don't worry if you don't understand what we are talking about, in the future you will understand and it will help you ;)*.  
-Start input and output data from register №100, this will help you avoid unpredictable behavior, because some variables are created by the compiler, and you can overwrite them.
+Start input and output data from register №100, for example, this will help you avoid what may seem at first to be unpredictable behavior, because some variables are created by the compiler, and you can overwrite them.  
+
+*Explanation for those who want to know more. If you use only registers before MOVA 4, then variables appear afterwards. Therefore, `a = 5` means that registers 0 and 1 are occupied, the first for a literal, the second for a variable. In addition, two memory locations are used for constants in the goto command, for example `goto smth 0 != 1`.*
